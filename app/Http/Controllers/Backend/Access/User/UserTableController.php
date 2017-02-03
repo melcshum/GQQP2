@@ -35,6 +35,7 @@ class UserTableController extends Controller
         return Datatables::of($this->users->getForDataTable($request->get('status'), $request->get('trashed')))
             ->editColumn('confirmed', function ($user) {
                 return $user->confirmed_label;
+      
             })
             ->addColumn('roles', function ($user) {
                 return $user->roles->count() ?
@@ -45,6 +46,7 @@ class UserTableController extends Controller
                 return $user->action_buttons;
             })
             ->withTrashed()
-            ->make(true);
+            ->make(true)  
+         ;
     }
 }

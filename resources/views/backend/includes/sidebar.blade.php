@@ -45,7 +45,8 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
 
-                    <ul class="treeview-menu {{ Active::pattern('admin/access/*', 'menu-open') }}" style="display: none; {{ Active::pattern('admin/access/*', 'display: block;') }}">
+                    <ul class="treeview-menu {{ Active::pattern('admin/access/*', 'menu-open') }}"
+                        style="display: none; {{ Active::pattern('admin/access/*', 'display: block;') }}">
                         @permission('manage-users')
                             <li class="{{ Active::pattern('admin/access/user*') }}">
                                 <a href="{{ route('admin.access.user.index') }}">
@@ -54,7 +55,9 @@
                                 </a>
                             </li>
                         @endauth
+ 
 
+  
                         @permission('manage-roles')
                             <li class="{{ Active::pattern('admin/access/role*') }}">
                                 <a href="{{ route('admin.access.role.index') }}">
@@ -63,9 +66,35 @@
                                 </a>
                             </li>
                         @endauth
+                           <li  class="{{ Active::pattern('lms/course*') }} " >
+                                <a href="{{ route('lms.course.index') }}">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span> {{ trans('labels.lms.courses.management') }}</span>
+                                </a>
+                            </li>
                     </ul>
                 </li>
             @endauth
+           
+                <li class="{{ Active::pattern('lms/course') }} treeview">
+                    <a href="#">
+                        <i class="fa fa-users"></i>
+                        <span>{{ trans('menus.lms.title') }}</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+
+                    <ul class="treeview-menu {{ Active::pattern('lms/course*', 'menu-open') }}"
+                        style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
+                         
+                           <li  class="{{ Active::pattern('lms/course*') }} " >
+                                <a href="{{ route('lms.course.index') }}">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span> {{ trans('labels.lms.courses.management') }}</span>
+                                </a>
+                            </li>
+                    </ul>
+                </li>
+             
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
 

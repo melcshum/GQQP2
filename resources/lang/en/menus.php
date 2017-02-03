@@ -50,6 +50,8 @@ return [
         ],
     ],
 
+
+
     'language-picker' => [
         'language' => 'Language',
         /*
@@ -74,4 +76,39 @@ return [
             'th'    => 'Thai',
         ],
     ],
+    
+    
+    'lms' => [
+        'title'=> 'Learning Mgt',  
+        'roles' => [
+            'all'        => 'All Roles',
+            'create'     => 'Create Role',
+            'edit'       => 'Edit Role',
+            'management' => 'Role Management',
+            'main'       => 'Roles',
+        ],
+
+        'courses' => [
+            'all'             => 'All Courses',
+            'change-password' => 'Change Password',
+            'create'          => 'Create Course',
+            'deactivated'     => 'Deactivated Courses',
+            'deleted'         => 'Deleted Courses',
+            'edit'            => 'Edit Course',
+            'main'            => 'Courses',
+            'view'            => 'View Course',
+        ], 
+
+        'log-viewer' => [
+            'main'      => 'Log Viewer',
+            'dashboard' => 'Dashboard',
+            'logs'      => 'Logs',
+        ],
+
+        'sidebar' => [
+            'dashboard' => 'Dashboard',
+            'general'   => 'General',
+            'system'    => 'System',
+        ],
+    ],   
 ];

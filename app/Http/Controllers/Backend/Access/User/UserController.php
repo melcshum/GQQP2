@@ -13,6 +13,7 @@ use App\Http\Requests\Backend\Access\User\UpdateUserRequest;
 /**
  * Class UserController.
  */
+ 
 class UserController extends Controller
 {
     /**

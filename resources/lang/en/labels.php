@@ -159,5 +159,91 @@ return [
             ],
         ],
 
+    ], 
+    
+    'lms' => [
+        'courses' =>[
+            'management'          => 'Courses Management',
+            
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'          => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'roles'          => 'Roles',
+                'total'          => 'user total|users total',
+            ],
+        ],
+        
+        
+        'access' => [
+            'roles' => [
+                'create'     => 'Create Role',
+                'edit'       => 'Edit Role',
+                'management' => 'Role Management',
+
+                'table' => [
+                    'number_of_users' => 'Number of Users',
+                    'permissions'     => 'Permissions',
+                    'role'            => 'Role',
+                    'sort'            => 'Sort',
+                    'total'           => 'role total|roles total',
+                ],
+            ],
+
+            'users' => [
+                'active'              => 'Active Users',
+                'all_permissions'     => 'All Permissions',
+                'change_password'     => 'Change Password',
+                'change_password_for' => 'Change Password for :user',
+                'create'              => 'Create User',
+                'deactivated'         => 'Deactivated Users',
+                'deleted'             => 'Deleted Users',
+                'edit'                => 'Edit User',
+                'management'          => 'User Management',
+                'no_permissions'      => 'No Permissions',
+                'no_roles'            => 'No Roles to set.',
+                'permissions'         => 'Permissions',
+
+                'table' => [
+                    'confirmed'      => 'Confirmed',
+                    'created'        => 'Created',
+                    'email'          => 'E-mail',
+                    'id'             => 'ID',
+                    'last_updated'   => 'Last Updated',
+                    'name'           => 'Name',
+                    'no_deactivated' => 'No Deactivated Users',
+                    'no_deleted'     => 'No Deleted Users',
+                    'roles'          => 'Roles',
+                    'total'          => 'user total|users total',
+                ],
+
+                'tabs' => [
+                    'titles' => [
+                        'overview' => 'Overview',
+                        'history'  => 'History',
+                    ],
+
+                    'content' => [
+                        'overview' => [
+                            'avatar'       => 'Avatar',
+                            'confirmed'    => 'Confirmed',
+                            'created_at'   => 'Created At',
+                            'deleted_at'   => 'Deleted At',
+                            'email'        => 'E-mail',
+                            'last_updated' => 'Last Updated',
+                            'name'         => 'Name',
+                            'status'       => 'Status',
+                        ],
+                    ],
+                ],
+
+                'view' => 'View User',
+            ],
+        ],
     ],
 ];
