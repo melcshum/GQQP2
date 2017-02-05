@@ -159,25 +159,22 @@ class CourseRepository extends Repository
     }
 
     /**
-     * @param Model $user
+     * @param Model $course
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function delete(Model $user)
+    public function delete(Model $course)
     {
-        if (access()->id() == $user->id) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_delete_self'));
-        }
-
-        if (parent::delete($user)) {
-            event(new UserDeleted($user));
+ 
+        if (parent::delete($course)) {
+         //   event(new UserDeleted($user));
 
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.access.users.delete_error'));
+        throw new GeneralException(trans('exceptions.lms.courses.delete_error'));
     }
 
     /**

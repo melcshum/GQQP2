@@ -58,6 +58,58 @@ class CourseController extends Controller
     {
          $this->courses->create(['data' => $request ]);
 
-        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.backend.users.created'));
+        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.lms.courses.created'));
     } 
+    
+    
+    
+    /**
+     * @param User              $user
+     * @param ManageUserRequest $request
+     *
+     * @return mixed
+     */
+//    public function show(User $user, ManageUserRequest $request)
+//    {
+//        return view('backend.access.show')
+        //    ->withUser($user);
+//    }
+
+    /**
+     * @param Course              $course
+     * @param ManageCourseRequest $request
+     *
+     * @return mixed
+     */
+    public function edit(Course $course, ManageCourseRequest $request)
+    {
+        return view('lms.course.edit')
+            ->withCourse($course);
+    }
+
+   /**
+     * @param Course              $course
+     * @param ManageCourseRequest $request
+     *
+     * @return mixed
+     */
+    public function update(Course $course, ManageCourseRequest $request)
+    {
+     //   $this->users->update($user, ['data' => $request->except('assignees_roles'), 'roles' => $request->only('assignees_roles')]);
+
+        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.lms.courses.updated'));
+    }
+
+   /**
+     * @param Course              $course
+     * @param ManageCourseRequest $request
+     *
+     * @return mixed
+     */
+    public function destroy(Course $course, ManageCourseRequest $request)
+    {
+        $this->courses->delete($course);
+
+        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.lms.courses.deleted'));
+    }
 }

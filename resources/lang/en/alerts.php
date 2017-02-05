@@ -30,4 +30,18 @@ return [
             'updated_password'    => "The user's password was successfully updated.",
         ],
     ],
+    
+    
+    'lms' => [
+        
+
+        'courses' => [
+           
+            'created'             => 'The course was successfully created.',
+            'deleted'             => 'The course was successfully deleted.',
+            'deleted_permanently' => 'The course was deleted permanently.',
+            'restored'            => 'The course was successfully restored.',
+            'updated'             => 'The course was successfully updated.', 
+        ],
+    ],
 ];
