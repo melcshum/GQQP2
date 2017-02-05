@@ -162,6 +162,16 @@ return [
             'new_password'              => 'New Password',
             'new_password_confirmation' => 'New Password Confirmation',
         ],
+        
+        'lms' => [
+            'courses' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'description'             => 'Description',
+                'slug'                    => 'Slug',
+                
+            ],
+        ],
     ],
 
 ];

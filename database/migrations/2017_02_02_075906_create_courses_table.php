@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string('description');
             $table->enum('level', [1, 2, 3]);
             $table->boolean('type')->default(0);
+            $table->tinyInteger('status')->default(1)->unsigned();
 //            $table->integer('teacher_id')->unsigned();
             $table->string('slug')->unique();
             //foreign keys

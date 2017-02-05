@@ -20,7 +20,7 @@ class CourseController extends Controller
      */
     protected $courses;
 
-   /**
+    /**
      * @param CourseRepository $courses
      * 
      */
@@ -29,14 +29,35 @@ class CourseController extends Controller
         $this->courses = $courses; 
     }
      
-     /**
-     * @param ManageUserRequest $request
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    /**
+    * @param ManageUserRequest $request
+    *
+    * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+    */
     public function index(ManageCourseRequest $request)
     {
         return view('lms.course.index');
     }
+    
+    /**
+     * @param ManageUserRequest $request
+     *
+     * @return mixed
+     */
+    public function create(ManageCourseRequest $request)
+    {
+        return view('lms.course.create');
+    }
+    
+    /**
+    * @param StoreUserRequest $request
+    *
+    * @return mixed
+    */
+    public function store(StoreCourseRequest $request)
+    {
+         $this->courses->create(['data' => $request ]);
 
+        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.backend.users.created'));
+    } 
 }

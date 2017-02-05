@@ -23,15 +23,15 @@ Route::group([
              Route::post('course/get', 'CourseTableController')->name('course.get');
 
             /*
-             * User Status'
+             * Course Status'
              */
             
-            Route::get('course/deactivated', 'UserStatusController@getDeactivated')->name('course.deactivated');
-            Route::get('course/deleted', 'UserStatusController@getDeleted')->name('course.deleted');
+            Route::get('course/deactivated', 'CourseStatusController@getDeactivated')->name('course.deactivated');
+             Route::get('course/deleted', 'CourseStatusController@getDeleted')->name('course.deleted');
             
             
             /*
-             * User CRUD
+             * Course CRUD
              */
             
             Route::resource('course', 'CourseController');

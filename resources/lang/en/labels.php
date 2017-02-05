@@ -164,6 +164,18 @@ return [
     'lms' => [
         'courses' =>[
             'management'          => 'Courses Management',
+            'active'              => 'Active Courses',
+            'all_permissions'     => 'All Permissions',
+            'change_password'     => 'Change Password',
+            'change_password_for' => 'Change Password for :Course',
+            'create'              => 'Create Course',
+            'deactivated'         => 'Deactivated Courses',
+            'deleted'             => 'Deleted Courses',
+            'edit'                => 'Edit Course',
+            'management'          => 'Course Management',
+            'no_permissions'      => 'No Permissions',
+            'no_roles'            => 'No Roles to set.',
+            'permissions'         => 'Permissions',
             
             'table' => [
                 'confirmed'      => 'Confirmed',

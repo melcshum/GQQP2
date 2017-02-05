@@ -15,7 +15,7 @@ use App\Events\Backend\Access\User\UserUpdated;
 use App\Events\Backend\Access\User\UserRestored;
 use App\Events\Backend\Access\User\UserDeactivated;
 use App\Events\Backend\Access\User\UserReactivated;
-use App\Events\Backend\Access\User\UserPasswordChanged; 
+use App\Events\Backend\Access\User\UserPasswordChanged;
 use App\Events\Backend\Access\User\UserPermanentlyDeleted;
 use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
 */
@@ -29,13 +29,13 @@ class CourseRepository extends Repository
      * Associated Repository Model.
      */
     const MODEL = Course::class;
-    
+
     /**
-     * 
+     *
      */
     public function __construct()
     {
-        
+
     }
 
     /**
@@ -51,7 +51,7 @@ class CourseRepository extends Repository
          * be able to differentiate what buttons to show for each row.
          */
         $dataTableQuery = $this->query()
-    
+
             ->select([
                 config('lms.courses_table').'.id',
                 config('lms.courses_table').'.name',
@@ -63,11 +63,11 @@ class CourseRepository extends Repository
                 config('lms.courses_table').'.updated_at',
                 config('lms.courses_table').'.deleted_at',
             ]);
-            
+
         if ($trashed == 'true') {
             return $dataTableQuery->onlyTrashed();
         }
- 
+
         // active() is a scope on the UserScope trait
         //return $dataTableQuery->active($status);
         return $dataTableQuery;
@@ -79,32 +79,31 @@ class CourseRepository extends Repository
     public function create($input)
     {
         $data = $input['data'];
-        $roles = $input['roles'];
 
-        $user = $this->createUserStub($data);
+        $course = $this->createCourseStub($data);
 
-        DB::transaction(function () use ($user, $data, $roles) {
-            if (parent::save($user)) {
+        DB::transaction(function () use ($course, $data) {
+            if (parent::save($course)) {
 
                 //User Created, Validate Roles
-                if (! count($roles['assignees_roles'])) {
-                    throw new GeneralException(trans('exceptions.backend.access.users.role_needed_create'));
-                }
+           //     if (! count($roles['assignees_roles'])) {
+          //          throw new GeneralException(trans('exceptions.backend.access.users.role_needed_create'));
+          //    }
 
                 //Attach new roles
-                $user->attachRoles($roles['assignees_roles']);
+          //      $user->attachRoles($roles['assignees_roles']);
 
                 //Send confirmation email if requested
-                if (isset($data['confirmation_email']) && $user->confirmed == 0) {
-                    $user->notify(new UserNeedsConfirmation($user->confirmation_code));
-                }
+          //    if (isset($data['confirmation_email']) && $user->confirmed == 0) {
+          //          $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+          //      }
 
-                event(new UserCreated($user));
+         //       event(new CourseCreated($user));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.access.users.create_error'));
+            throw new GeneralException(trans('exceptions.lms.course.create_error'));
         });
     }
 
@@ -299,7 +298,7 @@ class CourseRepository extends Repository
             throw new GeneralException(trans('exceptions.backend.access.users.role_needed'));
         }
     }
- 
+
 
     /**
      * @param  $input
@@ -309,15 +308,11 @@ class CourseRepository extends Repository
     protected function createCourseStub($input)
     {
         $course = self::MODEL;
-        /*
-        $user = new $user();
-        $user->name = $input['name'];
-        $user->email = $input['email'];
-        $user->password = bcrypt($input['password']);
-        $user->status = isset($input['status']) ? 1 : 0;
-        $user->confirmation_code = md5(uniqid(mt_rand(), true));
-        $user->confirmed = isset($input['confirmed']) ? 1 : 0;
-        */  
+        $course = new $course();
+        $course->name = $input['name'];
+        $course->description =  $input['description'];
+        $course->slug =  $input['slug'];
+        $course->status = isset($input['status']) ? 1 : 0;
         return $course;
     }
 }
