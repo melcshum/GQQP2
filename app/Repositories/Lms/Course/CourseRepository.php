@@ -108,27 +108,25 @@ class CourseRepository extends Repository
     }
 
     /**
-     * @param Model $user
+     * @param Model $course
      * @param array $input
      */
-    public function update(Model $user, array $input)
+    public function update(Model $course, array $input)
     {
-        $data = $input['data'];
-        $roles = $input['roles'];
-
-        $this->checkUserByEmail($data, $user);
-
-        DB::transaction(function () use ($user, $data, $roles) {
-            if (parent::update($user, $data)) {
+        $data = $input['data']; 
+        $course->status = isset($data['status']) ? 1 : 0;
+ 
+        DB::transaction(function () use ($course, $data ) {
+            if ( parent::update($course, $data)) {
                 //For whatever reason this just wont work in the above call, so a second is needed for now
-                $user->status = isset($data['status']) ? 1 : 0;
-                $user->confirmed = isset($data['confirmed']) ? 1 : 0;
-                parent::save($user);
+         //     parent::save($course);
+              //  $user->confirmed = isset($data['confirmed']) ? 1 : 0;
+           
+ 
+             //   $this->checkUserRolesCount($roles);
+             //   $this->flushRoles($roles, $user);
 
-                $this->checkUserRolesCount($roles);
-                $this->flushRoles($roles, $user);
-
-                event(new UserUpdated($user));
+             //   event(new UserUpdated($user));
 
                 return true;
             }
@@ -137,27 +135,7 @@ class CourseRepository extends Repository
         });
     }
 
-    /**
-     * @param Model $user
-     * @param $input
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function updatePassword(Model $user, $input)
-    {
-        $user->password = bcrypt($input['password']);
-
-        if (parent::save($user)) {
-            event(new UserPasswordChanged($user));
-
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.access.users.update_password_error'));
-    }
-
+     
     /**
      * @param Model $course
      *
@@ -254,22 +232,7 @@ class CourseRepository extends Repository
         throw new GeneralException(trans('exceptions.backend.access.users.mark_error'));
     }
 
-    /**
-     * @param  $input
-     * @param  $user
-     *
-     * @throws GeneralException
-     */
-    protected function checkUserByEmail($input, $user)
-    {
-        //Figure out if email is not the same
-        if ($user->email != $input['email']) {
-            //Check to see if email exists
-            if ($this->query()->where('email', '=', $input['email'])->first()) {
-                throw new GeneralException(trans('exceptions.backend.access.users.email_error'));
-            }
-        }
-    }
+     
 
     /**
      * @param $roles
@@ -282,19 +245,7 @@ class CourseRepository extends Repository
         $user->attachRoles($roles['assignees_roles']);
     }
 
-    /**
-     * @param  $roles
-     *
-     * @throws GeneralException
-     */
-    protected function checkUserRolesCount($roles)
-    {
-        //User Updated, Update Roles
-        //Validate that there's at least one role chosen
-        if (count($roles['assignees_roles']) == 0) {
-            throw new GeneralException(trans('exceptions.backend.access.users.role_needed'));
-        }
-    }
+    
 
 
     /**

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Lms\Course;
 
 use App\Models\Lms\Course\Course;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
- 
 use App\Repositories\Lms\Course\CourseRepository;
 use App\Http\Requests\Lms\Course\StoreCourseRequest;
 use App\Http\Requests\Lms\Course\ManageCourseRequest;
@@ -95,7 +93,7 @@ class CourseController extends Controller
      */
     public function update(Course $course, ManageCourseRequest $request)
     {
-     //   $this->users->update($user, ['data' => $request->except('assignees_roles'), 'roles' => $request->only('assignees_roles')]);
+        $this->courses->update($course, ['data' => $request->all() ]);
 
         return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.lms.courses.updated'));
     }

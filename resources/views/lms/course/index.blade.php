@@ -9,14 +9,14 @@
 @section('page-header')
     <h1>
         {{ trans('labels.lms.courses.management') }}
-        <small>{{ trans('labels.backend.access.users.active') }}</small>
+        <small>{{ trans('labels.lms.courses.active') }}</small>
     </h1>
 @endsection
 
 @section('content')
     <div class="box box-success">
         <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.access.users.active') }}</h3>
+            <h3 class="box-title">{{ trans('labels.lms.courses.active') }}</h3>
 
             <div class="box-tools pull-right">
                 @include('lms.course.includes.partials.course-header-buttons')

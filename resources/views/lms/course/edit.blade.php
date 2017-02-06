@@ -1,24 +1,23 @@
 @extends ('backend.layouts.app')
-
-@section ('title',  trans('labels.lms.courses.management') . ' | ' . trans('labels.lms.courses.create'))
+ 
+@section ('title',  trans('labels.lms.courses.management') . ' | ' . trans('labels.lms.courses.edit'))
 
 @section('page-header')
     <h1>
         {{ trans('labels.lms.courses.management') }}
-        <small>{{ trans('labels.lms.courses.create') }}</small>
+        <small>{{ trans('labels.lms.courses.edit') }}</small>
     </h1>
 @endsection
-
 @section('content')
-    {{ Form::open(['route' => 'lms.course.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) }}
+    {{ Form::model($course, ['route' => ['lms.course.update', $course], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH']) }}
 
         <div class="box box-success">
             <div class="box-header with-border">
-                <h3 class="box-title">{{ trans('labels.lms.courses.create') }}</h3>
+                <h3 class="box-title">{{ trans('labels.lms.courses.edit') }}</h3>
 
                 <div class="box-tools pull-right">
                     @include('lms.course.includes.partials.course-header-buttons')
-                          </div><!--box-tools pull-right-->
+                </div><!--box-tools pull-right-->
             </div><!-- /.box-header -->
 
             <div class="box-body">
@@ -30,6 +29,7 @@
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
+              
                 <div class="form-group">
                     {{ Form::label('description', trans('validation.attributes.lms.courses.description'), ['class' => 'col-lg-2 control-label']) }}
 
@@ -56,19 +56,18 @@
                 </div><!--form control-->
  
              
-
-              
+ 
             </div><!-- /.box-body -->
         </div><!--box-->
 
-        <div class="box box-info">
+         <div class="box box-info">
             <div class="box-body">
                 <div class="pull-left">
                     {{ link_to_route('lms.course.index', trans('buttons.general.cancel'), [], ['class' => 'btn btn-danger btn-xs']) }}
                 </div><!--pull-left-->
 
                 <div class="pull-right">
-                    {{ Form::submit(trans('buttons.general.crud.create'), ['class' => 'btn btn-success btn-xs']) }}
+                    {{ Form::submit(trans('buttons.general.crud.edit'), ['class' => 'btn btn-success btn-xs']) }}
                 </div><!--pull-right-->
 
                 <div class="clearfix"></div>

@@ -66,12 +66,7 @@
                                 </a>
                             </li>
                         @endauth
-                           <li  class="{{ Active::pattern('lms/course*') }} " >
-                                <a href="{{ route('lms.course.index') }}">
-                                    <i class="fa fa-circle-o"></i>
-                                    <span> {{ trans('labels.lms.courses.management') }}</span>
-                                </a>
-                            </li>
+                     
                     </ul>
                 </li>
             @endauth
