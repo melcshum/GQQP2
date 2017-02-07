@@ -50,8 +50,8 @@
                 <div class="form-group">
                     {{ Form::label('status', trans('validation.attributes.lms.courses.active'), ['class' => 'col-lg-2 control-label']) }}
 
-                    <div class="col-lg-1">
-                        {{ Form::checkbox('status', '1', true) }}
+                    <div class="col-lg-1"> 
+                        {{ Form::checkbox('status', '1', $course->status) }}
                     </div><!--col-lg-1-->
                 </div><!--form control-->
  

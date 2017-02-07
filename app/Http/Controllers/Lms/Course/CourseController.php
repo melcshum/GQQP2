@@ -81,6 +81,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course, ManageCourseRequest $request)
     {
+ 
         return view('lms.course.edit')
             ->withCourse($course);
     }
