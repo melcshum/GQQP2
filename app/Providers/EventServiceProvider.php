@@ -14,7 +14,9 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $listen = [];
+    protected $listen = [ 
+       
+    ];
 
     /**
      * Class event subscribers.
@@ -40,6 +42,11 @@ class EventServiceProvider extends ServiceProvider
          */
         \App\Listeners\Backend\Access\User\UserEventListener::class,
         \App\Listeners\Backend\Access\Role\RoleEventListener::class,
+      
+        /*
+         * Lms Subscribers
+         */
+       \App\Listeners\Lms\Course\CourseEventListener::class,
     ];
 
     /**

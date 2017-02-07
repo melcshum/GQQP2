@@ -33,5 +33,17 @@ return [
             'reactivated'         => 'reactivated user',
             'restored'            => 'restored user',
         ],
+     ],
+     'lms' => [
+        'recent_history'  => 'Recent History',
+        'courses' => [
+             'created'             => 'created course',
+            'deactivated'         => 'deactivated course',
+            'deleted'             => 'deleted course',
+            'permanently_deleted' => 'permanently deleted course',
+            'updated'             => 'updated course',
+            'reactivated'         => 'reactivated course',
+            'restored'            => 'restored course',
+        ],
     ],
 ];

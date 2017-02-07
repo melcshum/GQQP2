@@ -7,17 +7,17 @@ use App\Repositories\Repository;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use Illuminate\Database\Eloquent\Model;
+use App\Events\Lms\Course\CourseCreated;
 
+
+use App\Events\Lms\Course\CourseDeleted;
+use App\Events\Lms\Course\CourseUpdated;
 /*
-use App\Events\Lms\Course\UserCreated;
-use App\Events\Backend\Access\User\UserDeleted;
-use App\Events\Backend\Access\User\UserUpdated;
-use App\Events\Backend\Access\User\UserRestored;
-use App\Events\Backend\Access\User\UserDeactivated;
-use App\Events\Backend\Access\User\UserReactivated;
-use App\Events\Backend\Access\User\UserPasswordChanged;
-use App\Events\Backend\Access\User\UserPermanentlyDeleted;
-use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
+use App\Events\Lms\Course\CourseRestored;
+use App\Eventsms\course\CourseDeactivated;
+use App\Eventsms\course\CourseReactivated;
+use App\Eventsms\course\CoursePermanentlyDeleted;
+use App\Notifications\Frontend\Auth\CourseNeedsConfirmation;
 */
 
 /**
@@ -98,7 +98,7 @@ class CourseRepository extends Repository
           //          $user->notify(new UserNeedsConfirmation($user->confirmation_code));
           //      }
 
-         //       event(new CourseCreated($user));
+                event(new CourseCreated($course));
 
                 return true;
             }
@@ -126,7 +126,7 @@ class CourseRepository extends Repository
              //   $this->checkUserRolesCount($roles);
              //   $this->flushRoles($roles, $user);
 
-             //   event(new UserUpdated($user));
+               event(new CourseUpdated($course));
 
                 return true;
             }
@@ -147,7 +147,7 @@ class CourseRepository extends Repository
     {
  
         if (parent::delete($course)) {
-         //   event(new UserDeleted($user));
+            event(new CourseDeleted($course));
 
             return true;
         }
