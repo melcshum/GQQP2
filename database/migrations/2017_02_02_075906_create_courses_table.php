@@ -25,8 +25,10 @@ class CreateCoursesTable extends Migration
             $table->string('slug')->unique();
             //foreign keys
  //           $table->foreign('teacher_id')->references('id')->on('users');
+            $table->rememberToken();
+              $table->softDeletes();
             $table->timestamps();
-            $table->softDeletes();
+          
         });
     }
 

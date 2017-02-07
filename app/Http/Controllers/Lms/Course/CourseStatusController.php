@@ -36,7 +36,7 @@ class CourseStatusController extends Controller
      */
     public function getDeleted(ManageUserRequest $request)
     {
-        return view('backend.access.deleted');
+        return view('lms.course.deleted');
     }
     /**
      * @param User $user

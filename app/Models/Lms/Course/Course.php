@@ -30,7 +30,8 @@ class Course extends Model
         UserSendPasswordReset;
         
 */
-    use CourseAttribute;
+    use SoftDeletes,
+        CourseAttribute;
 
     /**
      * The database table used by the model.

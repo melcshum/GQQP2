@@ -109,6 +109,6 @@ class CourseController extends Controller
     {
         $this->courses->delete($course);
 
-        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.lms.courses.deleted'));
+        return redirect()->route('lms.course.deleted')->withFlashSuccess(trans('alerts.lms.courses.deleted'));
     }
 }

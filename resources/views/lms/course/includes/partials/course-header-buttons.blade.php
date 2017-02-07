@@ -9,14 +9,14 @@
 <div class="pull-right mb-10 hidden-lg hidden-md">
     <div class="btn-group">
         <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            {{ trans('menus.backend.access.users.main') }} <span class="caret"></span>
+            {{ trans('menus.lms.courses.main') }} <span class="caret"></span>
         </button>
 
         <ul class="dropdown-menu" role="menu">
-            <li>{{ link_to_route('lms.course.index', trans('menus.lms.courses.users.all')) }}</li>
-            <li>{{ link_to_route('lms.course.create', trans('menus.lms.courses.users.create')) }}</li>
+            <li>{{ link_to_route('lms.course.index', trans('menus.lms.courses.all')) }}</li>
+            <li>{{ link_to_route('lms.course.create', trans('menus.lms.courses.create')) }}</li>
             <li class="divider"></li>
-            <li>{{ link_to_route('lms.course.deactivated', trans('menus..lms.courses.deactivated')) }}</li>
+            <li>{{ link_to_route('lms.course.deactivated', trans('menus.lms.courses.deactivated')) }}</li>
             <li>{{ link_to_route('lms.course.deleted', trans('menus.lms.courses.deleted')) }}</li>
         </ul>
     </div><!--btn group-->

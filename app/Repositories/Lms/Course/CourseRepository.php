@@ -156,47 +156,47 @@ class CourseRepository extends Repository
     }
 
     /**
-     * @param Model $user
+     * @param Model $course
      *
      * @throws GeneralException
      */
-    public function forceDelete(Model $user)
+    public function forceDelete(Model $course)
     {
-        if (is_null($user->deleted_at)) {
-            throw new GeneralException(trans('exceptions.backend.access.users.delete_first'));
+        if (is_null($course->deleted_at)) {
+            throw new GeneralException(trans('exceptions.lms.courses.delete_first'));
         }
 
-        DB::transaction(function () use ($user) {
-            if (parent::forceDelete($user)) {
-                event(new UserPermanentlyDeleted($user));
+        DB::transaction(function () use ($course) {
+            if (parent::forceDelete($course)) {
+                event(new CoursePermanentlyDeleted($user));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.access.users.delete_error'));
+            throw new GeneralException(trans('exceptions.lms.courses.delete_error'));
         });
     }
 
     /**
-     * @param Model $user
+     * @param Model $course
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function restore(Model $user)
+    public function restore(Model $course)
     {
-        if (is_null($user->deleted_at)) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_restore'));
+        if (is_null($course->deleted_at)) {
+            throw new GeneralException(trans('exceptions.lms.courses.cant_restore'));
         }
 
-        if (parent::restore(($user))) {
-            event(new UserRestored($user));
+        if (parent::restore(($course))) {
+            event(new CourseRestored($course));
 
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.access.users.restore_error'));
+        throw new GeneralException(trans('exceptions.lms.courses.restore_error'));
     }
 
     /**

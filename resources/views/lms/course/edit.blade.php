@@ -8,6 +8,7 @@
         <small>{{ trans('labels.lms.courses.edit') }}</small>
     </h1>
 @endsection
+
 @section('content')
     {{ Form::model($course, ['route' => ['lms.course.update', $course], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH']) }}
 

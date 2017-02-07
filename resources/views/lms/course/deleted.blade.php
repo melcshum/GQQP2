@@ -20,22 +20,18 @@
             <h3 class="box-title">{{ trans('labels.backend.access.users.deleted') }}</h3>
 
             <div class="box-tools pull-right">
-                @include('backend.access.includes.partials.user-header-buttons')
+                @include('lms.course.includes.partials.course-header-buttons')
             </div><!--box-tools pull-right-->
         </div><!-- /.box-header -->
 
-        <div class="box-body">
+       <div class="box-body">
             <div class="table-responsive">
-                <table id="users-table" class="table table-condensed table-hover">
+                <table id="courses-table" class="table table-condensed table-hover">
                     <thead>
                         <tr>
-                            <th>{{ trans('labels.backend.access.users.table.id') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.name') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.email') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.confirmed') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.roles') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.created') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.last_updated') }}</th>
+                            <th>{{ trans('labels.lms.courses.table.id') }}</th>
+                            <th>{{ trans('labels.lms.courses.table.name') }}</th>
+                            <th>{{ trans('labels.lms.courses.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
@@ -51,29 +47,30 @@
 
 	<script>
 		$(function() {
-            $('#users-table').DataTable({
+            $('#courses-table').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '{{ route("admin.access.user.get") }}',
+                    url: '{{ route("lms.course.get") }}',
                     type: 'post',
                     data: {status: false, trashed: true}
                 },
                 columns: [
-                    {data: 'id', name: '{{config('access.users_table')}}.id'},
-                    {data: 'name', name: '{{config('access.users_table')}}.name', render: $.fn.dataTable.render.text()},
-                    {data: 'email', name: '{{config('access.users_table')}}.email', render: $.fn.dataTable.render.text()},
-                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},
-                    {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},
-                    {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},
-                    {data: 'updated_at', name: '{{config('access.users_table')}}.updated_at'},
-                    {data: 'actions', name: 'actions', searchable: false, sortable: false}
+                    {data: 'id', name: '{{config('lms.courses_table')}}.id'},
+                    {data: 'name', name: '{{config('lms.courses_table')}}.name', render: $.fn.dataTable.render.text()},
+                    {data: 'description', name: '{{config('lms.courses_table')}}.description', render: $.fn.dataTable.render.text()},
+ 
+//                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},
+//                    {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},
+//                    {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},
+//                    {data: 'updated_at', name: '{{config('access.users_table')}}.updated_at'},
+                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
                 order: [[0, "asc"]],
                 searchDelay: 500
             });
 
-            $("body").on("click", "a[name='delete_user_perm']", function(e) {
+            $("body").on("click", "a[name='delete_course_perm']", function(e) {
                 e.preventDefault();
                 var linkURL = $(this).attr("href");
 
@@ -93,7 +90,7 @@
                 });
             });
 
-            $("body").on("click", "a[name='restore_user']", function(e) {
+            $("body").on("click", "a[name='restore_course']", function(e) {
                 e.preventDefault();
                 var linkURL = $(this).attr("href");
 
