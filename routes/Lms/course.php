@@ -45,7 +45,7 @@ Route::group([
               //  Route::get('account/confirm/resend', 'UserConfirmationController@sendConfirmationEmail')->name('user.account.confirm.resend');
 
                 // Status
-            //    Route::get('mark/{status}', 'UserStatusController@mark')->name('user.mark')->where(['status' => '[0,1]']);
+                Route::get('mark/{status}', 'CourseStatusController@mark')->name('course.mark')->where(['status' => '[0,1]']);
 
                 // Password
               //  Route::get('password/change', 'UserPasswordController@edit')->name('user.change-password');

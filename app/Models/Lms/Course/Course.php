@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Lms\Course\Traits\Attribute\CourseAttribute;
+use App\Models\Lms\Course\Traits\Scope\CourseScope;
 
-//use App\Models\Access\Course\Traits\Scope\UserScope;
-//use Illuminate\Foundation\Auth\User as Authenticatable;
+ //use Illuminate\Foundation\Auth\User as Authenticatable;
 //use App\Models\Access\Course\Traits\UserAccess;
 //use App\Models\Access\Course\Traits\UserSendPasswordReset;
 //use App\Models\Access\Course\Traits\Relationship\UserRelationship;
@@ -21,14 +21,15 @@ use App\Models\Lms\Course\Traits\Attribute\CourseAttribute;
 class Course extends Model
 {
 /*    
-    use UserScope,
+    use 
         UserAccess,
         Notifiable, 
         UserRelationship,
         UserSendPasswordReset;
         
 */
-    use SoftDeletes,
+    use CourseScope,
+        SoftDeletes,
         CourseAttribute;
 
     /**
@@ -43,7 +44,7 @@ class Course extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'description', 'level', 'type', 'slug',  ];
+    protected $fillable = ['name', 'description', 'level', 'type', 'slug', 'status' ];
 
     /**
      * The attributes that should be hidden for arrays.

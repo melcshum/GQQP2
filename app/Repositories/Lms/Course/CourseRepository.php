@@ -14,10 +14,10 @@ use App\Events\Lms\Course\CourseDeleted;
 use App\Events\Lms\Course\CourseUpdated;
 use App\Events\Lms\Course\CourseRestored;
 use App\Events\Lms\Course\CoursePermanentlyDeleted;
+use App\Events\Lms\Course\CourseDeactivated;
+use App\Events\Lms\Course\CourseReactivated;
 
 /*
-use App\Eventsms\course\CourseDeactivated;
-use App\Eventsms\course\CourseReactivated;
 use App\Notifications\Frontend\Auth\CourseNeedsConfirmation;
 */
 
@@ -57,21 +57,23 @@ class CourseRepository extends Repository
                 config('lms.courses_table').'.id',
                 config('lms.courses_table').'.name',
                 config('lms.courses_table').'.description',
-//                config('lms.courses_table').'.level',
-//                config('lms.courses_table').'.type',
-//                config('lms.courses_table').'.slug',
+     //           config('lms.courses_table').'.level',
+     //           config('lms.courses_table').'.type',
+      //          config('lms.courses_table').'.slug',
+                config('lms.status').'.status',
                 config('lms.courses_table').'.created_at',
                 config('lms.courses_table').'.updated_at',
                 config('lms.courses_table').'.deleted_at',
             ]);
 
+        // soft deleted
         if ($trashed == 'true') {
             return $dataTableQuery->onlyTrashed();
         }
 
-        // active() is a scope on the UserScope trait
-        //return $dataTableQuery->active($status);
-        return $dataTableQuery;
+        // active() is a scope on the CourseScope trait
+        return $dataTableQuery->active($status);
+         
     }
 
     /**
@@ -201,36 +203,36 @@ class CourseRepository extends Repository
     }
 
     /**
-     * @param Model $user
+     * @param Model $course
      * @param $status
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function mark(Model $user, $status)
+    public function mark(Model $course, $status)
     {
-        if (access()->id() == $user->id && $status == 0) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_deactivate_self'));
-        }
+//        if (access()->id() == $user->id && $status == 0) {
+//            throw new GeneralException(trans('exceptions.backend.access.users.cant_deactivate_self'));
+//        }
 
-        $user->status = $status;
+        $course->status = $status;
 
         switch ($status) {
             case 0:
-                event(new UserDeactivated($user));
+                event(new CourseDeactivated($course));
             break;
 
             case 1:
-                event(new UserReactivated($user));
+                event(new CourseReactivated($course));
             break;
         }
 
-        if (parent::save($user)) {
+        if (parent::save($course)) {
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.access.users.mark_error'));
+        throw new GeneralException(trans('exceptions.lms.courses.mark_error'));
     }
 
      

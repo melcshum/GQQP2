@@ -32,12 +32,14 @@ class CourseStatusController extends Controller
      *
      * @return mixed
      */
-    /* 
-    public function getDeactivated(ManageUserRequest $request)
+     
+    public function getDeactivated(ManageCourseRequest $request)
     {
-        return view('backend.access.deactivated');
+        
+      //   return view('lms.course.index');
+        return view('lms.course.deactivated');
     }
-    */
+     
     /**
      * @param ManageCourseRequest $request
      *
@@ -49,18 +51,18 @@ class CourseStatusController extends Controller
     }
     
     /**
-     * @param User $user
+     * @param Course $course
      * @param $status
-     * @param ManageUserRequest $request
+     * @param ManageCourseRequest $request
      *
      * @return mixed
      */
-     /*
-    public function mark(User $user, $status, ManageUserRequest $request)
+     
+    public function mark(Course $course, $status, ManageCourseRequest $request)
     {
-        $this->users->mark($user, $status);
-        return redirect()->route($status == 1 ? 'admin.access.user.index' : 'admin.access.user.deactivated')->withFlashSuccess(trans('alerts.backend.users.updated'));
-    }*/
+        $this->courses->mark($course, $status);
+        return redirect()->route($status == 1 ? 'lms.course.index' : 'lms.course.deactivated')->withFlashSuccess(trans('alerts.lms.course.updated'));
+    }
     /**
      * @param Course              $deletedCourse
      * @param ManageCourseRequest $request
