@@ -189,6 +189,10 @@ class UserRepository extends Repository
      */
     public function forceDelete(Model $user)
     {
+        
+        
+        dd($user);
+        
         if (is_null($user->deleted_at)) {
             throw new GeneralException(trans('exceptions.backend.access.users.delete_first'));
         }

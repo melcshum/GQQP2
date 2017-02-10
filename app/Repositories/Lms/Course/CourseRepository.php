@@ -12,11 +12,12 @@ use App\Events\Lms\Course\CourseCreated;
 
 use App\Events\Lms\Course\CourseDeleted;
 use App\Events\Lms\Course\CourseUpdated;
-/*
 use App\Events\Lms\Course\CourseRestored;
+use App\Events\Lms\Course\CoursePermanentlyDeleted;
+
+/*
 use App\Eventsms\course\CourseDeactivated;
 use App\Eventsms\course\CourseReactivated;
-use App\Eventsms\course\CoursePermanentlyDeleted;
 use App\Notifications\Frontend\Auth\CourseNeedsConfirmation;
 */
 
@@ -168,7 +169,7 @@ class CourseRepository extends Repository
 
         DB::transaction(function () use ($course) {
             if (parent::forceDelete($course)) {
-                event(new CoursePermanentlyDeleted($user));
+                event(new CoursePermanentlyDeleted($course));
 
                 return true;
             }

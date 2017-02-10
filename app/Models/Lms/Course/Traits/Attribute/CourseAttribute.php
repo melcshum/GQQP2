@@ -172,8 +172,7 @@ trait CourseAttribute
      * @return string
      */
     public function getDeleteButtonAttribute()
-    {
- 
+    { 
         return '<a href="'.route('lms.course.destroy', $this).'"
              data-method="delete"
              data-trans-button-cancel="'.trans('buttons.general.cancel').'"
@@ -188,9 +187,9 @@ trait CourseAttribute
      */
     public function getRestoreButtonAttribute()
     {
-        return '<a href="'.route('admin.access.user.restore', $this).'" 
-        name="restore_user" class="btn btn-xs btn-info">
-        <i class="fa fa-refresh" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.restore_user').'"></i></a> ';
+        return '<a href="'.route('lms.course.restore', $this).'" 
+        name="restore_course" class="btn btn-xs btn-info">
+        <i class="fa fa-refresh" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.lms.course.restore_user').'"></i></a> ';
     }
 
     /**
@@ -198,7 +197,7 @@ trait CourseAttribute
      */
     public function getDeletePermanentlyButtonAttribute()
     {
-        return '<a href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm" class="btn btn-xs btn-danger"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.delete_permanently').'"></i></a> ';
+        return '<a href="'.route('lms.course.delete-permanently', $this).'" name="delete_course_perm" class="btn btn-xs btn-danger"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.lms.course.delete_permanently').'"></i></a> ';
     }
 
     /**
@@ -226,10 +225,10 @@ trait CourseAttribute
      */
     public function getActionButtonsAttribute()
     {
-//        if ($this->trashed()) {
-//            return $this->getRestoreButtonAttribute().
-//                $this->getDeletePermanentlyButtonAttribute();
-//        }
+       if ($this->trashed()) {
+            return $this->getRestoreButtonAttribute().
+                $this->getDeletePermanentlyButtonAttribute();
+        }
 
         return
  //           $this->getLoginAsButtonAttribute().

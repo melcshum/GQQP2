@@ -39,31 +39,32 @@ Route::group([
             /*
              * Specific User
              */
-            /* 
-            Route::group(['prefix' => 'user/{user}'], function () {
+            
+            Route::group(['prefix' => 'course/{course}'], function () {
                 // Account
-                Route::get('account/confirm/resend', 'UserConfirmationController@sendConfirmationEmail')->name('user.account.confirm.resend');
+              //  Route::get('account/confirm/resend', 'UserConfirmationController@sendConfirmationEmail')->name('user.account.confirm.resend');
 
                 // Status
-                Route::get('mark/{status}', 'UserStatusController@mark')->name('user.mark')->where(['status' => '[0,1]']);
+            //    Route::get('mark/{status}', 'UserStatusController@mark')->name('user.mark')->where(['status' => '[0,1]']);
 
                 // Password
-                Route::get('password/change', 'UserPasswordController@edit')->name('user.change-password');
-                Route::patch('password/change', 'UserPasswordController@update')->name('user.change-password');
+              //  Route::get('password/change', 'UserPasswordController@edit')->name('user.change-password');
+            //    Route::patch('password/change', 'UserPasswordController@update')->name('user.change-password');
 
                 // Access
-                Route::get('login-as', 'UserAccessController@loginAs')->name('user.login-as');
+              //  Route::get('login-as', 'UserAccessController@loginAs')->name('user.login-as');
             });
-            */
+            
             /*
-             * Deleted User
+             * Deleted Course
              */
-            /*
-            Route::group(['prefix' => 'user/{deletedUser}'], function () {
-                Route::get('delete', 'UserStatusController@delete')->name('user.delete-permanently');
-                Route::get('restore', 'UserStatusController@restore')->name('user.restore');
+         
+            Route::group(['prefix' => 'course/{deletedCourse}'], function () {
+                Route::get('delete', 'CourseStatusController@delete')->name('course.delete-permanently');
+                Route::get('restore','CourseStatusController@restore')->name('course.restore');  
             });
-            */
+            
+          
         });
     });
 

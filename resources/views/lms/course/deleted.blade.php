@@ -17,7 +17,7 @@
 @section('content')
     <div class="box box-success">
         <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.access.users.deleted') }}</h3>
+            <h3 class="box-title">{{ trans('labels.backend.access.courses.deleted') }}</h3>
 
             <div class="box-tools pull-right">
                 @include('lms.course.includes.partials.course-header-buttons')
@@ -73,10 +73,9 @@
             $("body").on("click", "a[name='delete_course_perm']", function(e) {
                 e.preventDefault();
                 var linkURL = $(this).attr("href");
-
                 swal({
                     title: "{{ trans('strings.backend.general.are_you_sure') }}",
-                    text: "{{ trans('strings.backend.access.users.delete_user_confirm') }}",
+                    text: "{{ trans('strings.lms.courses.delete_course_confirm') }}",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
@@ -93,10 +92,9 @@
             $("body").on("click", "a[name='restore_course']", function(e) {
                 e.preventDefault();
                 var linkURL = $(this).attr("href");
-
                 swal({
                     title: "{{ trans('strings.backend.general.are_you_sure') }}",
-                    text: "{{ trans('strings.backend.access.users.restore_user_confirm') }}",
+                    text: "{{ trans('strings.lms.courses.restore_course_confirm') }}",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",

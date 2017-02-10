@@ -12,6 +12,61 @@ return [
     | found in a intuitive way.
     |
     */
+    'lms' => [ 
+        'courses' => [
+            'delete_course_confirm'  => 'Are you sure you want to delete this course permanently? Anywhere in the application that references this course\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_course_confirm' => 'Restore this course to its original state?',
+        ],
+
+
+        'dashboard' => [
+            'title'   => 'Administrative Dashboard',
+            'welcome' => 'Welcome',
+        ],
+
+        'general' => [
+            'all_rights_reserved' => 'All Rights Reserved.',
+            'are_you_sure'        => 'Are you sure?',
+            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'continue'            => 'Continue',
+            'member_since'        => 'Member since',
+            'minutes'             => ' minutes',
+            'search_placeholder'  => 'Search...',
+            'timeout'             => 'You were automatically logged out for security reasons since you had no activity in ',
+
+            'see_all' => [
+                'messages'      => 'See all messages',
+                'notifications' => 'View all',
+                'tasks'         => 'View all tasks',
+            ],
+
+            'status' => [
+                'online'  => 'Online',
+                'offline' => 'Offline',
+            ],
+
+            'you_have' => [
+                'messages'      => '{0} You don\'t have messages|{1} You have 1 message|[2,Inf] You have :number messages',
+                'notifications' => '{0} You don\'t have notifications|{1} You have 1 notification|[2,Inf] You have :number notifications',
+                'tasks'         => '{0} You don\'t have tasks|{1} You have 1 task|[2,Inf] You have :number tasks',
+            ],
+        ],
+
+        'search' => [
+            'empty'      => 'Please enter a search term.',
+            'incomplete' => 'You must write your own search logic for this system.',
+            'title'      => 'Search Results',
+            'results'    => 'Search Results for :query',
+        ],
+
+        'welcome' => '<p>This is the AdminLTE theme by <a href="https://almsaeedstudio.com/" target="_blank">https://almsaeedstudio.com/</a>. This is a stripped down version with only the necessary styles and scripts to get it running. Download the full version to start adding components to your dashboard.</p>
+<p>All the functionality is for show with the exception of the <strong>User Management</strong> to the left. This boilerplate comes with a fully functional access control library to manage users/roles/permissions.</p>
+<p>Keep in mind it is a work in progress and their may be bugs or other issues I have not come across. I will do my best to fix them as I receive them.</p>
+<p>Hope you enjoy all of the work I have put into this. Please visit the <a href="https://github.com/rappasoft/laravel-5-boilerplate" target="_blank">GitHub</a> page for more information and report any <a href="https://github.com/rappasoft/Laravel-5-Boilerplate/issues" target="_blank">issues here</a>.</p>
+<p><strong>This project is very demanding to keep up with given the rate at which the master Laravel branch changes, so any help is appreciated.</strong></p>
+<p>- Anthony Rappa</p>',
+    ],
 
     'backend' => [
         'access' => [

@@ -30,6 +30,7 @@ class UserTableController extends Controller
      *
      * @return mixed
      */
+     
     public function __invoke(ManageUserRequest $request)
     {
         return Datatables::of($this->users->getForDataTable($request->get('status'), $request->get('trashed')))

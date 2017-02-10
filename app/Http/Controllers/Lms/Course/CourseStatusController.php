@@ -1,43 +1,53 @@
 <?php
 namespace App\Http\Controllers\Lms\Course;
+
 use App\Models\Access\User\User;
 use App\Http\Controllers\Controller;
-use App\Repositories\Backend\Access\User\UserRepository;
-use App\Http\Requests\Backend\Access\User\ManageUserRequest;
+//use App\Repositories\Backend\Access\User\UserRepository;
+//use App\Http\Requests\Backend\Access\User\ManageUserRequest;
+
+use App\Repositories\Lms\Course\CourseRepository;
+use App\Http\Requests\Lms\Course\ManageCourseRequest;
+
+use App\Models\Lms\Course\Course;
+
 /**
- * Class UserStatusController.
+ * Class CourseStatusController.
  */
 class CourseStatusController extends Controller
 {
     /**
-     * @var UserRepository
+     * @var CourseRepository
      */
-    protected $users;
+    protected $courses;
     /**
-     * @param UserRepository $users
+     * @param CourseRepository $courses
      */
-    public function __construct(UserRepository $users)
+    public function __construct(CourseRepository $courses)
     {
-        $this->users = $users;
+        $this->courses = $courses;
     }
     /**
      * @param ManageUserRequest $request
      *
      * @return mixed
      */
+    /* 
     public function getDeactivated(ManageUserRequest $request)
     {
         return view('backend.access.deactivated');
     }
+    */
     /**
-     * @param ManageUserRequest $request
+     * @param ManageCourseRequest $request
      *
      * @return mixed
      */
-    public function getDeleted(ManageUserRequest $request)
+    public function getDeleted(ManageCourseRequest $request)
     {
         return view('lms.course.deleted');
     }
+    
     /**
      * @param User $user
      * @param $status
@@ -45,31 +55,35 @@ class CourseStatusController extends Controller
      *
      * @return mixed
      */
+     /*
     public function mark(User $user, $status, ManageUserRequest $request)
     {
         $this->users->mark($user, $status);
         return redirect()->route($status == 1 ? 'admin.access.user.index' : 'admin.access.user.deactivated')->withFlashSuccess(trans('alerts.backend.users.updated'));
-    }
+    }*/
     /**
-     * @param User              $deletedUser
-     * @param ManageUserRequest $request
+     * @param Course              $deletedCourse
+     * @param ManageCourseRequest $request
      *
      * @return mixed
      */
-    public function delete(User $deletedUser, ManageUserRequest $request)
-    {
-        $this->users->forceDelete($deletedUser);
-        return redirect()->route('admin.access.user.deleted')->withFlashSuccess(trans('alerts.backend.users.deleted_permanently'));
-    }
+     
+    public function delete(Course $deletedCourse, ManageCourseRequest $request)
+    {  
+        $this->courses->forceDelete($deletedCourse);
+       
+         return redirect()->route('lms.course.deleted')->withFlashSuccess(trans('alerts.lms.courses.deleted_permanently'));
+     }
     /**
-     * @param User              $deletedUser
-     * @param ManageUserRequest $request
+     * @param Course              $restoreCourse
+     * @param ManageCourseRequest $request
      *
      * @return mixed
      */
-    public function restore(User $deletedUser, ManageUserRequest $request)
-    {
-        $this->users->restore($deletedUser);
-        return redirect()->route('admin.access.user.index')->withFlashSuccess(trans('alerts.backend.users.restored'));
+    public function restore(Course $restoreCourse, ManageCourseRequest $request)
+    { 
+        $this->courses->restore($restoreCourse);
+        return redirect()->route('lms.course.index')->withFlashSuccess(trans('alerts.lms.courses.restored'));
+        
     }
 }

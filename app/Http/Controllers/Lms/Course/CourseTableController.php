@@ -7,6 +7,8 @@ use Yajra\Datatables\Facades\Datatables;
 use App\Repositories\Lms\Course\CourseRepository;
 use App\Http\Requests\Lms\Course\ManageCourseRequest;
 
+//use App\Models\Lms\Course\Course;
+
 
 
 class CourseTableController extends Controller

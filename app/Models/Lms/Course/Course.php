@@ -23,9 +23,7 @@ class Course extends Model
 /*    
     use UserScope,
         UserAccess,
-        Notifiable,
-        SoftDeletes,
-        UserAttribute,
+        Notifiable, 
         UserRelationship,
         UserSendPasswordReset;
         

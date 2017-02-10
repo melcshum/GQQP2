@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Access\User\User;
+use App\Models\Lms\Course\Course;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -39,6 +40,17 @@ class RouteServiceProvider extends ServiceProvider
             $user = new User();
 
             return User::withTrashed()->where($user->getRouteKeyName(), $value)->first();
+        });
+
+
+        /*
+         * This allows us to use the Route Model Binding with SoftDeletes on
+         * On a model by model basis
+         */
+        $this->bind('deletedCourse', function ($value) {
+            $course = new Course();
+
+            return Course::withTrashed()->where($course->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();

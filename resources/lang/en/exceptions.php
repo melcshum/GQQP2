@@ -13,7 +13,7 @@ return [
     |
     */
     'lms' => [
-        'course' => [
+        'courseS' => [
             'cant_deactivate_self'  => 'You can not do that to yourself.',
             'cant_delete_self'      => 'You can not delete yourself.',
             'cant_restore'          => 'This course is not deleted so it can not be restored.',

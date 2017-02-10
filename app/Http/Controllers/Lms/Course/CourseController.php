@@ -62,16 +62,16 @@ class CourseController extends Controller
     
     
     /**
-     * @param User              $user
+     * @param User              $course
      * @param ManageUserRequest $request
      *
      * @return mixed
      */
-//    public function show(User $user, ManageUserRequest $request)
-//    {
-//        return view('backend.access.show')
-        //    ->withUser($user);
-//    }
+   public function show(Course $course, ManageCourseRequest $request)
+    {
+        return view('lms.course.show')
+            ->withUser($course);
+    }
 
     /**
      * @param Course              $course
@@ -80,8 +80,7 @@ class CourseController extends Controller
      * @return mixed
      */
     public function edit(Course $course, ManageCourseRequest $request)
-    {
- 
+    { 
         return view('lms.course.edit')
             ->withCourse($course);
     }
