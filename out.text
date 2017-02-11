@@ -1,0 +1,166 @@
+[05:46:24] Using gulpfile ~/workspace/gulpfile.js
+[05:46:24] Starting 'all'...
+[05:46:24] Starting 'copy'...
+[05:46:24] Finished 'copy' after 133 ms
+[05:46:24] Starting 'copy'...
+[05:46:24] Finished 'copy' after 12 ms
+[05:46:24] Starting 'sass'...
+[05:46:26] Finished 'sass' after 1.8 s
+[05:46:26] Starting 'styles'...
+[05:46:26] Finished 'styles' after 78 ms
+[05:46:26] Starting 'webpack'...
+[05:46:30] 
+[05:46:30] Finished 'webpack' after 3.83 s
+[05:46:30] Starting 'scripts'...
+[05:46:32] Finished 'scripts' after 2.21 s
+[05:46:32] Starting 'sass'...
+[05:46:39] Finished 'sass' after 6.43 s
+[05:46:39] Starting 'styles'...
+[05:46:39] Finished 'styles' after 137 ms
+[05:46:39] Starting 'webpack'...
+[05:46:41] 
+[05:46:41] Finished 'webpack' after 2.17 s
+[05:46:41] Starting 'rtlCss'...
+[05:46:41] Finished 'rtlCss' after 532 ms
+[05:46:41] Starting 'scripts'...
+[05:46:42] Finished 'scripts' after 173 ms
+[05:46:42] Starting 'styles'...
+[05:46:42] Finished 'styles' after 42 ms
+[05:46:42] Starting 'version'...
+[05:46:42] Finished 'version' after 278 ms
+[05:46:42] Starting 'phpUnit'...
+PHPUnit 5.7.9 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 7.0.15-1+deb.sury.org~trusty+1
+Configuration: /home/ubuntu/workspace/phpunit.xml
+
+.......................................FF...FF...FF..FF..F.F.F.  63 / 128 ( 49%)
+FF.................F..FFF.App\Models\Access\User\User {#51286
+  #table: "users"
+  #fillable: array:6 [
+    0 => "name"
+    1 => "email"
+    2 => "password"
+    3 => "status"
+    4 => "confirmation_code"
+    5 => "confirmed"
+  ]
+  #hidden: array:2 [
+    0 => "password"
+    1 => "remember_token"
+  ]
+  #dates: array:1 [
+    0 => "deleted_at"
+  ]
+  #connection: null
+  #primaryKey: "id"
+  #keyType: "int"
+  #perPage: 15
+  +incrementing: true
+  +timestamps: true
+  #attributes: array:11 [
+    "id" => 3
+    "name" => "Default User"
+    "email" => "user@user.com"
+    "password" => "$2y$10$jTp38fIBVnWK9QTNV9lsw.4cduc9J.gYkwAdh7x.xukq5OhwwlJ0C"
+    "status" => 1
+    "confirmation_code" => "d61bd5a85eb8ccd41ed9ec9874b04295"
+    "confirmed" => 1
+    "remember_token" => null
+    "created_at" => "2017-02-11 05:48:06"
+    "updated_at" => "2017-02-11 05:48:06"
+    "deleted_at" => "2017-02-11 05:48:06"
+  ]
+  #original: array:11 [
+    "id" => 3
+    "name" => "Default User"
+    "email" => "user@user.com"
+    "password" => "$2y$10$jTp38fIBVnWK9QTNV9lsw.4cduc9J.gYkwAdh7x.xukq5OhwwlJ0C"
+    "status" => 1
+    "confirmation_code" => "d61bd5a85eb8ccd41ed9ec9874b04295"
+    "confirmed" => 1
+    "remember_token" => null
+    "created_at" => "2017-02-11 05:48:06"
+    "updated_at" => "2017-02-11 05:48:06"
+    "deleted_at" => "2017-02-11 05:48:06"
+  ]
+  #relations: []
+  #visible: []
+  #appends: []
+  #guarded: array:1 [
+    0 => "*"
+  ]
+  #dateFormat: null
+  #casts: []
+  #touches: []
+  #observables: []
+  #with: []
+  +exists: true
+  +wasRecentlyCreated: false
+  #rememberTokenName: "remember_token"
+  #forceDeleting: false
+}
+[05:48:06] Finished 'phpUnit' after 1.38 min
+[05:48:06] Finished 'all' after 1.68 min
+[05:48:06] Starting 'default'...
+┌───────────────┬───────────────────────────────┬─────────────────────────────────────────────────────────┬────────────────────────────────────────┐
+│ Task          │ Summary                       │ Source Files                                            │ Destination                            │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.copy()    │ 1. Saving to Destination      │ node_modules/font-awesome/fonts/**/*                    │ public/build/fonts/font-awesome        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.copy()    │ 1. Saving to Destination      │ node_modules/bootstrap-sass/assets/fonts/bootstrap/**/* │ public/build/fonts/bootstrap           │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.sass()    │ 1. Compiling Sass             │ resources/assets/sass/frontend/app.scss                 │ resources/assets/css/frontend/app.css  │
+│               │ 2. Autoprefixing CSS          │ resources/assets/sass/plugin/sweetalert/sweetalert.scss │                                        │
+│               │ 3. Concatenating Files        │                                                         │                                        │
+│               │ 4. Writing Source Maps        │                                                         │                                        │
+│               │ 5. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.styles()  │ 1. Concatenating Files        │ resources/assets/css/frontend/app.css                   │ public/css/frontend.css                │
+│               │ 2. Writing Source Maps        │                                                         │                                        │
+│               │ 3. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.webpack() │ 1. Transforming ES2015 to ES5 │ resources/assets/js/frontend/app.js                     │ ./resources/assets/js/dist/frontend.js │
+│               │ 2. Writing Source Maps        │                                                         │                                        │
+│               │ 3. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.scripts() │ 1. Concatenating Files        │ resources/assets/js/dist/frontend.js                    │ public/js/frontend.js                  │
+│               │ 2. Writing Source Maps        │ resources/assets/js/plugin/sweetalert/sweetalert.min.js │                                        │
+│               │ 3. Saving to Destination      │ resources/assets/js/plugins.js                          │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.sass()    │ 1. Compiling Sass             │ resources/assets/sass/backend/app.scss                  │ resources/assets/css/backend/app.css   │
+│               │ 2. Autoprefixing CSS          │ resources/assets/sass/plugin/toastr/toastr.scss         │                                        │
+│               │ 3. Concatenating Files        │ resources/assets/sass/plugin/sweetalert/sweetalert.scss │                                        │
+│               │ 4. Writing Source Maps        │                                                         │                                        │
+│               │ 5. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.styles()  │ 1. Concatenating Files        │ resources/assets/css/backend/app.css                    │ public/css/backend.css                 │
+│               │ 2. Writing Source Maps        │                                                         │                                        │
+│               │ 3. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.webpack() │ 1. Transforming ES2015 to ES5 │ resources/assets/js/backend/app.js                      │ ./resources/assets/js/dist/backend.js  │
+│               │ 2. Writing Source Maps        │                                                         │                                        │
+│               │ 3. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.rtlCss()  │                               │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.scripts() │ 1. Concatenating Files        │ resources/assets/js/dist/backend.js                     │ public/js/backend.js                   │
+│               │ 2. Writing Source Maps        │ resources/assets/js/plugin/sweetalert/sweetalert.min.js │                                        │
+│               │ 3. Saving to Destination      │ resources/assets/js/plugin/toastr/toastr.min.js         │                                        │
+│               │                               │ resources/assets/js/plugins.js                          │                                        │
+│               │                               │ resources/assets/js/backend/custom.js                   │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.styles()  │ 1. Concatenating Files        │ resources/assets/css/rtl/bootstrap-rtl.css              │ public/css/rtl.css                     │
+│               │ 2. Writing Source Maps        │                                                         │                                        │
+│               │ 3. Saving to Destination      │                                                         │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.version() │ 1. Versioning                 │ public/css/frontend.css                                 │ public/build                           │
+│               │ 2. Rewriting File Paths       │ public/js/frontend.js                                   │                                        │
+│               │ 3. Saving to Destination      │ public/css/backend.css                                  │                                        │
+│               │ 4. Copying Source Maps        │ public/css/backend-rtl.css                              │                                        │
+│               │                               │ public/js/backend.js                                    │                                        │
+│               │                               │ public/css/rtl.css                                      │                                        │
+├───────────────┼───────────────────────────────┼─────────────────────────────────────────────────────────┼────────────────────────────────────────┤
+│ mix.phpUnit() │ 1. Executing PhpUnit          │
+└───────────────┴───────────────────────────────┴─────────────────────────────────────────────────────────┴────────────────────────────────────────┘
+[05:48:06] Finished 'default' after 16 ms

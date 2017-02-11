@@ -14,6 +14,9 @@ class FrontendController extends Controller
      */
     public function index()
     {
+      //   session()->put('locale', 'en');
+         
+       // dd( session()->get('locale'));
         return view('frontend.index');
     }
 

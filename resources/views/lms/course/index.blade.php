@@ -1,4 +1,4 @@
-@extends ('backend.layouts.app')
+@extends ('lms.layouts.app')
 
 @section ('title', trans('labels.lms.courses.management'))
 
@@ -63,7 +63,7 @@
                 ajax: {
                     url: '{{ route("lms.course.get") }}',
                     type: 'post',
-                    data: {status: 1, trashed: false}
+                    data: {status: G, trashed: false}
                 },
                 columns: [
                     
