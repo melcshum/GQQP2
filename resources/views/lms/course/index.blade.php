@@ -63,7 +63,7 @@
                 ajax: {
                     url: '{{ route("lms.course.get") }}',
                     type: 'post',
-                    data: {status: G, trashed: false}
+                    data: {status: 1, trashed: false}
                 },
                 columns: [
                     
