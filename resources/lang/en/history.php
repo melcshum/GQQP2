@@ -45,6 +45,7 @@ return [
             'reactivated'         => 'reactivated course',
             'restored'            => 'restored course',
         ],
+
          'games' => [
              'created'             => 'created games',
              'deactivated'         => 'deactivated games',
@@ -53,6 +54,15 @@ return [
              'updated'             => 'updated games',
              'reactivated'         => 'reactivated games',
              'restored'            => 'restored games',
+        ],
+         'models' => [
+             'created'             => 'created model',
+             'deactivated'         => 'deactivated model',
+             'deleted'             => 'deleted model',
+             'permanently_deleted' => 'permanently deleted model',
+             'updated'             => 'updated model',
+             'reactivated'         => 'reactivated model',
+             'restored'            => 'restored model',
          ],
     ],
 ];

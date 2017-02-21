@@ -171,7 +171,16 @@ return [
                 'slug'                    => 'Slug',
                 
             ],
+
             'games' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'description'             => 'Description',
+                'slug'                    => 'Slug',
+
+            ],
+
+            'models' => [
                 'active'                  => 'Active',
                 'name'                    => 'Name',
                 'description'             => 'Description',

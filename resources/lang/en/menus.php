@@ -99,6 +99,7 @@ return [
             'view'            => 'View Course',
         ],
 
+
         'games' => [
             'all'             => 'All Games',
             'change-password' => 'Change Password',
@@ -110,6 +111,17 @@ return [
             'view'            => 'View Game',
         ],
 
+
+        'models' => [
+            'all'             => 'All Models',
+            'change-password' => 'Change Password',
+            'create'          => 'Create Model',
+            'deactivated'     => 'Deactivated Models',
+            'deleted'         => 'Deleted Models',
+            'edit'            => 'Edit Model',
+            'main'            => 'Models',
+            'view'            => 'View Model',
+        ],
 
         'log-viewer' => [
             'main'      => 'Log Viewer',

@@ -30,18 +30,18 @@ return [
             'updated_password'    => "The user's password was successfully updated.",
         ],
     ],
-    
-    
+
+
     'lms' => [
-        
+
 
         'courses' => [
-           
+
             'created'             => 'The course was successfully created.',
             'deleted'             => 'The course was successfully deleted.',
             'deleted_permanently' => 'The course was deleted permanently.',
             'restored'            => 'The course was successfully restored.',
-            'updated'             => 'The course was successfully updated.', 
+            'updated'             => 'The course was successfully updated.',
         ],
 
         'games' => [
@@ -51,6 +51,15 @@ return [
             'deleted_permanently' => 'The games was deleted permanently.',
             'restored'            => 'The games was successfully restored.',
             'updated'             => 'The games was successfully updated.',
+        ],
+        'models' => [
+
+            'created'             => 'The model was successfully created.',
+            'deleted'             => 'The model was successfully deleted.',
+            'deleted_permanently' => 'The model was deleted permanently.',
+            'restored'            => 'The model was successfully restored.',
+            'updated'             => 'The model was successfully updated.',
+
         ],
     ],
 ];

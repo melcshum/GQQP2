@@ -71,7 +71,7 @@
                 </li>
             @endauth
            
-                <li class="{{ Active::pattern('lms/course') }} treeview">
+                <li class="{{ Active::pattern('lms/course')}}treeview">
                     <a href="#">
                         <i class="fa fa-users"></i>
                         <span>{{ trans('menus.lms.title') }}</span>
@@ -88,6 +88,7 @@
                                 </a>
                             </li>
                     </ul>
+<<<<<<< HEAD
                 </li>
             <li class="{{ Active::pattern('lms/game') }} treeview">
                 <a href="#">
@@ -108,6 +109,30 @@
                 </ul>
             </li>
 
+=======
+                    <ul class="treeview-menu {{ Active::pattern('lms/model*', 'menu-open') }}"
+                        style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
+
+                        <li  class="{{ Active::pattern('lms/model*') }} " >
+                            <a href="{{ route('lms.model.index') }}">
+                                <i class="fa fa-circle-o"></i>
+                                <span> {{ trans('labels.lms.model.management') }}</span>
+                            </a>
+                        </li>
+                    </ul>
+
+
+            {{--<li class="{{ Active::pattern('lms/model') }} treeview">--}}
+                {{--<a href="#">--}}
+                    {{--<i class="fa fa-users"></i>--}}
+                    {{--<span>{{ trans('menus.lms.title') }}</span>--}}
+                    {{--<i class="fa fa-angle-left pull-right"></i>--}}
+                {{--</a>--}}
+
+            {{--</li>--}}
+
+            </li>
+>>>>>>> d90b50ea4c829dc4a0f763b7666bff8f32dd2fdd
              
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
