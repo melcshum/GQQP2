@@ -43,5 +43,14 @@ return [
             'restored'            => 'The course was successfully restored.',
             'updated'             => 'The course was successfully updated.', 
         ],
+
+        'games' => [
+
+            'created'             => 'The games was successfully created.',
+            'deleted'             => 'The games was successfully deleted.',
+            'deleted_permanently' => 'The games was deleted permanently.',
+            'restored'            => 'The games was successfully restored.',
+            'updated'             => 'The games was successfully updated.',
+        ],
     ],
 ];

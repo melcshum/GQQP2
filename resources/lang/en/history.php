@@ -45,5 +45,14 @@ return [
             'reactivated'         => 'reactivated course',
             'restored'            => 'restored course',
         ],
+         'games' => [
+             'created'             => 'created games',
+             'deactivated'         => 'deactivated games',
+             'deleted'             => 'deleted games',
+             'permanently_deleted' => 'permanently deleted games',
+             'updated'             => 'updated games',
+             'reactivated'         => 'reactivated games',
+             'restored'            => 'restored games',
+         ],
     ],
 ];

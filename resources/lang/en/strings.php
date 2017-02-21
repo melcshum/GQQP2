@@ -18,6 +18,11 @@ return [
             'if_confirmed_off'     => '(If confirmed is off)',
             'restore_course_confirm' => 'Restore this course to its original state?',
         ],
+        'games' => [
+            'delete_course_confirm'  => 'Are you sure you want to delete this game permanently? Anywhere in the application that references this game\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_course_confirm' => 'Restore this game to its original state?',
+        ],
 
 
         'dashboard' => [

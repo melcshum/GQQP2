@@ -97,7 +97,19 @@ return [
             'edit'            => 'Edit Course',
             'main'            => 'Courses',
             'view'            => 'View Course',
-        ], 
+        ],
+
+        'games' => [
+            'all'             => 'All Games',
+            'change-password' => 'Change Password',
+            'create'          => 'Create Game',
+            'deactivated'     => 'Deactivated Games',
+            'deleted'         => 'Deleted Games',
+            'edit'            => 'Edit Games',
+            'main'            => 'Games',
+            'view'            => 'View Game',
+        ],
+
 
         'log-viewer' => [
             'main'      => 'Log Viewer',

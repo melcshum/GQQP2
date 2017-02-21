@@ -41,6 +41,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
  * Namespaces indicate folder structure
  */
 Route::group(['namespace' => 'Lms', 'prefix' => 'lms', 'as' => 'lms.', ], function () {
-     
+
     includeRouteFiles(__DIR__.'/Lms/');
 });

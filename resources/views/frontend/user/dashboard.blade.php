@@ -14,7 +14,7 @@
 
                         <div class="col-md-4 col-md-push-8">
 
-                            <ul class="media-list">
+                            <ul class="media-list"><!--Start user infor-->
                                 <li class="media">
                                     <div class="media-left">
                                         <img class="media-object" src="{{ $logged_in_user->picture }}" alt="Profile picture">
@@ -37,7 +37,7 @@
                                     </div><!--media-body-->
                                 </li><!--media-->
                             </ul><!--media-list-->
-
+                                <!--end user infor-->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4>Sidebar Item</h4>

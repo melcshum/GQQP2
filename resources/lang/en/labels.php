@@ -190,6 +190,34 @@ return [
                 'total'          => 'user total|users total',
             ],
         ],
+        'games' =>[
+            'management'          => 'Games Management',
+            'active'              => 'Active Games',
+            'all_permissions'     => 'All Permissions',
+            'change_password'     => 'Change Password',
+            'change_password_for' => 'Change Password for :Game',
+            'create'              => 'Create Game',
+            'deactivated'         => 'Deactivated Games',
+            'deleted'             => 'Deleted Games',
+            'edit'                => 'Edit Games',
+            'management'          => 'Game Management',
+            'no_permissions'      => 'No Permissions',
+            'no_roles'            => 'No Roles to set.',
+            'permissions'         => 'Permissions',
+
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'          => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'roles'          => 'Roles',
+                'total'          => 'user total|users total',
+            ],
+        ],
         
         
         'access' => [

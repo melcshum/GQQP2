@@ -80,7 +80,7 @@
 
                     <ul class="treeview-menu {{ Active::pattern('lms/course*', 'menu-open') }}"
                         style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
-                         
+
                            <li  class="{{ Active::pattern('lms/course*') }} " >
                                 <a href="{{ route('lms.course.index') }}">
                                     <i class="fa fa-circle-o"></i>
@@ -89,6 +89,25 @@
                             </li>
                     </ul>
                 </li>
+            <li class="{{ Active::pattern('lms/game') }} treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>{{ trans('menus.lms.title') }}</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu {{ Active::pattern('lms/game*', 'menu-open') }}"
+                    style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
+
+                    <li  class="{{ Active::pattern('lms/game*') }} " >
+                        <a href="{{ route('lms.game.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.games.management') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
              
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
