@@ -171,6 +171,14 @@ return [
                 'slug'                    => 'Slug',
                 
             ],
+
+            'models' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'description'             => 'Description',
+                'slug'                    => 'Slug',
+
+            ],
         ],
     ],
 

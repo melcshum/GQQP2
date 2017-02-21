@@ -43,5 +43,14 @@ return [
             'restored'            => 'The course was successfully restored.',
             'updated'             => 'The course was successfully updated.', 
         ],
+
+        'models' => [
+
+            'created'             => 'The model was successfully created.',
+            'deleted'             => 'The model was successfully deleted.',
+            'deleted_permanently' => 'The model was deleted permanently.',
+            'restored'            => 'The model was successfully restored.',
+            'updated'             => 'The model was successfully updated.',
+        ],
     ],
 ];

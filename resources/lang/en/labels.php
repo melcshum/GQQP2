@@ -190,6 +190,35 @@ return [
                 'total'          => 'user total|users total',
             ],
         ],
+
+        'models' =>[
+            'management'          => 'Models Management',
+            'active'              => 'Active Models',
+            'all_permissions'     => 'All Permissions',
+            'change_password'     => 'Change Password',
+            'change_password_for' => 'Change Password for :Model',
+            'create'              => 'Create Model',
+            'deactivated'         => 'Deactivated Models',
+            'deleted'             => 'Deleted Models',
+            'edit'                => 'Edit Model',
+            'management'          => 'Model Management',
+            'no_permissions'      => 'No Permissions',
+            'no_roles'            => 'No Roles to set.',
+            'permissions'         => 'Permissions',
+
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'          => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'roles'          => 'Roles',
+                'total'          => 'user total|users total',
+            ],
+        ],
         
         
         'access' => [

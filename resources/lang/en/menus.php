@@ -97,7 +97,18 @@ return [
             'edit'            => 'Edit Course',
             'main'            => 'Courses',
             'view'            => 'View Course',
-        ], 
+        ],
+
+        'models' => [
+            'all'             => 'All Models',
+            'change-password' => 'Change Password',
+            'create'          => 'Create Model',
+            'deactivated'     => 'Deactivated Models',
+            'deleted'         => 'Deleted Models',
+            'edit'            => 'Edit Model',
+            'main'            => 'Models',
+            'view'            => 'View Model',
+        ],
 
         'log-viewer' => [
             'main'      => 'Log Viewer',

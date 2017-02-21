@@ -45,5 +45,14 @@ return [
             'reactivated'         => 'reactivated course',
             'restored'            => 'restored course',
         ],
+         'models' => [
+             'created'             => 'created model',
+             'deactivated'         => 'deactivated model',
+             'deleted'             => 'deleted model',
+             'permanently_deleted' => 'permanently deleted model',
+             'updated'             => 'updated model',
+             'reactivated'         => 'reactivated model',
+             'restored'            => 'restored model',
+         ],
     ],
 ];

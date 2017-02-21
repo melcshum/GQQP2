@@ -71,7 +71,7 @@
                 </li>
             @endauth
            
-                <li class="{{ Active::pattern('lms/course') }} treeview">
+                <li class="{{ Active::pattern('lms/course')}}treeview">
                     <a href="#">
                         <i class="fa fa-users"></i>
                         <span>{{ trans('menus.lms.title') }}</span>
@@ -89,6 +89,7 @@
                             </li>
                     </ul>
                 </li>
+
              
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
