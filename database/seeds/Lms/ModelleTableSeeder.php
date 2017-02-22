@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon as Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ModelleTableSeeder extends Seeder
 {

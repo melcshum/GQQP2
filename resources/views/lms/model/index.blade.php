@@ -46,7 +46,7 @@
             </div><!-- /.box tools -->
         </div><!-- /.box-header -->
         <div class="box-body">
-            {!! history()->renderType('Modelle') !!}
+            {!! history()->renderType('Model') !!}
         </div><!-- /.box-body -->
     </div><!--box box-success-->
 @stop

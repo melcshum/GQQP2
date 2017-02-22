@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Models\Access\User\User;
 use App\Models\Lms\Course\Course;
+use App\Models\Lms\Model\Modelle;
+use App\Models\Lms\Game\Game;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -51,6 +53,18 @@ class RouteServiceProvider extends ServiceProvider
             $course = new Course();
 
             return Course::withTrashed()->where($course->getRouteKeyName(), $value)->first();
+        });
+
+        $this->bind('deletedModel', function ($value) {
+            $model = new Modelle();
+
+            return Modelle::withTrashed()->where($model->getRouteKeyName(), $value)->first();
+        });
+
+        $this->bind('deletedGame', function ($value) {
+            $game = new Game();
+
+            return Game::withTrashed()->where($game->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();
