@@ -187,6 +187,14 @@ return [
                 'slug'                    => 'Slug',
 
             ],
+
+            'questions' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'description'             => 'Description',
+                'slug'                    => 'Slug',
+
+            ],
         ],
     ],
 

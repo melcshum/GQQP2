@@ -30,6 +30,13 @@ return [
             'restore_course_confirm' => 'Restore this model to its original state?',
         ],
 
+        'questions' => [
+            'delete_course_confirm'  => 'Are you sure you want to delete this question permanently? Anywhere in the application that references this question\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_course_confirm' => 'Restore this question to its original state?',
+        ],
+
+
 
         'dashboard' => [
             'title'   => 'Administrative Dashboard',

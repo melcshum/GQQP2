@@ -7,3 +7,5 @@ require __DIR__.'/Breadcrumbs/Lms/Game.php';
 
 require __DIR__.'/Breadcrumbs/Lms/Model.php';
 
+require __DIR__.'/Breadcrumbs/Lms/Question.php';
+

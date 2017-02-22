@@ -55,9 +55,9 @@
                                 </a>
                             </li>
                         @endauth
- 
 
-  
+
+
                         @permission('manage-roles')
                             <li class="{{ Active::pattern('admin/access/role*') }}">
                                 <a href="{{ route('admin.access.role.index') }}">
@@ -66,11 +66,11 @@
                                 </a>
                             </li>
                         @endauth
-                     
+
                     </ul>
                 </li>
             @endauth
-           
+
                 <li class="{{ Active::pattern('lms/course')}}treeview">
                     <a href="#">
                         <i class="fa fa-users"></i>
@@ -108,7 +108,24 @@
                     </li>
                 </ul>
             </li>
+            <li class="{{ Active::pattern('lms/question') }} treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>{{ trans('menus.lms.title') }}</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
 
+                <ul class="treeview-menu {{ Active::pattern('lms/question*', 'menu-open') }}"
+                    style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
+
+                    <li  class="{{ Active::pattern('lms/question*') }} " >
+                        <a href="{{ route('lms.question.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.questions.management') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="{{ Active::pattern('lms/model') }} treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
@@ -128,6 +145,8 @@
             </li>
 
 
+
+
             {{--<li class="{{ Active::pattern('lms/model') }} treeview">--}}
                 {{--<a href="#">--}}
                     {{--<i class="fa fa-users"></i>--}}
@@ -139,7 +158,7 @@
 
             </li>
 
-             
+
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
 

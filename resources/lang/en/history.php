@@ -64,5 +64,14 @@ return [
              'reactivated'         => 'reactivated model',
              'restored'            => 'restored model',
          ],
+         'questions' => [
+             'created'             => 'created question',
+             'deactivated'         => 'deactivated question',
+             'deleted'             => 'deleted question',
+             'permanently_deleted' => 'permanently deleted question',
+             'updated'             => 'updated question',
+             'reactivated'         => 'reactivated question',
+             'restored'            => 'restored question',
+         ],
     ],
 ];

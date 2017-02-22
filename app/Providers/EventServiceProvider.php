@@ -49,6 +49,7 @@ class EventServiceProvider extends ServiceProvider
        \App\Listeners\Lms\Course\CourseEventListener::class,
         \App\Listeners\Lms\Model\ModelEventListener::class,
         \App\Listeners\Lms\Game\GameEventListener::class,
+        \App\Listeners\Lms\Question\QuestionEventListener::class,
     ];
 
     /**

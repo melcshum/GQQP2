@@ -61,5 +61,14 @@ return [
             'updated'             => 'The model was successfully updated.',
 
         ],
+        'questions' => [
+
+            'created'             => 'The question was successfully created.',
+            'deleted'             => 'The question was successfully deleted.',
+            'deleted_permanently' => 'The question was deleted permanently.',
+            'restored'            => 'The question was successfully restored.',
+            'updated'             => 'The question was successfully updated.',
+
+        ],
     ],
 ];

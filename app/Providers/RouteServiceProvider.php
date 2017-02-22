@@ -6,6 +6,7 @@ use App\Models\Access\User\User;
 use App\Models\Lms\Course\Course;
 use App\Models\Lms\Model\Modelle;
 use App\Models\Lms\Game\Game;
+use App\Models\Lms\Question\Question;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -65,6 +66,12 @@ class RouteServiceProvider extends ServiceProvider
             $game = new Game();
 
             return Game::withTrashed()->where($game->getRouteKeyName(), $value)->first();
+        });
+
+        $this->bind('deletedQuestion', function ($value) {
+            $question = new Question();
+
+            return Question::withTrashed()->where($question->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();

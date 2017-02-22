@@ -57,6 +57,23 @@ return [
             'update_error'          => 'There was a problem updating this model. Please try again.',
 
         ],
+
+
+        'questions' => [
+            'cant_deactivate_self'  => 'You can not do that to yourself.',
+            'cant_delete_self'      => 'You can not delete yourself.',
+            'cant_restore'          => 'This course is not deleted so it can not be restored.',
+            'create_error'          => 'There was a problem creating this question. Please try again.',
+            'delete_error'          => 'There was a problem deleting this question. Please try again.',
+            'delete_first'          => 'This question must be deleted first before it can be destroyed permanently.',
+            'email_error'           => 'That email address belongs to a different question.',
+            'mark_error'            => 'There was a problem updating this question. Please try again.',
+            'not_found'             => 'That question does not exist.',
+            'restore_error'         => 'There was a problem restoring this question. Please try again.',
+            'update_error'          => 'There was a problem updating this question. Please try again.',
+
+        ],
+
      ],
     'backend' => [
         'access' => [

@@ -123,6 +123,18 @@ return [
             'view'            => 'View Model',
         ],
 
+        'questions' => [
+            'all'             => 'All Questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create Question',
+            'deactivated'     => 'Deactivated Questions',
+            'deleted'         => 'Deleted Questions',
+            'edit'            => 'Edit Question',
+            'main'            => 'Questions',
+            'view'            => 'View Question',
+        ],
+
+
         'log-viewer' => [
             'main'      => 'Log Viewer',
             'dashboard' => 'Dashboard',
