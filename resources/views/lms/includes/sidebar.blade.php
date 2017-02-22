@@ -88,7 +88,7 @@
                                 </a>
                             </li>
                     </ul>
-<<<<<<< HEAD
+
                 </li>
             <li class="{{ Active::pattern('lms/game') }} treeview">
                 <a href="#">
@@ -109,17 +109,23 @@
                 </ul>
             </li>
 
-=======
+            <li class="{{ Active::pattern('lms/model') }} treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>{{ trans('menus.lms.title') }}</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
                     <ul class="treeview-menu {{ Active::pattern('lms/model*', 'menu-open') }}"
                         style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
 
                         <li  class="{{ Active::pattern('lms/model*') }} " >
                             <a href="{{ route('lms.model.index') }}">
                                 <i class="fa fa-circle-o"></i>
-                                <span> {{ trans('labels.lms.model.management') }}</span>
+                                <span> {{ trans('labels.lms.models.management') }}</span>
                             </a>
                         </li>
                     </ul>
+            </li>
 
 
             {{--<li class="{{ Active::pattern('lms/model') }} treeview">--}}
@@ -132,7 +138,7 @@
             {{--</li>--}}
 
             </li>
->>>>>>> d90b50ea4c829dc4a0f763b7666bff8f32dd2fdd
+
              
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>

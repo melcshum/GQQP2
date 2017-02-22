@@ -201,6 +201,19 @@ return [
             'deleted'             => 'Deleted Games',
             'edit'                => 'Edit Games',
             'management'          => 'Game Management',
+
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'          => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'roles'          => 'Roles',
+                'total'          => 'user total|users total',
+            ],
         ],
         'models' =>[
             'management'          => 'Models Management',
