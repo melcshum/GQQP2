@@ -18,12 +18,12 @@ class ModelleTableSeeder extends Seeder
         }
 
         if (DB::connection()->getDriverName() == 'mysql') {
-            DB::table(config('lms.modelles_table'))->truncate();
+            DB::table(config('lms.models_table'))->truncate();
         } elseif (DB::connection()->getDriverName() == 'sqlite') {
-            DB::statement('DELETE FROM '.config('lms.modelles_table'));
+            DB::statement('DELETE FROM '.config('lms.models_table'));
         } else {
             //For PostgreSQL or anything else
-            DB::statement('TRUNCATE TABLE '.config('lms.modelles_table').' CASCADE');
+            DB::statement('TRUNCATE TABLE '.config('lms.models_table').' CASCADE');
         }
 
         $modelles = [
