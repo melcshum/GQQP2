@@ -90,6 +90,7 @@
                     </ul>
 
                 </li>
+
             <li class="{{ Active::pattern('lms/game') }} treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
