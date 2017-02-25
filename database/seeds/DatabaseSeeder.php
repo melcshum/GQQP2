@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionTableSeeder::class);
         
         $this->call(HistoryTypeTableSeeder::class);
-        $this->call(ModelleTableSeeder::class);
+        $this->call(ModuleTableSeeder::class);
 
 
 

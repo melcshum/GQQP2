@@ -43,18 +43,18 @@ return [
             'update_error'          => 'There was a problem updating this games. Please try again.',
         ],
 
-        'models' => [
+        'modules' => [
             'cant_deactivate_self'  => 'You can not do that to yourself.',
             'cant_delete_self'      => 'You can not delete yourself.',
             'cant_restore'          => 'This course is not deleted so it can not be restored.',
-            'create_error'          => 'There was a problem creating this model. Please try again.',
-            'delete_error'          => 'There was a problem deleting this model. Please try again.',
-            'delete_first'          => 'This model must be deleted first before it can be destroyed permanently.',
-            'email_error'           => 'That email address belongs to a different model.',
-            'mark_error'            => 'There was a problem updating this model. Please try again.',
-            'not_found'             => 'That model does not exist.',
-            'restore_error'         => 'There was a problem restoring this model. Please try again.',
-            'update_error'          => 'There was a problem updating this model. Please try again.',
+            'create_error'          => 'There was a problem creating this module. Please try again.',
+            'delete_error'          => 'There was a problem deleting this module. Please try again.',
+            'delete_first'          => 'This module must be deleted first before it can be destroyed permanently.',
+            'email_error'           => 'That email address belongs to a different module.',
+            'mark_error'            => 'There was a problem updating this module. Please try again.',
+            'not_found'             => 'That module does not exist.',
+            'restore_error'         => 'There was a problem restoring this module. Please try again.',
+            'update_error'          => 'There was a problem updating this module. Please try again.',
 
         ],
 

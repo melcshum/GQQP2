@@ -112,15 +112,15 @@ return [
         ],
 
 
-        'models' => [
-            'all'             => 'All Models',
+        'modules' => [
+            'all'             => 'All Modules',
             'change-password' => 'Change Password',
-            'create'          => 'Create Model',
-            'deactivated'     => 'Deactivated Models',
-            'deleted'         => 'Deleted Models',
-            'edit'            => 'Edit Model',
-            'main'            => 'Models',
-            'view'            => 'View Model',
+            'create'          => 'Create Module',
+            'deactivated'     => 'Deactivated Modules',
+            'deleted'         => 'Deleted Modules',
+            'edit'            => 'Edit Module',
+            'main'            => 'Modules',
+            'view'            => 'View Module',
         ],
 
         'questions' => [

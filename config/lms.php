@@ -17,10 +17,13 @@ return [
     'questions' =>[
 
     ],
-    'models_table'=>'modelles',
 
-    'models' =>[
+    'modules_table'=> 'modules',
+
+    'modules' =>[
+
     ],
+
     
 
 ];

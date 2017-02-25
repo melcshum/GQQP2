@@ -180,7 +180,7 @@ return [
 
             ],
 
-            'models' => [
+            'modules' => [
                 'active'                  => 'Active',
                 'name'                    => 'Name',
                 'description'             => 'Description',

@@ -19,21 +19,21 @@ return [
             'restore_course_confirm' => 'Restore this course to its original state?',
         ],
         'games' => [
-            'delete_course_confirm'  => 'Are you sure you want to delete this game permanently? Anywhere in the application that references this game\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'delete_game_confirm'  => 'Are you sure you want to delete this game permanently? Anywhere in the application that references this game\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_course_confirm' => 'Restore this game to its original state?',
+            'restore_game_confirm' => 'Restore this game to its original state?',
         ],
 
-        'models' => [
-            'delete_course_confirm'  => 'Are you sure you want to delete this model permanently? Anywhere in the application that references this model\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+        'modules' => [
+            'delete_module_confirm'  => 'Are you sure you want to delete this module permanently? Anywhere in the application that references this module\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_course_confirm' => 'Restore this model to its original state?',
+            'restore_module_confirm' => 'Restore this module to its original state?',
         ],
 
         'questions' => [
-            'delete_course_confirm'  => 'Are you sure you want to delete this question permanently? Anywhere in the application that references this question\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'delete_question_confirm'  => 'Are you sure you want to delete this question permanently? Anywhere in the application that references this question\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_course_confirm' => 'Restore this question to its original state?',
+            'restore_question_confirm' => 'Restore this question to its original state?',
         ],
 
 

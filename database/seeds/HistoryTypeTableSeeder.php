@@ -50,7 +50,7 @@ class HistoryTypeTableSeeder extends Seeder
             ],
             [
                 'id'         => 4,
-                'name'       => 'Model',
+                'name'       => 'Module',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

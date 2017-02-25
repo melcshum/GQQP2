@@ -52,7 +52,7 @@ return [
             'restored'            => 'The games was successfully restored.',
             'updated'             => 'The games was successfully updated.',
         ],
-        'models' => [
+        'modules' => [
 
             'created'             => 'The model was successfully created.',
             'deleted'             => 'The model was successfully deleted.',
