@@ -56,7 +56,7 @@ class ModelleTableSeeder extends Seeder
             ],
         ];
 
-        DB::table(config('lms.modelles_table'))->insert($modelles);
+        DB::table(config('lms.models_table'))->insert($modelles);
 
 
         if (DB::connection()->getDriverName() == 'mysql') {
