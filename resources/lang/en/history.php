@@ -55,14 +55,14 @@ return [
              'reactivated'         => 'reactivated games',
              'restored'            => 'restored games',
         ],
-         'models' => [
-             'created'             => 'created model',
-             'deactivated'         => 'deactivated model',
-             'deleted'             => 'deleted model',
-             'permanently_deleted' => 'permanently deleted model',
-             'updated'             => 'updated model',
-             'reactivated'         => 'reactivated model',
-             'restored'            => 'restored model',
+         'modules' => [
+             'created'             => 'created module',
+             'deactivated'         => 'deactivated module',
+             'deleted'             => 'deleted module',
+             'permanently_deleted' => 'permanently deleted module',
+             'updated'             => 'updated module',
+             'reactivated'         => 'reactivated module',
+             'restored'            => 'restored module',
          ],
          'questions' => [
              'created'             => 'created question',

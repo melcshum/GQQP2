@@ -19,9 +19,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AccessTableSeeder::class);
         $this->call(CourseTableSeeder::class);
+        $this->call(QuestionTableSeeder::class);
+
         $this->call(HistoryTypeTableSeeder::class);
-        //$this->call(ModelleTableSeeder::class);
-        //$this->call(QuestionTableSeeder::class);
+        $this->call(ModuleTableSeeder::class);
+
+
+
 
         Model::reguard();
     }
