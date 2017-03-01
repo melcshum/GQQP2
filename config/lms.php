@@ -24,9 +24,10 @@ return [
 
     ],
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> f5b5670cacfb2aacb8a6c09bbe701fbd91853b7c
+    'games_table' => 'games',
+
+    'games' => [
+
+    ],
 
 ];
