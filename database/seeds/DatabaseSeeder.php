@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(HistoryTypeTableSeeder::class);
         $this->call(ModuleTableSeeder::class);
-
+        $this->call(GameTableSeeder::class);
+        $this->call(GameQuestionSeeder::class);
 
 
 

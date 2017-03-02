@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Lms\Game\Game;
+use App\Models\Lms\Question\Question;
+
 return [
     /*
      * Courses table used to store courses
@@ -14,6 +17,8 @@ return [
             ],
     'questions_table'=> 'questions',
 
+    'question' => Question::class,
+
     'questions' =>[
 
     ],
@@ -27,7 +32,16 @@ return [
     'games_table' => 'games',
 
     'games' => [
+        'default_question' => 'Game',
+    ],
+
+    'game_question_table' => 'game_question',
+
+    'providers' => [
+        'games' => [
+            'model'  => Game::class,
+        ],
 
     ],
-    
+
 ];

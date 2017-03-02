@@ -241,11 +241,11 @@ class GameRepository extends Repository
      * @param $roles
      * @param $user
      */
-    protected function flushRoles($roles, $user)
+    protected function flushQuestions($questions, $game)
     {
         //Flush roles out, then add array of new ones
-        $user->detachRoles($user->roles);
-        $user->attachRoles($roles['assignees_roles']);
+        $game->detachQuestions($game->questions);
+        $game->attachQuestions($questions['assignees_questions']);
     }
 
     

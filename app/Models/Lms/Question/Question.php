@@ -2,6 +2,7 @@
 
 namespace App\Models\Lms\Question;
 
+use App\Models\Lms\Question\Traits\Relationship\QuestionRelationship;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,7 +23,8 @@ class Question extends Model
 */
     use QuestionScope,
         SoftDeletes,
-        QuestionAttribute;
+        QuestionAttribute,
+        QuestionRelationship;
 
     /**
      * The database table used by the model.

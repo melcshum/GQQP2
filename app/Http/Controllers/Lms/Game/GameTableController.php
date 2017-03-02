@@ -37,11 +37,11 @@ class GameTableController extends Controller
             //        ->editColumn('confirmed', function ($game) {
             //            return $game->confirmed_label;
             //        })
-            //        ->addColumn('roles', function ($user) {
-            //            return $user->roles->count() ?
-            //                implode('<br/>', $user->roles->pluck('name')->toArray()) :
-            //                trans('labels.general.none');
-            //        })
+                    ->addColumn('Questions', function ($game) {
+                        return $game->questions->count() ?
+                            implode('<br/>', $game->questions->pluck('name')->toArray()) :
+                            trans('labels.general.none');
+                    })
             ->addColumn('actions', function ($game) {
                 return $game->action_buttons;
             })

@@ -221,22 +221,6 @@ class QuestionRepository extends Repository
         throw new GeneralException(trans('exceptions.lms.questions.mark_error'));
     }
 
-     
-
-    /**
-     * @param $roles
-     * @param $user
-     */
-    protected function flushRoles($roles, $user)
-    {
-        //Flush roles out, then add array of new ones
-        $user->detachRoles($user->roles);
-        $user->attachRoles($roles['assignees_roles']);
-    }
-
-    
-
-
     /**
      * @param  $input
      *
@@ -251,5 +235,14 @@ class QuestionRepository extends Repository
         $question->slug =  $input['slug'];
         $question->status = isset($input['status']) ? 1 : 0;
         return $question;
+    }
+
+    public function getDefaultGameQuestion()
+    {
+        if (is_numeric(config('lms.games.default_question'))) {
+            return $this->query()->where('id', (int) config('lms.games.default_question'))->first();
+        }
+
+        return $this->query()->where('name', config('lms.games.default_question'))->first();
     }
 }

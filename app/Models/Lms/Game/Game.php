@@ -2,6 +2,8 @@
 
 namespace App\Models\Lms\Game;
 
+use App\Models\Lms\Game\Traits\GameQ;
+use App\Models\Lms\Game\Traits\Relationship\GameRelationship;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,7 +32,9 @@ class Game extends Model
     */
     use GameScope,
         SoftDeletes,
-        GameAttribute;
+        GameAttribute,
+        GameQ,
+        GameRelationship;
 
     /**
      * The database table used by the model.
