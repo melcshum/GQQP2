@@ -73,5 +73,14 @@ return [
              'reactivated'         => 'reactivated question',
              'restored'            => 'restored question',
          ],
+         'lessons' => [
+             'created'             => 'created lesson',
+             'deactivated'         => 'deactivated lesson',
+             'deleted'             => 'deleted lesson',
+             'permanently_deleted' => 'permanently deleted lesson',
+             'updated'             => 'updated lesson',
+             'reactivated'         => 'reactivated lesson',
+             'restored'            => 'restored lesson',
+         ],
     ],
 ];

@@ -74,6 +74,12 @@ class RouteServiceProvider extends ServiceProvider
             return Game::withTrashed()->where($module->getRouteKeyName(), $value)->first();
         });
 
+        $this->bind('deletedLesson', function ($value) {
+            $lesson = new Lesson();
+
+            return Game::withTrashed()->where($lesson->getRouteKeyName(), $value)->first();
+        });
+
         parent::boot();
     }
 

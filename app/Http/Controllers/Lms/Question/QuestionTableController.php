@@ -42,6 +42,12 @@ class QuestionTableController extends Controller
             //                implode('<br/>', $user->roles->pluck('name')->toArray()) :
             //                trans('labels.general.none');
             //        })
+            ->addColumn('games', function ($question) {
+                return $question->games->count() ?
+                    implode('<br/>', $question->games->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
+
             ->addColumn('actions', function ($question) {
                 return $question->action_buttons;
             })

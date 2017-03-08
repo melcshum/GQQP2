@@ -44,4 +44,10 @@ return [
 
     ],
 
+    'lessons_table'=> 'lessons',
+
+    'lessons' =>[
+
+    ],
+
 ];
