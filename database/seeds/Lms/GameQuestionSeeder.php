@@ -39,7 +39,7 @@ class GameQuestionSeeder extends Seeder
                 $game_question = config('lms.providers.games.model');
                 $game_question = new $game_question();
                 $game_question::find(3)->attachQuestion(3);
-        
+
         if (DB::connection()->getDriverName() == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         }

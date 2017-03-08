@@ -211,7 +211,7 @@ return [
                 'name'           => 'Name',
                 'no_deactivated' => 'No Deactivated Users',
                 'no_deleted'     => 'No Deleted Users',
-                'roles'          => 'Roles',
+                'questions'          => 'Questions',
                 'total'          => 'user total|users total',
             ],
         ],
