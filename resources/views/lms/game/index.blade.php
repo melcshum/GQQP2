@@ -31,6 +31,7 @@
                         <tr>
                             <th>{{ trans('labels.lms.games.table.id') }}</th>
                             <th>{{ trans('labels.lms.games.table.name') }}</th>
+                            <th>{{ trans('labels.lms.games.table.questions') }}</th>
                             <th>{{ trans('labels.lms.games.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -61,7 +62,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '{{ route("lms.game.get") }}',
+                    url: '{{ route("lms.game.get")}}',
                     type: 'post',
                     data: {status: 1, trashed: false}
                 },
@@ -69,8 +70,10 @@
                     
                      {data: 'id', name: '{{config('lms.games_table')}}.id'},
                      {data: 'name', name: '{{config('lms.games_table')}}.name', render: $.fn.dataTable.render.text()},
+                     {data: 'questions', name: '{{config('lms.questions_table')}}.name', sortable: false},
                      {data: 'description', name: '{{config('lms.games_table')}}.description', render: $.fn.dataTable.render.text()},
- 
+
+
 //                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},
 //                    {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},
 //                    {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},

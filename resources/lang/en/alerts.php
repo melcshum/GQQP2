@@ -70,5 +70,15 @@ return [
             'updated'             => 'The question was successfully updated.',
 
         ],
+
+        'lessons' => [
+
+            'created'             => 'The lesson was successfully created.',
+            'deleted'             => 'The lesson was successfully deleted.',
+            'deleted_permanently' => 'The lesson was deleted permanently.',
+            'restored'            => 'The lesson was successfully restored.',
+            'updated'             => 'The lesson was successfully updated.',
+
+        ],
     ],
 ];

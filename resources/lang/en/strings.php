@@ -36,6 +36,12 @@ return [
             'restore_question_confirm' => 'Restore this question to its original state?',
         ],
 
+        'lessons' => [
+            'delete_lesson_confirm'  => 'Are you sure you want to delete this lesson permanently? Anywhere in the application that references this lesson\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_lesson_confirm' => 'Restore this lesson to its original state?',
+        ],
+
 
 
         'dashboard' => [

@@ -105,25 +105,18 @@
                             <span> {{ trans('labels.lms.modules.management') }}</span>
                         </a>
                     </li>
+                    <li  class="{{ Active::pattern('lms/lesson*') }} " >
+                        <a href="{{ route('lms.lesson.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.lessons.management') }}</span>
+                        </a>
+                    </li>
 
                 </ul>
 
             </li>
 
 
-
-
-
-
-
-            {{--<li class="{{ Active::pattern('lms/model') }} treeview">--}}
-            {{--<a href="#">--}}
-            {{--<i class="fa fa-users"></i>--}}
-            {{--<span>{{ trans('menus.lms.title') }}</span>--}}
-            {{--<i class="fa fa-angle-left pull-right"></i>--}}
-            {{--</a>--}}
-
-            {{--</li>--}}
 
             </li>
 

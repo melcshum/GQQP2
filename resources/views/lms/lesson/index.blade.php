@@ -1,6 +1,6 @@
 @extends ('lms.layouts.app')
 
-@section ('title', trans('labels.lms.questions.management'))
+@section ('title', trans('labels.lms.lessons.management'))
 
 @section('after-styles')
     {{ Html::style("css/backend/plugin/datatables/dataTables.bootstrap.min.css") }}
@@ -8,31 +8,30 @@
 
 @section('page-header')
     <h1>
-        {{ trans('labels.lms.questions.management') }}
-        <small>{{ trans('labels.lms.questions.active') }}</small>
+        {{ trans('labels.lms.lessons.management') }}
+        <small>{{ trans('labels.lms.lessons.active') }}</small>
     </h1>
 @endsection
 
 @section('content')
     <div class="box box-success">
         <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.lms.questions.active') }}</h3>
+            <h3 class="box-title">{{ trans('labels.lms.lessons.active') }}</h3>
 
             <div class="box-tools pull-right">
-                @include('lms.question.includes.partials.question-header-buttons')
+                @include('lms.lesson.includes.partials.lesson-header-buttons')
             </div><!--box-tools pull-right-->
         </div><!-- /.box-header -->
     </div><!--box-->
 
         <div class="box-body">
             <div class="table-responsive">
-                <table id="questions-table" class="table table-condensed table-hover">
+                <table id="lessons-table" class="table table-condensed table-hover">
                     <thead>
                         <tr>
-                            <th>{{ trans('labels.lms.questions.table.id') }}</th>
-                            <th>{{ trans('labels.lms.questions.table.name') }}</th>
-                            <th>{{ trans('labels.lms.questions.table.games') }}</th>
-                            <th>{{ trans('labels.lms.questions.table.description') }}</th>
+                            <th>{{ trans('labels.lms.lessons.table.id') }}</th>
+                            <th>{{ trans('labels.lms.lessons.table.name') }}</th>
+                            <th>{{ trans('labels.lms.lessons.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
@@ -47,7 +46,7 @@
             </div><!-- /.box tools -->
         </div><!-- /.box-header -->
         <div class="box-body">
-            {!! history()->renderType('Question') !!}
+            {!! history()->renderType('Lesson') !!}
         </div><!-- /.box-body -->
     </div><!--box box-success-->
 @stop
@@ -58,20 +57,19 @@
 
     <script>
         $(function() {
-            $('#questions-table').DataTable({
+            $('#lessons-table').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '{{ route("lms.question.get") }}',
+                    url: '{{ route("lms.lesson.get") }}',
                     type: 'post',
                     data: {status: 1, trashed: false}
                 },
                 columns: [
                     
-                     {data: 'id', name: '{{config('lms.questions_table')}}.id'},
-                     {data: 'name', name: '{{config('lms.questions_table')}}.name', render: $.fn.dataTable.render.text()},
-                     {data: 'games', name: '{{config('lms.games_table')}}.name', sortable: false},
-                     {data: 'description', name: '{{config('lms.questions_table')}}.description', render: $.fn.dataTable.render.text()},
+                     {data: 'id', name: '{{config('lms.lessons_table')}}.id'},
+                     {data: 'name', name: '{{config('lms.lessons_table')}}.name', render: $.fn.dataTable.render.text()},
+                     {data: 'description', name: '{{config('lms.lessons_table')}}.description', render: $.fn.dataTable.render.text()},
  
 //                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},
 //                    {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},

@@ -37,7 +37,7 @@ class GameTableController extends Controller
             //        ->editColumn('confirmed', function ($game) {
             //            return $game->confirmed_label;
             //        })
-                    ->addColumn('Questions', function ($game) {
+                    ->addColumn('questions', function ($game) {
                         return $game->questions->count() ?
                             implode('<br/>', $game->questions->pluck('name')->toArray()) :
                             trans('labels.general.none');
