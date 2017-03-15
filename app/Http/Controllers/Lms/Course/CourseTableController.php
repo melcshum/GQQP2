@@ -42,6 +42,11 @@ class CourseTableController extends Controller
     //                implode('<br/>', $user->roles->pluck('name')->toArray()) :
     //                trans('labels.general.none');
     //        })
+            ->addColumn('modules', function ($course) {
+                return $course->modules->count() ?
+                    implode('<br/>', $course->modules->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
              ->addColumn('actions', function ($course) {
                 return $course->action_buttons;
             })

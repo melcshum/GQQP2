@@ -241,11 +241,11 @@ class CourseRepository extends Repository
      * @param $roles
      * @param $user
      */
-    protected function flushRoles($roles, $user)
+    protected function flushModules($modules, $course)
     {
         //Flush roles out, then add array of new ones
-        $user->detachRoles($user->roles);
-        $user->attachRoles($roles['assignees_roles']);
+        $course->detachRoles($course->modules);
+        $course->attachRoles($modules['assignees_modules']);
     }
 
     

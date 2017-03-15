@@ -31,6 +31,7 @@
                         <tr>
                             <th>{{ trans('labels.lms.courses.table.id') }}</th>
                             <th>{{ trans('labels.lms.courses.table.name') }}</th>
+                            <th>{{ trans('labels.lms.courses.table.modules') }}</th>
                             <th>{{ trans('labels.lms.courses.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -69,6 +70,7 @@
                     
                      {data: 'id', name: '{{config('lms.courses_table')}}.id'},
                      {data: 'name', name: '{{config('lms.courses_table')}}.name', render: $.fn.dataTable.render.text()},
+                     {data: 'modules', name: '{{config('lms.modules_table')}}.name', sortable: false},
                      {data: 'description', name: '{{config('lms.courses_table')}}.description', render: $.fn.dataTable.render.text()},
  
 //                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},

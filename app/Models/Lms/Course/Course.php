@@ -2,6 +2,8 @@
 
 namespace App\Models\Lms\Course;
 
+use App\Models\Lms\Course\Traits\CourseModule;
+use App\Models\Lms\Course\Traits\Relationship\CourseRelationship;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Lms\Course\Traits\Attribute\CourseAttribute;
 use App\Models\Lms\Course\Traits\Scope\CourseScope;
+
 
  //use Illuminate\Foundation\Auth\User as Authenticatable;
 //use App\Models\Access\Course\Traits\UserAccess;
@@ -30,7 +33,9 @@ class Course extends Model
 */
     use CourseScope,
         SoftDeletes,
-        CourseAttribute;
+        CourseAttribute,
+        CourseModule,
+        CourseRelationship;
 
     /**
      * The database table used by the model.

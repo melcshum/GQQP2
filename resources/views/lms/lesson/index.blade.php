@@ -31,6 +31,7 @@
                         <tr>
                             <th>{{ trans('labels.lms.lessons.table.id') }}</th>
                             <th>{{ trans('labels.lms.lessons.table.name') }}</th>
+                            <th>{{ trans('labels.lms.modules.table.modules') }}</th>
                             <th>{{ trans('labels.lms.lessons.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -69,6 +70,7 @@
                     
                      {data: 'id', name: '{{config('lms.lessons_table')}}.id'},
                      {data: 'name', name: '{{config('lms.lessons_table')}}.name', render: $.fn.dataTable.render.text()},
+                     {data: 'modules', name: '{{config('lms.modules_table')}}.name', sortable: false},
                      {data: 'description', name: '{{config('lms.lessons_table')}}.description', render: $.fn.dataTable.render.text()},
  
 //                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},

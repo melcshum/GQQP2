@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GameQuestionSeeder extends Seeder
+class ModuleLessonSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,28 +17,28 @@ class GameQuestionSeeder extends Seeder
         }
 
         if (DB::connection()->getDriverName() == 'mysql') {
-            DB::table(config('lms.game_question_table'))->truncate();
+            DB::table(config('lms.module_lesson_table'))->truncate();
         } elseif (DB::connection()->getDriverName() == 'sqlite') {
-            DB::statement('DELETE FROM '.config('lms.game_question_table'));
+            DB::statement('DELETE FROM '.config('lms.module_lesson_table'));
         } else {
             //For PostgreSQL or anything else
-            DB::statement('TRUNCATE TABLE '.config('lms.game_question_table').' CASCADE');
+            DB::statement('TRUNCATE TABLE '.config('lms.module_lesson_table').' CASCADE');
         }
 
         //Attach question to game
-        $game_question = config('lms.providers.games.model');
-        $game_question = new $game_question();
-        $game_question::first()->attachQuestion(1);
+        $module_lesson = config('lms.providers.modules.model');
+        $module_lesson = new $module_lesson();
+        $module_lesson::first()->attachLesson(1);
 
         //Attach executive question to executive game
-        $game_question = config('lms.providers.games.model');
-        $game_question = new $game_question();
-        $game_question::find(2)->attachQuestion(2);
+        $module_lesson = config('lms.providers.modules.model');
+        $module_lesson = new $module_lesson();
+        $module_lesson::find(2)->attachLesson(2);
 
         //Attach game question to general game
-        $game_question = config('lms.providers.games.model');
-        $game_question = new $game_question();
-        $game_question::find(3)->attachQuestion(3);
+        $module_lesson = config('lms.providers.modules.model');
+        $module_lesson = new $module_lesson();
+        $module_lesson::find(3)->attachLesson(3);
 
         if (DB::connection()->getDriverName() == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');

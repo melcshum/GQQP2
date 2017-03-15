@@ -31,6 +31,9 @@
                         <tr>
                             <th>{{ trans('labels.lms.modules.table.id') }}</th>
                             <th>{{ trans('labels.lms.modules.table.name') }}</th>
+                            <th>{{ trans('labels.lms.modules.table.courses') }}</th>
+                            <th>{{ trans('labels.lms.modules.table.lessons') }}</th>
+                            <th>{{ trans('labels.lms.modules.table.games') }}</th>
                             <th>{{ trans('labels.lms.modules.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -69,6 +72,9 @@
                     
                      {data: 'id', name: '{{config('lms.modules_table')}}.id'},
                      {data: 'name', name: '{{config('lms.modules_table')}}.name', render: $.fn.dataTable.render.text()},
+                     {data: 'courses', name: '{{config('lms.courses_table')}}.name', sortable: false},
+                     {data: 'lessons', name: '{{config('lms.lessons_table')}}.name', sortable: false},
+                    {data: 'games', name: '{{config('lms.games_table')}}.name', sortable: false},
                      {data: 'description', name: '{{config('lms.modules_table')}}.description', render: $.fn.dataTable.render.text()},
  
 //                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},

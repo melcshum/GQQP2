@@ -1,36 +1,36 @@
 <?php
 
-namespace App\Models\Lms\Game\Traits;
+namespace App\Models\Lms\Module\Traits;
 
 /**
- * Class GameQ.
+ * Class UserAccess.
  */
-trait GameQ
+trait ModuleLesson
 {
     /**
-     * Checks if the user has a Question by its name or id.
+     * Checks if the user has a Lesson by its name or id.
      *
-     * @param string $nameOrId Question name or id.
+     * @param string $nameOrId Lesson name or id.
      *
      * @return bool
      */
-    public function hasQuestion($nameOrId)
+    public function hasLesson($nameOrId)
     {
-        foreach ($this->questions as $question) {
-            //See if question has all permissions
-            if ($question->all) {
+        foreach ($this->lessons as $lesson) {
+            //See if lesson has all permissions
+            if ($lesson->all) {
                 return true;
             }
 
             //First check to see if it's an ID
             if (is_numeric($nameOrId)) {
-                if ($question->id == $nameOrId) {
+                if ($lesson->id == $nameOrId) {
                     return true;
                 }
             }
 
             //Otherwise check by name
-            if ($question->name == $nameOrId) {
+            if ($lesson->name == $nameOrId) {
                 return true;
             }
         }
@@ -39,39 +39,39 @@ trait GameQ
     }
 
     /**
-     * Checks to see if user has array of questions.
+     * Checks to see if user has array of lessons.
      *
      * All must return true
      *
-     * @param  $questions
+     * @param  $lessons
      * @param  $needsAll
      *
      * @return bool
      */
-    public function hasQuestions($questions, $needsAll = false)
+    public function hasLessons($lessons, $needsAll = false)
     {
         //If not an array, make a one item array
-        if (! is_array($questions)) {
-            $questions = [$questions];
+        if (! is_array($lessons)) {
+            $lessons = [$lessons];
         }
 
-        //User has to possess all of the questions specified
+        //User has to possess all of the $lessons specified
         if ($needsAll) {
-            $hasQuestions = 0;
-            $numQuestions = count($questions);
+            $hasLessons = 0;
+            $numLessons = count($lessons);
 
-            foreach ($questions as $question) {
-                if ($this->hasQuestion($question)) {
-                    $hasQuestions++;
+            foreach ($lessons as $lesson) {
+                if ($this->hasLesson($lesson)) {
+                    $hasLessons++;
                 }
             }
 
-            return $numQuestions == $hasQuestions;
+            return $numLessons == $hasLessons;
         }
 
-        //User has to possess one of the questions specified
-        foreach ($questions as $question) {
-            if ($this->hasQuestion($question)) {
+        //User has to possess one of the lessons specified
+        foreach ($lessons as $lesson) {
+            if ($this->hasLesson($lesson)) {
                 return true;
             }
         }
@@ -88,14 +88,14 @@ trait GameQ
      */
     public function allow($nameOrId)
     {
-        foreach ($this->questions as $question) {
-            // See if question has all permissions
-            if ($question->all) {
+        foreach ($this->lessons as $lesson) {
+            // See if lesson has all permissions
+            if ($lesson->all) {
                 return true;
             }
 
             // Validate against the Permission table
-            foreach ($question->permissions as $perm) {
+            foreach ($lesson->permissions as $perm) {
 
                 // First check to see if it's an ID
                 if (is_numeric($nameOrId)) {
@@ -177,68 +177,68 @@ trait GameQ
     /**
      * Alias to eloquent many-to-many relation's attach() method.
      *
-     * @param mixed $question
+     * @param mixed $lesson
      *
      * @return void
      */
-    public function attachQuestion($question)
+    public function attachLesson($lesson)
     {
-        if (is_object($question)) {
-            $question = $question->getKey();
+        if (is_object($lesson)) {
+            $lesson = $lesson->getKey();
         }
 
-        if (is_array($question)) {
-            $question = $question['id'];
+        if (is_array($lesson)) {
+            $lesson = $lesson['id'];
         }
 
-        $this->questions()->attach($question);
+        $this->lessons()->attach($lesson);
     }
 
     /**
      * Alias to eloquent many-to-many relation's detach() method.
      *
-     * @param mixed $question
+     * @param mixed $lesson
      *
      * @return void
      */
-    public function detachQuestion($question)
+    public function detachLesson($lesson)
     {
-        if (is_object($question)) {
-            $question = $question->getKey();
+        if (is_object($lesson)) {
+            $lesson = $lesson->getKey();
         }
 
-        if (is_array($question)) {
-            $question = $question['id'];
+        if (is_array($lesson)) {
+            $lesson = $lesson['id'];
         }
 
-        $this->questions()->detach($question);
+        $this->lessons()->detach($lesson);
     }
 
     /**
-     * Attach multiple questions to a user.
+     * Attach multiple lessons to a user.
      *
-     * @param mixed $questions
+     * @param mixed $lessons
      *
      * @return void
      */
-    public function attachQuestions($questions)
+    public function attachLessons($lessons)
     {
-        foreach ($questions as $question) {
-            $this->attachQuestion($question);
+        foreach ($lessons as $lesson) {
+            $this->attachLesson($lesson);
         }
     }
 
     /**
-     * Detach multiple questions from a user.
+     * Detach multiple lessons from a user.
      *
-     * @param mixed $questions
+     * @param mixed $lessons
      *
      * @return void
      */
-    public function detachQuestions($questions)
+    public function detachLessons($lessons)
     {
-        foreach ($questions as $question) {
-            $this->detachQuestion($question);
+        foreach ($lessons as $lesson) {
+            $this->detachLesson($lesson);
         }
     }
 }

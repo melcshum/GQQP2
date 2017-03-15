@@ -1,5 +1,6 @@
 @extends ('lms.layouts.app')
 
+
 @section ('title', trans('labels.lms.games.management'))
 
 @section('after-styles')
@@ -32,6 +33,7 @@
                             <th>{{ trans('labels.lms.games.table.id') }}</th>
                             <th>{{ trans('labels.lms.games.table.name') }}</th>
                             <th>{{ trans('labels.lms.games.table.questions') }}</th>
+                            <th>{{ trans('labels.lms.games.table.modules') }}</th>
                             <th>{{ trans('labels.lms.games.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -71,6 +73,7 @@
                      {data: 'id', name: '{{config('lms.games_table')}}.id'},
                      {data: 'name', name: '{{config('lms.games_table')}}.name', render: $.fn.dataTable.render.text()},
                      {data: 'questions', name: '{{config('lms.questions_table')}}.name', sortable: false},
+                    {data: 'modules', name: '{{config('lms.modules_table')}}.name', sortable: false},
                      {data: 'description', name: '{{config('lms.games_table')}}.description', render: $.fn.dataTable.render.text()},
 
 

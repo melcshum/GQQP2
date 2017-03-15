@@ -42,6 +42,11 @@ class LessonTableController extends Controller
     //                implode('<br/>', $user->roles->pluck('name')->toArray()) :
     //                trans('labels.general.none');
     //        })
+            ->addColumn('modules', function ($lesson) {
+                return $lesson->modules->count() ?
+                    implode('<br/>', $lesson->modules->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
              ->addColumn('actions', function ($lesson) {
                 return $lesson->action_buttons;
             })

@@ -7,6 +7,8 @@ use App\Repositories\Repository;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use Illuminate\Database\Eloquent\Model;
+
+
 use App\Events\Lms\Module\ModuleCreated;
 use App\Events\Lms\Module\ModuleDeleted;
 use App\Events\Lms\Module\ModuleUpdated;
@@ -239,14 +241,19 @@ class ModuleRepository extends Repository
      * @param $roles
      * @param $user
      */
-    protected function flushRoles($roles, $user)
+    protected function flushLessons($lessons, $module)
     {
         //Flush roles out, then add array of new ones
-        $user->detachRoles($user->roles);
-        $user->attachRoles($roles['assignees_roles']);
+        $module->detachLessons($module->lessons);
+        $module->attachLessons($lessons['assignees_lessons']);
     }
 
-    
+    protected function flushGames($games, $module)
+    {
+        //Flush roles out, then add array of new ones
+        $module->detachLessons($module->lessons);
+        $module->attachLessons($games['assignees_games']);
+    }
 
 
     /**
@@ -263,5 +270,14 @@ class ModuleRepository extends Repository
         $module->slug =  $input['slug'];
         $module->status = isset($input['status']) ? 1 : 0;
         return $module;
+    }
+
+    public function getDefaultCourseModule()
+    {
+        if (is_numeric(config('lms.course.default_module'))) {
+            return $this->query()->where('id', (int) config('lms.courses.default_module'))->first();
+        }
+
+        return $this->query()->where('name', config('lms.courses.default_module'))->first();
     }
 }

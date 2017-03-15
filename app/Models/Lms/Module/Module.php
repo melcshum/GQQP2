@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Lms\Module\Traits\Attribute\ModuleAttribute;
 use App\Models\Lms\Module\Traits\Scope\ModuleScope;
+use App\Models\Lms\Module\Traits\Relationship\ModuleRelationship;
+use App\Models\Lms\Module\Traits\ModuleLesson;
+use App\Models\Lms\Module\Traits\ModuleGame;
 
 class Module extends Model
 {
@@ -22,7 +25,15 @@ class Module extends Model
 */
     use ModuleScope,
         SoftDeletes,
-        ModuleAttribute;
+        ModuleAttribute,
+        ModuleRelationship;
+     use ModuleLesson, ModuleGame{
+         ModuleLesson::getRow insteadof ModuleGame;
+     }
+
+     public function module(){
+         return $this->hasLesson();
+     }
 
     /**
      * The database table used by the model.
