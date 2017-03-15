@@ -4,6 +4,7 @@ use App\Models\Lms\Game\Game;
 use App\Models\Lms\Question\Question;
 use App\Models\Lms\Course\Course;
 use App\Models\Lms\Module\Module;
+use App\Models\Lms\Module\ModuleB;
 use App\Models\Lms\Lesson\Lesson;
 
 return [
@@ -83,6 +84,7 @@ return [
 
         'modules' => [
             'model' => Module::class,
+            'modelB' => ModuleB::class,
         ],
 
     ],

@@ -32,18 +32,6 @@ class Module extends Model
 
      ;
 
-//    use SoftDeletes,ModuleGame{
-//        SoftDeletes::restore as soft_delete_restore;
-//        ModuleGame::restore as entrust_restore;
-//    }
-//
-//    public function restore()
-//    {
-//        $result = $this->soft_delete_restore();
-//        $this->entrust_restore();
-//        return $result;
-//    }
-
     /**
      * The database table used by the model.
      *
@@ -78,4 +66,9 @@ class Module extends Model
         parent::__construct($attributes);
         $this->table = config('lms.modules_table');
     }
+}
+
+class ModuleB extends Module{
+
+    use ModuleLesson;
 }

@@ -31,7 +31,7 @@
                         <tr>
                             <th>{{ trans('labels.lms.lessons.table.id') }}</th>
                             <th>{{ trans('labels.lms.lessons.table.name') }}</th>
-                            <th>{{ trans('labels.lms.modules.table.modules') }}</th>
+                            <th>{{ trans('labels.lms.lessons.table.modules') }}</th>
                             <th>{{ trans('labels.lms.lessons.table.description') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
