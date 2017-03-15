@@ -14,6 +14,7 @@ trait ModuleLesson
      *
      * @return bool
      */
+
     public function hasLesson($nameOrId)
     {
         foreach ($this->lessons as $lesson) {

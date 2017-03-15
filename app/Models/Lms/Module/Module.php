@@ -26,14 +26,23 @@ class Module extends Model
     use ModuleScope,
         SoftDeletes,
         ModuleAttribute,
-        ModuleRelationship;
-     use ModuleLesson, ModuleGame{
-         ModuleLesson::getRow insteadof ModuleGame;
-     }
+        ModuleRelationship,
+      //  ModuleLesson
+       ModuleGame
 
-     public function module(){
-         return $this->hasLesson();
-     }
+     ;
+
+//    use SoftDeletes,ModuleGame{
+//        SoftDeletes::restore as soft_delete_restore;
+//        ModuleGame::restore as entrust_restore;
+//    }
+//
+//    public function restore()
+//    {
+//        $result = $this->soft_delete_restore();
+//        $this->entrust_restore();
+//        return $result;
+//    }
 
     /**
      * The database table used by the model.

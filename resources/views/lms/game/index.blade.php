@@ -73,7 +73,7 @@
                      {data: 'id', name: '{{config('lms.games_table')}}.id'},
                      {data: 'name', name: '{{config('lms.games_table')}}.name', render: $.fn.dataTable.render.text()},
                      {data: 'questions', name: '{{config('lms.questions_table')}}.name', sortable: false},
-                    {data: 'modules', name: '{{config('lms.modules_table')}}.name', sortable: false},
+                     {data: 'modules', name: '{{config('lms.modules_table')}}.name', sortable: false},
                      {data: 'description', name: '{{config('lms.games_table')}}.description', render: $.fn.dataTable.render.text()},
 
 
