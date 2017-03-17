@@ -42,6 +42,11 @@ class GameTableController extends Controller
                             implode('<br/>', $game->questions->pluck('name')->toArray()) :
                             trans('labels.general.none');
                     })
+            ->addColumn('modules', function ($game) {
+                return $game->modules->count() ?
+                    implode('<br/>', $game->modules->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
             ->addColumn('actions', function ($game) {
                 return $game->action_buttons;
             })

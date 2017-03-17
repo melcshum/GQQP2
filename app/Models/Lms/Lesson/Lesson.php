@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Lms\Lesson\Traits\Attribute\LessonAttribute;
 use App\Models\Lms\Lesson\Traits\Scope\LessonScope;
+use App\Models\Lms\Lesson\Traits\Relationship\LessonRelationship;
 
  //use Illuminate\Foundation\Auth\User as Authenticatable;
 //use App\Models\Access\Lesson\Traits\UserAccess;
@@ -30,7 +31,8 @@ class Lesson extends Model
 */
     use LessonScope,
         SoftDeletes,
-        LessonAttribute;
+        LessonAttribute,
+        LessonRelationship;
 
     /**
      * The database table used by the model.

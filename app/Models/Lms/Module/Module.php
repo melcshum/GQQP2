@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Lms\Module\Traits\Attribute\ModuleAttribute;
 use App\Models\Lms\Module\Traits\Scope\ModuleScope;
+use App\Models\Lms\Module\Traits\Relationship\ModuleRelationship;
+use App\Models\Lms\Module\Traits\ModuleLesson;
+use App\Models\Lms\Module\Traits\ModuleGame;
 
 class Module extends Model
 {
@@ -22,7 +25,12 @@ class Module extends Model
 */
     use ModuleScope,
         SoftDeletes,
-        ModuleAttribute;
+        ModuleAttribute,
+        ModuleRelationship,
+      //  ModuleLesson
+       ModuleGame
+
+     ;
 
     /**
      * The database table used by the model.
@@ -58,4 +66,9 @@ class Module extends Model
         parent::__construct($attributes);
         $this->table = config('lms.modules_table');
     }
+}
+
+class ModuleB extends Module{
+
+    use ModuleLesson;
 }

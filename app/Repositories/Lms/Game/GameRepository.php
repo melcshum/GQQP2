@@ -266,4 +266,13 @@ class GameRepository extends Repository
         $game->status = isset($input['status']) ? 1 : 0;
         return $game;
     }
+
+    public function getDefaultModuleGame()
+    {
+        if (is_numeric(config('lms.modules.default_game'))) {
+            return $this->query()->where('id', (int) config('lms.modules.default_game'))->first();
+        }
+
+        return $this->query()->where('name', config('lms.module.default_game'))->first();
+    }
 }

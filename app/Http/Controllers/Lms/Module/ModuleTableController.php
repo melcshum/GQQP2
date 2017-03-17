@@ -38,6 +38,21 @@ class ModuleTableController extends Controller
             //                implode('<br/>', $user->roles->pluck('name')->toArray()) :
             //                trans('labels.general.none');
             //        })
+            ->addColumn('courses', function ($module) {
+                return $module->courses->count() ?
+                    implode('<br/>', $module->courses->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
+            ->addColumn('lessons', function ($module) {
+                return $module->lessons->count() ?
+                    implode('<br/>', $module->lessons->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
+            ->addColumn('games', function ($module) {
+                return $module->games->count() ?
+                    implode('<br/>', $module->games->pluck('name')->toArray()) :
+                    trans('labels.general.none');
+            })
             ->addColumn('actions', function ($module) {
                 return $module->action_buttons;
             })

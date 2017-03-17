@@ -235,17 +235,17 @@ class LessonRepository extends Repository
     }
 
      
-
-    /**
-     * @param $roles
-     * @param $user
-     */
-    protected function flushRoles($roles, $user)
-    {
-        //Flush roles out, then add array of new ones
-        $user->detachRoles($user->roles);
-        $user->attachRoles($roles['assignees_roles']);
-    }
+//
+//    /**
+//     * @param $roles
+//     * @param $user
+//     */
+//    protected function flushRoles($roles, $user)
+//    {
+//        //Flush roles out, then add array of new ones
+//        $user->detachRoles($user->roles);
+//        $user->attachRoles($roles['assignees_roles']);
+//    }
 
     
 
@@ -264,5 +264,14 @@ class LessonRepository extends Repository
         $lesson->slug =  $input['slug'];
         $lesson->status = isset($input['status']) ? 1 : 0;
         return $lesson;
+    }
+
+    public function getDefaultModuleLesson()
+    {
+        if (is_numeric(config('lms.modules.default_lesson'))) {
+            return $this->query()->where('id', (int) config('lms.modules.default_lesson'))->first();
+        }
+
+        return $this->query()->where('name', config('lms.modules.default_lesson'))->first();
     }
 }
