@@ -68,4 +68,9 @@ class Lesson extends Model
         parent::__construct($attributes);
         $this->table = config('lms.lessons_table');
     }
+
+    public function lessonable()
+    {
+        return $this->morphTo();
+    }
 }
