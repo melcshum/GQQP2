@@ -70,4 +70,9 @@ class Game extends Model
         parent::__construct($attributes);
         $this->table = config('lms.games_table');
     }
+
+    public function gameable()
+    {
+        return $this->morphTo();
+    }
 }
