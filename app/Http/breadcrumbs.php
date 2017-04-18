@@ -10,3 +10,5 @@ require __DIR__.'/Breadcrumbs/Lms/Module.php';
 require __DIR__.'/Breadcrumbs/Lms/Question.php';
 
 require __DIR__.'/Breadcrumbs/Lms/Lesson.php';
+
+require __DIR__.'/Breadcrumbs/Lms/mcQuestion.php';

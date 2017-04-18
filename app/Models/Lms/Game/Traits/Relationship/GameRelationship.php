@@ -18,9 +18,9 @@ trait GameRelationship
         return $this->belongsToMany(config('lms.question'), config('lms.game_question_table'), 'game_id', 'question_id');
     }
 
-//    public function modules()
-//    {
-//        return $this->belongsToMany(config('lms.providers.modules.model'), config('lms.module_game_table'), 'game_id', 'module_id');
-//    }
+    public function modules()
+    {
+        return $this->belongsToMany(config('lms.providers.modules.model'), config('lms.module_game_table'), 'game_id', 'module_id');
+    }
 
 }

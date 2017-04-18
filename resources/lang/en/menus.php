@@ -124,13 +124,23 @@ return [
         ],
 
         'questions' => [
+            'all'             => 'All MC questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create MC question',
+            'deactivated'     => 'Deactivated MC questions',
+            'deleted'         => 'Deleted MC questions',
+            'edit'            => 'Edit MC question',
+            'main'            => 'MC questions',
+            'view'            => 'View MC question',
+        ],
+        'mcQuestions' => [
             'all'             => 'All Questions',
             'change-password' => 'Change Password',
             'create'          => 'Create Question',
             'deactivated'     => 'Deactivated Questions',
             'deleted'         => 'Deleted Questions',
             'edit'            => 'Edit Question',
-            'main'            => 'Questions',
+            'main'            => 'mcQuestions',
             'view'            => 'View Question',
         ],
 

@@ -35,6 +35,11 @@ return [
             'if_confirmed_off'     => '(If confirmed is off)',
             'restore_question_confirm' => 'Restore this question to its original state?',
         ],
+        'mcQuestions' => [
+            'delete_question_confirm'  => 'Are you sure you want to delete this MC question permanently? Anywhere in the application that references this MC question\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_question_confirm' => 'Restore this MC question to its original state?',
+        ],
 
         'lessons' => [
             'delete_lesson_confirm'  => 'Are you sure you want to delete this lesson permanently? Anywhere in the application that references this lesson\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
