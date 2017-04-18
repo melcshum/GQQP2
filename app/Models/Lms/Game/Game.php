@@ -71,8 +71,8 @@ class Game extends Model
         $this->table = config('lms.games_table');
     }
 
-    public function gameable()
-    {
-        return $this->morphTo();
-    }
+//    public function gameable()
+//    {
+//        return $this->morphTo();
+//    }
 }

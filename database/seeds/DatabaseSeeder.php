@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CourseModuleSeeder::class);
         $this->call(ModuleLessonSeeder::class);
         $this->call(ModuleGameSeeder::class);
+        $this->call(McQuestionSeeder::class);
 
         Model::reguard();
     }

@@ -27,7 +27,7 @@ class Module extends Model
         SoftDeletes,
         ModuleAttribute,
         ModuleRelationship,
-       ModuleLesson,
+     //  ModuleLesson,
        ModuleGame
 
      ;
@@ -67,8 +67,8 @@ class Module extends Model
         $this->table = config('lms.modules_table');
     }
 }
-//
-//class ModuleB extends Module{
-//
-//    use ModuleLesson;
-//}
+
+class ModuleB extends Module{
+
+    use ModuleLesson;
+}

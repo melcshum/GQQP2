@@ -69,8 +69,8 @@ class Lesson extends Model
         $this->table = config('lms.lessons_table');
     }
 
-    public function lessonable()
-    {
-        return $this->morphTo();
-    }
+//    public function lessonable()
+//    {
+//        return $this->morphTo();
+//    }
 }
