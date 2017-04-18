@@ -230,6 +230,7 @@ trait GameQuestion
 
     /**
      * Detach multiple questions from a user.
+     * Detach multiple questions from a user.
      *
      * @param mixed $questions
      *
