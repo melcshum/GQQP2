@@ -6,17 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
-use App\Models\Main\Item;
+use App\Models\Main\Justfortest;
 use App\User;
 use Auth;
 use Hash;
 use Illuminate\Support\Facades\Redirect;
 
-class ItemController extends Controller
+class JustforTestController extends Controller
 {
     public function __construct()
     {
-        $this->item = \App\Models\Main\Item::all();
+        $this->item = \App\Models\Main\Justfortest::all();
     }
 
     public function index()
@@ -47,7 +47,7 @@ class ItemController extends Controller
                 return redirect::to('shop')->with('message', 'Not Enough Gold');
             }
         }
-        
+
         elseif($itemid == 2){
             if($gold >= 1000){
                 $half += 1;
