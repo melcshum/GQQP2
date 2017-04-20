@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label>{{ trans('labels.frontend.macros.state.us.us') }}</label>
-                        {{-- Shorthand for this is just selectState, set which version is shorthanded in Macros/Dropdowns --}}
+                         Shorthand for this is just selectState, set which version is shorthanded in Macros/Dropdowns
                         {{ Form::selectStateUS('state', 'NY', ['class' => 'form-control']) }}
                     </div>
                     <div class="form-group">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('labels.frontend.macros.country.alpha2') }}</label>
-                        {{-- Shorthand for this is just selectCountry, set which version is shorthanded in Macros/Dropdowns --}}
+                         Shorthand for this is just selectCountry, set which version is shorthanded in Macros/Dropdowns
                         {{ Form::selectCountryAlpha2('country_alpha2', 'US', ['class' => 'form-control']) }}
                     </div>
                     <div class="form-group">

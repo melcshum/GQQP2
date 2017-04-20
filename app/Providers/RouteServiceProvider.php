@@ -7,7 +7,6 @@ use App\Models\Lms\Course\Course;
 use App\Models\Lms\Module\Module;
 use App\Models\Lms\Game\Game;
 use App\Models\Lms\Question\Question;
-use App\Models\Lms\mcQuestion\mcQuestion;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -79,12 +78,6 @@ class RouteServiceProvider extends ServiceProvider
             $lesson = new Lesson();
 
             return Game::withTrashed()->where($lesson->getRouteKeyName(), $value)->first();
-        });
-
-        $this->bind('deletedMcQuestion', function ($value) {
-            $mcQuestion = new mcQuestion();
-
-            return mcQuestion::withTrashed()->where($mcQuestion->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();

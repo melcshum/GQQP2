@@ -73,15 +73,6 @@ return [
              'reactivated'         => 'reactivated question',
              'restored'            => 'restored question',
          ],
-         'mcQuestions' => [
-             'created'             => 'created MC question',
-             'deactivated'         => 'deactivated MC question',
-             'deleted'             => 'deleted MC question',
-             'permanently_deleted' => 'permanently deleted MC question',
-             'updated'             => 'updated MC question',
-             'reactivated'         => 'reactivated MC question',
-             'restored'            => 'restored MC question',
-         ],
          'lessons' => [
              'created'             => 'created lesson',
              'deactivated'         => 'deactivated lesson',
