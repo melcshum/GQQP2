@@ -63,16 +63,6 @@ return [
 
     /*-------------------------------------------------*/
 
-    'mcQuestions_table'=> 'mcQuestions',
-
-    'mcQuestion' => mcQuestion::class,
-
-    'mcQuestions' =>[
-
-    ],
-
-    /*-------------------------------------------------*/
-
     'lessons_table'=> 'lessons',
 
     'lesson' => Lesson::class,

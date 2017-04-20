@@ -70,15 +70,6 @@ return [
             'updated'             => 'The question was successfully updated.',
 
         ],
-        'mcQuestions' => [
-
-            'created'             => 'The MC question was successfully created.',
-            'deleted'             => 'The MC question was successfully deleted.',
-            'deleted_permanently' => 'The MC question was deleted permanently.',
-            'restored'            => 'The MC question was successfully restored.',
-            'updated'             => 'The MC question was successfully updated.',
-
-        ],
 
         'lessons' => [
 

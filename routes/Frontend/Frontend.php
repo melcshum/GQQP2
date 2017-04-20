@@ -27,5 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
          * User Profile Specific
          */
         Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
+
+        Route::get('home', 'HomeController@index')->name('home');
     });
 });

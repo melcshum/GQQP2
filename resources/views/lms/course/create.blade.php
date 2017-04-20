@@ -45,6 +45,7 @@
                         {{ Form::text('slug', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.lms.courses.slug')]) }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
+ 
                
                 <div class="form-group">
                     {{ Form::label('status', trans('validation.attributes.lms.courses.active'), ['class' => 'col-lg-2 control-label']) }}
