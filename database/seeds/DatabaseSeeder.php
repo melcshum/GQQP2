@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionTableSeeder::class);
 
         $this->call(HistoryTypeTableSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(ModuleTableSeeder::class);
         $this->call(GameTableSeeder::class);
         $this->call(GameQuestionSeeder::class);
@@ -29,6 +30,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CourseModuleSeeder::class);
         $this->call(ModuleLessonSeeder::class);
         $this->call(ModuleGameSeeder::class);
+        $this->call(FillQuestionSeeder::class);
+        $this->call(IfTutorialSeeder::class);
+        $this->call(ItemSeeder::class);
+        $this->call(McQuestionSeeder::class);
+        $this->call(SkillSeeder::class);
+        $this->call(Item_UserSeeder::class);
 
         Model::reguard();
     }

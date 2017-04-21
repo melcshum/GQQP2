@@ -5,5 +5,6 @@
  * All route names are prefixed with 'frontend.'
  */
 
-Route::get('shop', 'ItemController@index');
-Route::post('shop', 'ItemController@exchangeItem');
+Route::resource('shop', 'ShopController');
+Route::get('shop', 'ShopController@index')->name('shop.index');
+Route::post('shop', 'ShopController@exchangeItem');

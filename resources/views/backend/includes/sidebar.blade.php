@@ -86,34 +86,16 @@
                 <ul class="treeview-menu {{ Active::pattern('lms/course*', 'menu-open')}}"
                     style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
 
-                    <li  class="{{ Active::pattern('lms/course*') }} " >
-                        <a href="{{ route('lms.course.index') }}">
+                <li  class="{{ Active::pattern('lms/mcQuestion*') }} " >
+                        <a href="{{ route('lms.mcQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.courses.management') }}</span>
+                            <span> {{ trans('labels.lms.mcQuestions.management') }}</span>
                         </a>
                     </li>
-                    <li  class="{{ Active::pattern('lms/game*') }} " >
-                        <a href="{{ route('lms.game.index') }}">
+                    <li   >
+                        <a href="{{ route('lms.mcQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.games.management') }}</span>
-                        </a>
-                    </li>
-                    <li  class="{{ Active::pattern('lms/question*') }} " >
-                        <a href="{{ route('lms.question.index') }}">
-                            <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.questions.management') }}</span>
-                        </a>
-                    </li>
-                    <li  class="{{ Active::pattern('lms/module*') }} " >
-                        <a href="{{ route('lms.module.index') }}">
-                            <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.modules.management') }}</span>
-                        </a>
-                    </li>
-                    <li  class="{{ Active::pattern('lms/lesson*') }} " >
-                        <a href="{{ route('lms.lesson.index') }}">
-                            <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.lessons.management') }}</span>
+                            <span> Fill in the blank Management</span>
                         </a>
                     </li>
                 </ul>
@@ -238,35 +220,16 @@
 
                 <ul class="treeview-menu {{ Active::pattern('lms/*', 'menu-open') }}"
                     style="display: none; {{ Active::pattern('lms/course*', 'display: block;') }}">
-
-                    <li  class="{{ Active::pattern('lms/course*') }} " >
-                        <a href="{{ route('lms.course.index') }}">
+                    <li  class="{{ Active::pattern('lms/mcQuestion*') }} " >
+                        <a href="{{ route('lms.mcQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.courses.management') }}</span>
+                            <span> {{ trans('labels.lms.mcQuestions.management') }}</span>
                         </a>
                     </li>
-                    <li  class="{{ Active::pattern('lms/game*') }} " >
-                        <a href="{{ route('lms.game.index') }}">
+                    <li   >
+                        <a href="{{ route('lms.mcQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.games.management') }}</span>
-                        </a>
-                    </li>
-                    <li  class="{{ Active::pattern('lms/question*') }} " >
-                        <a href="{{ route('lms.question.index') }}">
-                            <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.questions.management') }}</span>
-                        </a>
-                    </li>
-                    <li  class="{{ Active::pattern('lms/module*') }} " >
-                        <a href="{{ route('lms.module.index') }}">
-                            <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.modules.management') }}</span>
-                        </a>
-                    </li>
-                    <li  class="{{ Active::pattern('lms/lesson*') }} " >
-                        <a href="{{ route('lms.lesson.index') }}">
-                            <i class="fa fa-circle-o"></i>
-                            <span> {{ trans('labels.lms.lessons.management') }}</span>
+                            <span> Fill in the blank Management</span>
                         </a>
                     </li>
                 </ul>

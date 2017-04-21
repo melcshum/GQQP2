@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Main;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Hash;
-use App\User;
+use App\Models\Access\User\User;
 use Auth;
 use Illuminate\Support\Facades\Validator;
 use DB;
@@ -38,17 +39,17 @@ class UserController extends Controller
             ->join('users', 'skills.user_id', '=', 'users.id')->where('users.id', '=', Auth::user()->id)
             ->first();
 
-        return view('app.skill', compact('skill'));
+        return view('main.user.skill', compact('skill'));
     }
 
     public function edit($id){
         $row = DB::table('users') -> where('id', $id)->first();
-        return view('config')->with('row', $row);
+        return view('main.user.config')->with('row', $row);
     }
 
     public function index()
     {
-        return view('profile');
+        return view('main.user.profile');
     }
 
     public function changeInfor(){
@@ -57,7 +58,7 @@ class UserController extends Controller
 
     public function rank(){
         $users = DB::table('users')->orderBy('knowledge', 'desc')->get();
-        return view('ranking')->with('users', $users);
+        return view('main.ranking.ranking')->with('users', $users);
     }
 
     public function updateInfor(Request $request){

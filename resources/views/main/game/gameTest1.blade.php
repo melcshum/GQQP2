@@ -61,68 +61,13 @@
 
     </style>
 
-    <title>Learning Java |FYP</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
+@extends("main.layouts.app")
 
-<div id="wrapper">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="" >Game Exam</a>
-        </div>
-        <!-- /.navbar-header -->
-
-        <ul class="nav navbar-top-links navbar-right">
-            <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> joechoy123<i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a data-toggle="modal" data-target="#SignUp"><i class="fa fa-user fa-fw"></i> Leave</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
-        </ul>
-        <!-- /.navbar-top-links -->
-
-        <!-- /.navbar-static-side -->
-    </nav>
-    <div class="container">
+@section('content')
+    <div id="wrapper">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$playQuestionNum]->question_type))!!}</label>    <label>Level:<u>{!!(array_get($mc[$playQuestionNum], 'attributes.question_level'))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label>     </h4></center></pre>
@@ -161,41 +106,41 @@
         <div id="Mainp"class="row">
             <h3><label>{!! Form::label('question_num', $playQuestionNum+1) !!}</label>/2</h3>
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
-            <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
-                <h2>Question</h2>
-                <p><label>{!!(array_get($mc[$playQuestionNum], 'attributes.question'))!!}</label></p>
-                <hr>
-                <h2>Output</h2>
-                <img src="{!! $mc[$playQuestionNum]->photo !!}">
-                <hr>
-                <ol id="hits">
-                    {!! $mc[$playQuestionNum]->hint !!}
-                </ol>
-            </div>
+                <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
+                    <h2>Question</h2>
+                    <p><label>{!!(array_get($mc[$playQuestionNum], 'attributes.question'))!!}</label></p>
+                    <hr>
+                    <h2>Output</h2>
+                    <img src="{!! $mc[$playQuestionNum]->photo !!}">
+                    <hr>
+                    <ol id="hits">
+                        {!! $mc[$playQuestionNum]->hint !!}
+                    </ol>
+                </div>
 
-            <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
-                <h2>Answer</h2>
-                {!!(array_get($mc[$playQuestionNum], 'attributes.program'))!!}
-                <table id="Mc">
-                    {!! Form::open(array('action' => 'TestController@result','method' => 'post')) !!}
-                    <input type="hidden" name="question_num" value={!! $playQuestionNum+1!!}>
-                    <input type="hidden" id='time' name="time" value='0'>
-                    <input type="hidden"  name="totalgold" value={!! $totalgold !!}>
-                    <input type="hidden" id='qtime' name="qtime" value={!! $mc[$playQuestionNum]->time !!}>
-                    <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$playQuestionNum]->question_ans !!}>
-                    <tr>
-                        <td>
-                            <p><input class="item" type="radio" id='a' name="ans" value="a"/>a.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans1'))!!}</p>
-                            <p><input class="item" type="radio" id='b' name="ans" value="b"/>b.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans2'))!!}</p>
-                        </td>
-                        <td>
-                            <p><input class="item" type="radio" id='c' name="ans" value="c"/>c.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans3'))!!}</p>
-                            <p><input class="item" type="radio" id='d' name="ans" value="d"/>d.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans4'))!!}</p>
-                        </td>
-                    </tr>
-                </table>
-                <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
-            </div>
+                <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
+                    <h2>Answer</h2>
+                    {!!(array_get($mc[$playQuestionNum], 'attributes.program'))!!}
+                    <table id="Mc">
+                        {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
+                        <input type="hidden" name="question_num" value={!! $playQuestionNum+1!!}>
+                        <input type="hidden" id='time' name="time" value='0'>
+                        <input type="hidden"  name="totalgold" value={!! $totalgold !!}>
+                        <input type="hidden" id='qtime' name="qtime" value={!! $mc[$playQuestionNum]->time !!}>
+                        <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$playQuestionNum]->question_ans !!}>
+                        <tr>
+                            <td>
+                                <p><input class="item" type="radio" id='a' name="ans" value="a"/>a.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans1'))!!}</p>
+                                <p><input class="item" type="radio" id='b' name="ans" value="b"/>b.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans2'))!!}</p>
+                            </td>
+                            <td>
+                                <p><input class="item" type="radio" id='c' name="ans" value="c"/>c.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans3'))!!}</p>
+                                <p><input class="item" type="radio" id='d' name="ans" value="d"/>d.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans4'))!!}</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
+                </div>
             </div>
         </div>
         <!-- /.row -->
@@ -218,9 +163,9 @@
     </div>
     <!-- /#page-wrapper -->
 
-</div>
-<!-- /#wrapper -->
-
+    </div>
+    <!-- /#wrapper -->
+@endsection
 <!-- jQuery -->
 <script src="../vendor/jquery/jquery.min.js"></script>
 

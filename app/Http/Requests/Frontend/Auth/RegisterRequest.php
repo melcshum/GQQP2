@@ -44,4 +44,6 @@ class RegisterRequest extends Request
             'g-recaptcha-response.required_if' => trans('validation.required', ['attribute' => 'captcha']),
         ];
     }
+
+
 }

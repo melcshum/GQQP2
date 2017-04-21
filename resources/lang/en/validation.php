@@ -164,42 +164,24 @@ return [
         ],
         
         'lms' => [
-            'courses' => [
+            'mcQuestions' => [
                 'active'                  => 'Active',
                 'name'                    => 'Name',
-                'description'             => 'Description',
-                'slug'                    => 'Slug',
-                
-            ],
-
-            'games' => [
-                'active'                  => 'Active',
-                'name'                    => 'Name',
-                'description'             => 'Description',
-                'slug'                    => 'Slug',
-
-            ],
-
-            'modules' => [
-                'active'                  => 'Active',
-                'name'                    => 'Name',
-                'description'             => 'Description',
-                'slug'                    => 'Slug',
-
-            ],
-
-            'questions' => [
-                'active'                  => 'Active',
-                'name'                    => 'Name',
-                'description'             => 'Description',
-                'slug'                    => 'Slug',
-
-            ],
-
-            'lessons' => [
-                'active'                  => 'Active',
-                'name'                    => 'Name',
-                'description'             => 'Description',
+                'question'                => 'Question',
+                'program'                 => 'Program',
+                'hint'                    => 'Hint',
+                'gold'                    => 'Gold',
+                'question_ans'            => 'Question Answer',
+                'mc_ans1'                 => 'Option 1',
+                'mc_ans2'                 => 'Option 2',
+                'mc_ans3'                 => 'Option 3',
+                'mc_ans4'                 => 'Option 4',
+                'knowledge'               => 'Knowledge',
+                'time'                    => 'Time',
+                'photo'                   => 'Output',
+                'question_level'          => 'Question level',
+                'question_type'           => 'Question topic',
+                'type'                    => 'Type of Question',
                 'slug'                    => 'Slug',
 
             ],

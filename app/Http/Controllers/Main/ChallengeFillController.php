@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Main;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use  App\Fullquestion;
+use App\Models\Main\Fullquestion;
 use DB;
 use Auth;
 use Illuminate\Support\Facades\Input;
@@ -20,7 +20,7 @@ class ChallengeFillController extends Controller
         $totalgold = 0;
         $totalknowledge = 0;
 
-        return view('challengefill',compact('totalgold', 'totalknowledge','playnum','fill'));
+        return view('main.challenge.challengefill',compact('totalgold', 'totalknowledge','playnum','fill'));
     }
 
     public function challenge(Request $request){
@@ -40,7 +40,7 @@ class ChallengeFillController extends Controller
             //Session::push('challenge', $totalquestiondetail);
             $totalquestionresult = Session::get('challenge');
             //dd($totalquestionresult);
-            return view ('ChallengeResult', compact('totalquestionresult','totalgold','totaltime'));
+            return view ('main.challenge.ChallengeResult', compact('totalquestionresult','totalgold','totaltime'));
         }
        // dd($playnum);
         $check = $this->checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$playnum);

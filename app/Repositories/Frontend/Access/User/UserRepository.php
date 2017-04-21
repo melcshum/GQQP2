@@ -3,6 +3,7 @@
 namespace App\Repositories\Frontend\Access\User;
 
 use App\Models\Access\User\User;
+use App\Models\Main\Skill;
 use App\Repositories\Repository;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
@@ -78,39 +79,18 @@ class UserRepository extends Repository
      *
      * @return static
      */
-    public function create(array $data, $provider = false)
+    public function create(array $data)
     {
-        $user = self::MODEL;
-        $user = new $user();
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->confirmation_code = md5(uniqid(mt_rand(), true));
-        $user->status = 1;
-        $user->password = $provider ? null : bcrypt($data['password']);
-        $user->confirmed = $provider ? 1 : (config('access.users.confirm_email') ? 0 : 1);
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
 
-        DB::transaction(function () use ($user) {
-            if (parent::save($user)) {
-                /*
-                 * Add the default site role to the new user
-                 */
-                $user->attachRole($this->role->getDefaultUserRole());
-            }
-        });
+        $user->skill = Skill::create([
+            'user_id' => $user -> id
+        ]);
 
-        /*
-         * If users have to confirm their email and this is not a social account,
-         * send the confirmation email
-         *
-         * If this is a social account they are confirmed through the social provider by default
-         */
-        if (config('access.users.confirm_email') && $provider === false) {
-            $user->notify(new UserNeedsConfirmation($user->confirmation_code));
-        }
-
-        /*
-         * Return the user object
-         */
         return $user;
     }
 

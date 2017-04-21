@@ -15,7 +15,7 @@
     Route::get('/profile', 'UserController@index', function($username){
         $user = User::where('name', $username)->firstOrFail();
 
-        return View::make('profile')->with('user', $user);
+        return View::make('main.user.profile')->with('user', $user);
     });
 
     Route::get('/config', 'ConfigController@index');
@@ -27,9 +27,10 @@
     Route::get('/searchQuestion', 'QuestionController@search');
 
     Route::get('/playMenu', function () {
-        return view('menu');
+        return view('main.game.menu');
 
     });
+
     Route::resource('gameTest','TestController');
     Route::post('gameTest', 'TestController@result');
 
@@ -44,82 +45,52 @@
 
     Route::get('/ranking', 'UserController@rank');
 
-    Route::get('/goal', function(){
-        return view('goal');
-    });
-
-    Route::get('/why', function(){
-        return view('why');
-    });
-
-    Route::get('/ranking', 'UserController@rank');
-
-    //Route::get('/gameTest', function () {
-    //    return view('gameTest');
-    //});
-
     Route::get('/rules', function () {
-        return view('rules');
+        return view('main.challenge.rules');
     });
 
-    //Route::get('/challenge', function () {
-    //    return view('challenge');
-    //});
-    Route::get('/skipQuestion', function () {
-        return view('skipQuestion');
-    });
+//    Route::get('/challenge', function () {
+//        return view('main.challenge.challenge');
+//    });
+//    Route::get('/skipQuestion', function () {
+//        return view('main.challenge.skipQuestion');
+//    });
     Route::get('/questionResult', function () {
-        return view('questionResult');
+        return view('main.challenge.questionResult');
     });
+//
+//    Route::get('/mcQuestion', function () {
+//        return view('main.challenge.mcQuestion');
+//    });
+//
+//    Route::get('/mcResult', function () {
+//        return view('main.game.mcResult');
+//    });
 
-    Route::get('/mcQuestion', function () {
-        return view('mcQuestion');
-    });
+//    Route::get('/question20', function () {
+//        return view('main.challenge.question20');
+//    });
 
-    Route::get('/mcResult', function () {
-        return view('mcResult');
-    });
-
-    Route::get('/question20', function () {
-        return view('question20');
-    });
-
-    Route::get('/lastQuestion', function () {
-        return view('lastQuestion');
-    });
+//    Route::get('/lastQuestion', function () {
+//        return view('main.challenge.lastQuestion');
+//    });
 
     Route::post('Result', 'TestController@finish');
 
     Route::get('/tutorial/conditional', function () {
-        return view('ifTutorual');
+        return view('main.tutorial.ifTutorual');
     });
 
-    Route::get('/ranking', 'UserController@rank');
-
     Route::get('/tutorial', function(){
-        return view('tutorialMenu');
+        return view('main.tutorial.tutorialMenu');
     });
 
     Route::get('/tutorial/array', function(){
-        return view('arrayTutorial');
+        return view('main.tutorial.arrayTutorial');
     });
 
     Route::get('/tutorial/loop', function(){
-        return view('loopTutorial');
+        return view('main.tutorial.loopTutorial');
     });
-
-
-    Route::get('/shop', 'ItemController@index')->name('index');
-    Route::post('/shop', 'ItemController@exchangeItem');
-
-
-    Route::get('/goal', function(){
-       return view('goal');
-    });
-
-    Route::get('/why', function(){
-        return view('why');
-    });
-
 
 

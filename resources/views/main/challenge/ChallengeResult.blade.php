@@ -54,7 +54,7 @@
 <body>
 
 
-@extends('layouts.app')
+@extends('main.layouts.app')
 
 @section('content')
     <div id="page-wrapper">

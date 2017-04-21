@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Main;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\User;
 use Auth;
@@ -26,7 +26,7 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        return view('config');
+        return view('main.user.config');
     }
 
 

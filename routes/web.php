@@ -44,3 +44,7 @@ Route::group(['namespace' => 'Lms', 'prefix' => 'lms', 'as' => 'lms.', ], functi
 
     includeRouteFiles(__DIR__.'/Lms/');
 });
+
+Route::group(['namespace' => 'Main', 'as' => 'main.'], function () {
+    includeRouteFiles(__DIR__ . '/Main/');
+});

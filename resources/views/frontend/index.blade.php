@@ -176,7 +176,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-           <a href=" {{link_to_route('main.shop')}}">
+                        <a href="shop">
         <div class="thumbnail"><br>
             <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:60px;"></i>
             <div class="caption">

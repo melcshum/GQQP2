@@ -10,7 +10,7 @@
 
 <body>
 
-@extends("layouts.tutorialBar")
+@extends("main.layouts.tutorialBar")
 
 
 @section('content')
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        {!! Form::open(array('action' => 'TutorialController@show','method' => 'post')) !!}
+                        {!! Form::open(array('action' => 'Main\TutorialController@show','method' => 'post')) !!}
                         <div class="col-lg-12 col-md-12 col-sm-12">
                         <h3 class="page-header">
                             Exercise

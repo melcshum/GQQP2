@@ -10,7 +10,7 @@
 
 <body>
 
-@extends("layouts.tutorialBar")
+@extends("main.layouts.tutorialBar")
 
 
 @section('content')

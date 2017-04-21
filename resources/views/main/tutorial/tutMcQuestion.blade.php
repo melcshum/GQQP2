@@ -100,7 +100,7 @@
 </head>
 
 <body>
-@extends('layouts.app')
+@extends('main.layouts.app')
 
 @section('content')
 
@@ -126,7 +126,7 @@
                 <h2>Answer</h2>
                 {!!(($iftutorial[$tutquestion]->program))!!}
                 <table id="Mc">
-                    {!! Form::open(array('action' => 'TutorialController@show','method' => 'post')) !!}
+                    {!! Form::open(array('action' => 'Main\TutorialController@show','method' => 'post')) !!}
                     <input type="hidden" name="numQ" value={!! $tutquestion !!}>
                     <tr>
                         <td>

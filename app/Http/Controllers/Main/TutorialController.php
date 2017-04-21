@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Main;
 
 use Illuminate\Http\Request;
 
@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Session;
 use DB;
-use App\iftutquestions;
+use App\Models\Main\iftutquestions;
 
 class TutorialController extends Controller
 {
@@ -29,7 +29,7 @@ class TutorialController extends Controller
             }else{
                 $message="Sorry, you are not correct";
             }
-            return view('MctutorialResult', compact('message', 'tureAns','playQuestionNum','playAns','iftutorial','userAns','turntotAns'));
+            return view('main.tutorial.MctutorialResult', compact('message', 'tureAns','playQuestionNum','playAns','iftutorial','userAns','turntotAns'));
         }
         else {
             $tutquestion = 0;
@@ -43,7 +43,7 @@ class TutorialController extends Controller
             //$fill = Fillquestion::all();
             $iftutorial = iftutquestions::all();
             //dd($fill);
-            return view('tutMcQuestion', compact('iftutorial', 'tutquestion'));
+            return view('main.tutorial.tutMcQuestion', compact('iftutorial', 'tutquestion'));
         }
     }
 

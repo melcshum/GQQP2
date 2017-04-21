@@ -88,49 +88,14 @@ return [
             'main'       => 'Roles',
         ],
 
-        'courses' => [
-            'all'             => 'All Courses',
-            'change-password' => 'Change Password',
-            'create'          => 'Create Course',
-            'deactivated'     => 'Deactivated Courses',
-            'deleted'         => 'Deleted Courses',
-            'edit'            => 'Edit Course',
-            'main'            => 'Courses',
-            'view'            => 'View Course',
-        ],
-
-
-        'games' => [
-            'all'             => 'All Games',
-            'change-password' => 'Change Password',
-            'create'          => 'Create Game',
-            'deactivated'     => 'Deactivated Games',
-            'deleted'         => 'Deleted Games',
-            'edit'            => 'Edit Games',
-            'main'            => 'Games',
-            'view'            => 'View Game',
-        ],
-
-
-        'modules' => [
-            'all'             => 'All Modules',
-            'change-password' => 'Change Password',
-            'create'          => 'Create Module',
-            'deactivated'     => 'Deactivated Modules',
-            'deleted'         => 'Deleted Modules',
-            'edit'            => 'Edit Module',
-            'main'            => 'Modules',
-            'view'            => 'View Module',
-        ],
-
-        'questions' => [
+        'mcQuestions' => [
             'all'             => 'All Questions',
             'change-password' => 'Change Password',
             'create'          => 'Create Question',
             'deactivated'     => 'Deactivated Questions',
             'deleted'         => 'Deleted Questions',
             'edit'            => 'Edit Question',
-            'main'            => 'Questions',
+            'main'            => 'MC Questions',
             'view'            => 'View Question',
         ],
 

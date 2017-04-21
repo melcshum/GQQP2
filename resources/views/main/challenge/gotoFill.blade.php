@@ -51,7 +51,7 @@
 </head>
 
 <body>
-@extends('layouts.sidebar')
+@extends('main.layouts.app')
 
 @section('content')
     <div id="wrapper">

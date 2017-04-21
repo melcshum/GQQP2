@@ -16,7 +16,7 @@
 </head>
 
 <body>
-@extends("layouts.app")
+@extends("main.layouts.app")
 
 @section('content')
 
