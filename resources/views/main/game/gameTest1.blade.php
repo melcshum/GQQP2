@@ -60,6 +60,56 @@
         }
 
     </style>
+    
+    <style>
+
+.item {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>button {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>button {
+  border: 1px dashed #444;
+  width: 150px;
+  height: 80px;
+  transition: 500ms all;
+  background-color: WHITE;
+}
+
+input[type=radio]:checked + label>button {
+  transform: 
+    rotateZ(0deg) 
+    rotateX(0deg);
+    background-color: Gold;
+}
+
+/*
+ | //lea.verou.me/css3patterns
+ | Because white bgs are boring.
+*/
+html {
+  background-color: #fff;
+  background-size: 100% 1.2em;
+  background-image: 
+    linear-gradient(
+      90deg, 
+      transparent 79px, 
+      #abced4 79px, 
+      #abced4 81px, 
+      transparent 81px
+    ),
+    linear-gradient(
+      #eee .1em, 
+      transparent .1em
+    );
+}
+</style>
 
 </head>
 
@@ -128,16 +178,17 @@
                         <input type="hidden"  name="totalgold" value={!! $totalgold !!}>
                         <input type="hidden" id='qtime' name="qtime" value={!! $mc[$playQuestionNum]->time !!}>
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$playQuestionNum]->question_ans !!}>
-                        <tr>
-                            <td>
-                                <p><input class="item" type="radio" id='a' name="ans" value="a"/>a.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans1'))!!}</p>
-                                <p><input class="item" type="radio" id='b' name="ans" value="b"/>b.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans2'))!!}</p>
-                            </td>
-                            <td>
-                                <p><input class="item" type="radio" id='c' name="ans" value="c"/>c.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans3'))!!}</p>
-                                <p><input class="item" type="radio" id='d' name="ans" value="d"/>d.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans4'))!!}</p>
-                            </td>
-                        </tr>
+                          <tr>
+                        <td align="right">
+                            <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a"><button type="button" >{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans1'))!!}</button></label></p>
+                            <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans2'))!!}</button></label></p>
+                        </td>
+                        <td align="right">
+                            <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans3'))!!}</button></label></p>
+                            <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d"><button type="button" >{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans4'))!!}</button></label></p>
+                        </td>
+              
+                    </tr>
                     </table>
                     <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
                 </div>

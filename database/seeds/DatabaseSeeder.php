@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(arrayTutorialSeeder::class);
         $this->call(loopTutorialSeeder::class);
 
+
         Model::reguard();
     }
 }
