@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Access\User\Traits\UserSendPasswordReset;
 use App\Models\Access\User\Traits\Attribute\UserAttribute;
 use App\Models\Access\User\Traits\Relationship\UserRelationship;
+use App\Models\Main\Skill;
 
 /**
  * Class User.
@@ -58,4 +59,20 @@ class User extends Authenticatable
         parent::__construct($attributes);
         $this->table = config('access.users_table');
     }
+
+
+    public function skill()
+    {
+        return $this->hasOne(Skill::class);
+    }
+
+    public function question(){
+        return $this->hasMany('App\Question');
+    }
+
+    public function items()
+    {
+        return $this->belongsToMany('App\Item');
+    }
+
 }

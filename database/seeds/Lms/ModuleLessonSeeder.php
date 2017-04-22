@@ -18,6 +18,7 @@ class ModuleLessonSeeder extends Seeder
 
         if (DB::connection()->getDriverName() == 'mysql') {
             DB::table(config('lms.module_lesson_table'))->truncate();
+
         } elseif (DB::connection()->getDriverName() == 'sqlite') {
             DB::statement('DELETE FROM '.config('lms.module_lesson_table'));
         } else {
@@ -26,17 +27,17 @@ class ModuleLessonSeeder extends Seeder
         }
 
         //Attach question to game
-        $module_lesson = config('lms.providers.modules.model');
+        $module_lesson = config('lms.providers.modules.modelB');
         $module_lesson = new $module_lesson();
         $module_lesson::first()->attachLesson(1);
 
         //Attach executive question to executive game
-        $module_lesson = config('lms.providers.modules.model');
+        $module_lesson = config('lms.providers.modules.modelB');
         $module_lesson = new $module_lesson();
         $module_lesson::find(2)->attachLesson(2);
 
         //Attach game question to general game
-        $module_lesson = config('lms.providers.modules.model');
+        $module_lesson = config('lms.providers.modules.modelB');
         $module_lesson = new $module_lesson();
         $module_lesson::find(3)->attachLesson(3);
 
@@ -44,4 +45,5 @@ class ModuleLessonSeeder extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         }
     }
+
 }

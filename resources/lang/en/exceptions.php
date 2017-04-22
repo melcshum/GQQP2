@@ -13,79 +13,18 @@ return [
     |
     */
     'lms' => [
-        'courseS' => [
+        'mcQuestions' => [
             'cant_deactivate_self'  => 'You can not do that to yourself.',
             'cant_delete_self'      => 'You can not delete yourself.',
             'cant_restore'          => 'This course is not deleted so it can not be restored.',
-            'create_error'          => 'There was a problem creating this course. Please try again.',
-            'delete_error'          => 'There was a problem deleting this course. Please try again.',
-            'delete_first'          => 'This course must be deleted first before it can be destroyed permanently.',
-            'email_error'           => 'That email address belongs to a different course.',
-            'mark_error'            => 'There was a problem updating this course. Please try again.',
-            'not_found'             => 'That course does not exist.',
-            'restore_error'         => 'There was a problem restoring this course. Please try again.',
-         
-            'update_error'          => 'There was a problem updating this course. Please try again.', 
-        ],
-
-        'games' => [
-            'cant_deactivate_self'  => 'You can not do that to yourself.',
-            'cant_delete_self'      => 'You can not delete yourself.',
-            'cant_restore'          => 'This games is not deleted so it can not be restored.',
-            'create_error'          => 'There was a problem creating this games. Please try again.',
-            'delete_error'          => 'There was a problem deleting this games. Please try again.',
-            'delete_first'          => 'This games must be deleted first before it can be destroyed permanently.',
-            'email_error'           => 'That email address belongs to a different games.',
-            'mark_error'            => 'There was a problem updating this games. Please try again.',
-            'not_found'             => 'That games does not exist.',
-            'restore_error'         => 'There was a problem restoring this games. Please try again.',
-
-            'update_error'          => 'There was a problem updating this games. Please try again.',
-        ],
-
-        'modules' => [
-            'cant_deactivate_self'  => 'You can not do that to yourself.',
-            'cant_delete_self'      => 'You can not delete yourself.',
-            'cant_restore'          => 'This course is not deleted so it can not be restored.',
-            'create_error'          => 'There was a problem creating this module. Please try again.',
-            'delete_error'          => 'There was a problem deleting this module. Please try again.',
-            'delete_first'          => 'This module must be deleted first before it can be destroyed permanently.',
-            'email_error'           => 'That email address belongs to a different module.',
-            'mark_error'            => 'There was a problem updating this module. Please try again.',
-            'not_found'             => 'That module does not exist.',
-            'restore_error'         => 'There was a problem restoring this module. Please try again.',
-            'update_error'          => 'There was a problem updating this module. Please try again.',
-
-        ],
-
-
-        'questions' => [
-            'cant_deactivate_self'  => 'You can not do that to yourself.',
-            'cant_delete_self'      => 'You can not delete yourself.',
-            'cant_restore'          => 'This course is not deleted so it can not be restored.',
-            'create_error'          => 'There was a problem creating this question. Please try again.',
-            'delete_error'          => 'There was a problem deleting this question. Please try again.',
-            'delete_first'          => 'This question must be deleted first before it can be destroyed permanently.',
+            'create_error'          => 'There was a problem creating this MC question. Please try again.',
+            'delete_error'          => 'There was a problem deleting this MC question. Please try again.',
+            'delete_first'          => 'This MC question must be deleted first before it can be destroyed permanently.',
             'email_error'           => 'That email address belongs to a different question.',
-            'mark_error'            => 'There was a problem updating this question. Please try again.',
-            'not_found'             => 'That question does not exist.',
-            'restore_error'         => 'There was a problem restoring this question. Please try again.',
-            'update_error'          => 'There was a problem updating this question. Please try again.',
-
-        ],
-
-        'lessons' => [
-            'cant_deactivate_self'  => 'You can not do that to yourself.',
-            'cant_delete_self'      => 'You can not delete yourself.',
-            'cant_restore'          => 'This course is not deleted so it can not be restored.',
-            'create_error'          => 'There was a problem creating this lesson. Please try again.',
-            'delete_error'          => 'There was a problem deleting this lesson. Please try again.',
-            'delete_first'          => 'This lesson must be deleted first before it can be destroyed permanently.',
-            'email_error'           => 'That email address belongs to a different question.',
-            'mark_error'            => 'There was a problem updating this lesson. Please try again.',
-            'not_found'             => 'That question does not exist.',
-            'restore_error'         => 'There was a problem restoring this lesson. Please try again.',
-            'update_error'          => 'There was a problem updating this lesson. Please try again.',
+            'mark_error'            => 'There was a problem updating this MC question. Please try again.',
+            'not_found'             => 'That MC question does not exist.',
+            'restore_error'         => 'There was a problem restoring this MC question. Please try again.',
+            'update_error'          => 'There was a problem updating this MC question. Please try again.',
 
         ],
 

@@ -50,34 +50,10 @@ class RouteServiceProvider extends ServiceProvider
          * This allows us to use the Route Model Binding with SoftDeletes on
          * On a model by model basis
          */
-        $this->bind('deletedCourse', function ($value) {
-            $course = new Course();
+        $this->bind('deletedMcQuestion', function ($value) {
+            $mcQuestion = new mcQuestion();
 
-            return Course::withTrashed()->where($course->getRouteKeyName(), $value)->first();
-        });
-
-        $this->bind('deletedGame', function ($value) {
-            $game = new Game();
-
-            return Game::withTrashed()->where($game->getRouteKeyName(), $value)->first();
-        });
-
-        $this->bind('deletedQuestion', function ($value) {
-            $question = new Question();
-
-            return Question::withTrashed()->where($question->getRouteKeyName(), $value)->first();
-        });
-
-        $this->bind('deletedModule', function ($value) {
-            $module = new Module();
-
-            return Game::withTrashed()->where($module->getRouteKeyName(), $value)->first();
-        });
-
-        $this->bind('deletedLesson', function ($value) {
-            $lesson = new Lesson();
-
-            return Game::withTrashed()->where($lesson->getRouteKeyName(), $value)->first();
+            return mcQuestion::withTrashed()->where($mcQuestion->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();
