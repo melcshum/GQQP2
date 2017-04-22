@@ -37,6 +37,9 @@
     Route::resource('ifTutorialQuestion','TutorialController');
     Route::post('ifTutorialQuestion', 'TutorialController@show');
 
+    Route::resource('arrayTutorialQuestion','ArrayTutorialController');
+    Route::post('arrayTutorialQuestion', 'ArrayTutorialController@show');
+
     Route::resource('challenge','ChallengeController');
     Route::post('challenge','ChallengeController@challenge');
 

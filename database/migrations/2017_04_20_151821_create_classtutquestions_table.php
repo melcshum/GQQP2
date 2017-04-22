@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TutorialQuestionTable extends Migration
+class CreateClasstutquestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class TutorialQuestionTable extends Migration
      */
     public function up()
     {
-        Schema::create('iftutquestions', function (Blueprint $table) {
+        Schema::create('classtutquestions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('teacher_id')->nullable();
@@ -41,6 +41,6 @@ class TutorialQuestionTable extends Migration
      */
     public function down()
     {
-        Schema::drop('iftutquestions');
+        Schema::drop('classtutquestions');
     }
 }
