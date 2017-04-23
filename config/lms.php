@@ -21,4 +21,14 @@ return [
 
     ],
 
+    /*-------------------------------------------------*/
+
+    'loopQuestions_table'=> 'looptutquestions',
+
+    'loopQuestion' => loopQuestion::class,
+
+    'loopQuestions' =>[
+
+    ],
+
 ];

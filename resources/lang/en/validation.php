@@ -186,7 +186,7 @@ return [
 
             ],
 
-            'mcQuestions' => [
+            'fillQuestions' => [
                 'active'                  => 'Active',
                 'name'                    => 'Name',
                 'question'                => 'Question',
@@ -205,6 +205,24 @@ return [
                 'question_level'          => 'Question level',
                 'question_type'           => 'Question topic',
                 'type'                    => 'Type of Question',
+                'slug'                    => 'Slug',
+
+            ],
+
+            'loopQuestions' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'question'                => 'Question',
+                'program'                 => 'Program',
+                'question_ans'            => 'Question Answer',
+                'ans1'                    => 'Answer 1',
+                'ans2'                    => 'Answer 2',
+                'ans3'                    => 'Answer 3',
+                'ans4'                    => 'Answer 4',
+                'ans5'                    => 'Answer 5',
+                'photo'                   => 'Output',
+                'question_level'          => 'Question level',
+                'question_type'           => 'Question topic',
                 'slug'                    => 'Slug',
 
             ],

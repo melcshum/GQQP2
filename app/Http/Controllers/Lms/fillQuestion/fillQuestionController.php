@@ -134,11 +134,11 @@ class fillQuestionController extends Controller
 
         }
 //        else{
-//            if(DB::table('mcQuestions')->where('id', '=', $id) ->whereNotNull('photo')){
-//                $path = DB::table('mcQuestions')->where('id', '=', $id) ->pluck('photo');
+//            if(DB::table('fillQuestions')->where('id', '=', $id) ->whereNotNull('photo')){
+//                $path = DB::table('fillQuestions')->where('id', '=', $id) ->pluck('photo');
 //                dd($path);
 //            }else{
-//                return redirect()->route('lms.mcQuestion.edit', $id)->withErrors('Photo is required');
+//                return redirect()->route('lms.fillQuestion.edit', $id)->withErrors('Photo is required');
 //            }
 //        }
 

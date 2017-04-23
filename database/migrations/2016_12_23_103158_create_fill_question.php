@@ -13,7 +13,7 @@ class CreateFillQuestion extends Migration
     public function up()
     {
         Schema::create('fillQuestions', function (Blueprint $table) {
-            $table->increments('question_id');
+            $table->increments('id');
             $table->string('name');
             $table->integer('teacher_id')->nullable();
             $table->string('question_type', 20);

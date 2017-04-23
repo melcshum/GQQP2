@@ -159,8 +159,8 @@ return [
             ],
         ],
 
-    ], 
-    
+    ],
+
     'lms' => [
         'mcQuestions' =>[
             'management'          => 'Questions Management',
@@ -189,38 +189,69 @@ return [
                 'no_deleted'     => 'No Deleted Users',
                 'total'          => 'user total|users total',
             ],
+        ],
 
-            'mcQuestions' =>[
-                'management'          => 'Questions Management',
-                'active'              => 'Active fill in the blank questions',
-                'all_permissions'     => 'All Permissions',
-                'change_password'     => 'Change Password',
-                'change_password_for' => 'Change Password for :fill in the blank question',
-                'create'              => 'Create fill in the blank question',
-                'deactivated'         => 'Deactivated fill in the blank questions',
-                'deleted'             => 'Deleted fill in the blank questions',
-                'edit'                => 'Edit fill in the blank question',
-                'management'          => 'fill in the blank Question Management',
-                'no_permissions'      => 'No Permissions',
-                'no_roles'            => 'No Roles to set.',
-                'permissions'         => 'Permissions',
+        'fillQuestions' =>[
+            'management'          => 'Questions Management',
+            'active'              => 'Active fill in the blank questions',
+            'all_permissions'     => 'All Permissions',
+            'change_password'     => 'Change Password',
+            'change_password_for' => 'Change Password for :fill in the blank question',
+            'create'              => 'Create fill in the blank question',
+            'deactivated'         => 'Deactivated fill in the blank questions',
+            'deleted'             => 'Deleted fill in the blank questions',
+            'edit'                => 'Edit fill in the blank question',
+            'management'          => 'fill in the blank Question Management',
+            'no_permissions'      => 'No Permissions',
+            'no_roles'            => 'No Roles to set.',
+            'permissions'         => 'Permissions',
 
-                'table' => [
-                    'confirmed'      => 'Confirmed',
-                    'created'        => 'Created',
-                    'description'    => 'Description',
-                    'id'             => 'ID',
-                    'last_updated'   => 'Last Updated',
-                    'name'           => 'Name',
-                    'question'       => 'Question',
-                    'no_deactivated' => 'No Deactivated Users',
-                    'no_deleted'     => 'No Deleted Users',
-                    'total'          => 'user total|users total',
-                ],
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'    => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'question'       => 'Question',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'total'          => 'user total|users total',
             ],
 
         ],
-        
+
+        'loopQuestions' =>[
+            'management'          => 'Questions Management',
+            'active'              => 'Active loop questions',
+            'all_permissions'     => 'All Permissions',
+            'change_password'     => 'Change Password',
+            'change_password_for' => 'Change Password for :loop question',
+            'create'              => 'Create loop question',
+            'deactivated'         => 'Deactivated loop questions',
+            'deleted'             => 'Deleted loop questions',
+            'edit'                => 'Edit loop question',
+            'management'          => 'loop Question Management',
+            'no_permissions'      => 'No Permissions',
+            'no_roles'            => 'No Roles to set.',
+            'permissions'         => 'Permissions',
+
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'    => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'question'       => 'Question',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'total'          => 'user total|users total',
+            ],
+
+
+        ],
+
         'access' => [
             'roles' => [
                 'create'     => 'Create Role',

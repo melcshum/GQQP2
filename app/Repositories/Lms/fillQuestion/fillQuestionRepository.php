@@ -56,7 +56,6 @@ class fillQuestionRepository extends Repository
                 config('lms.fillQuestions_table').'.question_level',
                 config('lms.fillQuestions_table').'.question',
                 config('lms.fillQuestions_table').'.program',
-                config('lms.fillQuestions_table').'.question_ans',
                 config('lms.fillQuestions_table').'.ans1',
                 config('lms.fillQuestions_table').'.ans2',
                 config('lms.fillQuestions_table').'.ans3',
@@ -252,12 +251,11 @@ class fillQuestionRepository extends Repository
         $fillQuestion->question_level = $input['question_level'];
         $fillQuestion->question = $input['question'];
         $fillQuestion->program = $input['program'];
-        $fillQuestion->question_ans = $input['question_ans'];
         $fillQuestion->ans1 = $input['ans1'];
         $fillQuestion->ans2 = $input['ans2'];
         $fillQuestion->ans3 = $input['ans3'];
         $fillQuestion->ans4 = $input['ans4'];
-        $fillQuestion->ans4 = $input['ans5'];
+        $fillQuestion->ans5 = $input['ans5'];
         $fillQuestion->knowledge = $input['knowledge'];
         $fillQuestion->gold = $input['gold'];
         $fillQuestion->time = $input['time'];

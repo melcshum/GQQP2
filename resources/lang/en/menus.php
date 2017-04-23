@@ -110,6 +110,17 @@ return [
             'view'            => 'View Question',
         ],
 
+        'loopQuestions' => [
+            'all'             => 'All loop Questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create loop Question',
+            'deactivated'     => 'Deactivated loop Questions',
+            'deleted'         => 'Deleted loop Questions',
+            'edit'            => 'Edit loop Question',
+            'main'            => 'Loop Questions',
+            'view'            => 'View Question',
+        ],
+
 
         'log-viewer' => [
             'main'      => 'Log Viewer',

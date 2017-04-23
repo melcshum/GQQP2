@@ -63,6 +63,11 @@ return [
         'fillQuestion' =>[
             'restore_user'       => 'Restore fill in the blank Question',
             'delete_permanently' => 'Delete Permanently',
+        ],
+
+        'loopQuestion' =>[
+            'restore_user'       => 'Restore loop Question',
+            'delete_permanently' => 'Delete Permanently',
         ]
     ],
 ];

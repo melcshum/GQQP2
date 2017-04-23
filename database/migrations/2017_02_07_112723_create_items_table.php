@@ -19,14 +19,6 @@ class CreateItemsTable extends Migration
             $table->integer('price');
         });
 
-        Schema::create('item_user', function(Blueprint $table){
-            $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->integer('item_id')->unsigned()->index();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
-            $table->foreign('item_id')->references('item_id')->on('items')->onDelete('cascade');;
-        });
     }
 
     /**
@@ -36,7 +28,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('item_user');
         Schema::drop('items');
 
     }

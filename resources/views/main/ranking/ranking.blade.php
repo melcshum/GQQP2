@@ -50,6 +50,9 @@
                                 <tbody>
                                     <?php $index = 1; ?>
                                 @foreach($users as $user)
+                                    @if($user -> id >= 1 && $user -> id <= 3)
+
+                                     @elseif ($user -> knowledge >= 10000)
                                 <input type="hidden" name="id" id="id" value="{{$user->id}}">
                                     <tr>
                                         <td>
@@ -62,7 +65,7 @@
                                             <label>{{$user -> knowledge}}</label>
                                         </td>
                                     </tr>
-
+                                @endif
                                 @endforeach
                                 </tbody>
                             </table>
@@ -81,9 +84,26 @@
                                     <th>Mark</th>
                                 </tr>
                                 </thead>
-
                                 <tbody>
+                                <?php $index = 1; ?>
+                                @foreach($users as $user)
+                                    @if($user -> id >= 1 && $user -> id <= 3)
 
+                                    @elseif ($user -> knowledge < 10000 && $user->knowledge >= 5000)
+                                        <input type="hidden" name="id" id="id" value="{{$user->id}}">
+                                        <tr>
+                                            <td>
+                                                <?= $index; $index++ ?>
+                                            </td>
+                                            <td>
+                                                <label>{{$user -> name}}</label>
+                                            </td>
+                                            <td>
+                                                <label>{{$user -> knowledge}}</label>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -103,7 +123,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php $index = 1; ?>
+                                @foreach($users as $user)
+                                    @if($user -> id >= 1 && $user -> id <= 3)
 
+                                    @elseif ($user -> knowledge < 5000 && $user -> knowledge >= 2500)
+                                        <input type="hidden" name="id" id="id" value="{{$user->id}}">
+                                        <tr>
+                                            <td>
+                                                <?= $index; $index++ ?>
+                                            </td>
+                                            <td>
+                                                <label>{{$user -> name}}</label>
+                                            </td>
+                                            <td>
+                                                <label>{{$user -> knowledge}}</label>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -121,7 +159,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php $index = 1; ?>
+                                @foreach($users as $user)
+                                    @if($user -> id >= 1 && $user -> id <= 3)
 
+                                    @elseif ($user -> knowledge < 2500)
+                                        <input type="hidden" name="id" id="id" value="{{$user->id}}">
+                                        <tr>
+                                            <td>
+                                                <?= $index; $index++ ?>
+                                            </td>
+                                            <td>
+                                                <label>{{$user -> name}}</label>
+                                            </td>
+                                            <td>
+                                                <label>{{$user -> knowledge}}</label>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
