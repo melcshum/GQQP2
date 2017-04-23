@@ -40,6 +40,9 @@
     Route::resource('arrayTutorialQuestion','ArrayTutorialController');
     Route::post('arrayTutorialQuestion', 'ArrayTutorialController@show');
 
+    Route::resource('loopTutorialQuestion','LoopTutorialController');
+    Route::post('loopTutorialQuestion', 'LoopTutorialController@show');
+
     Route::resource('challenge','ChallengeController');
     Route::post('challenge','ChallengeController@challenge');
 

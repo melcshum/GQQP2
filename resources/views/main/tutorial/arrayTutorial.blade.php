@@ -123,8 +123,8 @@ double myList[];   // works but not preferred way.</pre>
                                                 <p class="pull-right">
                                                     <span class="glyphicon glyphicon-star"></span>
                                                     <span class="glyphicon glyphicon-star"></span>
-                                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
                                                     <span class="glyphicon glyphicon-star-empty"></span>
                                             </div>
                                             </p>

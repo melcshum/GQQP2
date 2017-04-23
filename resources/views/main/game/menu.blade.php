@@ -274,7 +274,7 @@
                                     <td colspan="3"> <h4>Topic 1 If and Else</h4></td>
                                 </tr>
                                 <tr>
-                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation" class="btn btn-primary" role="button">Play</td>
+                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation1" class="btn btn-primary" role="button">Play</td>
                                     <td align="center" valign="bottom"><button id=Topic1 class="btn btn-primary">Show Information</button></td>
                                     <td align="right" valign="bottom"><//img src="./images/Lock.jpg" height="40" width="40">
                                     </td>
@@ -297,7 +297,7 @@
                                     <td colspan="3">     <h4>Topic 2 Array</h4></td>
                                 </tr>
                                 <tr>
-                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation" class="btn btn-primary" role="button">Play</td>
+                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation2" class="btn btn-primary" role="button">Play</td>
                                     <td align="center" valign="bottom"><button id=Topic2 class="btn btn-primary">Show Information</button></td>
                                     <td align="right" valign="bottom"> <//img src="./images/Unloack.jpg" height="40" width="40">
                                     </td>
@@ -307,28 +307,6 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="thumbnail" >
-                            <div class="caption"  style="overflow:hidden; height:100%">
-                                     <table cellpadding="0" cellspacing="0" style="height:100%;" border="0" width="100%">
-                                    <tr>
-                                        <td colspan="3" align="center">
-                                          <img src="./images/Symbol.png" alt='Thumbnail3' class="img-thumbnail img-responsive" width="120px" height="120px"/>
-                                         </td>
-                                         </tr>
-                                    <tr>
-                                    <td colspan="3"> <h4>Topic 3 Control Characters</h4></td>
-                                </tr>
-                                <tr>
-                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation" class="btn btn-primary" role="button">Play</td>
-                                    <td align="center" valign="bottom"><button id=Topic3 class="btn btn-primary">Show Information</button></td>
-                                    <td align="right" valign="bottom"> <//img src="./images/Lock.jpg" height="40" width="40">
-                                    </td>
-                                </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="thumbnail">
                             <div class="caption"  style="overflow:hidden; height:100%">
                                         <table cellpadding="0" cellspacing="0" style="height:100%;" border="0" width="100%">
@@ -338,10 +316,10 @@
                                          </td>
                                          </tr>
                                     <tr>
-                                    <td colspan="3"> <h4>Topic 3 Control Characters</h4></td>
+                                    <td colspan="3"> <h4>Topic 3 Loop</h4></td>
                                 </tr>
                                 <tr>
-                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation" class="btn btn-primary" role="button">Play</td>
+                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation3" class="btn btn-primary" role="button">Play</td>
                                     <td align="center" valign="bottom"><button id=Topic3 class="btn btn-primary">Show Information</button></td>
                                     <td align="right" valign="bottom"> <//img src="./images/Lock.jpg" height="40" width="40">
                                     </td>
@@ -351,30 +329,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="thumbnail">
-                            <div class="caption"  style="overflow:hidden; height:100%">
-                                        <table cellpadding="0" cellspacing="0" style="height:100%;" border="0" width="100%">
-                                    <tr>
-                                        <td colspan="3" align="center">
-                                          <img src="./images/Symbol.png" alt='Thumbnail3' class="img-thumbnail img-responsive" width="120px" height="120px"/>
-                                         </td>
-                                         </tr>
-                                    <tr>
-                                    <td colspan="3"> <h4>Topic 3 Control Characters</h4></td>
-                                </tr>
-                                <tr>
-                                    <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation" class="btn btn-primary" role="button">Play</td>
-                                    <td align="center" valign="bottom"><button id=Topic3 class="btn btn-primary">Show Information</button></td>
-                                    <td align="right" valign="bottom"> <//img src="./images/Lock.jpg" height="40" width="40">
-                                    </td>
-                                </tr>
-                                </table>
-\
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
             <!-- /.row -->
@@ -384,24 +338,8 @@
     </div>
     <!-- /#wrapper -->
 
-    <div class="modal fade" id="question_type" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Send Question</h4>
-                </div>
-                <div class="modal-body">
-                    <p><h4>Please choose the type</h4></p>
-                    <a href="question-LQ.html"><button type="button" class="btn btn-info" id="LQ" name="LQ">Long Question</button></a>
-                    <a href="question-MC.html"><button type="button" class="btn btn-success" id="MC" name="MC">Multiple Choice</button></a>
-                    <a href="question-FILL.html"><button type="button" class="btn btn-primary" id="Filling" name="Filling">Filling</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade" id="Explanation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="Explanation1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -410,11 +348,55 @@
                 </div>
                 <div class="modal-body">
                     <p><h4>How to play?</h4></p>
-
                     <p>This game contain 20 questions. If you cannot complete the question in time,it takes 0 marks.<b>(when the level is high, it will more time)</b>
                          This mode can get Gold to buy item(Tips) in shop, it can help you solve some problem.</p>
-                    <a href="/gameTest"><button type="button" class="btn btn-success" id="MC" name="MC">Start</button></a>
+                </div>
+                    <div class="modal-footer">
+                        {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
+                        <button type="submit" name="1" id="1" class="btn btn-primary" style="float: right;" value="if_else">Play</button>
+                        {!! Form::close() !!}
+                    </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal fade" id="Explanation2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Explanation</h4>
+                </div>
+                <div class="modal-body">
+                    <p><h4>How to play?</h4></p>
+                    <p>This game contain 20 questions. If you cannot complete the question in time,it takes 0 marks.<b>(when the level is high, it will more time)</b>
+                        This mode can get Gold to buy item(Tips) in shop, it can help you solve some problem.</p>
+                </div>
+                <div class="modal-footer">
+                    {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
+                    <button type="submit" name="1" id="1" class="btn btn-primary" style="float: right;" value="array">Play</button>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Explanation3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Explanation</h4>
+                </div>
+                <div class="modal-body">
+                    <p><h4>How to play?</h4></p>
+                    <p>This game contain 20 questions. If you cannot complete the question in time,it takes 0 marks.<b>(when the level is high, it will more time)</b>
+                        This mode can get Gold to buy item(Tips) in shop, it can help you solve some problem.</p>
+                </div>
+                <div class="modal-footer">
+                    {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
+                    <button type="submit" name="1" id="1" class="btn btn-primary" style="float: right;" value="loop">Play</button>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

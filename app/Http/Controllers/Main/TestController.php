@@ -20,25 +20,38 @@ class TestController extends Controller
     private $totalgold;
     public function __construct()
     {
-        $this->mc = McQuestion::all();
+        //$this->mc = McQuestion::all();
         $this->totalgold = 0;
     }
 
-    public function index(){ //set all need infor
+    public function index(Request $request){ //set all need infor
         //$totalquestion = [1,2,3,4,5];
         //$arrayList[0] = ['name' => 'Desk' ,'price' => 100];
         //$arrayList[1] = ['name' => 'Joe' ,'price' => 90];
         //dd($arrayList[0]['name']);
         //dd($this->fill);
-        $playQuestionNum = 0;
-        $mc = $this->mc;
-        $totalgold = $this->totalgold;
-        Session::forget('abc');//clear session abc
-        return view('main.game.gameTest1', compact('mc','playQuestionNum','totalgold'));
+
+
     }
 
     public function result(Request $request){
-        $mc = $this->mc;
+        if(Input::get('1')) {
+            $type = Input::get('1');
+            $playQuestionNum = 0;
+            //$mc = $this->mc;
+            $mc = DB::table('mcquestions')->where('question_type', $type)->get();
+            $random = $this->randomNumber(count($mc));
+            //dd($random);
+            $totalgold = $this->totalgold;
+            Session::forget('abc');//clear session abc
+            Session::forget('random');
+            Session::push('random',$random);
+            $random = Session::get('random')[0][$playQuestionNum];
+            //dd(Session::get('random')[0][0]);
+            return view('main.game.gameTest1', compact('mc', 'playQuestionNum', 'totalgold','type','random'));
+        }
+        $type = Input::get('type');
+        $mc = DB::table('mcquestions')->where('question_type', $type)->get();
         $mc_num = count($mc);//count the all question
         $playQuestionNum = $request->input('question_num');
         if(Input::get('Next_question')){//view button in question result
@@ -53,17 +66,19 @@ class TestController extends Controller
         $playQuestionNum = $request->input('question_num');//get the number of now do question number
         $this->totalgold= $this->totalgold+$request->input('totalgold');//set the totalgold
         $totalgold = $this->totalgold;//set the totalgold
-        $mc = $this->mc;
-        //$questionResult = [['']];
-        return view('main.game.gameTest1',compact('mc','playQuestionNum','totalgold'));
+        $mc = DB::table('mcquestions')->where('question_type', $type)->get();
+            $random = Session::get('random')[0][$playQuestionNum];
+            $type = Input::get('type');
+        return view('main.game.gameTest1',compact('mc','playQuestionNum','totalgold','random','type'));
         }
 
-        $mc = $this->mc;
+        $mc = DB::table('mcquestions')->where('question_type', $type)->get();
         //dd(Auth::user()->id);
+
         $time = $request->input('time');
         $playQuestionNum = $request->input('question_num')-1;//which questionNum
-
-        $tureAns = $this->getDbAns(($mc[$playQuestionNum]['attributes']['question_ans']), $playQuestionNum);//the mc ans
+        $random = Session::get('random')[0][$playQuestionNum];
+        $tureAns = $this->getDbAns(($mc[$random]->question_ans), $random,$type);//the mc ans
         if (Input::get('skip')) {//if user click skip button
             $this->totalgold= $this->totalgold+$request->input('totalgold');//set the totalgold
             $totalgold = $this->totalgold;//set the totalgold
@@ -71,16 +86,19 @@ class TestController extends Controller
             $ans = "you skip the question";
             $gold = 0;
             $time = 0;
+            $type = Input::get('type');
+            $random = Session::get('random')[0][$playQuestionNum];
             $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<i>skip</i>','Gold' =>$gold,'Finish Time' =>$time];
             Session::push('abc',$totalquestiondetail);
-            return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold'));
+            return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','type','random'));
 
         } elseif (Input::get('next')) { // if user choose answer the question and click next
+            //dd(Session::get('random')[0][$playQuestionNum]);
             $playAns = $request->input('ans');//player choose ans
             $this->totalgold= $this->totalgold+$request->input('totalgold');//set the totalgold
             $totalgold = $this->totalgold;//set the totalgold
-            if ($playAns == $mc[$playQuestionNum]['attributes']['question_ans']) {
-                $gold = ($mc[$playQuestionNum]['attributes']['gold']);
+            if ($playAns == $mc[$random]->question_ans) {
+                $gold = ($mc[$random]->gold);
                 $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => 'Ture','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
             } else {
@@ -89,17 +107,25 @@ class TestController extends Controller
                 Session::push('abc',$totalquestiondetail);
             }
             if ($playAns == 'a') {
-                $ans = ($mc[$playQuestionNum]['attributes']['mc_ans1']);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold'));
+                $type = Input::get('type');
+                $random = Session::get('random')[0][$playQuestionNum];
+                $ans = ($mc[$random]->mc_ans1);
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type'));
             } elseif ($playAns == 'b') {
-                $ans = ($mc[$playQuestionNum]['attributes']['mc_ans2']);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold'));
+                $type = Input::get('type');
+                $random = Session::get('random')[0][$playQuestionNum];
+                $ans = ($mc[$random]->mc_ans2);
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold', 'random','type'));
             } elseif ($playAns == 'c') {
-                $ans = ($mc[$playQuestionNum]['attributes']['mc_ans3']);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold'));
+                $type = Input::get('type');
+                $random = Session::get('random')[0][$playQuestionNum];
+                $ans = ($mc[$random]->mc_ans3);
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type'));
             } elseif ($playAns == 'd') {
-                $ans = ($mc[$playQuestionNum]['attributes']['mc_ans4']);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold'));
+                $type = Input::get('type');
+                $random = Session::get('random')[0][$playQuestionNum];
+                $ans = ($mc[$random]->mc_ans4);
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type'));
             }
             //if(Input::get('ship')) {
             //    return "Yes";
@@ -117,16 +143,16 @@ class TestController extends Controller
         }
     }
 
-    public function getDbAns($answer,$num){
-        $mc = $this->mc;
+    public function getDbAns($answer,$num,$type){
+        $mc = DB::table('mcquestions')->where('question_type', $type)->get();;
         if($answer=='a'){
-            $qAns=($mc[$num]['attributes']['mc_ans1']);
+            $qAns=($mc[$num]->mc_ans1);
         }elseif ($answer=='b'){
-            $qAns=($mc[$num]['attributes']['mc_ans2']);
+            $qAns=($mc[$num]->mc_ans2);
         }elseif($answer=='c'){
-            $qAns=($mc[$num]['attributes']['mc_ans3']);
+            $qAns=($mc[$num]->mc_ans3);
         }elseif($answer=='d'){
-            $qAns=($mc[$num]['attributes']['mc_ans4']);
+            $qAns=($mc[$num]->mc_ans4);
         }
         return $qAns;
     }
@@ -156,5 +182,11 @@ class TestController extends Controller
            ->update(array('gold'=>$gold));
         //$project->update($input);
         return 'nice';
+    }
+
+    public function randomNumber($total){
+        $random = range(0,$total-1);
+        shuffle($random);
+        return (array_slice($random, 0 ,$total));
     }
 }

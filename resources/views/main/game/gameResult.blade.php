@@ -98,95 +98,29 @@
     <div class="container">
 
         <div id="Mainp"class="row">
-            <h3><label>{!! $playQuestionNum+1!!}</label>/20</h3>
-            <pre><h4>Question: {!!(array_get($mc[$playQuestionNum], 'attributes.question'))!!}</h4></pre>
+            <h3><label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}</h3>
+            <pre><h4>Question: {!!($mc[$random]->question)!!}</h4></pre>
             <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
                 <h2>Your Answer</h2>
-                {!!(array_get($mc[$playQuestionNum], 'attributes.program'))!!}
+                {!!($mc[$random]->program)!!}
                 {!!$playAns!!}.{!!$ans!!}
             </div>
 
             <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
                 <h2>Correct Answer</h2>
-                {!!(array_get($mc[$playQuestionNum], 'attributes.question_ans'))!!}.{!!($tureAns)!!}
-                {!!(array_get($mc[$playQuestionNum], 'attributes.program'))!!}
+                {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
+                {!!($mc[$random]->program)!!}
             </div>
         </div>
         <!-- /.row -->
     </div>
     <div class="container">
-        <ul class="nav" id="side-menu">
-
-            <li>
-                <a href="#" class="btn" style="float: left;">01</a>
-            </li>
-
-            <li>
-                <a href="q2.html" class="btn active" style="float: left;">02</a>
-            </li>
-            <li>
-                <a href="q3.html" class="btn" style="float: left;">03</a>
-            </li>
-
-            <li>
-                <a href="q4.html" class="btn" style="float: left;">04</a>
-            </li>
-            <li>
-                <a href="q5.html" class="btn" style="float: left;">05</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">06</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">07</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">08</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">09</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">10</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">11</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">12</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">13</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">14</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">15</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">16</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">17</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">18</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">19</a>
-            </li>
-            <li>
-                <a href="#" class="btn" style="float: left;">20</a>
-            </li>
-            <li>
                 {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
                 <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
                 <input type="hidden" name="question_num" value={!! $playQuestionNum+=1!!}>
                 <input type="hidden" name="totalgold" value={!!$totalgold+$gold!!}>
+                <input type="hidden" name="type" value={!!$type!!}>
                 {!! Form::close() !!}
-            </li>
-        </ul>
     </div>
     <!-- /#page-wrapper -->
 
