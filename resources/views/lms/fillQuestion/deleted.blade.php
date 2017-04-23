@@ -75,7 +75,7 @@
                 var linkURL = $(this).attr("href");
                 swal({
                     title: "{{ trans('strings.backend.general.are_you_sure') }}",
-                    text: "{{ trans('strings.lms.fillQuestions.delete_FillQuestion_confirm') }}",
+                    text: "{{ trans('strings.lms.fillQuestions.delete_fillQuestion_confirm') }}",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",

@@ -13,7 +13,7 @@ class FillQuestionSeeder extends Seeder
     {
         DB::table('fillQuestions')->delete();
 
-        $fillquestions = array(['question_id'=>1, 'name'=>"Q1",'teacher_id'=>1, 'question_type'=>'class','question_level'=>3,'question'=>'Create Hello class and have a main class to print "Hello class":'
+        $fillquestions = array(['id'=>1, 'name'=>"Q1",'teacher_id'=>1, 'question_type'=>'class','question_level'=>3,'question'=>'Create Hello class and have a main class to print "Hello class":'
             ,'program'=>'<pre>public class 1.<input type="text" id="ans1" name="ans1">{
 	public 2. <input type="text" id="ans2" name="ans2"> 3.<input type="text" id="ans3" name="ans3"> 4.<input type="text" id="ans4" name="ans4">(String [] args){
 		5.<input type="text" id="ans5" name="ans5">.print("Hello class");

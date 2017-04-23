@@ -20,10 +20,16 @@ return [
             'restore_mcQuestion_confirm' => 'Restore this mc Question to its original state?',
         ],
 
-        'mcQuestions' => [
-            'delete_mcQuestion_confirm'  => 'Are you sure you want to delete this fill in the blank Question permanently? Anywhere in the application that references this fill in the blank Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
+        'fillQuestions' => [
+            'delete_fillQuestion_confirm'  => 'Are you sure you want to delete this fill in the blank Question permanently? Anywhere in the application that references this fill in the blank Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_mcQuestion_confirm' => 'Restore this fill in the blank Question to its original state?',
+            'restore_fillQuestion_confirm' => 'Restore this fill in the blank Question to its original state?',
+        ],
+
+        'loopQuestions' => [
+            'delete_loopQuestion_confirm'  => 'Are you sure you want to delete this loop Question permanently? Anywhere in the application that references this loop Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_loopQuestion_confirm' => 'Restore this loop Question to its original state?',
         ],
 
 

@@ -53,5 +53,15 @@ return [
             'updated'             => 'The fill in the blank question was successfully updated.',
 
         ],
+
+        'loopQuestions' => [
+
+            'created'             => 'The loop question was successfully created.',
+            'deleted'             => 'The loop question was successfully deleted.',
+            'deleted_permanently' => 'The loop question was deleted permanently.',
+            'restored'            => 'The loop question was successfully restored.',
+            'updated'             => 'The loop question was successfully updated.',
+
+        ],
     ],
 ];

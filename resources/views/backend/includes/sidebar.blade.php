@@ -98,6 +98,7 @@
                             <span> {{ trans('labels.lms.fillQuestions.management') }}</span>
                         </a>
                     </li>
+<<<<<<< HEAD
                     <li  class="{{ Active::pattern('lms/iftutorialQuestion*') }} " >
                         <a href="{{ route('lms.iftutorialQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
@@ -108,6 +109,12 @@
                         <a href="{{ route('lms.arrayQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
                             <span> {{ trans('labels.lms.arrayQuestions.management') }}</span>
+=======
+                    <li  class="{{ Active::pattern('lms/loopQuestion*') }} " >
+                        <a href="{{ route('lms.loopQuestion.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.loopQuestions.management') }}</span>
+>>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
                         </a>
                     </li>
                 </ul>
@@ -244,6 +251,7 @@
                             <span> {{ trans('labels.lms.fillQuestions.management') }}</span>
                         </a>
                     </li>
+<<<<<<< HEAD
                     <li  class="{{ Active::pattern('lms/iftutorialQuestion*') }} " >
                         <a href="{{ route('lms.iftutorialQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
@@ -254,6 +262,12 @@
                         <a href="{{ route('lms.arrayQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
                             <span> {{ trans('labels.lms.arrayQuestions.management') }}</span>
+=======
+                    <li  class="{{ Active::pattern('lms/loopQuestion*') }} " >
+                        <a href="{{ route('lms.loopQuestion.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.loopQuestions.management') }}</span>
+>>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
                         </a>
                     </li>
                 </ul>

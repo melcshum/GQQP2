@@ -110,6 +110,7 @@ return [
             'view'            => 'View Question',
         ],
 
+<<<<<<< HEAD
         'iftutorialQuestions' => [
             'all'             => 'All if tutorial Questions',
             'change-password' => 'Change Password',
@@ -131,6 +132,19 @@ return [
             'main'            => 'Array Questions',
             'view'            => 'View Question',
         ],
+=======
+        'loopQuestions' => [
+            'all'             => 'All loop Questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create loop Question',
+            'deactivated'     => 'Deactivated loop Questions',
+            'deleted'         => 'Deleted loop Questions',
+            'edit'            => 'Edit loop Question',
+            'main'            => 'Loop Questions',
+            'view'            => 'View Question',
+        ],
+
+>>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
 
         'log-viewer' => [
             'main'      => 'Log Viewer',

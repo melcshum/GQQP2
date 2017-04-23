@@ -52,25 +52,6 @@
                 </div><!--form control-->
 
                 <div class="form-group">
-                    {{ Form::label('question_ans', trans('validation.attributes.lms.fillQuestions.question_ans'), ['class' => 'col-lg-2 control-label']) }}
-
-                    <div class="col-lg-10">
-                        {{ Form::select('question_ans', array(
-                            'a' => 'a',
-                            'b' => 'b',
-                            'c' => 'c',
-                            'd' => 'd',
-                            ),
-                                null,
-                                ['placeholder' => 'select the right answer']
-                            )
-
-                        }}
-
-                    </div><!--col-lg-10-->
-                </div><!--form control-->
-
-                <div class="form-group">
                     {{ Form::label('ans1', trans('validation.attributes.lms.fillQuestions.ans1'), ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">

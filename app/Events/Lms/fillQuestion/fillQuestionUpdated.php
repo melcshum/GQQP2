@@ -13,7 +13,7 @@ class fillQuestionUpdated
 {
     use SerializesModels;
 
-    public $mcQuestion;
+    public $fillQuestion;
 
     public function __construct($fillQuestion)
     {

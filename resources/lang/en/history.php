@@ -55,5 +55,15 @@ return [
              'reactivated'         => 'reactivated fill in the blank question',
              'restored'            => 'restored fill in the blank question',
          ],
+
+         'loopQuestions' => [
+             'created'             => 'created loop question',
+             'deactivated'         => 'deactivated loop question',
+             'deleted'             => 'deleted loop question',
+             'permanently_deleted' => 'permanently deleted loop question',
+             'updated'             => 'updated loop question',
+             'reactivated'         => 'reactivated loop question',
+             'restored'            => 'restored loop question',
+         ],
     ],
 ];

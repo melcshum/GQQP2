@@ -47,6 +47,7 @@ class EventServiceProvider extends ServiceProvider
          * Lms Subscribers
          */
        \App\Listeners\Lms\mcQuestion\mcQuestionEventListener::class,
+        \App\Listeners\Lms\loopQuestion\loopQuestionEventListener::class,
     ];
 
     /**
