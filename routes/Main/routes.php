@@ -55,6 +55,9 @@
         return view('main.challenge.rules');
     });
 
+Route::resource('challengeMCChange','ChallengeController@checkAjax');
+Route::post('challengeMCChange', 'ChallengeController@checkAjax');
+
 //    Route::get('/challenge', function () {
 //        return view('main.challenge.challenge');
 //    });

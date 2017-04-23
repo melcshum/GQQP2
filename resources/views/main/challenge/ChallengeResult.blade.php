@@ -74,27 +74,41 @@
                         <th>Question</th>
                         <th>Result</th>
                         <th>Gold</th>
+                        <th>Knowledge</th>
                         <th>Finish Time</th>
                     </tr>
                     <tbody>
-                    @for($i=0;$i<count($totalquestionresult);$i++)
+                    @for($i=0;$i<count($totalquestionMCresult);$i++)
                         <tr>
-                            <td>{!! $totalquestionresult[$i][$i]['Question'] !!}</td>
-                            <td>{!! $totalquestionresult[$i][$i]['Result'] !!}</td>
-                            <td>{!! $totalquestionresult[$i][$i]['Gold'] !!}</td>
-                            <td>{!! intval($totalquestionresult[$i][$i]['Finish Time']/60) !!}:{!! $totalquestionresult[$i][$i]['Finish Time']%60 !!}</td>
+                            <td>{!! $totalquestionMCresult[$i][$i]['Question'] !!}</td>
+                            <td>{!! $totalquestionMCresult[$i][$i]['Result'] !!}</td>
+                            <td>{!! $totalquestionMCresult[$i][$i]['Gold'] !!}</td>
+                            <td>{!! $totalquestionMCresult[$i][$i]['Knowledge'] !!}</td>
+                            <td>{!! intval($totalquestionMCresult[$i][$i]['Finish Time']/60) !!}:{!! $totalquestionMCresult[$i][$i]['Finish Time']%60 !!}</td>
+                        </tr>
+                        <tr>
+                            <td>{!! $totalquestionresult[0][0]['Question'] !!}</td>
+                            <td>{!! $totalquestionresult[0][0]['Result'] !!}</td>
+                            <td>{!! $totalquestionresult[0][0]['Gold'] !!}</td>
+                            <td>{!! $totalquestionresult[0][0]['Knowledge'] !!}</td>
+                            <td>{!! intval($totalquestionresult[0][0]['Finish Time']/60) !!}:{!! $totalquestionMCresult[0][0]['Finish Time']%60 !!}</td>
                         </tr>
 
                     @endfor
                     <tr>
-                        <td colspan="4">
-                            <center>Total Gold:{!! $totalgold !!}</center>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="5">
+                            <center>Total Gold{!! $totalGold !!}
+                        </center>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="4">
-                            <center>Total Time:{!! intval($totaltime/60) !!}:{!! $totaltime%60 !!}</center>
+
                         </td>
                     </tr>
                     </tbody>

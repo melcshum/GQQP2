@@ -17,53 +17,63 @@ class ChallengeController extends Controller
 {
     public function index(){
         $playNumber = 0;
-        $mc = Mcquestion::all();
+        $mc = DB::table('mcquestions')->where('status',1)->get();
+        $random = $this->randomNumber(count($mc));
         $fill = Fullquestion::all();//
         $totalgold = 0;
         $totalknowledge = 0;
-        $totalquestion2 = count($fill) + count($mc);
+        $totalquestion2 = count($fill) + count($mc);//all mc+fill question
         Session::forget('challenge');
-        return view('main.challenge.challengemode',compact('totalgold', 'totalknowledge','playNumber','mc','fill','totalquestion2'));
+        Session::forget('challengeFill');
+        Session::forget('ChallengeRandom');
+        Session::forget('ChallengeFillRandom');
+        Session::push('ChallengeRandom',$random);
+        $random = Session::get('ChallengeRandom')[0][$playNumber];
+        return view('main.challenge.challengemode',compact('totalgold', 'totalknowledge','playNumber','mc','totalquestion2','random'));
     }
     public function challenge (Request $request)
     {
         $playNumber = $request->input('question_num')+1;
-        $mc = Mcquestion::all();
+        $mc = DB::table('mcquestions')->where('status',1)->get();
 
 
         if (Input::get('next')) {
-            $mc = Mcquestion::all();//get MCquestion database
+            $mc = DB::table('mcquestions')->where('status',1)->get();//get MCquestion database
             $UserTime = $request->input('qtime');//User finish Time
             $QuestionTime = $request->input('time');//Question finish Time
             $totalgold = $request->input('totalgold');//get the totalgold in all Challenge
             $totalknowledge = $request->input('totalknowledge');//get the totalknowledge in all Challenge
             $playNumber = $request->input('question_num');//get now finish question no.
+            $random = Session::get('ChallengeRandom')[0][$playNumber];
             $playAns = $request->input('ans');//get User play Ans
             $trueAns = $request->input('trueAns');
             if ($this->checkTureFlase($playAns, $trueAns)) {
-                $gold = ($mc[$playNumber]['attributes']['gold']);
-                $knowledge = ($mc[$playNumber]['attributes']['knowledge']);
+                $gold = ($mc[$random]->gold);
+                $knowledge = ($mc[$random]->knowledge);
                 $totalgold = $totalgold + $gold;
                 $totalknowledge = $totalknowledge + $knowledge;
                 $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'True', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
-                Session::push('main.challenge.challenge', $totalquestiondetail);
+                Session::push('challenge', $totalquestiondetail);
                 $playNumber++;
                 if($this->checkEnd($playNumber)) {
                     return view ($this->goPage());
                 }
-                return view('main.challenge.challengemode', compact('mc', 'totalgold', 'totalknowledge', 'playNumber'));
+                $random = Session::get('ChallengeRandom')[0][$playNumber];
+                return view('main.challenge.challengemode', compact('mc', 'totalgold', 'totalknowledge', 'playNumber','random'));
 
             }else{
-                $gold = ($mc[$playNumber]['attributes']['gold']);
-                $knowledge = ($mc[$playNumber]['attributes']['knowledge']);
+                $random = Session::get('ChallengeRandom')[0][$playNumber];
+                $gold = 0;
+                $knowledge = 0;
                 $totalgold = $totalgold + $gold;
                 $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'False', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
-                Session::push('main.challenge.challenge', $totalquestiondetail);
+                Session::push('challenge', $totalquestiondetail);
                 $playNumber++;
                 if($this->checkEnd($playNumber)) {
                     return view ($this->goPage());
                 }
-                return view('main.challenge.challengemode', compact('mc', 'totalgold', 'totalknowledge', 'playNumber'));
+                $random = Session::get('ChallengeRandom')[0][$playNumber];
+                return view('main.challenge.challengemode', compact('mc', 'totalgold', 'totalknowledge', 'playNumber','random'));
             }
 
 
@@ -90,13 +100,15 @@ class ChallengeController extends Controller
             $totalgold += $gold;
             $totalknowledge += $knowledge;
             $playNumber = $request->input('question_num');
+            $random = Session::get('ChallengeRandom')[0][$playNumber];
             $totalquestiondetail[$playNumber]=['Question' => $playNumber+1 ,'Result' => '<i>skip</i>','Gold' =>$gold,'Knowledge'=>$knowledge,'Finish Time' =>0];
-            Session::push('main.challenge.challenge',$totalquestiondetail);
+            Session::push('challenge',$totalquestiondetail);
             $playNumber++;
             if($this->checkEnd($playNumber)) {
                 return view ($this->goPage());
             }
-            return view('main.challenge.challengemode', compact('mc', 'totalgold', 'totalknowledge', 'playNumber'));
+            $random = Session::get('ChallengeRandom')[0][$playNumber];
+            return view('main.challenge.challengemode', compact('mc', 'totalgold', 'totalknowledge', 'playNumber','random'));
         }
 
 
@@ -115,8 +127,8 @@ class ChallengeController extends Controller
     }
     public function checkEnd($playNumber){
         $End = "";
-        $mc = Mcquestion::all();
-        if ($playNumber >= count($mc)) {
+        $mc =DB::table('mcquestions')->where('status',1)->get();
+        if ($playNumber == count($mc)) {
             $End = True;
         }else {
             $End = False;
@@ -127,5 +139,23 @@ class ChallengeController extends Controller
 
     public function goPage(){
         return ("main.challenge.gotoFill");
+    }
+
+    public function checkAjax(Request $request){
+//       return "abc";
+        $mc = DB::table('mcquestions')->where('status',1)->get();
+        $mcquestion = $mc[1];
+        //dd($mc[1]);
+        return response()->json($mcquestion);
+//        $semester = Input::get('sem');
+//
+//        return json_encode($semester);
+
+    }
+
+    public function randomNumber($total){
+        $random = range(0,$total-1);
+        shuffle($random);
+        return (array_slice($random, 0 ,$total));
     }
 }

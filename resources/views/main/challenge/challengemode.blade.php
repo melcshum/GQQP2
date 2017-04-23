@@ -67,9 +67,8 @@
     </style>
 </head>
 
-
 <body>
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @extends('main.layouts.app')
 
 @section('content')
@@ -77,7 +76,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Type:{!!(($mc[$playNumber]->question_type))!!}</label>    <label>Level:<u>{!!(array_get($mc[$playNumber], 'attributes.question_level'))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label></h4></center></pre>
+                <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label></h4></center></pre>
             </div>
         </div>
     </div>
@@ -85,10 +84,10 @@
     <table border="1" align="right">
         <tr>
             <td>
-                <img src="./images/the-meaning-of-D.jpg">
+                <img id='changeQ' src="./images/the-meaning-of-D.jpg">
             </td>
             <td>
-                x1
+                x{{ Auth::user()->change }}
             </td>
         </tr>
         <tr>
@@ -96,7 +95,7 @@
                 <img id='fivefive' src="./images/50-50-movie_61.jpg">
             </td>
             <td>
-                x1
+               x{{ Auth::user()->half }}
             </td>
         </tr>
         <tr>
@@ -104,51 +103,52 @@
                 <img id="plustime" src="./images/hO01DAyn.png">
             </td>
             <td>
-                x1
+                x{{ Auth::user()->extra }}
             </td>
         </tr>
     </table>
     <div class="container">
 
         <div id="Mainp"class="row">
-            <h3><label>{!! $playNumber+1 !!}</label>/3</h3>
+            <h3><label>{!! $playNumber+1 !!}</label>/20</h3>
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
                     <h2>Question</h2>
-                    <p><label>{!!(($mc[$playNumber]->question))!!}</label></p>
+                    <p><label>{!!($mc[$random]->question)!!}</label></p>
                     <hr>
                     <h2>Output</h2>
-                    <img src={!!(($mc[$playNumber]->photo))!!}>
+                    <img src={!!(($mc[$random]->photo))!!}>
                     <hr>
                     <ol id="hits">
-                        {!!(($mc[$playNumber]->hint))!!}
+                        {!!(($mc[$random]->hint))!!}
                     </ol>
                 </div>
 
                 <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
                     <h2>Answer</h2>
-                    {!!(($mc[$playNumber]->program))!!}
+                    {!!(($mc[$random]->program))!!}
                     <table id="Mc" class="table table-bordered">
                         {!! Form::open(array('action' => 'Main\ChallengeController@challenge','method' => 'post')) !!}
                         <input type="hidden" name="question_num" value={!! $playNumber!!}>
                         <input type="hidden" id='time' name="time" value='0'>
-                        <input type="hidden" id='qtime' name="qtime" value={!! $mc[$playNumber]->time !!}>
-                        <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$playNumber]->question_ans !!}>
-                        <input type="hidden" id='questionType' name="questionType" value={!! $mc[$playNumber]->type !!}>
+                        <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
+                        <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
+                        <input type="hidden" id='questionType' name="questionType" value={!! $mc[$random]->type !!}>
+                        <input type="hidden" id='random' name="random" value={!! $random !!}>
                         <tr>
                             <td id ="hset">
-                                <p class="item"><input type="radio" id='a' name="ans" value="a"/>a.<span class="queenie">{!!(array_get($mc[$playNumber], 'attributes.mc_ans1'))!!}</span></p>
+                                <p class="item"><input type="radio" id='a' name="ans" value="a"/>a.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans1)!!}</span></span></p>
                             </td>
                             <td id ="hset">
-                                <p class="item"><input type="radio" id='b' name="ans" value="b"/>b.<span class="queenie">{!!(array_get($mc[$playNumber], 'attributes.mc_ans2'))!!}</span></p>
+                                <p class="item"><input type="radio" id='b' name="ans" value="b"/>b.<span class="queenie"><span id="MCB">{!!($mc[$random]->mc_ans2)!!}</span></span></p>
                             </td>
                         </tr>
                         <tr>
                             <td id ="hset2">
-                                <p class="item"><input type="radio" id='c' name="ans" value="c"/>c.<span class="queenie">{!!(array_get($mc[$playNumber], 'attributes.mc_ans3'))!!}</span></p>
+                                <p class="item"><input type="radio" id='c' name="ans" value="c"/>c.<span class="queenie"><span id="MCC">{!!($mc[$random]->mc_ans3)!!}</span></span></p>
                             </td>
                             <td id ="hset2">
-                                <p class="item"><input type="radio" id='d' name="ans" value="d"/>d.<span class="queenie">{!!(array_get($mc[$playNumber], 'attributes.mc_ans4'))!!}</span></p>
+                                <p class="item"><input type="radio" id='d' name="ans" value="d"/>d.<span class="queenie"><span id="MCD">{!!($mc[$random]->mc_ans4)!!}</span></span></p>
                             </td>
                         </tr>
                     </table>
@@ -160,16 +160,6 @@
     </div>
     <div class="container">
         <ul class="nav" id="side-menu">
-
-            <li>
-                <a href="" class="btn" style="float: left;">01</a>
-            </li>
-
-            <li>
-                <a href="" class="btn " style="float: left;">02</a>
-            </li>
-            <li>
-                <a href="" class="btn" style="float: left;">03</a>
             <li>
                 <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
             </li>
@@ -206,9 +196,9 @@
         $('#hset2').css( "height", high );
         $("#hits").hide();
         $("#Next").hide();
-        var qtime = 120;
+        var qtime = $("#qtime").val();
         var s = qtime % 60;
-        var m = qtime / 60;
+        var m = Math.floor(qtime / 60);
         $("#my").text(m);
 
         var id = setInterval(frame, 1000);
@@ -254,16 +244,15 @@
             var ansfive3 = ($('.queenie').eq(2).html());
             var ansfive4 = ($('.queenie').eq(3).html());
             var i;
-            var randomnum = [];
             if(donthint=='a'){
-                    random = 0;
-                    while (random == 0 ) {
-                        var random = Math.floor(Math.random() * $('.item').length);
-                    }
-                    $('.item').hide().eq(random).show();
-                    var ansfive = ($('.queenie').eq(random).html());
-                    $('.item').eq(0).show();
-            }elseif(donthint=='b')
+                random = 0;
+                while (random == 0 ) {
+                    var random = Math.floor(Math.random() * $('.item').length);
+                }
+                $('.item').hide().eq(random).show();
+                var ansfive = ($('.queenie').eq(random).html());
+                $('.item').eq(0).show();
+            }if(donthint=='b')
             {
                 while(random==1) {
                     var random = Math.floor(Math.random() * $('.item').length);
@@ -271,7 +260,7 @@
                 $('.item').hide().eq(random).show();
                 var ansfive = ($('.queenie').eq(random).html());
                 $('.item').eq(1).show();
-            }elseif(donthint=='c')
+            }if(donthint=='c')
             {
                 while(random==2) {
                     var random = Math.floor(Math.random() * $('.item').length);
@@ -279,7 +268,7 @@
                 $('.item').hide().eq(random).show();
                 var ansfive = ($('.queenie').eq(random).html());
                 $('.item').eq(2).show();
-            }elseif(donthint=='d')
+            }if(donthint=='d')
             {
                 while(random==3) {
                     var random = Math.floor(Math.random() * $('.item').length);
@@ -298,6 +287,31 @@
         $("#Next").click(function(event){
             $("#time").val(s);
         });
+
+        $('#changeQ').click(function() {
+            $.ajax({
+                type:"POST",
+                url: "/challengeMCChange",
+                data: {sem : "mc"},
+                success:function(data){
+                    console.log(data);
+                    $('#hits').text(data['question_id']);
+                    $('#MCA').html(data['mc_ans1']);
+                    $('#MCB').html(data['mc_ans2']);
+                    $('#MCC').html(data['mc_ans3']);
+                    $('#MCD').html(data['mc_ans4']);
+                    $('#trueAns').val(data['question_ans']);
+                    $('#questionType').val(data['type']);
+                }
+            })
+        });
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
     });
 </script>
 {{--<script src="../dist/js/jqueryTime.js"></script>--}}

@@ -67,7 +67,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Type:{!!(($fill[$playnum]->question_type))!!}</label>    <label>Level:<u>{!!(($fill[$playnum]->question_level))!!}</u></label>    <label>Timer: </label><label id="asd" class="timer" data-seconds-left=>{!!(($fill[$playnum]->time))!!} </label></h4></center></pre>
+                <pre class="joe"><center><h4><label>Type:{!!(($fill[$random]->question_type))!!}</label>    <label>Level:<u>{!!(($fill[$random]->question_level))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label></h4></center></pre>
             </div>
         </div>
     </div>
@@ -94,16 +94,16 @@
 
         <div id="Mainp" class="row">
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
-                <h3><label>{!!(($playnum+3))!!}</label>/3</h3>
+                <h3><label>{!!(($playnum))!!}</label>/3</h3>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
                     <h2>Question</h2>
-                    <p><label>{!!(($fill[$playnum]->question))!!}</label></p>
+                    <p><label>{!!(($fill[$random]->question))!!}</label></p>
                     <hr>
                     <h2>Output</h2>
-                    <img src={!!(($fill[$playnum]->photo))!!}>
+                    <img src={!!(($fill[$random]->photo))!!}>
                     <hr>
                     <ol id="hits">
-                        {!!(($fill[$playnum]->hint))!!}
+                        {!!(($fill[$random]->hint))!!}
                     </ol>
                 </div>
 
@@ -111,7 +111,9 @@
                     <h2>Answer</h2>
                     {!! Form::open(array('action' => 'Main\ChallengeFillController@challenge','method' => 'post')) !!}
                     <input type="hidden" name="playNum" id="playNum" value={!! $playnum !!}>
-                    {!!(($fill[$playnum]->program))!!}
+                    <input type="hidden" name="playNum" id="playNum" value={!! $random !!}>
+                    <input type="hidden" id='qtime' name="qtime" value={!! $fill[$random]->time !!}>
+                    {!!(($fill[$random]->program))!!}
                     <p id="test"align="right" valign="bottom"><input type="submit" id="Next" class="btn btn-primary" value="Next"></p>
                 </div>
             </div>
@@ -163,53 +165,75 @@
 <script type="text/javascript" language="javascript">
     $(document).ready(function(){
         $("#hits").hide();
-        var s = 60;
+        var qtime = $("#qtime").val();
+        var s = qtime % 60;
+        var m = Math.floor(qtime / 60);
+        $("#my").text(m);
+
         var id = setInterval(frame, 1000);
         function frame(){
-            if(s<=30){
+
+            if(s ==0 && m>=1) {
+                m--;
+                $("#my").text(m);
+                s = 60;
+                $("#sy").text(s);
+            }else if(s==0 && m==0){
+                clearInterval(myVar);
+            }
+            if(qtime<=30){
                 $("#hits").show();
-            }else{
                 s--;
+                $("#sy").text(s);
+                qtime--;
             }
+            if(s >60){
+                m++;
+                $("#my").text(m);
+                s= (qtime % 60) -2;
+                s--;
+                qtime--;
+                $("#sy").text(s);
+            }
+            else{
+                s--;
+                $("#sy").text(s);
+                qtime--;
+            }
+
         }
-        $('input:radio[name="ans"]').change(function(){
-            $("#Next").show();
-        });
-        $('#fivefive').click(function(){
-            var donthint = $("#trueAns").val();
-            var random = Math.floor(Math.random() * $('.item').length);
-            if(donthint=='a'){
-                while(random==0) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(0).show();
-            }elseif(donthint=='b')
-            {
-                while(random==1) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(1).show();
-            }elseif(donthint=='c')
-            {
-                while(random==2) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(2).show();
-            }elseif(donthint=='d')
-            {
-                while(random==3) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(3).show();
-            }
+        $('#plustime').click(function() {
+            qtime = qtime + 30;
+            s = s + 30;
         });
         $("#Next").click(function(event){
             $("#time").val(s);
         });
+
+        $('#changeQ').click(function() {
+            $.ajax({
+                type:"POST",
+                url: "/challengeMCChange",
+                data: {sem : "mc"},
+                success:function(data){
+                    console.log(data);
+                    $('#hits').text(data['question_id']);
+                    $('#MCA').html(data['mc_ans1']);
+                    $('#MCB').html(data['mc_ans2']);
+                    $('#MCC').html(data['mc_ans3']);
+                    $('#MCD').html(data['mc_ans4']);
+                    $('#trueAns').val(data['question_ans']);
+                    $('#questionType').val(data['type']);
+                }
+            })
+        });
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
     });
 </script>
 <script src="../dist/js/jqueryTime.js"></script>
