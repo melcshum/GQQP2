@@ -39,7 +39,7 @@
 
             <div style="text-align:center">
                 <abc>
-                    <a onclick="showHide();setTimeout(myFunction, 7500);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
+                    <a onclick="showHide();setTimeout(myFunction, 5500);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
                     <a href="#" class="btn btn-danger" >Cancel</a>
 
                 </abc>

@@ -87,10 +87,23 @@
                             <span> {{ trans('labels.lms.mcQuestions.management') }}</span>
                         </a>
                     </li>
-                    <li   >
-                        <a href="{{ route('lms.mcQuestion.index') }}">
+                    <li  class="{{ Active::pattern('lms/fillQuestion*') }} " >
+                        <a href="{{ route('lms.fillQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> Fill in the blank Management</span>
+                            <span> {{ trans('labels.lms.fillQuestions.management') }}</span>
+                        </a>
+                    </li>
+                    <li  class="{{ Active::pattern('lms/iftutorialQuestion*') }} " >
+                        <a href="{{ route('lms.iftutorialQuestion.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.iftutorialQuestions.management') }}</span>
+                        </a>
+                    </li>
+
+                    <li  class="{{ Active::pattern('lms/arrayQuestion*') }} " >
+                        <a href="{{ route('lms.arrayQuestion.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span> {{ trans('labels.lms.arrayQuestions.management') }}</span>
                         </a>
                     </li>
 

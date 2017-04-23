@@ -189,18 +189,18 @@ return [
                 'no_deleted'     => 'No Deleted Users',
                 'total'          => 'user total|users total',
             ],
-
-            'mcQuestions' =>[
+            ],
+            'iftutorialQuestions' =>[
                 'management'          => 'Questions Management',
-                'active'              => 'Active fill in the blank questions',
+                'active'              => 'Active if tutorial questions',
                 'all_permissions'     => 'All Permissions',
                 'change_password'     => 'Change Password',
-                'change_password_for' => 'Change Password for :fill in the blank question',
-                'create'              => 'Create fill in the blank question',
-                'deactivated'         => 'Deactivated fill in the blank questions',
-                'deleted'             => 'Deleted fill in the blank questions',
-                'edit'                => 'Edit fill in the blank question',
-                'management'          => 'fill in the blank Question Management',
+                'change_password_for' => 'Change Password for :if tutorial question',
+                'create'              => 'Create if tutorial question',
+                'deactivated'         => 'Deactivated if tutorial questions',
+                'deleted'             => 'Deleted if tutorial questions',
+                'edit'                => 'Edit if tutorial question',
+                'management'          => 'If tutorial Question Management',
                 'no_permissions'      => 'No Permissions',
                 'no_roles'            => 'No Roles to set.',
                 'permissions'         => 'Permissions',
@@ -219,7 +219,36 @@ return [
                 ],
             ],
 
+        'arrayQuestions' =>[
+            'management'          => 'Questions Management',
+            'active'              => 'Active array questions',
+            'all_permissions'     => 'All Permissions',
+            'change_password'     => 'Change Password',
+            'change_password_for' => 'Change Password for :array question',
+            'create'              => 'Create array question',
+            'deactivated'         => 'Deactivated array questions',
+            'deleted'             => 'Deleted array questions',
+            'edit'                => 'Edit array question',
+            'management'          => 'Array Question Management',
+            'no_permissions'      => 'No Permissions',
+            'no_roles'            => 'No Roles to set.',
+            'permissions'         => 'Permissions',
+
+            'table' => [
+                'confirmed'      => 'Confirmed',
+                'created'        => 'Created',
+                'description'    => 'Description',
+                'id'             => 'ID',
+                'last_updated'   => 'Last Updated',
+                'name'           => 'Name',
+                'question'       => 'Question',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted'     => 'No Deleted Users',
+                'total'          => 'user total|users total',
+            ],
         ],
+
+
         
         'access' => [
             'roles' => [

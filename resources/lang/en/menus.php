@@ -110,6 +110,27 @@ return [
             'view'            => 'View Question',
         ],
 
+        'iftutorialQuestions' => [
+            'all'             => 'All if tutorial Questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create if tutorial Question',
+            'deactivated'     => 'Deactivated if tutorial Questions',
+            'deleted'         => 'Deleted if tutorial Questions',
+            'edit'            => 'Edit if tutorial Question',
+            'main'            => 'If tutorial Questions',
+            'view'            => 'View Question',
+        ],
+
+        'arrayQuestions' => [
+            'all'             => 'All array Questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create array Question',
+            'deactivated'     => 'Deactivated array Questions',
+            'deleted'         => 'Deleted array Questions',
+            'edit'            => 'Edit array Question',
+            'main'            => 'Array Questions',
+            'view'            => 'View Question',
+        ],
 
         'log-viewer' => [
             'main'      => 'Log Viewer',
