@@ -61,81 +61,103 @@
 
     </style>
 
+    <style>
+
+.item {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>button {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>button {
+  border: 1px dashed #444;
+  width: 150px;
+  height: 80px;
+  transition: 500ms all;
+  background-color: WHITE;
+}
+
+input[type=radio]:checked + label>button {
+  transform: 
+    rotateZ(0deg) 
+    rotateX(0deg);
+    background-color: Gold;
+}
+
+/*
+ | //lea.verou.me/css3patterns
+ | Because white bgs are boring.
+*/
+html {
+  background-color: #fff;
+  background-size: 100% 1.2em;
+  background-image: 
+    linear-gradient(
+      90deg, 
+      transparent 79px, 
+      #abced4 79px, 
+      #abced4 81px, 
+      transparent 81px
+    ),
+    linear-gradient(
+      #eee .1em, 
+      transparent .1em
+    );
+}
+</style>
+
 </head>
 
 <body>
 @extends("main.layouts.app")
 
 @section('content')
-    <div id="wrapper">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$playQuestionNum]->question_type))!!}</label>    <label>Level:<u>{!!(array_get($mc[$playQuestionNum], 'attributes.question_level'))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label>     </h4></center></pre>
-            </div>
-        </div>
-    </div>
-    <h3><p align="right">item</p></h3>
-    <table border="1" align="right">
-        <tr>
-            <td>
-                <img src="./images/the-meaning-of-D.jpg">
-            </td>
-            <td>
-                x1
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img id='fivefive' src="./images/50-50-movie_61.jpg">
-            </td>
-            <td>
-                x1
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img id="plustime" src="./images/hO01DAyn.png">
-            </td>
-            <td>
-                x1
-            </td>
-        </tr>
-    </table>
+   
     <div class="container">
 
         <div id="Mainp"class="row">
-            <h3><label>{!! Form::label('question_num', $playQuestionNum+1) !!}</label>/2</h3>
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label>     </h4></center></pre>
+            </div>
+        </div>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
-                    <h2>Question</h2>
-                    <p><label>{!!(array_get($mc[$playQuestionNum], 'attributes.question'))!!}</label></p>
+                    <h2>Question <label>{!! Form::label('question_num', $playQuestionNum+1) !!}</label> / {!! count($mc) !!}</h2>
+                    <p><label>{!!($mc[$random]->question)!!}</label></p>
                     <hr>
                     <h2>Output</h2>
-                    <img src="{!! $mc[$playQuestionNum]->photo !!}">
+                    <img src="{!! $mc[$random]->photo !!}">
                     <hr>
                     <ol id="hits">
-                        {!! $mc[$playQuestionNum]->hint !!}
+                        {!! $mc[$random]->hint !!}
                     </ol>
                 </div>
 
                 <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
                     <h2>Answer</h2>
-                    {!!(array_get($mc[$playQuestionNum], 'attributes.program'))!!}
+                    {!!($mc[$random]->program)!!}
                     <table id="Mc">
                         {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
                         <input type="hidden" name="question_num" value={!! $playQuestionNum+1!!}>
                         <input type="hidden" id='time' name="time" value='0'>
+                        <input type="hidden" id='type' name="type" value={!! $type !!}>
                         <input type="hidden"  name="totalgold" value={!! $totalgold !!}>
-                        <input type="hidden" id='qtime' name="qtime" value={!! $mc[$playQuestionNum]->time !!}>
-                        <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$playQuestionNum]->question_ans !!}>
+                        <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
+                        <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                         <tr>
-                            <td>
-                                <p><input class="item" type="radio" id='a' name="ans" value="a"/>a.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans1'))!!}</p>
-                                <p><input class="item" type="radio" id='b' name="ans" value="b"/>b.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans2'))!!}</p>
+                             <td align="right">
+                                <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a"><button type="button" >a.{!!($mc[$random]->mc_ans1)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >b.{!!($mc[$random]->mc_ans2)!!}</button></label></p>
                             </td>
-                            <td>
-                                <p><input class="item" type="radio" id='c' name="ans" value="c"/>c.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans3'))!!}</p>
-                                <p><input class="item" type="radio" id='d' name="ans" value="d"/>d.{!!(array_get($mc[$playQuestionNum], 'attributes.mc_ans4'))!!}</p>
+                             <td align="right">
+                                <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >c.{!!($mc[$random]->mc_ans3)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d"><button type="button" >d.{!!($mc[$random]->mc_ans4)!!}</button></label></p>
                             </td>
                         </tr>
                     </table>
@@ -146,23 +168,11 @@
         <!-- /.row -->
     </div>
     <div class="container">
-        <ul class="nav" id="side-menu">
-
-            <li>
-                <a href="" class="btn" style="float: left;">01</a>
-            </li>
-
-            <li>
-                <a href="" class="btn " style="float: left;">02</a>
-            </li>
-            <li>
-                <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
-            </li>
-        </ul>
-        {!! Form::close() !!}
-    </div>
+        <li>
+            <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
+        </li>
+    {!! Form::close() !!}
     <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 @endsection

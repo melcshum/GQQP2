@@ -67,6 +67,7 @@ double myList[];   // works but not preferred way.</pre>
                             </div>
                         </div>
 
+                        {!! Form::open(array('action' => 'Main\ArrayTutorialController@show','method' => 'post')) !!}
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <h3 class="page-header">
                                 Exercise
@@ -85,30 +86,9 @@ double myList[];   // works but not preferred way.</pre>
                                                     <span class="glyphicon glyphicon-star-empty"></span>
                                             </div>
                                             </p>
-                                            <h4><a href="#">Practice 1</a>
+                                            <h4><a>Practice 1</a>
                                             </h4>
-                                            <p><a href="/mcQuestion" class="btn btn-primary" role="button" style="float: right;">Play</a>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4 col-lg-4 col-md-4">
-                                    <div class="thumbnail">
-                                        <img class="img-responsive" src="../images/Array2.png" alt="">
-                                        <div class="caption">
-                                            <div class="ratings">
-                                                <p class="pull-right">
-                                                    <span class="glyphicon glyphicon-star"></span>a
-                                                    <span class="glyphicon glyphicon-star"></span>
-                                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                            </div>
-                                            </p>
-                                            <h4><a href="#">Practice 2</a>
-                                            </h4>
-                                            <p><a href="/mcQuestion" class="btn btn-primary" role="button" style="float: right;">Play</a>
+                                            <p><input type="submit" name="1" id="1" class="btn btn-primary" style="float: right;" value="Play"></p>
                                             <p></p>
                                         </div>
                                     </div>
@@ -127,13 +107,35 @@ double myList[];   // works but not preferred way.</pre>
                                                     <span class="glyphicon glyphicon-star-empty"></span>
                                             </div>
                                             </p>
-                                            <h4><a href="#">Practice 3</a>
+                                            <h4><a>Practice 2</a>
                                             </h4>
-                                            <p><a href="/mcQuestion" class="btn btn-primary" role="button" style="float: right;">Play</a>
+                                            <p><input type="submit" name="2" id="2" class="btn btn-primary" style="float: right;" value="Play"></p>
                                             <p></p>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive" src="../images/Array2.png" alt="">
+                                        <div class="caption">
+                                            <div class="ratings">
+                                                <p class="pull-right">
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                            </div>
+                                            </p>
+                                            <h4><a>Practice 3</a>
+                                            </h4>
+                                            <p><input type="submit" name="3" id="3" class="btn btn-primary" style="float: right;" value="Play"></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {!! Form::close() !!}
                             </div>
                         </div>
                     </div>

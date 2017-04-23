@@ -74,7 +74,6 @@
             <pre><h4>{!! $message !!}</h4></pre>
             <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
                 <h2>Your Answer</h2>
-                {!!$playAns!!}
                 {!!$playAns!!}.{!!$userAns!!}
             </div>
 
