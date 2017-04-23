@@ -48,4 +48,26 @@ return [
         'save' => 'Save',
         'view' => 'View',
     ],
+
+    'lms' =>[
+      'models' =>[
+        'deactivate'            => 'Deactivate',
+          'activate'              => 'Activate',
+
+      ],
+        'mcQuestion' =>[
+            'restore_user'       => 'Restore Mc Question',
+            'delete_permanently' => 'Delete Permanently',
+        ],
+
+        'fillQuestion' =>[
+            'restore_user'       => 'Restore fill in the blank Question',
+            'delete_permanently' => 'Delete Permanently',
+        ],
+
+        'loopQuestion' =>[
+            'restore_user'       => 'Restore loop Question',
+            'delete_permanently' => 'Delete Permanently',
+        ]
+    ],
 ];

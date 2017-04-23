@@ -43,5 +43,25 @@ return [
             'updated'             => 'The MC question was successfully updated.',
 
         ],
+
+        'fillQuestions' => [
+
+            'created'             => 'The fill in the blank question was successfully created.',
+            'deleted'             => 'The fill in the blank question was successfully deleted.',
+            'deleted_permanently' => 'The fill in the blank question was deleted permanently.',
+            'restored'            => 'The fill in the blank question was successfully restored.',
+            'updated'             => 'The fill in the blank question was successfully updated.',
+
+        ],
+
+        'loopQuestions' => [
+
+            'created'             => 'The loop question was successfully created.',
+            'deleted'             => 'The loop question was successfully deleted.',
+            'deleted_permanently' => 'The loop question was deleted permanently.',
+            'restored'            => 'The loop question was successfully restored.',
+            'updated'             => 'The loop question was successfully updated.',
+
+        ],
     ],
 ];

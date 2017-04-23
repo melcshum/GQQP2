@@ -9,6 +9,7 @@ use App\Repositories\Lms\mcQuestion\mcQuestionRepository;
 use App\Http\Requests\Lms\mcQuestion\StoreMcQuestionRequest;
 use App\Http\Requests\Lms\mcQuestion\ManageMcQuestionRequest;
 use App\Http\Requests\Lms\mcQuestion\UpdateMcQuestionRequest;
+use Illuminate\Support\Facades\DB;
 
 class mcQuestionController extends Controller
 {
@@ -54,6 +55,34 @@ class mcQuestionController extends Controller
      */
     public function store(StoreMcQuestionRequest $request)
     {
+        $id = $request->id;
+
+        $path = "";
+
+        if($request->hasFile('photo')){
+            $destinationPath=public_path().'/images/mcQuestion/';
+            $file = $request->file('photo');
+            $fileName = $file->getClientOriginalName();
+            $request->file('photo')->move($destinationPath, $fileName);
+
+            $path = './images/mcQuestion/'.$fileName;
+        }
+
+        if($request->knowledge < 0){
+            return redirect()->route('lms.mcQuestion.create', $request->all())->withErrors('Knowledge must be integer');
+        }
+
+        if($request->gold < 0){
+            return redirect()->route('lms.mcQuestion.create', $request->all())->withErrors('Gold must be integer');
+        }
+
+        if($request->time <= 0){
+            return redirect()->route('lms.mcQuestion.create', $request->all())->withErrors('Time must be integer');
+        }
+
+        $input = $request->all();
+        $input['photo'] = $path;
+
         $this->mcQuestions->create(['data' => $request ]);
 
         return redirect()->route('lms.mcQuestion.index')->withFlashSuccess(trans('alerts.lms.mcQuestions.created'));
@@ -91,9 +120,44 @@ class mcQuestionController extends Controller
      *
      * @return mixed
      */
-    public function update(mcQuestion $mcQuestion, ManageMcQuestionRequest $request)
+    public function update(mcQuestion $mcQuestion,  UpdateMcQuestionRequest $request)
     {
-        $this->mcQuestions->update($mcQuestion, ['data' => $request->all() ]);
+        $id = $request->id;
+
+        if($request->hasFile('photo')){
+            $destinationPath=public_path().'/images/mcQuestion/';
+            $file = $request->file('photo');
+            $fileName = $file->getClientOriginalName();
+            $request->file('photo')->move($destinationPath, $fileName);
+
+            $path = './images/mcQuestion/'.$fileName;
+
+        }
+//        else{
+//            if(DB::table('mcQuestions')->where('id', '=', $id) ->whereNotNull('photo')){
+//                $path = DB::table('mcQuestions')->where('id', '=', $id) ->pluck('photo');
+//                dd($path);
+//            }else{
+//                return redirect()->route('lms.mcQuestion.edit', $id)->withErrors('Photo is required');
+//            }
+//        }
+
+        if($request->knowledge < 0){
+            return redirect()->route('lms.mcQuestion.edit', $id)->withErrors('Knowledge must be integer');
+        }
+
+        if($request->gold < 0){
+            return redirect()->route('lms.mcQuestion.edit', $id)->withErrors('Gold must be integer');
+        }
+
+        if($request->time <= 0){
+            return redirect()->route('lms.mcQuestion.edit', $id)->withErrors('Time must be integer');
+        }
+
+        $input = $request->all();
+        $input['photo'] = $path;
+
+        $this->mcQuestions->update($mcQuestion, ['data' => $input ]);
 
         return redirect()->route('lms.mcQuestion.index')->withFlashSuccess(trans('alerts.lms.mcQuestions.updated'));
     }

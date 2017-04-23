@@ -12,34 +12,24 @@ return [
     | found in a intuitive way.
     |
     */
-    'lms' => [ 
-        'courses' => [
-            'delete_course_confirm'  => 'Are you sure you want to delete this course permanently? Anywhere in the application that references this course\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+    'lms' => [
+
+        'mcQuestions' => [
+            'delete_mcQuestion_confirm'  => 'Are you sure you want to delete this mc Question permanently? Anywhere in the application that references this mc Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_course_confirm' => 'Restore this course to its original state?',
-        ],
-        'games' => [
-            'delete_game_confirm'  => 'Are you sure you want to delete this game permanently? Anywhere in the application that references this game\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
-            'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_game_confirm' => 'Restore this game to its original state?',
+            'restore_mcQuestion_confirm' => 'Restore this mc Question to its original state?',
         ],
 
-        'modules' => [
-            'delete_module_confirm'  => 'Are you sure you want to delete this module permanently? Anywhere in the application that references this module\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+        'fillQuestions' => [
+            'delete_fillQuestion_confirm'  => 'Are you sure you want to delete this fill in the blank Question permanently? Anywhere in the application that references this fill in the blank Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_module_confirm' => 'Restore this module to its original state?',
+            'restore_fillQuestion_confirm' => 'Restore this fill in the blank Question to its original state?',
         ],
 
-        'questions' => [
-            'delete_question_confirm'  => 'Are you sure you want to delete this question permanently? Anywhere in the application that references this question\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+        'loopQuestions' => [
+            'delete_loopQuestion_confirm'  => 'Are you sure you want to delete this loop Question permanently? Anywhere in the application that references this loop Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
             'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_question_confirm' => 'Restore this question to its original state?',
-        ],
-
-        'lessons' => [
-            'delete_lesson_confirm'  => 'Are you sure you want to delete this lesson permanently? Anywhere in the application that references this lesson\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
-            'if_confirmed_off'     => '(If confirmed is off)',
-            'restore_lesson_confirm' => 'Restore this lesson to its original state?',
+            'restore_loopQuestion_confirm' => 'Restore this loop Question to its original state?',
         ],
 
 

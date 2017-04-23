@@ -53,7 +53,6 @@ class mcQuestionRepository extends Repository
                 config('lms.mcQuestions_table').'.id',
                 config('lms.mcQuestions_table').'.name',
                 config('lms.mcQuestions_table').'.question_type',
-                config('lms.mcQuestions_table').'.type',
                 config('lms.mcQuestions_table').'.question_level',
                 config('lms.mcQuestions_table').'.question',
                 config('lms.mcQuestions_table').'.program',
@@ -125,6 +124,8 @@ class mcQuestionRepository extends Repository
     public function update(Model $mcQuestion, array $input)
     {
         $data = $input['data'];
+
+
         $mcQuestion->status = isset($data['status']) ? 1 : 0;
  
         DB::transaction(function () use ($mcQuestion, $data ) {
@@ -247,7 +248,6 @@ class mcQuestionRepository extends Repository
         $mcQuestion = new $mcQuestion();
         $mcQuestion->name = $input['name'];
         $mcQuestion->question_type = $input['question_type'];
-        $mcQuestion->type = $input['type'];
         $mcQuestion->question_level = $input['question_level'];
         $mcQuestion->question = $input['question'];
         $mcQuestion->program = $input['program'];
@@ -266,12 +266,5 @@ class mcQuestionRepository extends Repository
         return $mcQuestion;
     }
 
-//    public function getDefaultGameQuestion()
-//    {
-//        if (is_numeric(config('lms.games.default_question'))) {
-//            return $this->query()->where('id', (int) config('lms.games.default_question'))->first();
-//        }
-//
-//        return $this->query()->where('name', config('lms.games.default_question'))->first();
-//    }
+
 }

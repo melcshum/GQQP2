@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    {{ Form::open(['route' => 'lms.mcQuestion.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) }}
+    {{ Form::open(['route' => 'lms.mcQuestion.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'files' => true]) }}
 
         <div class="box box-success">
             <div class="box-header with-border">
@@ -34,15 +34,15 @@
                     {{ Form::label('question_type', trans('validation.attributes.lms.mcQuestions.question_type'), ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::text('question_type', null) }}
-                    </div><!--col-lg-10-->
-                </div><!--form control-->
-
-                <div class="form-group">
-                    {{ Form::label('type', trans('validation.attributes.lms.mcQuestions.type'), ['class' => 'col-lg-2 control-label']) }}
-
-                    <div class="col-lg-10">
-                        {{ Form::text('type', null) }}
+                        {{ Form::select('question_type', array(
+                            'if_else' => 'if_else',
+                            'array'   => 'array',
+                            'loop'    => 'loop',
+                            ),
+                                null,
+                                ['placeholder' => 'select the question topic']
+                            )
+                        }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
@@ -50,10 +50,19 @@
                     {{ Form::label('question_level', trans('validation.attributes.lms.mcQuestions.question_level'), ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::number('question_level',null) }}
+                        {{
+                            Form::select('question_level',array(
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                            ),
+                                null,
+                                ['placeholder' => 'select the question level'])
+                        }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
-
 
                 <div class="form-group">
                     {{ Form::label('question', trans('validation.attributes.lms.mcQuestions.question'), ['class' => 'col-lg-2 control-label']) }}
@@ -77,7 +86,15 @@
                     {{ Form::label('question_ans', trans('validation.attributes.lms.mcQuestions.question_ans'), ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::text('question_ans', null) }}
+                        {{ Form::select('question_ans', array(
+                            'a' => 'a',
+                            'b' => 'b',
+                            'c' => 'c',
+                            'd' => 'd',
+                            ),
+                                null,
+                                ['placeholder' => 'select the right answer'])
+                        }}
 
                     </div><!--col-lg-10-->
                 </div><!--form control-->

@@ -29,10 +29,6 @@ Route::group([
         Route::get('mcQuestion/deactivated', 'mcQuestionStatusController@getDeactivated')->name('mcQuestion.deactivated');
         Route::get('mcQuestion/deleted', 'mcQuestionStatusController@getDeleted')->name('mcQuestion.deleted');
 
-        Route::post('photo', function (){
-            request()->file('avatar')->store('output');
-        });
-
         /*
          * Question CRUD
          */

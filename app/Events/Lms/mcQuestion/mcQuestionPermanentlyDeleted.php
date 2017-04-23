@@ -17,6 +17,6 @@ class mcQuestionPermanentlyDeleted
 
     public function __construct($mcQuestion)
     {
-        $this->mcquestion = $mcQuestion;
+        $this->mcQuestion = $mcQuestion;
     }
 }

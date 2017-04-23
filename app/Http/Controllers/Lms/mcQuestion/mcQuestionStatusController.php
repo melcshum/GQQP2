@@ -58,9 +58,9 @@ class mcQuestionStatusController extends Controller
      * @return mixed
      */
 
-    public function mark(mcQuestion $mcQuestions, $status, ManageMcQuestionRequest $request)
+    public function mark(mcQuestion $mcQuestion, $status, ManageMcQuestionRequest $request)
     {
-        $this->mcQuestions->mark($mcQuestions, $status);
+        $this->mcQuestions->mark($mcQuestion, $status);
         return redirect()->route($status == 1 ? 'lms.mcQuestion.index' : 'lms.mcQuestion.deactivated')->withFlashSuccess(trans('alerts.lms.mcQuestion.updated'));
     }
     /**

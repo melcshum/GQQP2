@@ -45,5 +45,25 @@ return [
              'reactivated'         => 'reactivated MC question',
              'restored'            => 'restored MC question',
          ],
+
+         'fillQuestions' => [
+             'created'             => 'created fill in the blank question',
+             'deactivated'         => 'deactivated fill in the blank question',
+             'deleted'             => 'deleted fill in the blank question',
+             'permanently_deleted' => 'permanently deleted fill in the blank question',
+             'updated'             => 'updated fill in the blank question',
+             'reactivated'         => 'reactivated fill in the blank question',
+             'restored'            => 'restored fill in the blank question',
+         ],
+
+         'loopQuestions' => [
+             'created'             => 'created loop question',
+             'deactivated'         => 'deactivated loop question',
+             'deleted'             => 'deleted loop question',
+             'permanently_deleted' => 'permanently deleted loop question',
+             'updated'             => 'updated loop question',
+             'reactivated'         => 'reactivated loop question',
+             'restored'            => 'restored loop question',
+         ],
     ],
 ];

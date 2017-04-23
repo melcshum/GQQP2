@@ -10,7 +10,8 @@
 @endsection
 
 @section('content')
-    {{ Form::model($mcQuestion, ['route' => ['lms.mcQuestion.update', $mcQuestion], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH']) }}
+    {{ Form::model($mcQuestion, ['route' => ['lms.mcQuestion.update', $mcQuestion], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'files' => true]) }}
+
 
         <div class="box box-success">
             <div class="box-header with-border">
@@ -20,6 +21,8 @@
                     @include('lms.mcQuestion.includes.partials.mcQuestion-header-buttons')
                 </div><!--box-tools pull-right-->
             </div><!-- /.box-header -->
+
+            {{ Form::hidden('id', null) }}
 
             <div class="box-body">
                 <div class="form-group">
@@ -52,7 +55,17 @@
                     {{ Form::label('question_ans', trans('validation.attributes.lms.mcQuestions.question_ans'), ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::text('question_ans', null) }}
+                        {{ Form::select('question_ans', array(
+                            'a' => 'a',
+                            'b' => 'b',
+                            'c' => 'c',
+                            'd' => 'd',
+                            ),
+                                null,
+                                ['placeholder' => 'select the right answer']
+                            )
+
+                        }}
 
                     </div><!--col-lg-10-->
                 </div><!--form control-->

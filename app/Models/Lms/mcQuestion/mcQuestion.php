@@ -37,7 +37,8 @@ class mcQuestion extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'teacher_id' ];
+    protected $fillable = ['name', 'teacher_id', 'question_type', 'type', 'question_level', 'question', 'program', 'question_ans',
+                        'mc_ans1', 'mc_ans2', 'mc_ans3', 'mc_ans4', 'knowledge', 'gold', 'time', 'hint', 'photo', 'slug', 'status' ];
 
     /**
      * @var array

@@ -3,10 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Access\User\User;
-use App\Models\Lms\Course\Course;
-use App\Models\Lms\Module\Module;
-use App\Models\Lms\Game\Game;
-use App\Models\Lms\Question\Question;
+use App\Models\Lms\mcQuestion\mcQuestion;
+use App\Models\Lms\fillQuestion\fillQuestion;
+use App\Models\Lms\loopQuestion\loopQuestion;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -54,6 +53,18 @@ class RouteServiceProvider extends ServiceProvider
             $mcQuestion = new mcQuestion();
 
             return mcQuestion::withTrashed()->where($mcQuestion->getRouteKeyName(), $value)->first();
+        });
+
+        $this->bind('deletedFillQuestion', function ($value) {
+            $FillQuestion = new fillQuestion();
+
+            return mcQuestion::withTrashed()->where($fillQuestion->getRouteKeyName(), $value)->first();
+        });
+
+        $this->bind('deletedLoopQuestion', function ($value) {
+            $loopQuestion = new loopQuestion();
+
+            return mcQuestion::withTrashed()->where($loopQuestion->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();

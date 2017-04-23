@@ -16,7 +16,8 @@
             </div><!-- /.box tools -->
         </div><!-- /.box-header -->
         <div class="box-body">
-            {!! trans('strings.backend.welcome') !!}
+            <h4>This is the admin page of Gamify Programming Learning Platform.</h4>
+            <h4>You can modify question and user in this page.</h4>
         </div><!-- /.box-body -->
     </div><!--box box-success-->
 

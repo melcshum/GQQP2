@@ -32,8 +32,6 @@
                             <th>{{ trans('labels.lms.mcQuestions.table.id') }}</th>
                             <th>{{ trans('labels.lms.mcQuestions.table.name') }}</th>
                             <th>{{ trans('labels.lms.mcQuestions.table.question') }}</th>
-                            {{--<th>{{ trans('labels.lms.questions.table.games') }}</th>--}}
-                            {{--<th>{{ trans('labels.lms.questions.table.description') }}</th>--}}
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
