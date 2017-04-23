@@ -147,10 +147,10 @@
         <!-- /.row -->
     </div>
     <div class="container">
-            <li>
-                <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
-            </li>
-        {!! Form::close() !!}
+        <li>
+            <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
+        </li>
+    {!! Form::close() !!}
     <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
