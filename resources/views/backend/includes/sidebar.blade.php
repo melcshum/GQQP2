@@ -92,10 +92,10 @@
                             <span> {{ trans('labels.lms.mcQuestions.management') }}</span>
                         </a>
                     </li>
-                    <li   >
-                        <a href="{{ route('lms.mcQuestion.index') }}">
+                    <li  class="{{ Active::pattern('lms/fillQuestion*') }} " >
+                        <a href="{{ route('lms.fillQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> Fill in the blank Management</span>
+                            <span> {{ trans('labels.lms.fillQuestions.management') }}</span>
                         </a>
                     </li>
                 </ul>
@@ -226,10 +226,10 @@
                             <span> {{ trans('labels.lms.mcQuestions.management') }}</span>
                         </a>
                     </li>
-                    <li   >
-                        <a href="{{ route('lms.mcQuestion.index') }}">
+                    <li  class="{{ Active::pattern('lms/fillQuestion*') }} " >
+                        <a href="{{ route('lms.fillQuestion.index') }}">
                             <i class="fa fa-circle-o"></i>
-                            <span> Fill in the blank Management</span>
+                            <span> {{ trans('labels.lms.fillQuestions.management') }}</span>
                         </a>
                     </li>
                 </ul>

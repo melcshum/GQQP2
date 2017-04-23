@@ -3,10 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Access\User\User;
-use App\Models\Lms\Course\Course;
-use App\Models\Lms\Module\Module;
-use App\Models\Lms\Game\Game;
-use App\Models\Lms\Question\Question;
+use App\Models\Lms\mcQuestion\mcQuestion;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 

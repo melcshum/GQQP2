@@ -44,28 +44,11 @@ class HistoryTypeTableSeeder extends Seeder
             ],
             [
                 'id'         => 3,
-                'name'       => 'Course',
+                'name'       => 'mcQuestion',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-            [
-                'id'         => 4,
-                'name'       => 'Module',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'id'         => 5,
-                'name'       => 'Game',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'id'         => 6,
-                'name'       => 'Question',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
+
         ];
 
         DB::table('history_types')->insert($types);

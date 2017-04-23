@@ -45,5 +45,15 @@ return [
              'reactivated'         => 'reactivated MC question',
              'restored'            => 'restored MC question',
          ],
+
+         'fillQuestions' => [
+             'created'             => 'created fill in the blank question',
+             'deactivated'         => 'deactivated fill in the blank question',
+             'deleted'             => 'deleted fill in the blank question',
+             'permanently_deleted' => 'permanently deleted fill in the blank question',
+             'updated'             => 'updated fill in the blank question',
+             'reactivated'         => 'reactivated fill in the blank question',
+             'restored'            => 'restored fill in the blank question',
+         ],
     ],
 ];

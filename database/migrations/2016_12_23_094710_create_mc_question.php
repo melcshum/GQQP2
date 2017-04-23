@@ -17,7 +17,6 @@ class CreateMcQuestion extends Migration
             $table->string('name');
             $table->integer('teacher_id')->nullable();
             $table->string('question_type', 20);
-            $table->string('type',10);
             $table->integer('question_level');
             $table->string('question', 1000);
             $table->string('program', 2000);

@@ -24,8 +24,8 @@ class CreateItemsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('item_id')->unsigned()->index();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('item_id')->references('item_id')->on('items');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('item_id')->references('item_id')->on('items')->onDelete('cascade');;
         });
     }
 
@@ -38,5 +38,6 @@ class CreateItemsTable extends Migration
     {
         Schema::drop('item_user');
         Schema::drop('items');
+
     }
 }

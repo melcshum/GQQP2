@@ -89,13 +89,24 @@ return [
         ],
 
         'mcQuestions' => [
-            'all'             => 'All Questions',
+            'all'             => 'All MC Questions',
             'change-password' => 'Change Password',
-            'create'          => 'Create Question',
-            'deactivated'     => 'Deactivated Questions',
-            'deleted'         => 'Deleted Questions',
-            'edit'            => 'Edit Question',
+            'create'          => 'Create MC Question',
+            'deactivated'     => 'Deactivated MC Questions',
+            'deleted'         => 'Deleted MC Questions',
+            'edit'            => 'Edit MC Question',
             'main'            => 'MC Questions',
+            'view'            => 'View Question',
+        ],
+
+        'fillQuestions' => [
+            'all'             => 'All fill in the blank Questions',
+            'change-password' => 'Change Password',
+            'create'          => 'Create fill in the blank Question',
+            'deactivated'     => 'Deactivated fill in the blank Questions',
+            'deleted'         => 'Deleted fill in the blank Questions',
+            'edit'            => 'Edit fill in the blank Question',
+            'main'            => 'Fill in the blank Questions',
             'view'            => 'View Question',
         ],
 

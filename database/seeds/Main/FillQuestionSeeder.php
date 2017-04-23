@@ -11,9 +11,9 @@ class FillQuestionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('fullQuestions')->delete();
+        DB::table('fillQuestions')->delete();
 
-        $fillquestions = array(['question_id'=>1, 'teacher_id'=>1, 'question_type'=>'class','type'=>"fill",'question_level'=>3,'question'=>'Create Hello class and have a main class to print "Hello class":'
+        $fillquestions = array(['question_id'=>1, 'name'=>"Q1",'teacher_id'=>1, 'question_type'=>'class','question_level'=>3,'question'=>'Create Hello class and have a main class to print "Hello class":'
             ,'program'=>'<pre>public class 1.<input type="text" id="ans1" name="ans1">{
 	public 2. <input type="text" id="ans2" name="ans2"> 3.<input type="text" id="ans3" name="ans3"> 4.<input type="text" id="ans4" name="ans4">(String [] args){
 		5.<input type="text" id="ans5" name="ans5">.print("Hello class");
@@ -24,10 +24,10 @@ class FillQuestionSeeder extends Seeder
 						<li>about the main class</li>
 						<li>about the main class</li>
 						<li>about the main class</li>
-						<li>java basic library to print</li>','photo'=>'./images/ans1.JPG'],
+						<li>java basic library to print</li>','photo'=>'./images/ans1.JPG', 'created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
 
         );
 
-        DB::table('fullQuestions')->insert($fillquestions);
+        DB::table('fillQuestions')->insert($fillquestions);
     }
 }

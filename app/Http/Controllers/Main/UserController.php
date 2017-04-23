@@ -53,7 +53,7 @@ class UserController extends Controller
     }
 
     public function changeInfor(){
-        return view('changeInfor');
+        return view('main.user.changeInfor');
     }
 
     public function rank(){

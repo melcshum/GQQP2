@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFullQuestion extends Migration
+class CreateFillQuestion extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateFullQuestion extends Migration
      */
     public function up()
     {
-        Schema::create('fullQuestions', function (Blueprint $table) {
+        Schema::create('fillQuestions', function (Blueprint $table) {
             $table->increments('question_id');
+            $table->string('name');
             $table->integer('teacher_id')->nullable();
             $table->string('question_type', 20);
-            $table->string('type',10);
             $table->integer('question_level');
             $table->string('question', 1000);
             $table->string('program', 2000);
@@ -30,6 +30,10 @@ class CreateFullQuestion extends Migration
             $table->integer('time');
             $table->string('hint',300);
             $table->string('photo',200);
+            $table->string('slug')->unique();
+            $table->tinyInteger('status')->default(1)->unsigned();
+            $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -41,6 +45,6 @@ class CreateFullQuestion extends Migration
      */
     public function down()
     {
-        Schema:: drop('fullQuestions');
+        Schema:: drop('fillQuestions');
     }
 }

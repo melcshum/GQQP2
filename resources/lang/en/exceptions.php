@@ -16,7 +16,7 @@ return [
         'mcQuestions' => [
             'cant_deactivate_self'  => 'You can not do that to yourself.',
             'cant_delete_self'      => 'You can not delete yourself.',
-            'cant_restore'          => 'This course is not deleted so it can not be restored.',
+            'cant_restore'          => 'This NC Question is not deleted so it can not be restored.',
             'create_error'          => 'There was a problem creating this MC question. Please try again.',
             'delete_error'          => 'There was a problem deleting this MC question. Please try again.',
             'delete_first'          => 'This MC question must be deleted first before it can be destroyed permanently.',
@@ -25,6 +25,21 @@ return [
             'not_found'             => 'That MC question does not exist.',
             'restore_error'         => 'There was a problem restoring this MC question. Please try again.',
             'update_error'          => 'There was a problem updating this MC question. Please try again.',
+
+        ],
+
+        'fillQuestions' => [
+            'cant_deactivate_self'  => 'You can not do that to yourself.',
+            'cant_delete_self'      => 'You can not delete yourself.',
+            'cant_restore'          => 'This fill in the blank is not deleted so it can not be restored.',
+            'create_error'          => 'There was a problem creating this fill in the blank question. Please try again.',
+            'delete_error'          => 'There was a problem deleting this fill in the blank question. Please try again.',
+            'delete_first'          => 'This fill in the blank question must be deleted first before it can be destroyed permanently.',
+            'email_error'           => 'That email address belongs to a different question.',
+            'mark_error'            => 'There was a problem updating this fill in the blank question. Please try again.',
+            'not_found'             => 'That fill in the blank question does not exist.',
+            'restore_error'         => 'There was a problem restoring this fill in the blank question. Please try again.',
+            'update_error'          => 'There was a problem updating this fill in the blank question. Please try again.',
 
         ],
 

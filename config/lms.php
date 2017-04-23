@@ -13,4 +13,12 @@ return [
 
     /*-------------------------------------------------*/
 
+    'fillQuestions_table'=> 'fillQuestions',
+
+    'fillQuestion' => fillQuestion::class,
+
+    'fillQuestions' =>[
+
+    ],
+
 ];
