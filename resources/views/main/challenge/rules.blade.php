@@ -5,6 +5,14 @@
 
 
 </head>
+<style>
+    .main-container {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 100%;
+        clear: both;
+    }
+    </style>
 
 <body>
 @extends("main.layouts.app")
@@ -15,14 +23,18 @@
             <!-- /.col-lg-12 -->
             <div class="col-lg-12">
 
-                <div style="text-align:center">
+                <div style="text-align:center" class="main-container">
+                    <table border="0" width="100%">
+                        <tr><td>
                     <font size="5" >
                         <abc>Leaderboard was divided into 4 divisions <br><b>(platinum, gold, silver, bronze)</b>
                             which the top 25% of players will assign to the Platinum Division,<br>
                             26%-50% will be Gold Division ,<br>51%-75% will be Silver Division <br>
-                            and the others players will be Bronze Division.<br><br>Enjoy the Game!</abc>
+                            and the others players will be Bronze Division.<br><br>Enjoy the Challenge!</abc>
 
                     </font>
+                            </td></tr>
+                    </table>
                 </div>
 
 
@@ -30,7 +42,7 @@
             </div>
 
             <div id="myimageDiv" style="display:none;">
-                <img src='../images/5sec.gif' width="100%" height="100%">
+                <img src='../images/5sec.gif' width="100%" height="100%" align="left">
                 <br />
             </div>
 
@@ -39,7 +51,7 @@
 
             <div style="text-align:center">
                 <abc>
-                    <a onclick="showHide();setTimeout(myFunction, 5500);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
+                    <a onclick="showHide();setTimeout(myFunction, 5450);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
                     <a href="#" class="btn btn-danger" >Cancel</a>
 
                 </abc>

@@ -60,7 +60,7 @@
 
 <body>
 
-@extends('main.layouts.app')
+@extends('main.layouts.game')
 
 @section('content')
     <div id="wrapper">
@@ -94,9 +94,9 @@
 
         <div id="Mainp" class="row">
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
-                <h3><label>{!!(($playnum))!!}</label>/3</h3>
+
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
-                    <h2>Question</h2>
+                    <h2>Question <label>{!!(($playnum))!!}</label>/20</h2>
                     <p><label>{!!(($fill[$random]->question))!!}</label></p>
                     <hr>
                     <h2>Output</h2>
@@ -107,7 +107,7 @@
                     </ol>
                 </div>
 
-                <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
+                <div id="Answer"class="col-md-8 col-sm-8 col-xs-8" >
                     <h2>Answer</h2>
                     {!! Form::open(array('action' => 'Main\ChallengeFillController@challenge','method' => 'post')) !!}
                     <input type="hidden" name="playNum" id="playNum" value={!! $playnum !!}>
