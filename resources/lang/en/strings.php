@@ -32,6 +32,18 @@ return [
             'restore_loopQuestion_confirm' => 'Restore this loop Question to its original state?',
         ],
 
+        'iftutorialQuestions' => [
+            'delete_iftutorialQuestion_confirm'  => 'Are you sure you want to delete this if_else Question permanently? Anywhere in the application that references this if_else Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_loopQuestion_confirm' => 'Restore this if_else Question to its original state?',
+        ],
+
+        'arrayQuestions' => [
+            'delete_arrayQuestion_confirm'  => 'Are you sure you want to delete this array Question permanently? Anywhere in the application that references this array Question\'s will most likely error. Proceed at your own risk. This can not be un-done.',
+            'if_confirmed_off'     => '(If confirmed is off)',
+            'restore_loopQuestion_confirm' => 'Restore this array Question to its original state?',
+        ],
+
 
 
         'dashboard' => [

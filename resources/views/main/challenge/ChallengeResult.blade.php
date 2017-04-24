@@ -86,15 +86,14 @@
                             <td>{!! $totalquestionMCresult[$i][$i]['Knowledge'] !!}</td>
                             <td>{!! intval($totalquestionMCresult[$i][$i]['Finish Time']/60) !!}:{!! $totalquestionMCresult[$i][$i]['Finish Time']%60 !!}</td>
                         </tr>
-                        <tr>
-                            <td>{!! $totalquestionresult[0][0]['Question'] !!}</td>
-                            <td>{!! $totalquestionresult[0][0]['Result'] !!}</td>
-                            <td>{!! $totalquestionresult[0][0]['Gold'] !!}</td>
-                            <td>{!! $totalquestionresult[0][0]['Knowledge'] !!}</td>
-                            <td>{!! intval($totalquestionresult[0][0]['Finish Time']/60) !!}:{!! $totalquestionMCresult[0][0]['Finish Time']%60 !!}</td>
-                        </tr>
-
                     @endfor
+                    <tr>
+                        <td>{!! $totalquestionresult[0][0]['Question'] !!}</td>
+                        <td>{!! $totalquestionresult[0][0]['Result'] !!}</td>
+                        <td>{!! $totalquestionresult[0][0]['Gold'] !!}</td>
+                        <td>{!! $totalquestionresult[0][0]['Knowledge'] !!}</td>
+                        <td>{!! intval($totalquestionresult[0][0]['Finish Time']/60) !!}:{!! $totalquestionMCresult[0][0]['Finish Time']%60 !!}</td>
+                    </tr>
                     <tr>
 
                     </tr>

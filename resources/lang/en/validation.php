@@ -186,46 +186,8 @@ return [
 
             ],
 
-<<<<<<< HEAD
+
             'iftutorialQuestions' => [
-=======
-            'fillQuestions' => [
->>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
-                'active'                  => 'Active',
-                'name'                    => 'Name',
-                'question'                => 'Question',
-                'program'                 => 'Program',
-                'question_ans'            => 'Question Answer',
-                'mc_ans1'                    => 'Answer 1',
-                'mc_ans2'                    => 'Answer 2',
-                'mc_ans3'                    => 'Answer 3',
-                'mc_ans4'                    => 'Answer 4',
-                'photo'                   => 'Output',
-                'question_level'          => 'Question level',
-                'question_type'           => 'Question topic',
-                'type'                    => 'Type of Question',
-                'slug'                    => 'Slug',
-
-            ],
-            'arrayQuestions' => [
-                'active'                  => 'Active',
-                'name'                    => 'Name',
-                'question'                => 'Question',
-                'program'                 => 'Program',
-                'question_ans'            => 'Question Answer',
-                'mc_ans1'                    => 'Answer 1',
-                'mc_ans2'                    => 'Answer 2',
-                'mc_ans3'                    => 'Answer 3',
-                'mc_ans4'                    => 'Answer 4',
-                'photo'                   => 'Output',
-                'question_level'          => 'Question level',
-                'question_type'           => 'Question topic',
-                'type'                    => 'Type of Question',
-                'slug'                    => 'Slug',
-
-            ],
-
-            'loopQuestions' => [
                 'active'                  => 'Active',
                 'name'                    => 'Name',
                 'question'                => 'Question',
@@ -236,6 +198,57 @@ return [
                 'ans3'                    => 'Answer 3',
                 'ans4'                    => 'Answer 4',
                 'ans5'                    => 'Answer 5',
+                'photo'                   => 'Output',
+                'question_level'          => 'Question level',
+                'question_type'           => 'Question topic',
+                'slug'                    => 'Slug',
+
+            ],
+
+            'fillQuestions' => [
+
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'question'                => 'Question',
+                'program'                 => 'Program',
+                'question_ans'            => 'Question Answer',
+                'mc_ans1'                    => 'Option a',
+                'mc_ans2'                    => 'Option b',
+                'mc_ans3'                    => 'Option c',
+                'mc_ans4'                    => 'Option d',
+                'photo'                   => 'Output',
+                'question_level'          => 'Question level',
+                'question_type'           => 'Question topic',
+                'slug'                    => 'Slug',
+
+            ],
+            'arrayQuestions' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'question'                => 'Question',
+                'program'                 => 'Program',
+                'question_ans'            => 'Question Answer',
+                'mc_ans1'                    => 'Option a',
+                'mc_ans2'                    => 'Option b',
+                'mc_ans3'                    => 'Option c',
+                'mc_ans4'                    => 'Option d',
+                'photo'                   => 'Output',
+                'question_level'          => 'Question level',
+                'question_type'           => 'Question topic',
+                'slug'                    => 'Slug',
+
+            ],
+
+            'loopQuestions' => [
+                'active'                  => 'Active',
+                'name'                    => 'Name',
+                'question'                => 'Question',
+                'program'                 => 'Program',
+                'question_ans'            => 'Question Answer',
+                'mc_ans1'                    => 'Option a',
+                'mc_ans2'                    => 'Option b',
+                'mc_ans3'                    => 'Option c',
+                'mc_ans4'                    => 'Option d',
                 'photo'                   => 'Output',
                 'question_level'          => 'Question level',
                 'question_type'           => 'Question topic',

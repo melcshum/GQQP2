@@ -17,9 +17,9 @@ class ChallengeController extends Controller
 {
     public function index(){
         $playNumber = 0;
-        $mc = DB::table('mcquestions')->where('status',1)->get();
+        $mc = DB::table('mcQuestions')->where('status',1)->get();
         $random = $this->randomNumber(count($mc));
-        $fill = Fullquestion::all();//
+        $fill = DB::table('fillQuestions')->where('status',1)->get();//
         $totalgold = 0;
         $totalknowledge = 0;
         $totalquestion2 = count($fill) + count($mc);//all mc+fill question
@@ -34,11 +34,11 @@ class ChallengeController extends Controller
     public function challenge (Request $request)
     {
         $playNumber = $request->input('question_num')+1;
-        $mc = DB::table('mcquestions')->where('status',1)->get();
+        $mc = DB::table('mcQuestions')->where('status',1)->get();
 
 
         if (Input::get('next')) {
-            $mc = DB::table('mcquestions')->where('status',1)->get();//get MCquestion database
+            $mc = DB::table('mcQuestions')->where('status',1)->get();//get MCquestion database
             $UserTime = $request->input('qtime');//User finish Time
             $QuestionTime = $request->input('time');//Question finish Time
             $totalgold = $request->input('totalgold');//get the totalgold in all Challenge
@@ -127,7 +127,7 @@ class ChallengeController extends Controller
     }
     public function checkEnd($playNumber){
         $End = "";
-        $mc =DB::table('mcquestions')->where('status',1)->get();
+        $mc =DB::table('mcQuestions')->where('status',1)->get();
         if ($playNumber == count($mc)) {
             $End = True;
         }else {
@@ -143,7 +143,7 @@ class ChallengeController extends Controller
 
     public function checkAjax(Request $request){
 //       return "abc";
-        $mc = DB::table('mcquestions')->where('status',1)->get();
+        $mc = DB::table('mcQuestions')->where('status',1)->get();
         $mcquestion = $mc[1];
         //dd($mc[1]);
         return response()->json($mcquestion);

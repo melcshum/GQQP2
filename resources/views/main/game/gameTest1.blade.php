@@ -226,52 +226,11 @@ html {
                 $("#time").val(rtime);
             }
         }
+        
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
         });
-        $('#fivefive').click(function(){
-            var donthint = $("#trueAns").val();
-            var random = Math.floor(Math.random() * $('.item').length);
-            if(donthint=='a'){
-                while(random==0) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(0).show();
-            }elseif(donthint=='b')
-            {
-                while(random==1) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(1).show();
-            }elseif(donthint=='c')
-            {
-                while(random==2) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(2).show();
-            }elseif(donthint=='d')
-            {
-                while(random==3) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                $('.item').eq(3).show();
-            }
-        });
-        $('#plustime').click(function(){
-            rtime= rtime + 30;
-            s = s +30;
 
-
-
-//            if(s>= 60 ){
-//                m++;
-//                s= s % 60;
-//            }
-        });
 
 
 

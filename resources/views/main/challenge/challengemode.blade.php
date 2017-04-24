@@ -133,7 +133,6 @@
                         <input type="hidden" id='time' name="time" value='0'>
                         <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
-                        <input type="hidden" id='questionType' name="questionType" value={!! $mc[$random]->type !!}>
                         <input type="hidden" id='random' name="random" value={!! $random !!}>
                         <tr>
                             <td id ="hset">
@@ -301,7 +300,7 @@
                     $('#MCC').html(data['mc_ans3']);
                     $('#MCD').html(data['mc_ans4']);
                     $('#trueAns').val(data['question_ans']);
-                    $('#questionType').val(data['type']);
+                    $('#questionType').val(data['question_type']);
                 }
             })
         });

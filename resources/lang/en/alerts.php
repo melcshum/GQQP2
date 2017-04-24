@@ -63,5 +63,25 @@ return [
             'updated'             => 'The loop question was successfully updated.',
 
         ],
+
+        'arrayQuestions' => [
+
+            'created'             => 'The array question was successfully created.',
+            'deleted'             => 'The array question was successfully deleted.',
+            'deleted_permanently' => 'The array question was deleted permanently.',
+            'restored'            => 'The array question was successfully restored.',
+            'updated'             => 'The array question was successfully updated.',
+
+        ],
+
+        'iftutorialQuestions' => [
+
+            'created'             => 'The if_else question was successfully created.',
+            'deleted'             => 'The if_else question was successfully deleted.',
+            'deleted_permanently' => 'The if_else question was deleted permanently.',
+            'restored'            => 'The if_else question was successfully restored.',
+            'updated'             => 'The loif_else question was successfully updated.',
+
+        ],
     ],
 ];

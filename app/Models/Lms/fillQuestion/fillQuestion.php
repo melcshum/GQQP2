@@ -36,7 +36,7 @@ class fillQuestion extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'teacher_id', 'question_type', 'type', 'question_level', 'question', 'program',
+    protected $fillable = ['id', 'name', 'teacher_id', 'question_type','question_level', 'question', 'program',
                         'ans1', 'ans2', 'ans3', 'ans4', 'ans5', 'knowledge', 'gold', 'time', 'hint', 'photo', 'slug', 'status' ];
 
     /**

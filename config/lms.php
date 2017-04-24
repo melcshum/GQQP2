@@ -21,7 +21,7 @@ return [
 
     ],
 
-<<<<<<< HEAD
+
     'iftutorialQuestions_table'=> 'iftutquestions',
 
     'iftutorialQuestion' => iftutquestion::class,
@@ -35,7 +35,8 @@ return [
     'arrayQuestion' => arraytutquestion::class,
 
     'arrayQuestions' =>[
-=======
+
+        ],
     /*-------------------------------------------------*/
 
     'loopQuestions_table'=> 'looptutquestions',
@@ -43,7 +44,7 @@ return [
     'loopQuestion' => loopQuestion::class,
 
     'loopQuestions' =>[
->>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
+
 
     ],
 

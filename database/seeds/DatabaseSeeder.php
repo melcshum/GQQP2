@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemSeeder::class);
         $this->call(McQuestionSeeder::class);
         $this->call(SkillSeeder::class);
-        $this->call(Item_UserSeeder::class);
         $this->call(arrayTutorialSeeder::class);
         $this->call(loopTutorialSeeder::class);
 

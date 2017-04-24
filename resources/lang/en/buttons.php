@@ -68,6 +68,16 @@ return [
         'loopQuestion' =>[
             'restore_user'       => 'Restore loop Question',
             'delete_permanently' => 'Delete Permanently',
-        ]
+        ],
+
+        'iftutorialQuestion' =>[
+            'restore_user'       => 'Restore if_else Question',
+            'delete_permanently' => 'Delete Permanently',
+        ],
+
+        'arrayQuestion' =>[
+            'restore_user'       => 'Restore array Question',
+            'delete_permanently' => 'Delete Permanently',
+        ],
     ],
 ];

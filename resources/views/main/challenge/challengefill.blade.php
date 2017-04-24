@@ -223,7 +223,7 @@
                     $('#MCC').html(data['mc_ans3']);
                     $('#MCD').html(data['mc_ans4']);
                     $('#trueAns').val(data['question_ans']);
-                    $('#questionType').val(data['type']);
+                    $('#questionType').val(data['question_type']);
                 }
             })
         });

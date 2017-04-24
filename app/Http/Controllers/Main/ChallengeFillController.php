@@ -15,7 +15,7 @@ use Session;
 class ChallengeFillController extends Controller
 {
     public function index(){
-        $fill = DB::table('fullquestions')->get();
+        $fill = DB::table('fillQuestions')->where('status',1)->get();
         $playnum = 20;
         $totalgold = 0;
         $random = $this->randomNumber(count($fill));
@@ -27,7 +27,7 @@ class ChallengeFillController extends Controller
     }
 
     public function challenge(Request $request){
-        $fill = DB::table('fullquestions')->get();
+        $fill = DB::table('fillQuestions')->where('status',1)->get();
         $random = Session::get('ChallengeFillRandom')[0][0];
        //dd($fill[0]['attributes']['']);
         $playnum = $request->input('playNum');//20
@@ -48,7 +48,7 @@ class ChallengeFillController extends Controller
             //dd($totalquestionresult);
             return view ('main.challenge.ChallengeResult', compact('totalquestionresult','totalquestionMCresult','totalTime','totalGold','totalKnow'));
         }
-        $fill = DB::table('fullquestions')->get();
+        $fill = DB::table('fillQuestions')->where('status',1)->get();
         $random = Session::get('ChallengeFillRandom')[0][0];
         $gold = $fill[$random]->gold;
         $knowledge = $fill[$random]->knowledge;
@@ -65,7 +65,7 @@ class ChallengeFillController extends Controller
         return view ('main.challenge.ChallengeResult', compact('totalquestionresult','totalquestionMCresult','totalGold','totalTime','totalKnow'));
     }
     public function checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$random){
-        $fill = DB::table('fullquestions')->get();
+        $fill = DB::table('fillQuestions')->where('status',1)->get();
         $check = true;
         if($fill[$random]->ans1 != $ans1){
             $check = false;

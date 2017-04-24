@@ -189,8 +189,8 @@ return [
                 'no_deleted'     => 'No Deleted Users',
                 'total'          => 'user total|users total',
             ],
-<<<<<<< HEAD
-            ],
+
+        ],
             'iftutorialQuestions' =>[
                 'management'          => 'Questions Management',
                 'active'              => 'Active if tutorial questions',
@@ -205,7 +205,19 @@ return [
                 'no_permissions'      => 'No Permissions',
                 'no_roles'            => 'No Roles to set.',
                 'permissions'         => 'Permissions',
-=======
+
+                'table' => [
+                    'confirmed'      => 'Confirmed',
+                    'created'        => 'Created',
+                    'description'          => 'Description',
+                    'id'             => 'ID',
+                    'last_updated'   => 'Last Updated',
+                    'name'           => 'Name',
+                    'question'       => 'Question',
+                    'no_deactivated' => 'No Deactivated Users',
+                    'no_deleted'     => 'No Deleted Users',
+                    'total'          => 'user total|users total',
+                ],
         ],
 
         'fillQuestions' =>[
@@ -222,7 +234,7 @@ return [
             'no_permissions'      => 'No Permissions',
             'no_roles'            => 'No Roles to set.',
             'permissions'         => 'Permissions',
->>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
+
 
             'table' => [
                 'confirmed'      => 'Confirmed',
@@ -266,8 +278,9 @@ return [
                 'no_deleted'     => 'No Deleted Users',
                 'total'          => 'user total|users total',
             ],
+        ],
 
-<<<<<<< HEAD
+
         'arrayQuestions' =>[
             'management'          => 'Questions Management',
             'active'              => 'Active array questions',
@@ -298,12 +311,6 @@ return [
         ],
 
 
-        
-=======
-
-        ],
-
->>>>>>> 922febbdc7615e5c8d238aefe461dfcd2c2f61de
         'access' => [
             'roles' => [
                 'create'     => 'Create Role',
