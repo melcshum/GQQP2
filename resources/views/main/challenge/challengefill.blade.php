@@ -75,7 +75,7 @@
     <table border="1" align="right">
         <tr>
             <td>
-                <img src="./images/the-meaning-of-D.jpg">
+                <img src="./images/changeQuestion.png" width="50" height="50">
             </td>
             <td>
                 x1
@@ -83,7 +83,7 @@
         </tr>
         <tr>
             <td>
-                <img src="./images/hO01DAyn.png">
+                <img src="./images/extraTime.png" width="50" height="50">
             </td>
             <td>
                 x1

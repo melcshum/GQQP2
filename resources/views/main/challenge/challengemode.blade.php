@@ -135,7 +135,7 @@
         <table border="1" align="right">
             <tr>
                 <td>
-                    <img id='changeQ' src="./images/the-meaning-of-D.jpg">
+                    <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
                 </td>
                 <td>
                     x{{ Auth::user()->change }}
@@ -151,7 +151,7 @@
             </tr>
             <tr>
                 <td>
-                    <img id="plustime" src="./images/hO01DAyn.png">
+                    <img id="plustime" src="./images/extraTime.png" width="50" height="50">
                 </td>
                 <td>
                     x{{ Auth::user()->extra }}
