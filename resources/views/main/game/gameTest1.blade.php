@@ -153,12 +153,12 @@
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                         <tr>
                              <td align="right">
-                                <p><input class="item" type="radio" id='a' name="ans" value="a"/>{{--<label for="a"><button type="button" >--}}a) {!!($mc[$random]->mc_ans1)!!}</button></label></p>
-                                <p><input class="item" type="radio" id='b' name="ans" value="b"/>{{--<label for="b"><button type="button" >--}}b) {!!($mc[$random]->mc_ans2)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='a' name="ans" value="a"/>{{--<label for="a"><button type="button" >--}}a) {!!($mc[$random]->mc_ans1)!!}</p>
+                                 <p><input class="item" type="radio" id='c' name="ans" value="c"/>{{--<label for="c"><button type="button" >--}}c) {!!($mc[$random]->mc_ans3)!!}</p>
                             </td>
                              <td align="right">
-                                <p><input class="item" type="radio" id='c' name="ans" value="c"/>{{--<label for="c"><button type="button" >--}}c) {!!($mc[$random]->mc_ans3)!!}</button></label></p>
-                                <p><input class="item" type="radio" id='d' name="ans" value="d"/>{{--<label for="d"><button type="button" >--}}d) {!!($mc[$random]->mc_ans4)!!}</button></label></p>
+                                 <p><input class="item" type="radio" id='b' name="ans" value="b"/>{{--<label for="b"><button type="button" >--}}b) {!!($mc[$random]->mc_ans2)!!}</p>
+                                <p><input class="item" type="radio" id='d' name="ans" value="d"/>{{--<label for="d"><button type="button" >--}}d) {!!($mc[$random]->mc_ans4)!!}</p>
                             </td>
                         </tr>
                     </table>

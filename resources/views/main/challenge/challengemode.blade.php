@@ -187,18 +187,18 @@
                             <input type="hidden" id='random' name="random" value={!! $random !!}>
                             <tr>
                                 <td id ="hset" align="right">
-                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/>{{--<label for="a" ><button type="button">--}}<span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                    <p class="item"><input type="radio" id='a' name="ans" value="a"/>a.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans1)!!}</span></span></p>
                                 </td>
                                 <td id ="hset" align="right">
-                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/>{{--<label for="b" ><button type="button">--}}<span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                    <p class="item"><input type="radio" id='a' name="ans" value="b"/>b.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans2)!!}</span></span></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td id ="hset2" align="right">
-                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/>{{--<label for="c" ><button type="button">--}}<span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                    <p class="item"><input type="radio" id='a' name="ans" value="c"/>c.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans3)!!}</span></span></p>
                                 </td>
                                 <td id ="hset2" align="right">
-                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/>{{--<label for="d" ><button type="button">--}}<span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                    <p class="item"><input type="radio" id='a' name="ans" value="d"/>d.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans4)!!}</span></span></p>
                                 </td>
                             </tr>
                         </table>
