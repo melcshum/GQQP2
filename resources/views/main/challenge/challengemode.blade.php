@@ -66,55 +66,55 @@
 
     </style>
 
-    {{--<style>--}}
+    <style>
 
-        {{--.item {--}}
-            {{--position: absolute;--}}
-            {{--left: -9999px;--}}
-        {{--}--}}
+    .item {
+    position: absolute;
+    left: -9999px;
+    }
 
-        {{--input[type=radio]:checked + label>button  {--}}
-            {{--border: 1px solid #fff;--}}
-            {{--box-shadow: 0 0 3px 3px #090;--}}
-        {{--}--}}
+    input[type=radio]:checked + label>button  {
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 3px #090;
+    }
 
-        {{--/* Stuff after this is only to make things more pretty */--}}
-        {{--input[type=radio] + label>button {--}}
-            {{--border: 1px dashed #444;--}}
-            {{--width: 150px;--}}
-            {{--height: 80px;--}}
-            {{--transition: 500ms all;--}}
-            {{--background-color: WHITE;--}}
-        {{--}--}}
+    /* Stuff after this is only to make things more pretty */
+    input[type=radio] + label>button {
+    border: 1px dashed #444;
+    width: 150px;
+    height: 80px;
+    transition: 500ms all;
+    background-color: WHITE;
+    }
 
-        {{--input[type=radio]:checked + label>button {--}}
-            {{--transform:--}}
-                    {{--rotateZ(0deg)--}}
-                    {{--rotateX(0deg);--}}
-            {{--background-color: Gold;--}}
-        {{--}--}}
+    input[type=radio]:checked + label>button {
+    transform:
+    rotateZ(0deg)
+    rotateX(0deg);
+    background-color: Gold;
+    }
 
-        {{--/*--}}
-         {{--| //lea.verou.me/css3patterns--}}
-         {{--| Because white bgs are boring.--}}
-        {{--*/--}}
-        {{--html {--}}
-            {{--background-color: #fff;--}}
-            {{--background-size: 100% 1.2em;--}}
-            {{--background-image:--}}
-                    {{--linear-gradient(--}}
-                            {{--90deg,--}}
-                            {{--transparent 79px,--}}
-                            {{--#abced4 79px,--}}
-                            {{--#abced4 81px,--}}
-                            {{--transparent 81px--}}
-                    {{--),--}}
-                    {{--linear-gradient(--}}
-                            {{--#eee .1em,--}}
-                            {{--transparent .1em--}}
-                    {{--);--}}
-        {{--}--}}
-    {{--</style>--}}
+    /*
+    | //lea.verou.me/css3patterns
+    | Because white bgs are boring.
+    */
+    html {
+    background-color: #fff;
+    background-size: 100% 1.2em;
+    background-image:
+    linear-gradient(
+    90deg,
+    transparent 79px,
+    #abced4 79px,
+    #abced4 81px,
+    transparent 81px
+    ),
+    linear-gradient(
+    #eee .1em,
+    transparent .1em
+    );
+    }
+    </style>
 
 </head>
 
@@ -135,7 +135,7 @@
         <table border="1" align="right">
             <tr>
                 <td>
-                    <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
+                    <img id='changeQ' src="./images/the-meaning-of-D.jpg">
                 </td>
                 <td>
                     x{{ Auth::user()->change }}
@@ -151,7 +151,7 @@
             </tr>
             <tr>
                 <td>
-                    <img id="plustime" src="./images/extraTime.png" width="50" height="50">
+                    <img id="plustime" src="./images/hO01DAyn.png">
                 </td>
                 <td>
                     x{{ Auth::user()->extra }}
@@ -187,18 +187,18 @@
                             <input type="hidden" id='random' name="random" value={!! $random !!}>
                             <tr>
                                 <td id ="hset" align="right">
-                                    <p class="item"><input type="radio" id='a' name="ans" value="a"/>a.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans1)!!}</span></span></p>
+                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><button type="button"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
                                 </td>
                                 <td id ="hset" align="right">
-                                    <p class="item"><input type="radio" id='a' name="ans" value="b"/>b.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans2)!!}</span></span></p>
+                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><button type="button"><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td id ="hset2" align="right">
-                                    <p class="item"><input type="radio" id='a' name="ans" value="c"/>c.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans3)!!}</span></span></p>
+                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><button type="button"><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
                                 </td>
                                 <td id ="hset2" align="right">
-                                    <p class="item"><input type="radio" id='a' name="ans" value="d"/>d.<span class="queenie"><span id="MCA">{!!($mc[$random]->mc_ans4)!!}</span></span></p>
+                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><button type="button"><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
                                 </td>
                             </tr>
                         </table>
