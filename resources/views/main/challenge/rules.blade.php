@@ -11,6 +11,10 @@
         margin: 0 auto;
         max-width: 100%;
         clear: both;
+
+    }
+    .row-fluid {
+
     }
     </style>
 
@@ -51,7 +55,7 @@
 
             <div style="text-align:center">
                 <abc>
-                    <a onclick="showHide();setTimeout(myFunction, 5450);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
+                    <a onclick="showHide();setTimeout(myFunction, 5425);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
                     <a href="#" class="btn btn-danger" >Cancel</a>
 
                 </abc>
