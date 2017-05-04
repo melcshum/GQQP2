@@ -241,8 +241,7 @@
         });
 //            $('table').on('click', 'tr', function(){
 //               $(this).addClass('self').sibling().removeClass('self');
-//            });
-    });
+
 </script>
 
 </body>

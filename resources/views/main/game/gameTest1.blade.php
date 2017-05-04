@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
+
+
     <style>
         .thumbnail{
             width:300px;
@@ -63,53 +66,53 @@
 
     <style>
 
-.item {
-  position: absolute;
-  left: -9999px;
-}
+        .item {
+            position: absolute;
+            left: -9999px;
+        }
 
-input[type=radio]:checked + label>button {
-  border: 1px solid #fff;
-  box-shadow: 0 0 3px 3px #090;
-}
+        input[type=radio]:checked + label>button {
+            border: 1px solid #fff;
+            box-shadow: 0 0 3px 3px #090;
+        }
 
-/* Stuff after this is only to make things more pretty */
-input[type=radio] + label>button {
-  border: 1px dashed #444;
-  width: 150px;
-  height: 80px;
-  transition: 500ms all;
-  background-color: WHITE;
-}
+        /* Stuff after this is only to make things more pretty */
+        input[type=radio] + label>button {
+            border: 1px dashed #444;
+            width: 150px;
+            height: 80px;
+            transition: 500ms all;
+            background-color: WHITE;
+        }
 
-input[type=radio]:checked + label>button {
-  transform: 
-    rotateZ(0deg) 
-    rotateX(0deg);
-    background-color: Gold;
-}
+        input[type=radio]:checked + label>button {
+            transform:
+                    rotateZ(0deg)
+                    rotateX(0deg);
+            background-color: Gold;
+        }
 
-/*
- | //lea.verou.me/css3patterns
- | Because white bgs are boring.
-*/
-html {
-  background-color: #fff;
-  background-size: 100% 1.2em;
-  background-image: 
-    linear-gradient(
-      90deg, 
-      transparent 79px, 
-      #abced4 79px, 
-      #abced4 81px, 
-      transparent 81px
-    ),
-    linear-gradient(
-      #eee .1em, 
-      transparent .1em
-    );
-}
-</style>
+        /*
+         | //lea.verou.me/css3patterns
+         | Because white bgs are boring.
+        */
+        html {
+            background-color: #fff;
+            background-size: 100% 1.2em;
+            background-image:
+                    linear-gradient(
+                            90deg,
+                            transparent 79px,
+                            #abced4 79px,
+                            #abced4 81px,
+                            transparent 81px
+                    ),
+                    linear-gradient(
+                            #eee .1em,
+                            transparent .1em
+                    );
+        }
+    </style>
 
 </head>
 
@@ -176,6 +179,8 @@ html {
     </div>
     <!-- /#wrapper -->
 @endsection
+
+
 <!-- jQuery -->
 <script src="../vendor/jquery/jquery.min.js"></script>
 
@@ -226,7 +231,7 @@ html {
                 $("#time").val(rtime);
             }
         }
-        
+
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
         });
@@ -281,5 +286,6 @@ html {
     })
 </script>
 </body>
+
 
 </html>
