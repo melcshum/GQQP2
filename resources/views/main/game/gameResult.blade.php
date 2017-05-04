@@ -89,28 +89,29 @@
 
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Gold:<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
-            </div>
-        </div>
-    </div>
-    <div class="container">
 
-        <div id="Mainp"class="row">
-            <h3><label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}</h3>
-            <pre><h4>Question: {!!($mc[$random]->question)!!}</h4></pre>
-            <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
+
+
+
+        <div id="Mainp"class="row"><div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                    <pre class="joe"><center><h4><label>Gold:<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
+
+            <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
+            <div id="Question" class="col-md-12 col-sm-12 col-xs-12">
                 <h2>Your Answer</h2>
                 {!!($mc[$random]->program)!!}
                 {!!$playAns!!}.{!!$ans!!}
             </div>
 
-            <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Answer" class="col-md-12 col-sm-12 col-xs-12">
                 <h2>Correct Answer</h2>
-                {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
+
                 {!!($mc[$random]->program)!!}
+                {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
             </div>
+                </div>
         </div>
         <!-- /.row -->
     </div>

@@ -57,9 +57,9 @@
                             <td colspan="2">
 
                                 You now have:
-                                <button2 class="btn btn-info">Change Question</button2> x {{Auth::user()->change}}&nbsp&nbsp&nbsp
-                                <button2 class="btn btn-info">50/50</button2> x {{Auth::user()->half}}&nbsp&nbsp&nbsp
-                                <button2 class="btn btn-info">Extra Time</button2> x {{Auth::user()->extra}}&nbsp&nbsp&nbsp
+                                <img src="./images/changeQuestion.png" width="50" height="50"> x {{Auth::user()->change}}&nbsp&nbsp&nbsp
+                                <img src="./images/50-50-movie_61.jpg"> x {{Auth::user()->half}}&nbsp&nbsp&nbsp
+                                <img src="./images/extraTime.png" width="50" height="50"> x {{Auth::user()->extra}}&nbsp&nbsp&nbsp
                             </td>
                             <th>
 
@@ -87,7 +87,7 @@
 
                     <tr>
 
-                            <h5><td align="center"><button class="btn btn-info">Change Question</button></td>
+                            <h5><td align="center"><img src="./images/changeQuestion.png" width="50" height="50"></td>
                                 <td align="center">&nbsp(user can displace to another question in Challenge Mode)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                                 <td align="center" ><button id="buy1" name="buy1" class="btn btn-danger" data-toggle="modal" data-target="#myModal" value="1">
                                 <span class="showPoint"><img src="./images/gold.ico" width="40"> &nbspx &nbsp500</span>
@@ -99,7 +99,7 @@
 
                     <tr>
 
-                            <h5><td align="center"><button class="btn btn-info">50/50</button></td>
+                            <h5><td align="center"><img src="./images/50-50-movie_61.jpg"></td>
                                 <td align="center">&nbsp(user can filter 2 incorrecct answer in  Challenge Mode <b>(Multiple Choice Only)</b>)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                                 <td align="center"><button id="buy2" name="buy2" class="btn btn-danger" data-toggle="modal" data-target="#myModal2" value="2">
                                 <span class="showPoint"><img src="./images/gold.ico" width="40"> x 1000</span>
@@ -110,7 +110,7 @@
 
                     <tr>
 
-                            <h5> <td align="center"><button class="btn btn-info" >Extra time</button></td>
+                            <h5> <td align="center"><img src="./images/extraTime.png" width="50" height="50"></td>
                                 <td align="center">&nbsp(user can get an extra time in the Challenge Mode)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                                 <td align="center"><button id="buy3" name="buy3" class="btn btn-danger" data-toggle="modal" data-target="#myModal3" value="3">
                                 <span class="showPoint"><img src="./images/gold.ico" width="40"> x 2000</span>

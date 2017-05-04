@@ -321,7 +321,7 @@
                                 <tr>
                                     <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation3" class="btn btn-primary" role="button">Play</td>
                                     <td align="center" valign="bottom"><button id=Topic3 class="btn btn-primary">Show Information</button></td>
-                                    <td align="right" valign="bottom"> <//img src="./images/Lock.jpg" height="40" width="40">
+                                    <td align="right" valign="bottom"> <img src="./images/Lock.jpg" height="40" width="40">
                                     </td>
                                 </tr>
                                 </table>
