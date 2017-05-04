@@ -125,7 +125,7 @@
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label>     </h4></center></pre>
+                <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
             </div>
         </div>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
@@ -213,7 +213,7 @@
                 if(s>=60){
                     m++;
                     $("#my").text(m);
-                    s= (rtime % 60) -2;
+                    s = (rtime % 60) -1;
                     s++;
                     rtime++;
                     $("#sy").text(s);
@@ -225,6 +225,12 @@
                 rtime++;
                 $("#sy").text(s);
                 $("#time").val(rtime);
+            }
+            if(s>9){
+                $("#tensy").hide();
+            }
+            else{
+                $("#tensy").show();
             }
         }
         
