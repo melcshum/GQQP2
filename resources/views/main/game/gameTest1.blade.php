@@ -32,6 +32,7 @@
         }
         #Test123{
             display: table;
+
         }
 
         #Mainp [class*="col-"] {
@@ -66,6 +67,7 @@
 
     <style>
 
+<<<<<<< HEAD
         .item {
             position: absolute;
             left: -9999px;
@@ -113,14 +115,63 @@
                     );
         }
     </style>
+=======
+.item {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>button {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>button {
+  border: 1px dashed #444;
+  width: 150px;
+  height: 80px;
+  transition: 500ms all;
+  background-color: WHITE;
+}
+
+input[type=radio]:checked + label>button {
+  transform:
+    rotateZ(0deg)
+    rotateX(0deg);
+    background-color: Gold;
+}
+
+/*
+ | //lea.verou.me/css3patterns
+ | Because white bgs are boring.
+*/
+html {
+  background-color: #fff;
+  background-size: 100% 1.2em;
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(
+      #eee .1em,
+      transparent .1em
+    );
+}
+</style>
+>>>>>>> 72e8f7aea1e233fba0f4e917a2976eac1ea42f70
 
 </head>
 
 <body>
-@extends("main.layouts.app")
+@extends("main.layouts.game")
 
 @section('content')
-   
+
     <div class="container">
 
         <div id="Mainp"class="row">
@@ -155,12 +206,12 @@
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                         <tr>
                              <td align="right">
-                                <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a"><button type="button" >a.{!!($mc[$random]->mc_ans1)!!}</button></label></p>
-                                <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >b.{!!($mc[$random]->mc_ans2)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a"><button type="button" >a) {!!($mc[$random]->mc_ans1)!!}</button></label></p>
+                                 <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >c) {!!($mc[$random]->mc_ans3)!!}</button></label></p>
                             </td>
                              <td align="right">
-                                <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >c.{!!($mc[$random]->mc_ans3)!!}</button></label></p>
-                                <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d"><button type="button" >d.{!!($mc[$random]->mc_ans4)!!}</button></label></p>
+                                 <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >b) {!!($mc[$random]->mc_ans2)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d"><button type="button" >d) {!!($mc[$random]->mc_ans4)!!}</button></label></p>
                             </td>
                         </tr>
                     </table>
