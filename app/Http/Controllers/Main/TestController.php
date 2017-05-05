@@ -99,11 +99,11 @@ class TestController extends Controller
             $totalgold = $this->totalgold;//set the totalgold
             if ($playAns == $mc[$random]->question_ans) {
                 $gold = ($mc[$random]->gold);
-                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => 'Ture','Gold' =>$gold,'Finish Time' =>$time];
+                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="#76eec6">Ture</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
             } else {
                 $gold = 0;
-                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => 'False','Gold' =>$gold,'Finish Time' =>$time];
+                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color ="#ee3b3b">False</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
             }
             if ($playAns == 'a') {

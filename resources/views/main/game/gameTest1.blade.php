@@ -128,7 +128,7 @@
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
+                        <pre class="joe"><center><h4><label>Get Total Gold in This Game:<u>{!!$totalgold!!}</u></label>  <label>Gold of This Question:{!!(($mc[$random]->gold))!!}</label>  <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
                     </div>
                 </div>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
@@ -156,12 +156,12 @@
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                         <tr>
                             <td align="right">
-                                <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a"><button type="button" >a) {!!($mc[$random]->mc_ans1)!!}</button></label></p>
-                                <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >c) {!!($mc[$random]->mc_ans3)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a">a) {!!($mc[$random]->mc_ans1)!!}</label></p>
+                                <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c">c) {!!($mc[$random]->mc_ans3)!!}</label></p>
                             </td>
                             <td align="right">
-                                <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >b) {!!($mc[$random]->mc_ans2)!!}</button></label></p>
-                                <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d"><button type="button" >d) {!!($mc[$random]->mc_ans4)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b">b) {!!($mc[$random]->mc_ans2)!!}</label></p>
+                                <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d">d) {!!($mc[$random]->mc_ans4)!!}</label></p>
                             </td>
                         </tr>
                     </table>
