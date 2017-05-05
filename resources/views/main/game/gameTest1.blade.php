@@ -67,7 +67,6 @@
 
     <style>
 
-<<<<<<< HEAD
         .item {
             position: absolute;
             left: -9999px;
@@ -115,55 +114,6 @@
                     );
         }
     </style>
-=======
-.item {
-  position: absolute;
-  left: -9999px;
-}
-
-input[type=radio]:checked + label>button {
-  border: 1px solid #fff;
-  box-shadow: 0 0 3px 3px #090;
-}
-
-/* Stuff after this is only to make things more pretty */
-input[type=radio] + label>button {
-  border: 1px dashed #444;
-  width: 150px;
-  height: 80px;
-  transition: 500ms all;
-  background-color: WHITE;
-}
-
-input[type=radio]:checked + label>button {
-  transform:
-    rotateZ(0deg)
-    rotateX(0deg);
-    background-color: Gold;
-}
-
-/*
- | //lea.verou.me/css3patterns
- | Because white bgs are boring.
-*/
-html {
-  background-color: #fff;
-  background-size: 100% 1.2em;
-  background-image:
-    linear-gradient(
-      90deg,
-      transparent 79px,
-      #abced4 79px,
-      #abced4 81px,
-      transparent 81px
-    ),
-    linear-gradient(
-      #eee .1em,
-      transparent .1em
-    );
-}
-</style>
->>>>>>> 72e8f7aea1e233fba0f4e917a2976eac1ea42f70
 
 </head>
 
@@ -177,10 +127,10 @@ html {
         <div id="Mainp"class="row">
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
-            </div>
-        </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <pre class="joe"><center><h4><label>Total Gold:<u>{!!$totalgold!!}</u></label>    <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
+                    </div>
+                </div>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
                     <h2>Question <label>{!! Form::label('question_num', $playQuestionNum+1) !!}</label> / {!! count($mc) !!}</h2>
                     <p><label>{!!($mc[$random]->question)!!}</label></p>
@@ -205,12 +155,12 @@ html {
                         <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                         <tr>
-                             <td align="right">
+                            <td align="right">
                                 <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a"><button type="button" >a) {!!($mc[$random]->mc_ans1)!!}</button></label></p>
-                                 <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >c) {!!($mc[$random]->mc_ans3)!!}</button></label></p>
+                                <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c"><button type="button" >c) {!!($mc[$random]->mc_ans3)!!}</button></label></p>
                             </td>
-                             <td align="right">
-                                 <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >b) {!!($mc[$random]->mc_ans2)!!}</button></label></p>
+                            <td align="right">
+                                <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b"><button type="button" >b) {!!($mc[$random]->mc_ans2)!!}</button></label></p>
                                 <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d"><button type="button" >d) {!!($mc[$random]->mc_ans4)!!}</button></label></p>
                             </td>
                         </tr>
