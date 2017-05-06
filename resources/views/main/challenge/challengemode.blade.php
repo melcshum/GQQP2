@@ -264,9 +264,7 @@
             }
             if(qtime<=30){
                 $("#hits").show();
-                s--;
                 $("#sy").text(s);
-                qtime--;
             }
             if(s >60){
                 m++;
@@ -288,6 +286,9 @@
                 $("#tensy").show();
             }
 
+            if(qtime<30 && qtime>25){
+                $("#hits").fadeOut(1000).fadeIn(1000);
+            }
         }
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();

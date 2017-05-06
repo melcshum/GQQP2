@@ -101,6 +101,7 @@
             <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
             <div id="Question" class="col-md-12 col-sm-12 col-xs-12">
                 <h2>Your Answer</h2>
+                <h3>{!! $message !!}</h3>
                 {!!($mc[$random]->program)!!}
                 {!!$playAns!!}.{!!$ans!!}
             </div>
