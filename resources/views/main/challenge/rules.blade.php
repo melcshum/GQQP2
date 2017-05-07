@@ -33,10 +33,33 @@
 
                     <font size="5" >
                         <div id="myimageDiv2" style="display:inline;"><img src="../images/rankingDivision.png" width="100%" height="350"></div>
-                        <abc>Leaderboard was divided into 4 divisions <br><b>(platinum, gold, silver, bronze)</b>
-                            which the top 25% of players will assign to the Platinum Division,<br>
-                            26%-50% will be Gold Division ,<br>51%-75% will be Silver Division <br>
-                            and the others players will be Bronze Division.<br><br>Enjoy the Challenge!</abc>
+                        <abc>
+                        <table border="1" width="100%">
+                            <tr>
+                                <th><img src="./images/ranking2.png" width="100%" height="70%"></th>
+                                <th><center><i class="fa fa-book fa-3x"></i>Knowledge point</center></th>
+                            </tr>
+                            <tr>
+                                <th>Platinum</th>
+                                <td>Top 25% players</td>
+                            </tr>
+                            <tr>
+                                <th>Gold</th>
+                                <td>26%-50% players</td>
+                            </tr>
+                            <tr>
+                                <th>Silver</th>
+                                <td>51%-75% players</td>
+                            </tr>
+                            <tr>
+                                <th>Bronze</th>
+                                <td>Other players</td>
+                            </tr>
+                            <tr>
+
+                            </tr>
+                        </table>
+                            <br>Enjoy the Challenge!</abc>
 
                     </font>
                             </td></tr>
@@ -57,7 +80,7 @@
 
             <div style="text-align:center">
                 <abc>
-                    <a onclick="showHide();setTimeout(myFunction, 5400);" id="myBtn" class="btn btn-info" href="#">Start Game</a>
+                    <a onclick="showHide();setTimeout(myFunction, 5400);" id="myBtn" class="btn btn-info" href="#">Start Challenge</a>
                     <a href="#" class="btn btn-danger" >Cancel</a>
 
                 </abc>
