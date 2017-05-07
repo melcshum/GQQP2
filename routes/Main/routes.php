@@ -62,6 +62,9 @@ Route::group(['middleware' => 'auth', 'as' => 'auth.'], function () {
     Route::resource('challengeMCChangeExtra','ChallengeController@UpdateExtraNum');
     Route::post('challengeMCChangeExtra', 'ChallengeController@UpdateExtraNum');
 
+    Route::resource('challengeMCChangeHalf','ChallengeController@UpdateHalfNum');
+    Route::post('challengeMCChangeHalf', 'ChallengeController@UpdateHalfNum');
+
 //    Route::get('/challenge', function () {
 //        return view('main.challenge.challenge');
 //    });

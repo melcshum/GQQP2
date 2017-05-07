@@ -142,11 +142,38 @@ class ChallengeController extends Controller
     }
 
     public function checkAjax(Request $request){
+//        $total = [1,2,3];
+//        $random = range(0,4);
+//        shuffle($random);
+//        $test = array_slice($random, 0 ,1);
+//        //dd(array_slice($random, 0 ,1));
+//        $i = "f";
+//        $k = 'f';
+//        $test;
+//        while($i=='f') {
+//            for ($j = 0; $j < count($total); $j++) {
+//                if ($test[0] == 1) {
+//                    $k = 're';
+//                    $test = array_slice($random, 0 ,1);
+//                    break;
+//                } else {
+//                    $k = 'not re';
+//                    continue;
+//                }
+//            }
+//        }
+//        return $k;
+        //dd(count($total));
+        //$random = Session::get('ChallengeRandom');
 //       return "abc";
-        $mc = DB::table('mcQuestions')->where('status',1)->get();
-        $mcquestion = $mc[1];
-        //dd($mc[1]);
-        return response()->json($mcquestion);
+        //$mc = DB::table('mcQuestions')->where('status',1)->get();
+        //$mcquestion = $mc[1];
+       // $change = Auth::user()->change -1;
+       // DB::table('users')
+       //     ->where('id',Auth::user()->id)
+       //     ->update(array('change'=>$change));
+
+       // return response()->json($mcquestion);
 //        $semester = Input::get('sem');
 //
 //        return json_encode($semester);
@@ -166,6 +193,19 @@ class ChallengeController extends Controller
             ->update(array('extra'=>$extra));
         //dd($mc[1]);
         return response()->json($extra);
+//        $semester = Input::get('sem');
+//
+//        return json_encode($semester);
+
+    }
+
+    public function UpdateHalfNum(Request $request){
+        $half = Auth::user()->half -1;
+        DB::table('users')
+            ->where('id',Auth::user()->id)
+            ->update(array('half'=>$half));
+        //dd($mc[1]);
+        return response()->json($half);
 //        $semester = Input::get('sem');
 //
 //        return json_encode($semester);
