@@ -128,7 +128,7 @@
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <pre class="joe"><center><h4><label> Total Gold Earned:<u>{!!$totalgold!!}</u></label>  <label>Question Reward:{!!(($mc[$random]->gold))!!}</label>  <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
+                        <pre class="joe"><center><h4><label> Total Gold Earned:<u>{!!$totalgold!!}</u></label>  <label><img src="./images/gold.ico" width="25" height="25">={!!(($mc[$random]->gold))!!}</label>  <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
                     </div>
                 </div>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">

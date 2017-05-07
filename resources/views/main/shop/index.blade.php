@@ -78,9 +78,9 @@
                     {{ csrf_field() }}
                 <table border="1" width="100%">
                     <tr >
-                        <th align="center">Item name</th>
-                        <th align="center">Item description</th>
-                        <th align="center">Cost</th>
+                        <th align="center"><center>Item name</center></th>
+                        <th align="center"><center>Item description</center></th>
+                        <th align="center"><center>Cost</center></th>
                     </tr>
 
                     <input type="hidden" name="itemId" id="itemId" value="">
@@ -88,7 +88,7 @@
                     <tr>
 
                             <h5><td align="center"><img src="./images/changeQuestion.png" width="50" height="50"></td>
-                                <td align="center">&nbsp(user can displace to another question in Challenge Mode)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                <td align="center">&nbsp(user can change to another question in Challenge Mode)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                                 <td align="center" ><button id="buy1" name="buy1" class="btn btn-danger" data-toggle="modal" data-target="#myModal" value="1">
                                 <span class="showPoint"><img src="./images/gold.ico" width="40"> &nbspx &nbsp500</span>
                                 <span class="redeem">Redeem now!</span>

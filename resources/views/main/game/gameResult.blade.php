@@ -96,7 +96,7 @@
         <div id="Mainp"><div class="col-md-12 col-sm-12 col-xs-12">
 
 
-                    <pre class="joe"><center><h4><label>Gold:<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
+                    <pre class="joe"><center><h4><label><img src="./images/gold.ico" width="25" height="25">＝<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
 
             <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
             <div id="Question" >
