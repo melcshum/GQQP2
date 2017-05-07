@@ -58,7 +58,7 @@
 <body>
 
 <div id="wrapper">
-    @extends("main.layouts.app")
+    @extends("main.layouts.game")
 
 
     @section('content')
@@ -83,11 +83,14 @@
                 {!!(array_get($iftutorial[$playQuestionNum], 'attributes.program'))!!}
             </div>
         </div>
+        <div>
+            <p align="right"><a href="/tutorial/conditional"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
+
+        </div>
         <!-- /.row -->
     </div>
 
-                <p align="right"><a href="/tutorial/conditional"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
-    <!-- /#page-wrapper -->
+                <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->

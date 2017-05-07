@@ -117,29 +117,31 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-            </div>
+
         </div>
     </div>
     <div class="container">
 
         <div id="Mainp"class="row">
             <pre><h4>{!! $message !!}</h4></pre>
-            <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Question" class="">
                 <h2>Your Answer</h2>
                 {!!$playAns!!}.{!!$userAns!!}
             </div>
 
-            <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Answer" class="">
                 <h2>Correct Answer</h2>
                 {!!$tureAns!!}.{!!($turntotAns)!!}
                 {!!(array_get($arraytutorial[$playQuestionNum], 'attributes.program'))!!}
             </div>
         </div>
+        <div>
+            <p align="right"><a href="/tutorial/array"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
+
+        </div>
         <!-- /.row -->
     </div>
 
-    <p align="right"><a href="/tutorial/array"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
     <!-- /#page-wrapper -->
 
 </div>

@@ -125,23 +125,24 @@
 
         <div id="Mainp"class="row">
             <pre><h4>{!! $message !!}</h4></pre>
-            <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Question">
                 <h2>Your Answer</h2>
                 {!!$playAns!!}.{!!$userAns!!}
             </div>
 
-            <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Answer">
                 <h2>Correct Answer</h2>
                 {!!$tureAns!!}.{!!($turntotAns)!!}
                 {!!(array_get($looptutorial[$playQuestionNum], 'attributes.program'))!!}
             </div>
         </div>
         <!-- /.row -->
+
+        <div>
+             <p align="right"><a href="/tutorial/loop"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
+        </div>
+        <!-- /#page-wrapper -->
     </div>
-
-    <p align="right"><a href="/tutorial/loop"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
-    <!-- /#page-wrapper -->
-
 </div>
 <!-- /#wrapper -->
 

@@ -116,6 +116,48 @@
     }
     </style>
 
+
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 150px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -127,37 +169,85 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label></h4></center></pre>
+                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
+                </div>
+
+
+                <!-- Trigger/Open The Modal -->
+
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3><p align="left">Items: </p></h3>
+                        <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50"> x <span id="changeNum" >{{ Auth::user()->change }}</span>
+                        　<img id='fivefive' src="./images/50-50-movie_61.jpg" width="100" height="50"> x <span id="halfNum" >{{ Auth::user()->half }}</span>
+                        　<img id="plustime" src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
+                    </div>
+
+                </div>
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('myModal');
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+
+
+                <div id="myimageDiv" style="display:none;">
+                    <h3><p align="left">Items: </p></h3>
+                    <table border="1" align="left" width="100%" >
+                        <tr>
+                            <td>
+                                <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
+                            </td>
+                            <td>
+                                x<span id="changeNum" >{{ Auth::user()->change }}</span>
+                            </td>
+
+                            <td>
+                                <img id='fivefive' src="./images/50-50-movie_61.jpg" width="50" height="50">
+                            </td>
+                            <td>
+                                x<span id="halfNum" >{{ Auth::user()->half }}</span>
+                            </td>
+
+                            <td>
+                                <img id="plustime" src="./images/extraTime.png" width="50" height="50">
+                            </td>
+                            <td>
+                                x<span id="extraNum">{{ Auth::user()->extra }}</span>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        <h3><p align="right">item</p></h3>
-        <table border="1" align="right">
-            <tr>
-                <td>
-                    <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
-                </td>
-                <td>
-                    x<span id="changeNum" >{{ Auth::user()->change }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img id='fivefive' src="./images/50-50-movie_61.jpg" width="50" height="50">
-                </td>
-                <td>
-                    x<span id="halfNum" >{{ Auth::user()->half }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img id="plustime" src="./images/extraTime.png" width="50" height="50">
-                </td>
-                <td>
-                    x<span id="extraNum">{{ Auth::user()->extra }}</span>
-                </td>
-            </tr>
-        </table>
+
         <div class="container">
 
             <div id="Mainp"class="row">
@@ -173,6 +263,7 @@
                         <ol id="hits">
                             {!!(($mc[$random]->hint))!!}
                         </ol>
+
                     </div>
 
                     <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
@@ -187,18 +278,18 @@
                             <input type="hidden" id='random' name="random" value={!! $random !!}>
                             <tr>
                                 <td id ="hset" align="center">
-                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
+                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><span class="queenie"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                                 <td id ="hset" align="center">
-                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
+                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span class="queenie"><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td id ="hset2" align="center">
-                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
+                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span class="queenie"><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                                 <td id ="hset2" align="center">
-                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
+                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span class="queenie"><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                             </tr>
                         </table>
@@ -383,6 +474,23 @@
 
     });
 </script>
+<script type="text/javascript">
+
+    function showHide(){
+//create an object reference to the div containing images
+
+        var oImageDiv=document.getElementById("myimageDiv");
+
+
+
+//set display to inline if currently none, otherwise to none
+        oImageDiv.style.display=(oImageDiv.style.display=='none')?'inline':'none';
+
+    }
+</script>
+
+
+
 {{--<script src="../dist/js/jqueryTime.js"></script>--}}
 {{--<script src="../dist/js/jquery.simple.timer.js"></script>--}}
 {{--<script>--}}
