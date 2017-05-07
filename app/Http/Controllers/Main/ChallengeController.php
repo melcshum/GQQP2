@@ -158,4 +158,17 @@ class ChallengeController extends Controller
         shuffle($random);
         return (array_slice($random, 0 ,$total));
     }
+
+    public function UpdateExtraNum(Request $request){
+        $extra = Auth::user()->extra -1;
+        DB::table('users')
+            ->where('id',Auth::user()->id)
+            ->update(array('extra'=>$extra));
+        //dd($mc[1]);
+        return response()->json($extra);
+//        $semester = Input::get('sem');
+//
+//        return json_encode($semester);
+
+    }
 }
