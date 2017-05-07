@@ -80,13 +80,13 @@
 
 </head>
 
-<body>
+<body onload="setTimeout(showHide, 4150);">
 @extends("main.layouts.app")
 
 @section('content')
 
 <div id="wrapper">
-
+    <div id="myimageDiv" style="display:none;">
 
     <div class="container">
 
@@ -105,8 +105,9 @@
                     <h2>Your Answer</h2>
                     {!!($mc[$random]->program)!!}
                             {!! $message !!}
+                            <br>
                     {!!$playAns!!}.{!!$ans!!}
-                            {!! $gif !!}
+
                     </td>
 <td>　　　　</td>
                     <td>
@@ -127,7 +128,11 @@
         </div>
         <!-- /.row -->
     </div>
-
+</div>
+    <div id="myimageDiv2" style="display:inline;">
+        {!! $gif !!}
+        <br />
+    </div>
 
 
     <!-- /#page-wrapper -->
@@ -188,6 +193,22 @@
         });
     })
 </script>
+
+<script type="text/javascript">
+
+    function showHide(){
+//create an object reference to the div containing images
+
+        var oImageDiv=document.getElementById("myimageDiv");
+        var pImageDiv=document.getElementById("myimageDiv2");
+
+
+//set display to inline if currently none, otherwise to none
+        oImageDiv.style.display=(oImageDiv.style.display=='none')?'inline':'none';
+        pImageDiv.style.display=(pImageDiv.style.display=='inline')?'none':'inline';
+    }
+</script>
+
 </body>
 
 </html>
