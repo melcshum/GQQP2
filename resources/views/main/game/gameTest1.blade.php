@@ -67,18 +67,18 @@
 
     <style>
 
-        .item {
+        .item{
             position: absolute;
             left: -9999px;
         }
 
-        input[type=radio]:checked + label>button {
+        input[type=radio]:checked + label {
             border: 1px solid #fff;
             box-shadow: 0 0 3px 3px #090;
         }
 
         /* Stuff after this is only to make things more pretty */
-        input[type=radio] + label>button {
+        input[type=radio] + label {
             border: 1px dashed #444;
             width: 150px;
             height: 80px;
@@ -86,7 +86,7 @@
             background-color: WHITE;
         }
 
-        input[type=radio]:checked + label>button {
+        input[type=radio]:checked + label {
             transform:
                     rotateZ(0deg)
                     rotateX(0deg);
@@ -128,7 +128,7 @@
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <pre class="joe"><center><h4><label>Get Total Gold in This Game:<u>{!!$totalgold!!}</u></label>  <label>Gold of This Question:{!!(($mc[$random]->gold))!!}</label>  <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
+                        <pre class="joe"><center><h4><label> Total Gold Earned:<u>{!!$totalgold!!}</u></label>  <label>Question Reward:{!!(($mc[$random]->gold))!!}</label>  <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
                     </div>
                 </div>
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
@@ -155,11 +155,11 @@
                         <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
                         <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                         <tr>
-                            <td align="right">
+                            <td align="center">
                                 <p><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a">a) {!!($mc[$random]->mc_ans1)!!}</label></p>
                                 <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c">c) {!!($mc[$random]->mc_ans3)!!}</label></p>
                             </td>
-                            <td align="right">
+                            <td align="center">
                                 <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b">b) {!!($mc[$random]->mc_ans2)!!}</label></p>
                                 <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d">d) {!!($mc[$random]->mc_ans4)!!}</label></p>
                             </td>
@@ -251,6 +251,7 @@
         //});
     });
 </script>
+
 <!--<script type="text/javascript" language="javascript">
     $(document).ready(function(){
         $("#hits").hide();
