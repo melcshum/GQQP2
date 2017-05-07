@@ -54,7 +54,7 @@
 <body>
 
 
-@extends('main.layouts.app')
+@extends('main.layouts.game')
 
 @section('content')
     <div id="page-wrapper">
@@ -84,7 +84,7 @@
                             <td>{!! $totalquestionMCresult[$i][$i]['Result'] !!}</td>
                             <td>{!! $totalquestionMCresult[$i][$i]['Gold'] !!}</td>
                             <td>{!! $totalquestionMCresult[$i][$i]['Knowledge'] !!}</td>
-                            <td>{!! intval($totalquestionMCresult[$i][$i]['Finish Time']/60) !!}:{!! $totalquestionMCresult[$i][$i]['Finish Time']%60 !!}</td>
+                            <td>{!! $totalquestionMCresult[$i][$i]['Finish Time']!!} (Sec)</td>
                         </tr>
                     @endfor
                     <tr>
@@ -92,7 +92,7 @@
                         <td>{!! $totalquestionresult[0][0]['Result'] !!}</td>
                         <td>{!! $totalquestionresult[0][0]['Gold'] !!}</td>
                         <td>{!! $totalquestionresult[0][0]['Knowledge'] !!}</td>
-                        <td>{!! intval($totalquestionresult[0][0]['Finish Time']/60) !!}:{!! $totalquestionMCresult[0][0]['Finish Time']%60 !!}</td>
+                        <td>{!! $totalquestionMCresult[0][0]['Finish Time']!!} (Sec)</td>
                     </tr>
                     <tr>
 
@@ -100,7 +100,7 @@
 
                     <tr>
                         <td colspan="5">
-                            <center>Total Gold{!! $totalGold !!}
+                            <center>Total Gold: {!! $totalGold !!} <img src="./images/gold.ico" width="25" height="25">
                         </center>
                         </td>
                     </tr>
@@ -113,6 +113,7 @@
                     </tbody>
                     </thead>
                 </table>
+                <center><a href="{{ url('/') }}"><button><img src="./images/backMenu.png" height="50"></button></a></center>
             </div>
             <!-- /.row -->
         </div>

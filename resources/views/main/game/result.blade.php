@@ -107,7 +107,7 @@
                 </tbody>
                 </thead>
             </table>
-            <center><a href="/playMenu"><button><img src="./images/backMenu.png" height="50"></button></a></center>
+            <center><a href="{{ url('/') }}"><button><img src="./images/backMenu.png" height="50"></button></a></center>
         </div>
         <!-- /.row -->
     </div>

@@ -73,13 +73,13 @@
     left: -9999px;
     }
 
-    input[type=radio]:checked + label>button  {
+    input[type=radio]:checked + label  {
     border: 1px solid #fff;
     box-shadow: 0 0 3px 3px #090;
     }
 
     /* Stuff after this is only to make things more pretty */
-    input[type=radio] + label>button {
+    input[type=radio] + label {
     border: 1px dashed #444;
     width: 150px;
     height: 80px;
@@ -87,7 +87,7 @@
     background-color: WHITE;
     }
 
-    input[type=radio]:checked + label>button {
+    input[type=radio]:checked + label {
     transform:
     rotateZ(0deg)
     rotateX(0deg);
@@ -186,19 +186,19 @@
                             <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                             <input type="hidden" id='random' name="random" value={!! $random !!}>
                             <tr>
-                                <td id ="hset" align="right">
-                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><button type="button"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset" align="center">
+                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
                                 </td>
-                                <td id ="hset" align="right">
-                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><button type="button"><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset" align="center">
+                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
                                 </td>
                             </tr>
                             <tr>
-                                <td id ="hset2" align="right">
-                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><button type="button"><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset2" align="center">
+                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
                                 </td>
-                                <td id ="hset2" align="right">
-                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><button type="button"><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset2" align="center">
+                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></label></p>
                                 </td>
                             </tr>
                         </table>

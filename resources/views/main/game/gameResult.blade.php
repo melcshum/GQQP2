@@ -106,6 +106,7 @@
                     {!!($mc[$random]->program)!!}
                             {!! $message !!}
                     {!!$playAns!!}.{!!$ans!!}
+                            {!! $gif !!}
                     </td>
 <td>　　　　</td>
                     <td>
