@@ -93,36 +93,41 @@
 
 
 
-        <div id="Mainp"class="row"><div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="Mainp"><div class="col-md-12 col-sm-12 col-xs-12">
 
 
                     <pre class="joe"><center><h4><label>Gold:<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
 
             <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
-            <div id="Question" class="col-md-12 col-sm-12 col-xs-12">
-                <h2>Your Answer</h2>
-                {!!($mc[$random]->program)!!}
-                {!!$playAns!!}.{!!$ans!!}
-            </div>
+            <div id="Question" >
+                <table border="0" width="100%">
+                    <tr><td>
+                    <h2>Your Answer</h2>
+                    {!!($mc[$random]->program)!!}
+                    {!!$playAns!!}.{!!$ans!!}
+                    </td>
+<td>　　　　</td>
+                    <td>
+                        <h2>Correct Answer</h2>
 
-            <div id="Answer" class="col-md-12 col-sm-12 col-xs-12">
-                <h2>Correct Answer</h2>
-
-                {!!($mc[$random]->program)!!}
-                {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
+                        {!!($mc[$random]->program)!!}
+                        {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
+                    </td></tr>
+<tr><td colspan="3">  {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
+        <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
+        <input type="hidden" name="question_num" value={!! $playQuestionNum+=1!!}>
+        <input type="hidden" name="totalgold" value={!!$totalgold+$gold!!}>
+        <input type="hidden" name="type" value={!!$type!!}>
+        {!! Form::close() !!}</td></tr>
+                 </table>
             </div>
                 </div>
         </div>
         <!-- /.row -->
     </div>
-    <div class="container">
-                {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
-                <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
-                <input type="hidden" name="question_num" value={!! $playQuestionNum+=1!!}>
-                <input type="hidden" name="totalgold" value={!!$totalgold+$gold!!}>
-                <input type="hidden" name="type" value={!!$type!!}>
-                {!! Form::close() !!}
-    </div>
+
+
+
     <!-- /#page-wrapper -->
 
 </div>

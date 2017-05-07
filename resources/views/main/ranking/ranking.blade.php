@@ -25,10 +25,10 @@
             <div class="row-fluid">
                 <div class="col-md-12 col-sm-12 col-xs-1">
                     <ul id="myTab" class="nav nav-tabs">
-                        <li class="active"><a href="#Platinum" data-toggle="tab">Platinum</a></li>
-                        <li><a href="#Gold" data-toggle="tab">Gold</a></li>
-                        <li><a href="#Silver" data-toggle="tab">Silver</a></li>
-                        <li><a href="#Copper" data-toggle="tab">Copper</a></li>
+                        <li class="active"><a href="#Platinum" data-toggle="tab"><img src="./images/platinum.png"></a></li>
+                        <li><a href="#Gold" data-toggle="tab"><img src="./images/gold2.png"></a></li>
+                        <li><a href="#Silver" data-toggle="tab"><img src="./images/silver2.png"></a></li>
+                        <li><a href="#Copper" data-toggle="tab"><img src="./images/bronze.png"></a></li>
 
                         </li>
                     </ul>
@@ -148,7 +148,7 @@
 
                         <div class="tab-pane" id="Copper">
                             <center>
-                                <h3>Copper</h3>
+                                <h3>Bronze</h3>
                             </center>
                             <table class="table table-striped" align="left">
                                 <thead>

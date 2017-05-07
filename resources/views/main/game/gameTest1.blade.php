@@ -227,7 +227,7 @@ html {
                 $("#time").val(rtime);
             }
         }
-        
+
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
         });

@@ -30,7 +30,9 @@
                 <div style="text-align:center" class="main-container">
                     <table border="0" width="100%">
                         <tr><td>
+
                     <font size="5" >
+                        <div id="myimageDiv2" style="display:inline;"><img src="../images/rankingDivision.png" width="100%" height="350"></div>
                         <abc>Leaderboard was divided into 4 divisions <br><b>(platinum, gold, silver, bronze)</b>
                             which the top 25% of players will assign to the Platinum Division,<br>
                             26%-50% will be Gold Division ,<br>51%-75% will be Silver Division <br>
@@ -79,11 +81,12 @@
 //create an object reference to the div containing images
 
         var oImageDiv=document.getElementById("myimageDiv");
+        var pImageDiv=document.getElementById("myimageDiv2");
 
 
 //set display to inline if currently none, otherwise to none
         oImageDiv.style.display=(oImageDiv.style.display=='none')?'inline':'none';
-
+        pImageDiv.style.display=(pImageDiv.style.display=='inline')?'none':'inline';
     }
 </script>
 <script type="text/javascript">
