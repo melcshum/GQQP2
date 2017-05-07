@@ -104,6 +104,7 @@
                     <tr><td>
                     <h2>Your Answer</h2>
                     {!!($mc[$random]->program)!!}
+                            {!! $message !!}
                     {!!$playAns!!}.{!!$ans!!}
                     </td>
 <td>　　　　</td>

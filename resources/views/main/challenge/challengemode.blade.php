@@ -138,7 +138,7 @@
                     <img id='changeQ' src="./images/the-meaning-of-D.jpg">
                 </td>
                 <td>
-                    x{{ Auth::user()->change }}
+                    x<span id="changeNum" >{{ Auth::user()->change }}</span>
                 </td>
             </tr>
             <tr>
@@ -146,7 +146,7 @@
                     <img id='fivefive' src="./images/50-50-movie_61.jpg">
                 </td>
                 <td>
-                    x{{ Auth::user()->half }}
+                    x<span id="halfNum" >{{ Auth::user()->half }}</span>
                 </td>
             </tr>
             <tr>
@@ -154,7 +154,7 @@
                     <img id="plustime" src="./images/hO01DAyn.png">
                 </td>
                 <td>
-                    x{{ Auth::user()->extra }}
+                    x<span id="extraNum">{{ Auth::user()->extra }}</span>
                 </td>
             </tr>
         </table>
@@ -340,6 +340,17 @@
         $('#plustime').click(function() {
             qtime = qtime + 30;
             s = s + 30;
+            $.ajax({
+                type:"POST",
+                url: "/challengeMCChangeExtra",
+                data: {sem : "mcextra"},
+                success:function(data){
+                    console.log(data);
+                    $("#extraNum").html(data);
+                    $("#extraNum").fadeOut(1000).fadeIn(1000);
+                    $("#extraNum").fadeOut(1000).fadeIn(1000);
+                }
+            })
         });
         $("#Next").click(function(event){
             $("#time").val(s);

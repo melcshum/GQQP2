@@ -101,12 +101,12 @@ class TestController extends Controller
                 $gold = ($mc[$random]->gold);
                 $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="#76eec6">True</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
-                $message = '<font color="#76eec6">Correct</font>';
+                $message = '<font color="#76eec6">Nice, You are Correct</font>';
             } else {
                 $gold = 0;
                 $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color ="#ee3b3b">False</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
-                $message = '<font color="#ee3b3b">Incorrect</font>';
+                $message = '<font color="#ee3b3b">Sorry, You are Incorrect</font>';
             }
             if ($playAns == 'a') {
                 $type = Input::get('type');
