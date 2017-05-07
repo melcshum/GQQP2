@@ -80,13 +80,13 @@
 
 </head>
 
-<body>
+<body onload="setTimeout(showHide, 4150);">
 @extends("main.layouts.app")
 
 @section('content')
 
 <div id="wrapper">
-
+    <div id="myimageDiv" style="display:none;">
 
     <div class="container">
 
@@ -100,21 +100,20 @@
 
             <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
             <div id="Question" >
+                <table border="1" width="100%">
+                    <tr><td colspan="3"><center><h2>{!! $message !!}</h2></center></td></tr></table>
                 <table border="0" width="100%">
-                    <tr><td>
-                    <h2>Your Answer</h2>
+                    <tr><td><h2>Your Answer</h2></td><td></td><td><h2>Correct Answer</h2></td></tr>
+                    <tr>
+                        <td>
                     {!!($mc[$random]->program)!!}
-                            {!! $message !!}
-                    {!!$playAns!!}.{!!$ans!!}
-                            {!! $gif !!}
                     </td>
-<td>　　　　</td>
+                    <td>　　　　</td>
                     <td>
-                        <h2>Correct Answer</h2>
-
                         {!!($mc[$random]->program)!!}
-                        {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
-                    </td></tr>
+                    </td>
+                    </tr>
+                    <tr><td>  {!!$playAns!!}.{!!$ans!!} </td><td></td><td>{!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}</td></tr>
 <tr><td colspan="3">  {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
         <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
         <input type="hidden" name="question_num" value={!! $playQuestionNum+=1!!}>
@@ -127,7 +126,11 @@
         </div>
         <!-- /.row -->
     </div>
-
+</div>
+    <div id="myimageDiv2" style="display:inline;">
+        {!! $gif !!}
+        <br />
+    </div>
 
 
     <!-- /#page-wrapper -->
@@ -188,6 +191,22 @@
         });
     })
 </script>
+
+<script type="text/javascript">
+
+    function showHide(){
+//create an object reference to the div containing images
+
+        var oImageDiv=document.getElementById("myimageDiv");
+        var pImageDiv=document.getElementById("myimageDiv2");
+
+
+//set display to inline if currently none, otherwise to none
+        oImageDiv.style.display=(oImageDiv.style.display=='none')?'inline':'none';
+        pImageDiv.style.display=(pImageDiv.style.display=='inline')?'none':'inline';
+    }
+</script>
+
 </body>
 
 </html>

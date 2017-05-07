@@ -135,7 +135,7 @@
         <table border="1" align="right">
             <tr>
                 <td>
-                    <img id='changeQ' src="./images/the-meaning-of-D.jpg">
+                    <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
                 </td>
                 <td>
                     x<span id="changeNum" >{{ Auth::user()->change }}</span>
@@ -143,7 +143,7 @@
             </tr>
             <tr>
                 <td>
-                    <img id='fivefive' src="./images/50-50-movie_61.jpg">
+                    <img id='fivefive' src="./images/50-50-movie_61.jpg" width="50" height="50">
                 </td>
                 <td>
                     x<span id="halfNum" >{{ Auth::user()->half }}</span>
@@ -151,7 +151,7 @@
             </tr>
             <tr>
                 <td>
-                    <img id="plustime" src="./images/hO01DAyn.png">
+                    <img id="plustime" src="./images/extraTime.png" width="50" height="50">
                 </td>
                 <td>
                     x<span id="extraNum">{{ Auth::user()->extra }}</span>
@@ -304,6 +304,7 @@
         }
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
+            $("#skip").hide();
         });
         $('#fivefive').click(function() {
             if (($("#useItem").val() == 0) && (parseInt($("#halfNum").html()) != 0)){

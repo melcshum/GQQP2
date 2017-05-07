@@ -102,13 +102,13 @@ class TestController extends Controller
                 $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="#76eec6">True</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
                 $message = '<font color="#76eec6">Nice, You are Correct</font>';
-                $gif='<img src="./images/correct.gif" width="100" height="100">';
+                $gif='<img src="./images/correct.gif" width="100%" height="100%">';
             } else {
                 $gold = 0;
                 $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color ="#ee3b3b">False</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
                 $message = '<font color="#ee3b3b">Sorry, You are Incorrect</font>';
-                $gif='<img src="./images/wrong.gif" width="100" height="100">';
+                $gif='<img src="./images/wrong.gif" width="100%" height="100%">';
             }
             if ($playAns == 'a') {
                 $type = Input::get('type');
