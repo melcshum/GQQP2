@@ -99,33 +99,35 @@ class TestController extends Controller
             $totalgold = $this->totalgold;//set the totalgold
             if ($playAns == $mc[$random]->question_ans) {
                 $gold = ($mc[$random]->gold);
-                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => 'Ture','Gold' =>$gold,'Finish Time' =>$time];
+                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="#76eec6">Ture</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
+                $message = '<font color="#76eec6">Correct</font>';
             } else {
                 $gold = 0;
-                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => 'False','Gold' =>$gold,'Finish Time' =>$time];
+                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color ="#ee3b3b">False</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
+                $message = '<font color="#ee3b3b">Incorrect</font>';
             }
             if ($playAns == 'a') {
                 $type = Input::get('type');
                 $random = Session::get('random')[0][$playQuestionNum];
                 $ans = ($mc[$random]->mc_ans1);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type'));
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type','message'));
             } elseif ($playAns == 'b') {
                 $type = Input::get('type');
                 $random = Session::get('random')[0][$playQuestionNum];
                 $ans = ($mc[$random]->mc_ans2);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold', 'random','type'));
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold', 'random','type','message'));
             } elseif ($playAns == 'c') {
                 $type = Input::get('type');
                 $random = Session::get('random')[0][$playQuestionNum];
                 $ans = ($mc[$random]->mc_ans3);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type'));
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type','message'));
             } elseif ($playAns == 'd') {
                 $type = Input::get('type');
                 $random = Session::get('random')[0][$playQuestionNum];
                 $ans = ($mc[$random]->mc_ans4);
-                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type'));
+                return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','random','type','message'));
             }
             //if(Input::get('ship')) {
             //    return "Yes";

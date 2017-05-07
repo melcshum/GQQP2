@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::group(['middleware' => 'auth', 'as' => 'auth.'], function () {
 
     Route::get('/profile', 'UserController@index', function($username){
         $user = User::where('name', $username)->firstOrFail();
@@ -101,5 +101,7 @@ Route::post('challengeMCChange', 'ChallengeController@checkAjax');
     Route::get('/tutorial/loop', function(){
         return view('main.tutorial.loopTutorial');
     });
+
+});
 
 

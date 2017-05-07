@@ -127,7 +127,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="sy">0</label></h4></center></pre>
+                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label></h4></center></pre>
                 </div>
             </div>
         </div>
@@ -264,9 +264,7 @@
             }
             if(qtime<=30){
                 $("#hits").show();
-                s--;
                 $("#sy").text(s);
-                qtime--;
             }
             if(s >60){
                 m++;
@@ -281,7 +279,16 @@
                 $("#sy").text(s);
                 qtime--;
             }
+            if(s>9){
+                $("#tensy").hide();
+            }
+            else{
+                $("#tensy").show();
+            }
 
+            if(qtime<30 && qtime>25){
+                $("#hits").fadeOut(1000).fadeIn(1000);
+            }
         }
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();

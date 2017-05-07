@@ -40,16 +40,6 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading text-center" >How many Question you finish</div>
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                <div class="text-center"><div align="center">4/12</div></div>
-                            </div>
-                        </div>
-
-                    </li>
                 </ul>
                 <ul class="nav" id="Topic_side2">
                     <li>
@@ -57,16 +47,6 @@
                             <div class="panel-heading text-center" >Topic Introduction</div>
                             <div class="panel-body text-center">
                                 Topic 2 Is Arrary
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="panel panel-default">
-                            <div class="panel-heading text-center" >How many Question you finish</div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                    <div class="text-center">12/12</div>
-                                </div>
                             </div>
                         </div>
                     </li>
@@ -78,16 +58,6 @@
                             <div class="panel-heading text-center" >Topic's  Introduction</div>
                             <div class="panel-body text-center">
                                 Topic 3 Control Characters
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="panel panel-default">
-                            <div class="panel-heading text-center" >How many Question you finish</div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                                    <div class="text-center">1/12</div>
-                                </div>
                             </div>
                         </div>
                     </li>
@@ -103,7 +73,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" ><img src="./images/gold.ico" width="40">Gold</div>
                             <div class="panel-body text-center">
-                                100 Gold
+                                2000 - 5000 Gold
                             </div>
                         </div>
                     </li>
@@ -121,16 +91,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" >Suggest finish time</div>
                             <div class="panel-body text-center">
-                                20 minute
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading text-center" >The Fastest Finish time</div>
-                            <div class="panel-body text-center">
-                                10 minute
+                                25 minute
                             </div>
                         </div>
                     </li>
@@ -154,7 +115,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" ><img src="./images/gold.ico" width="40">Gold</div>
                             <div class="panel-body text-center">
-                                50 Gold
+                                2500 - 5500 Gold
                             </div>
                         </div>
                     </li>
@@ -172,16 +133,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" >Suggest finsih time</div>
                             <div class="panel-body text-center">
-                                10 minute
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading text-center" >The Fastest Finish time</div>
-                            <div class="panel-body text-center">
-                                7 minute
+                                30 minute
                             </div>
                         </div>
                     </li>
@@ -205,7 +157,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" ><img src="./images/gold.ico" width="40">Gold</div>
                             <div class="panel-body text-center">
-                                90 Gold
+                                4000 - 6000 Gold
                             </div>
                         </div>
                     </li>
@@ -214,7 +166,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" >How many Question</div>
                             <div class="panel-body text-center">
-                                30
+                                20
                             </div>
                         </div>
                     </li>
@@ -228,16 +180,6 @@
                         </div>
                     </li>
                     <li>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading text-center" >The Fastest Finish time</div>
-                            <div class="panel-body text-center">
-                                33 minute
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-
                         <div class="panel panel-default">
                             <div class="panel-heading text-center" >Bar</div>
                             <div class="panel-body text-center">
@@ -321,7 +263,7 @@
                                 <tr>
                                     <td align="left" valign="bottom"><a data-toggle="modal" data-target="#Explanation3" class="btn btn-primary" role="button">Play</td>
                                     <td align="center" valign="bottom"><button id=Topic3 class="btn btn-primary">Show Information</button></td>
-                                    <td align="right" valign="bottom"> <//img src="./images/Lock.jpg" height="40" width="40">
+                                    <td align="right" valign="bottom"> <img src="./images/Lock.jpg" height="40" width="40">
                                     </td>
                                 </tr>
                                 </table>

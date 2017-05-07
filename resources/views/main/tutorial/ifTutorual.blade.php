@@ -83,7 +83,7 @@
                                         </p>
                                         <h4>Practice 1
                                         </h4>
-                                        <p><input type="submit" name="1" id="1" class="btn btn-primary" style="float: right;" value="Play"></p>
+                                        <p><input type="submit" name="1" id="1" class="btn btn-primary" style="float: right;" value="Try"></p>
                                         <p></p>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@
                                         </p>
                                         <h4>Practice 2
                                         </h4>
-                                        <p><input type="submit" name="2" id="2" class="btn btn-primary" style="float: right;" value="Play"></p>
+                                        <p><input type="submit" name="2" id="2" class="btn btn-primary" style="float: right;" value="Try"></p>
                                         <p></p>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                         </p>
                                         <h4>Practice 3
                                         </h4>
-                                        <p><input type="submit" name="3" id="3" class="btn btn-primary" style="float: right;" value="Play"></p>
+                                        <p><input type="submit" name="3" id="3" class="btn btn-primary" style="float: right;" value="Try"></p>
                                         <p></p>
                                     </div>
                                 </div>

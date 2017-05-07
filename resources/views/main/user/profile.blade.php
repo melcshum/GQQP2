@@ -125,7 +125,7 @@
                     <div class="panel-body">
                         {{--<div class="thumbnail">--}}
                         <center>
-                            <img src="./images/2955057094021740194.png" name="aboutme" width="140" height="140" class="img-circle">
+                            <img src="{{ access()->user()->picture }}" name="aboutme" width="140" height="140" class="img-circle">
                             <h3><img src="./images/Gold.png">{{ Auth::user()->name }}<img src="./images/Gold.png"></h3>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
