@@ -183,6 +183,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- /.row -->
         </div>
@@ -229,16 +230,17 @@
 <script src="../dist/js/sb-admin-2.js"></script>
 <script type="text/javascript" language="javascript">
     $(document).ready(function(){
-//        $('tr').each(function(){
-//            var userID = $('#userID').val();
-//            var id = $('#id').val();
-////            alert(id);
-////            if(userID == id){
-//                $(this).addClass('self').sibling().removeClass('self');
-//            }
-
-
+        $('table td').each(function(){
+            //$('table tr:even').css('backgroundColor', '#FFFFFF');
+            var userID = $('#userID').val();
+            var id = $('#id').val();
+            if(userID == id) {
+             //   $(this).parent().css('backgroundColor', '#EFEF00');
+            }
         });
+
+
+    });
 //            $('table').on('click', 'tr', function(){
 //               $(this).addClass('self').sibling().removeClass('self');
 

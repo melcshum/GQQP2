@@ -41,7 +41,7 @@ class ShopController extends Controller
                 $gold -= 500;
                 DB::table('users')->where('id', $userId)->update(['gold' => $gold]);
                 DB::table('users')->where('id', $userId)->update(['change' => $change]);
-                return redirect::to('shop');
+                return redirect::to('shop')->with('success', 'You have bought a Change Question Item');;
             }
             else{
                 return redirect::to('shop')->with('message', 'Not Enough Gold');
@@ -54,7 +54,7 @@ class ShopController extends Controller
                 $gold -= 500;
                 DB::table('users')->where('id', $userId)->update(['gold' => $gold]);
                 DB::table('users')->where('id', $userId)->update(['half' => $half]);
-                return redirect::to('shop');
+                return redirect::to('shop')->with('success', 'You have bought a 50/50 Item');;
             }
             else{
                 return redirect::to('shop')->with('message', 'Not Enough Gold');
@@ -67,7 +67,7 @@ class ShopController extends Controller
                 $gold -= 2000;
                 DB::table('users')->where('id', $userId)->update(['gold' => $gold]);
                 DB::table('users')->where('id', $userId)->update(['extra' => $extra]);
-                return redirect::to('shop');
+                return redirect::to('shop')->with('success', 'You have bought a Extra Time');;
             } else {
                 return redirect::to('shop')->with('message', 'Not Enough Gold');
             }
