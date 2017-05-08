@@ -80,50 +80,59 @@
 
 </head>
 
-<body>
+<body onload="setTimeout(showHide, 4150);">
 @extends("main.layouts.app")
 
 @section('content')
 
 <div id="wrapper">
-
+    <div id="myimageDiv" style="display:none;">
 
     <div class="container">
 
 
 
 
-        <div id="Mainp"class="row"><div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="Mainp"><div class="col-md-12 col-sm-12 col-xs-12">
 
 
-                    <pre class="joe"><center><h4><label>You Get Gold of This Question:<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
+                    <pre class="joe"><center><h4><label><img src="./images/gold.ico" width="25" height="25">＝<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
 
             <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
-            <div id="Question" class="col-md-12 col-sm-12 col-xs-12">
-                <h2>Your Answer</h2>
-                <h3>{!! $message !!}</h3>
-                {!!($mc[$random]->program)!!}
-                {!!$playAns!!}.{!!$ans!!}
-            </div>
-
-            <div id="Answer" class="col-md-12 col-sm-12 col-xs-12">
-                <h2>Correct Answer</h2>
-
-                {!!($mc[$random]->program)!!}
-                {!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}
+            <div id="Question" >
+                <table border="1" width="100%">
+                    <tr><td colspan="3"><center><h2>{!! $message !!}</h2></center></td></tr></table>
+                <table border="0" width="100%">
+                    <tr><td><h2>Your Answer</h2></td><td></td><td><h2>Correct Answer</h2></td></tr>
+                    <tr>
+                        <td>
+                    {!!($mc[$random]->program)!!}
+                    </td>
+                    <td>　　　　</td>
+                    <td>
+                        {!!($mc[$random]->program)!!}
+                    </td>
+                    </tr>
+                    <tr><td>  {!!$playAns!!}.{!!$ans!!} </td><td></td><td>{!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}</td></tr>
+<tr><td colspan="3">  {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
+        <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
+        <input type="hidden" name="question_num" value={!! $playQuestionNum+=1!!}>
+        <input type="hidden" name="totalgold" value={!!$totalgold+$gold!!}>
+        <input type="hidden" name="type" value={!!$type!!}>
+        {!! Form::close() !!}</td></tr>
+                 </table>
             </div>
                 </div>
         </div>
         <!-- /.row -->
     </div>
-    <div class="container">
-                {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
-                <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
-                <input type="hidden" name="question_num" value={!! $playQuestionNum+=1!!}>
-                <input type="hidden" name="totalgold" value={!!$totalgold+$gold!!}>
-                <input type="hidden" name="type" value={!!$type!!}>
-                {!! Form::close() !!}
+</div>
+    <div id="myimageDiv2" style="display:inline;">
+        {!! $gif !!}
+        <br />
     </div>
+
+
     <!-- /#page-wrapper -->
 
 </div>
@@ -182,6 +191,22 @@
         });
     })
 </script>
+
+<script type="text/javascript">
+
+    function showHide(){
+//create an object reference to the div containing images
+
+        var oImageDiv=document.getElementById("myimageDiv");
+        var pImageDiv=document.getElementById("myimageDiv2");
+
+
+//set display to inline if currently none, otherwise to none
+        oImageDiv.style.display=(oImageDiv.style.display=='none')?'inline':'none';
+        pImageDiv.style.display=(pImageDiv.style.display=='inline')?'none':'inline';
+    }
+</script>
+
 </body>
 
 </html>

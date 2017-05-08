@@ -73,13 +73,13 @@
     left: -9999px;
     }
 
-    input[type=radio]:checked + label>button  {
+    input[type=radio]:checked + label  {
     border: 1px solid #fff;
     box-shadow: 0 0 3px 3px #090;
     }
 
     /* Stuff after this is only to make things more pretty */
-    input[type=radio] + label>button {
+    input[type=radio] + label {
     border: 1px dashed #444;
     width: 150px;
     height: 80px;
@@ -87,7 +87,7 @@
     background-color: WHITE;
     }
 
-    input[type=radio]:checked + label>button {
+    input[type=radio]:checked + label {
     transform:
     rotateZ(0deg)
     rotateX(0deg);
@@ -116,6 +116,48 @@
     }
     </style>
 
+
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 150px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -127,37 +169,85 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label></h4></center></pre>
+                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
+                </div>
+
+
+                <!-- Trigger/Open The Modal -->
+
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3><p align="left">Items: </p></h3>
+                        <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50"> x <span id="changeNum" >{{ Auth::user()->change }}</span>
+                        　<img id='fivefive' src="./images/50-50-movie_61.jpg" width="100" height="50"> x <span id="halfNum" >{{ Auth::user()->half }}</span>
+                        　<img id="plustime" src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
+                    </div>
+
+                </div>
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('myModal');
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+
+
+                <div id="myimageDiv" style="display:none;">
+                    <h3><p align="left">Items: </p></h3>
+                    <table border="1" align="left" width="100%" >
+                        <tr>
+                            <td>
+                                <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
+                            </td>
+                            <td>
+                                x<span id="changeNum" >{{ Auth::user()->change }}</span>
+                            </td>
+
+                            <td>
+                                <img id='fivefive' src="./images/50-50-movie_61.jpg" width="50" height="50">
+                            </td>
+                            <td>
+                                x<span id="halfNum" >{{ Auth::user()->half }}</span>
+                            </td>
+
+                            <td>
+                                <img id="plustime" src="./images/extraTime.png" width="50" height="50">
+                            </td>
+                            <td>
+                                x<span id="extraNum">{{ Auth::user()->extra }}</span>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        <h3><p align="right">item</p></h3>
-        <table border="1" align="right">
-            <tr>
-                <td>
-                    <img id='changeQ' src="./images/the-meaning-of-D.jpg">
-                </td>
-                <td>
-                    x{{ Auth::user()->change }}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img id='fivefive' src="./images/50-50-movie_61.jpg">
-                </td>
-                <td>
-                    x{{ Auth::user()->half }}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img id="plustime" src="./images/hO01DAyn.png">
-                </td>
-                <td>
-                    x{{ Auth::user()->extra }}
-                </td>
-            </tr>
-        </table>
+
         <div class="container">
 
             <div id="Mainp"class="row">
@@ -173,6 +263,7 @@
                         <ol id="hits">
                             {!!(($mc[$random]->hint))!!}
                         </ol>
+
                     </div>
 
                     <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
@@ -185,20 +276,21 @@
                             <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
                             <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
                             <input type="hidden" id='random' name="random" value={!! $random !!}>
+                            <input type="hidden" id='useItem' name="useItem" value=0>
                             <tr>
-                                <td id ="hset" align="right">
-                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><button type="button"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset" align="center">
+                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><span class="queenie"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
-                                <td id ="hset" align="right">
-                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><button type="button"><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset" align="center">
+                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span class="queenie"><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                             </tr>
                             <tr>
-                                <td id ="hset2" align="right">
-                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><button type="button"><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset2" align="center">
+                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span class="queenie"><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
-                                <td id ="hset2" align="right">
-                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><button type="button"><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></button></label></p>
+                                <td id ="hset2" align="center">
+                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span class="queenie"><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                             </tr>
                         </table>
@@ -250,6 +342,15 @@
         var s = qtime % 60;
         var m = Math.floor(qtime / 60);
         $("#my").text(m);
+        if(parseInt($("#changeNum").html()) == 0){
+            $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
+        }
+        if(parseInt($("#halfNum").html()) == 0){
+            $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
+        }
+        if(parseInt($("#extraNum").html()) == 0){
+            $("#plustime").attr('src','./images/extraTime-black.png');
+        }
 
         var id = setInterval(frame, 1000);
         function frame(){
@@ -273,11 +374,13 @@
                 s--;
                 qtime--;
                 $("#sy").text(s);
+                $("#time").val(qtime);
             }
             else{
                 s--;
                 $("#sy").text(s);
                 qtime--;
+                $("#time").val(qtime);
             }
             if(s>9){
                 $("#tensy").hide();
@@ -292,75 +395,125 @@
         }
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
+            $("#skip").hide();
         });
-        $('#fivefive').click(function(){
-            var donthint = $("#trueAns").val();
+        $('#fivefive').click(function() {
+            if (($("#useItem").val() == 0) && (parseInt($("#halfNum").html()) != 0)){
+                var donthint = $("#trueAns").val();
             var random = Math.floor(Math.random() * $('.item').length);
             var ansfive1 = ($('.queenie').eq(0).html());
             var ansfive2 = ($('.queenie').eq(1).html());
             var ansfive3 = ($('.queenie').eq(2).html());
             var ansfive4 = ($('.queenie').eq(3).html());
             var i;
-            if(donthint=='a'){
+            if (donthint == 'a') {
                 random = 0;
-                while (random == 0 ) {
+                while (random == 0) {
                     var random = Math.floor(Math.random() * $('.item').length);
                 }
                 $('.item').hide().eq(random).show();
                 var ansfive = ($('.queenie').eq(random).html());
                 $('.item').eq(0).show();
-            }if(donthint=='b')
-            {
-                while(random==1) {
+
+            }
+            if (donthint == 'b') {
+                while (random == 1) {
                     var random = Math.floor(Math.random() * $('.item').length);
                 }
                 $('.item').hide().eq(random).show();
                 var ansfive = ($('.queenie').eq(random).html());
                 $('.item').eq(1).show();
-            }if(donthint=='c')
-            {
-                while(random==2) {
+            }
+            if (donthint == 'c') {
+                while (random == 2) {
                     var random = Math.floor(Math.random() * $('.item').length);
                 }
                 $('.item').hide().eq(random).show();
                 var ansfive = ($('.queenie').eq(random).html());
                 $('.item').eq(2).show();
-            }if(donthint=='d')
-            {
-                while(random==3) {
+            }
+            if (donthint == 'd') {
+                while (random == 3) {
                     var random = Math.floor(Math.random() * $('.item').length);
                 }
                 $('.item').hide().eq(random).show();
                 var ansfive = ($('.queenie').eq(random).html());
                 $('.item').eq(3).show();
             }
-            $('#hset').css( "height", high );
-            $('#hset2').css( "height", high );
+            $('#hset').css("height", high);
+            $('#hset2').css("height", high);
+
+            $.ajax({
+                type: "POST",
+                url: "/challengeMCChangeHalf",
+                data: {sem: "mcextra"},
+                success: function (data) {
+                    console.log(data);
+                    $("#halfNum").html(data);
+                    $("#halfNum").fadeOut(1000).fadeIn(1000);
+                    $("#halfNum").fadeOut(1000).fadeIn(1000);
+                    $("#useItem").val(1);
+                    $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
+                    $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
+                    $("#plustime").attr('src','./images/extraTime-black.png');
+
+                }
+            })
+        }
+        else{
+
+            }
         });
         $('#plustime').click(function() {
-            qtime = qtime + 30;
+            if (($("#useItem").val() == 0) && (parseInt($("#extraNum").html()) != 0)){
+                qtime = qtime + 30;
             s = s + 30;
+            $.ajax({
+                type: "POST",
+                url: "/challengeMCChangeExtra",
+                data: {sem: "mcextra"},
+                success: function (data) {
+                    console.log(data);
+                    $("#extraNum").html(data);
+                    $("#extraNum").fadeOut(1000).fadeIn(1000);
+                    $("#extraNum").fadeOut(1000).fadeIn(1000);
+                    $("#useItem").val(1);
+                    $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
+                    $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
+                    $("#plustime").attr('src','./images/extraTime-black.png');
+                }
+            })
+        }
+        else{
+
+            }
         });
         $("#Next").click(function(event){
             $("#time").val(s);
         });
 
         $('#changeQ').click(function() {
-            $.ajax({
-                type:"POST",
-                url: "/challengeMCChange",
-                data: {sem : "mc"},
-                success:function(data){
-                    console.log(data);
-                    $('#hits').text(data['question_id']);
-                    $('#MCA').html(data['mc_ans1']);
-                    $('#MCB').html(data['mc_ans2']);
-                    $('#MCC').html(data['mc_ans3']);
-                    $('#MCD').html(data['mc_ans4']);
-                    $('#trueAns').val(data['question_ans']);
-                    $('#questionType').val(data['question_type']);
-                }
-            })
+            if (($("#useItem").val() == 0) && (parseInt($("#changeNum").html()) != 0)){
+                $.ajax({
+                    type: "POST",
+                    url: "/challengeMCChange",
+                    data: {sem: "mc"},
+                    success: function (data) {
+                        console.log(data);
+                        var changecount = parseInt($("#changeNum").html());
+                        $("#changeNum").html(changecount - 1);
+                        $("#changeNum").fadeOut(1000).fadeIn(1000);
+                        $("#changeNum").fadeOut(1000).fadeIn(1000);
+                        $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg')
+                        $("#useItem").val(1);
+                        $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
+                        $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
+                        $("#plustime").attr('src','./images/extraTime-black.png');
+                    }
+                })
+        }else{
+
+            }
         });
 
         $.ajaxSetup({
@@ -371,6 +524,23 @@
 
     });
 </script>
+<script type="text/javascript">
+
+    function showHide(){
+//create an object reference to the div containing images
+
+        var oImageDiv=document.getElementById("myimageDiv");
+
+
+
+//set display to inline if currently none, otherwise to none
+        oImageDiv.style.display=(oImageDiv.style.display=='none')?'inline':'none';
+
+    }
+</script>
+
+
+
 {{--<script src="../dist/js/jqueryTime.js"></script>--}}
 {{--<script src="../dist/js/jquery.simple.timer.js"></script>--}}
 {{--<script>--}}

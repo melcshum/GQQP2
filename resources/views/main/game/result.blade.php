@@ -54,13 +54,13 @@
 <body>
 
 
-@extends('main.layouts.app')
+@extends('main.layouts.game')
 
 @section('content')
     <div id="page-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="">
                 <pre class="joe"><center><h4><label>Total Result</label></h4></center></pre>
             </div>
         </div>
@@ -68,7 +68,7 @@
     <div class="container">
 
         <div id="Mainp"class="row">
-            <table class="table table-striped">
+            <table class="table table-striped" border="0">
                 <thead>
                 <tr>
                     <th>Question</th>
@@ -82,24 +82,32 @@
                     <td>{!! $totalquestionresult[$i][$i]['Question'] !!}</td>
                     <td>{!! $totalquestionresult[$i][$i]['Result'] !!}</td>
                     <td>{!! $totalquestionresult[$i][$i]['Gold'] !!}</td>
-                    <td>{!! intval($totalquestionresult[$i][$i]['Finish Time']/60) !!}:{!! $totalquestionresult[$i][$i]['Finish Time']%60 !!}</td>
+                    <td>{!! $totalquestionresult[$i][$i]['Finish Time']!!} (Sec)</td>
                 </tr>
 
                  @endfor
+
                  <tr>
-                     <td colspan="4">
-                         <center>Total Gold:{!! $totalgold !!}</center>
+                     <td colspan="2" align="right">
+                         Total Gold Earned:
+                     </td>
+                     <td colspan="2" align="left">
+                         {!! $totalgold !!}　<img src="./images/gold.ico" width="25" height="25">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td colspan="2" align="right">
+                         Total Time Used:
+                     </td>
+                     <td colspan="2" align="left">
+                         {!! $totaltime !!}　(Sec)
                      </td>
                  </tr>
 
-                 <tr>
-                     <td colspan="4">
-                         <center>Total Time:{!! intval($totaltime/60) !!}:{!! $totaltime%60 !!}</center>
-                     </td>
-                 </tr>
                 </tbody>
                 </thead>
             </table>
+            <center><a href="{{ url('/') }}"><button><img src="./images/backMenu.png" height="50"></button></a></center>
         </div>
         <!-- /.row -->
     </div>

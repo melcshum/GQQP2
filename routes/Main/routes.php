@@ -55,8 +55,15 @@ Route::group(['middleware' => 'auth', 'as' => 'auth.'], function () {
         return view('main.challenge.rules');
     });
 
-Route::resource('challengeMCChange','ChallengeController@checkAjax');
-Route::post('challengeMCChange', 'ChallengeController@checkAjax');
+    Route::resource('challengeMCChange','ChallengeController@checkAjax');
+    Route::post('challengeMCChange', 'ChallengeController@checkAjax');
+
+
+    Route::resource('challengeMCChangeExtra','ChallengeController@UpdateExtraNum');
+    Route::post('challengeMCChangeExtra', 'ChallengeController@UpdateExtraNum');
+
+    Route::resource('challengeMCChangeHalf','ChallengeController@UpdateHalfNum');
+    Route::post('challengeMCChangeHalf', 'ChallengeController@UpdateHalfNum');
 
 //    Route::get('/challenge', function () {
 //        return view('main.challenge.challenge');

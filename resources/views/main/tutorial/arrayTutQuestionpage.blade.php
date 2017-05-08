@@ -100,29 +100,24 @@
 </head>
 
 <body>
-@extends('main.layouts.app')
+@extends('main.layouts.game')
 
 @section('content')
 
-    <div id="wrapper">
+    <div id="page-wrapper">
+
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <pre class="joe"><center><h4>   <label>Type:{!!(($arraytutorial[$tutquestion]->question_type))!!}</label>    <label>Level:<u>{!!(($arraytutorial[$tutquestion]->tutquestion_level))!!}</u></label></h4></center></pre>
-                </div>
+            <div>
+                <pre class="joe"><center><h4>   <label>Type:{!!(($arraytutorial[$tutquestion]->question_type))!!}</label>    <label>Level:<u>{!!(($arraytutorial[$tutquestion]->tutquestion_level))!!}</u></label></h4></center></pre>
             </div>
-        </div>
-        <div class="container">
 
-            <div id="Mainp"class="row">
-                <div id="Question" class="col-md-6 col-sm-6 col-xs-6">
+            <div id="Mainp">
+
+                <div id="Answer" >
                     <h2>Question</h2>
                     <p><label>{!!(($arraytutorial[$tutquestion]->tutquestion))!!}</label></p>
                     <hr>
-                </div>
-
-                <div id="Answer" class="col-md-6 col-sm-6 col-xs-6">
                     <h2>Answer</h2>
                     {!!(($arraytutorial[$tutquestion]->program))!!}
                     <table id="Mc">
@@ -130,17 +125,17 @@
                         <input type="hidden" name="numQ" value={!! $tutquestion !!}>
                         <tr>
                             <td>
-                                <input type="radio" name="tutans" value="a">a.<p>{!!(($arraytutorial[$tutquestion]->mc_ans1))!!}</p>
-                                <input type="radio" name="tutans" value="b">b.<p>{!!(($arraytutorial[$tutquestion]->mc_ans2))!!}</p>
+                                <p><input type="radio" name="tutans" value="a">a. {!!(($arraytutorial[$tutquestion]->mc_ans1))!!}</p>
+                                <p><input type="radio" name="tutans" value="b">b. {!!(($arraytutorial[$tutquestion]->mc_ans2))!!}</p>
                             </td>
                             <td>
-                                <input type="radio" name="tutans" value="c">c.<p>{!!(($arraytutorial[$tutquestion]->mc_ans3))!!}</p>
-                                <input type="radio" name="tutans" value="d">d.<p>{!!(($arraytutorial[$tutquestion]->mc_ans4))!!}</p>
+                                <p><input type="radio" name="tutans" value="c">c. {!!(($arraytutorial[$tutquestion]->mc_ans3))!!}</p>
+                                <p><input type="radio" name="tutans" value="d">d. {!!(($arraytutorial[$tutquestion]->mc_ans4))!!}</p>
                             </td>
                         </tr>
 
                     </table>
-                    <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
+                    <p align="right"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
                     {!! Form::close() !!}
                 </div>
             </div>
