@@ -169,7 +169,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                        <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
+                        <pre class="joe"><center><h4><label>Type:<span id="changeType"> {!!(($mc[$random]->question_type))!!}</span></label>    <label>Level:<u><span id="changeQuLv"> {!!($mc[$random]->question_level)!!}</span></u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
                 </div>
 
 
@@ -267,10 +267,10 @@
                 <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                     <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
                         <h2>Question  <label>{!! $playNumber+1 !!}</label>/20</h2>
-                        <p><label>{!!($mc[$random]->question)!!}</label></p>
+                        <p><label><sapn id="Qion">{!!($mc[$random]->question)!!}</sapn></label></p>
                         <hr>
                         <h2>Output</h2>
-                        <img src={!!(($mc[$random]->photo))!!}>
+                        <img id='changePhoto' src={!!(($mc[$random]->photo))!!}>
                         <hr>
                         <ol id="hits">
                             {!!(($mc[$random]->hint))!!}
@@ -280,7 +280,7 @@
 
                     <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
                         <h2>Answer</h2>
-                        {!!(($mc[$random]->program))!!}
+                        <span id ='program'>{!!(($mc[$random]->program))!!}</span>
                         <table id="Mc">
                             {!! Form::open(array('action' => 'Main\ChallengeController@challenge','method' => 'post')) !!}
                             <input type="hidden" id='question_num' name="question_num" value={!! $playNumber!!}>
@@ -291,18 +291,18 @@
                             <input type="hidden" id='useItem' name="useItem" value=0>
                             <tr>
                                 <td id ="hset" align="center">
-                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><span class="queenie"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
+                                    <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" class ='csabcd' id="csa"><span class="queenie"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                                 <td id ="hset" align="center">
-                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span class="queenie"><span id="MCB">b) {!!($mc[$random]->mc_ans2)!!}</span></span></label></p>
+                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" class ='csabcd' id="csb"><span class="queenie"><span id="MCB">b) {!!($mc[$random]->mc_ans2)!!}</span></span></label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td id ="hset2" align="center">
-                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span class="queenie"><span id="MCC">c) {!!($mc[$random]->mc_ans3)!!}</span></span></label></p>
+                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" class ='csabcd' id="csc"><span class="queenie"><span id="MCC">c) {!!($mc[$random]->mc_ans3)!!}</span></span></label></p>
                                 </td>
                                 <td id ="hset2" align="center">
-                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span class="queenie"><span id="MCD">d) {!!($mc[$random]->mc_ans4)!!}</span></span></label></p>
+                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" class ='csabcd' id="csd"><span class="queenie"><span id="MCD">d) {!!($mc[$random]->mc_ans4)!!}</span></span></label></p>
                                 </td>
                             </tr>
                         </table>
@@ -349,9 +349,10 @@
         var qtime = $("#qtime").val();
         var s = qtime % 60;
         var m = Math.floor(qtime / 60);
+        $("#time").val($("#qtime").val());
         $("#my").text(m);
         if(parseInt($("#changeNum").html()) == 0){
-            $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
+            $("#changeQ").attr('src','./images/changeQuestion - black.png');
         }
         if(parseInt($("#halfNum").html()) == 0){
             $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
@@ -408,67 +409,56 @@
         $('#fivefive').click(function() {
             if (($("#useItem").val() == 0) && (parseInt($("#halfNum").html()) != 0)){
                 var donthint = $("#trueAns").val();
-            var random = Math.floor(Math.random() * $('.item').length);
-            var ansfive1 = ($('.queenie').eq(0).html());
-            var ansfive2 = ($('.queenie').eq(1).html());
-            var ansfive3 = ($('.queenie').eq(2).html());
-            var ansfive4 = ($('.queenie').eq(3).html());
-            var i;
-            if (donthint == 'a') {
-                random = 0;
-                while (random == 0) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                var ansfive = ($('.queenie').eq(random).html());
-                $('.item').eq(0).show();
-
-            }
-            if (donthint == 'b') {
-                while (random == 1) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                var ansfive = ($('.queenie').eq(random).html());
-                $('.item').eq(1).show();
-            }
-            if (donthint == 'c') {
-                while (random == 2) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                var ansfive = ($('.queenie').eq(random).html());
-                $('.item').eq(2).show();
-            }
-            if (donthint == 'd') {
-                while (random == 3) {
-                    var random = Math.floor(Math.random() * $('.item').length);
-                }
-                $('.item').hide().eq(random).show();
-                var ansfive = ($('.queenie').eq(random).html());
-                $('.item').eq(3).show();
-            }
-            $('#hset').css("height", high);
-            $('#hset2').css("height", high);
-
-            $.ajax({
-                type: "POST",
-                url: "/challengeMCChangeHalf",
-                data: {sem: "mcextra"},
-                success: function (data) {
-                    console.log(data);
-                    $("#halfNum").html(data);
-                    $("#halfNum").fadeOut(1000).fadeIn(1000);
-                    $("#halfNum").fadeOut(1000).fadeIn(1000);
-                    $("#useItem").val(1);
-                    $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
-                    $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
-                    $("#plustime").attr('src','./images/extraTime-black.png');
+                var random = Math.floor(Math.random() * $('.csabcd').length);
+                var i;
+                if (donthint == 'a') {
+                    random = 0;
+                    while (random == 0) {
+                        var random = Math.floor(Math.random() * $('.csabcd').length);
+                    }
+                    $('.csabcd').hide().eq(random).show();
+                    $("#csa").show();
 
                 }
-            })
-        }
-        else{
+                if (donthint == 'b') {
+                    while (random == 1) {
+                        var random = Math.floor(Math.random() * $('.csabcd').length);
+                    }
+                    $('.csabcd').hide().eq(random).show();
+                    $("#csb").show();
+                }
+                if (donthint == 'c') {
+                    while (random == 2) {
+                        var random = Math.floor(Math.random() * $('.csabcd').length);
+                    }
+                    $('.csabcd').hide().eq(random).show();
+                    $("#csc").show();
+                }
+                if (donthint == 'd') {
+                    while (random == 3) {
+                        var random = Math.floor(Math.random() * $('.csabcd').length);
+                    }
+                    $('.csabcd').hide().eq(random).show();
+                    $("#csd").show();
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "/challengeMCChangeHalf",
+                    data: {sem: "mcextra"},
+                    success: function (data) {
+                        console.log(data);
+                        $("#halfNum").html(data);
+                        $("#halfNum").fadeOut(1000).fadeIn(1000);
+                        $("#halfNum").fadeOut(1000).fadeIn(1000);
+                        $("#useItem").val(1);
+                        $("#changeQ").attr('src','./images/changeQuestion - black.png');
+                        $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
+                        $("#plustime").attr('src','./images/extraTime-black.png');
+
+                    }
+                })
+            }
+            else{
 
             }
         });
@@ -486,7 +476,7 @@
                     $("#extraNum").fadeOut(1000).fadeIn(1000);
                     $("#extraNum").fadeOut(1000).fadeIn(1000);
                     $("#useItem").val(1);
-                    $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
+                    $("#changeQ").attr('src','./images/changeQuestion - black.png');
                     $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
                     $("#plustime").attr('src','./images/extraTime-black.png');
                 }
@@ -497,7 +487,7 @@
             }
         });
         $("#Next").click(function(event){
-            $("#time").val(s);
+
         });
 
         $('#changeQ').click(function() {
@@ -509,7 +499,6 @@
                     data: {sem: NowNumber},
                     success: function (data) {
                         console.log(data);
-                        alert(data);
                         var changecount = parseInt($("#changeNum").html());
                         $("#changeNum").html(changecount - 1);
                         $("#changeNum").fadeOut(1000).fadeIn(1000);
@@ -519,6 +508,20 @@
                         $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
                         $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
                         $("#plustime").attr('src','./images/extraTime-black.png');
+                        $('#hits').html(data['hint']);
+                        $('#MCA').html('a)'+data['mc_ans1']);
+                        $('#MCB').html('b)'+data['mc_ans2']);
+                        $('#MCC').html('c)'+data['mc_ans3']);
+                        $('#MCD').html('d)'+data['mc_ans4']);
+                        $('#trueAns').val(data['question_ans']);
+                        $('#questionType').val(data['question_type']);
+                        $('#program').html(data['program']);
+                        $('#Qion').html(data['question']);
+                        $('#qtime').val(data['time']);
+                        $('#time').val($("#qtime").val($('#qtime').val()));
+                        $('#changeQuLv').html(data['question_level']);
+                        $('#changeType').html(data['question_type']);
+                        $("#changePhoto").attr('src',data['photo']);
                     }
                 })
         }else{

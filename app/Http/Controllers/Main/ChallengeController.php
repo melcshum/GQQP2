@@ -40,7 +40,7 @@ class ChallengeController extends Controller
         $mc = DB::table('mcQuestions')->where('status',1)->get();
 
 
-        if (Input::get('next')) {
+        if (Input::get('next') && $request->input('time') !=0) {
             $mc = DB::table('mcQuestions')->where('status',1)->get();//get MCquestion database
             $UserTime = $request->input('qtime');//User finish Time
             $QuestionTime = $request->input('time');//Question finish Time
@@ -83,21 +83,9 @@ class ChallengeController extends Controller
 
 
 
-//            else{
-//                $gold = 0;
-//                $knowledge = 0;
-//                $totalgold = $request->input('totalgold');
-//                $totalknowledge = $request->input('totalknowledge');
-//                $totalgold += $gold;
-//                $totalknowledge += $knowledge;
-//                $playNumber = $request->input('question_num')-1;
-//                $totalquestiondetail[$playNumber -1]=['Question' => 3 ,'Result' => 'False','Gold' =>$gold,'Knowledge'=>$knowledge,'Finish Time' =>$UserTime];
-//                Session::push('challenge',$totalquestiondetail);
-//            }
-
         }
-        if(Input::get('skip')){
-            $playAns = 'skip';
+        else{
+            $playAns = 'Time Up';
             $gold = 0;
             $knowledge = 0;
             $totalgold = $request->input('totalgold');
@@ -106,7 +94,7 @@ class ChallengeController extends Controller
             $totalknowledge += $knowledge;
             $playNumber = $request->input('question_num');
             $random = Session::get('ChallengeRandom')[0][$playNumber];
-            $totalquestiondetail[$playNumber]=['Question' => $playNumber+1 ,'Result' => '<i>skip</i>','Gold' =>$gold,'Knowledge'=>$knowledge,'Finish Time' =>0];
+            $totalquestiondetail[$playNumber]=['Question' => $playNumber+1 ,'Result' => '<i>Time Up</i>','Gold' =>$gold,'Knowledge'=>$knowledge,'Finish Time' =>0];
             Session::push('challenge',$totalquestiondetail);
             $playNumber++;
             if($this->checkEnd($playNumber)) {
@@ -133,7 +121,7 @@ class ChallengeController extends Controller
     public function checkEnd($playNumber){
         $End = "";
         $mc =DB::table('mcQuestions')->where('status',1)->get();
-        if ($playNumber == count($mc)) { // to 20
+        if ($playNumber == 1) { // to 20
             $End = True;
         }else {
             $End = False;
@@ -149,45 +137,21 @@ class ChallengeController extends Controller
     public function checkAjax(Request $request){
         $changeNumber = Session::get('ChangeNumber');
         $random = Session::get('ChallengeRandom');
-        return (input::get('sem'));
-
-
-//        $total = [1,2,3];
-//        $random = range(0,4);
-//        shuffle($random);
-//        $test = array_slice($random, 0 ,1);
-//        //dd(array_slice($random, 0 ,1));
-//        $i = "f";
-//        $k = 'f';
-//        $test;
-//        while($i=='f') {
-//            for ($j = 0; $j < count($total); $j++) {
-//                if ($test[0] == 1) {
-//                    $k = 're';
-//                    $test = array_slice($random, 0 ,1);
-//                    break;
-//                } else {
-//                    $k = 'not re';
-//                    continue;
-//                }
-//            }
-//        }
-//        return $k;
-        //dd(count($total));
-        //$random = Session::get('ChallengeRandom');
-//       return "abc";
-        //$mc = DB::table('mcQuestions')->where('status',1)->get();
-        //$mcquestion = $mc[1];
-       // $change = Auth::user()->change -1;
-       // DB::table('users')
-       //     ->where('id',Auth::user()->id)
-       //     ->update(array('change'=>$change));
-
-       // return response()->json($mcquestion);
-//        $semester = Input::get('sem');
-//
-//        return json_encode($semester);
-
+        $nowPlayNum =  (input::get('sem'));
+        //dd($random);
+        $random[0][$nowPlayNum] = $changeNumber[0];
+        //dd($random);
+        Session::forget('ChallengeRandom');
+        Session::push('ChallengeRandom',$random[0]);
+        $random = Session::get('ChallengeRandom');
+        $mc =DB::table('mcQuestions')->where('status',1)->get();
+        $change = Auth::user()->change -1;
+        DB::table('users')
+            ->where('id',Auth::user()->id)
+            ->update(array('change'=>$change));
+        Session::forget('ChangeNumber');
+        Session::push('ChangeNumber',$changeNumber[0]+1);
+        return response()->json( $mc[$random[0][$nowPlayNum]]);
     }
 
     public function randomNumber($total){
@@ -201,12 +165,7 @@ class ChallengeController extends Controller
         DB::table('users')
             ->where('id',Auth::user()->id)
             ->update(array('extra'=>$extra));
-        //dd($mc[1]);
         return response()->json($extra);
-//        $semester = Input::get('sem');
-//
-//        return json_encode($semester);
-
     }
 
     public function UpdateHalfNum(Request $request){
@@ -214,11 +173,6 @@ class ChallengeController extends Controller
         DB::table('users')
             ->where('id',Auth::user()->id)
             ->update(array('half'=>$half));
-        //dd($mc[1]);
         return response()->json($half);
-//        $semester = Input::get('sem');
-//
-//        return json_encode($semester);
-
     }
 }

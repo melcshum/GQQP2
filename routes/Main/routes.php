@@ -65,6 +65,11 @@ Route::group(['middleware' => 'auth', 'as' => 'auth.'], function () {
     Route::resource('challengeMCChangeHalf','ChallengeController@UpdateHalfNum');
     Route::post('challengeMCChangeHalf', 'ChallengeController@UpdateHalfNum');
 
+    Route::resource('challengeFillChange','ChallengeFillController@checkAjax');
+    Route::post('challengeFillChange', 'ChallengeFillController@checkAjax');
+
+
+
 //    Route::get('/challenge', function () {
 //        return view('main.challenge.challenge');
 //    });

@@ -100,7 +100,7 @@
 
 
 <body>
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @extends('main.layouts.game')
 
 @section('content')
@@ -108,7 +108,7 @@
     <div class="container">
         <div>
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Type:{!!(($fill[$random]->question_type))!!}</label>    <label>Level:<u>{!!(($fill[$random]->question_level))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label><label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
+                <pre class="joe"><center><h4><label>Type:<span id="changeType">{!!(($fill[$random]->question_type))!!}</span></label>    <label>Level:<u><span id="changeQuLv">{!!(($fill[$random]->question_level))!!}</span></u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label><label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
             </div>
         </div>
     </div>
@@ -190,10 +190,10 @@
 
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
                     <h2>Question <label>{!!(($playnum))!!}</label>/20</h2>
-                    <p><label>{!!(($fill[$random]->question))!!}</label></p>
+                    <p><label><span id="changeQuestion">{!!(($fill[$random]->question))!!}</span></label></p>
                     <hr>
                     <h2>Output</h2>
-                    <img src={!!(($fill[$random]->photo))!!}>
+                    <img id='changePhoto' src={!!(($fill[$random]->photo))!!}>
                     <hr>
                     <ol id="hits">
                         {!!(($fill[$random]->hint))!!}
@@ -206,7 +206,8 @@
                     <input type="hidden" name="playNum" id="playNum" value={!! $playnum !!}>
                     <input type="hidden" name="playNum" id="playNum" value={!! $random !!}>
                     <input type="hidden" id='qtime' name="qtime" value={!! $fill[$random]->time !!}>
-                    {!!(($fill[$random]->program))!!}
+                    <input type="hidden" id='useItem' name="useItem" value=0>
+                   <span id="programP"> {!!(($fill[$random]->program))!!}</span>
                     <p align="right" valign="bottom"><input type="submit" id="Next" class="btn btn-primary" value="Next"></p>
                 </div>
             </div>
@@ -247,6 +248,12 @@
         var s = qtime % 60;
         var m = Math.floor(qtime / 60);
         $("#my").text(m);
+        if(parseInt($("#changeNum").html()) == 0){
+            $("#changeQ").attr('src','./images/changeQuestion - black.png');
+        }
+        if(parseInt($("#extraNum").html()) == 0){
+            $("#plustime").attr('src','./images/extraTime-black.png');
+        }
 
         var id = setInterval(frame, 1000);
         function frame(){
@@ -285,29 +292,49 @@
 
         }
         $('#plustime').click(function() {
-            qtime = qtime + 30;
-            s = s + 30;
+            if (($("#useItem").val() == 0) && (parseInt($("#extraNum").html()) != 0)){
+                qtime = qtime + 30;
+                s = s + 30;
+                $.ajax({
+                    type: "POST",
+                    url: "/challengeMCChangeExtra",
+                    data: {sem: "mcextra"},
+                    success: function (data) {
+                        console.log(data);
+                        $("#extraNum").html(data);
+                        $("#extraNum").fadeOut(1000).fadeIn(1000);
+                        $("#extraNum").fadeOut(1000).fadeIn(1000);
+                        $("#useItem").val(1);
+                        $("#changeQ").attr('src','./images/changeQuestion - black.png');
+                        $("#plustime").attr('src','./images/extraTime-black.png');
+                    }
+                })
+            }
+            else{
+
+            }
         });
         $("#Next").click(function(event){
-            $("#time").val(s);
+
         });
 
         $('#changeQ').click(function() {
+            if (($("#useItem").val() == 0) && (parseInt($("#changeNum").html()) != 0)){
             $.ajax({
                 type:"POST",
-                url: "/challengeMCChange",
+                url: "/challengeFillChange",
                 data: {sem : "mc"},
                 success:function(data){
                     console.log(data);
-                    $('#hits').text(data['question_id']);
-                    $('#MCA').html(data['mc_ans1']);
-                    $('#MCB').html(data['mc_ans2']);
-                    $('#MCC').html(data['mc_ans3']);
-                    $('#MCD').html(data['mc_ans4']);
-                    $('#trueAns').val(data['question_ans']);
-                    $('#questionType').val(data['question_type']);
+                    var changecount = parseInt($("#changeNum").html());
+                    $("#changeNum").html(changecount - 1);
+                    alert(data['question_type']);
                 }
             })
+            }
+            else{
+
+            }
         });
 
         $.ajaxSetup({

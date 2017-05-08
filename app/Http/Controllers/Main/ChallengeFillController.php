@@ -18,8 +18,10 @@ class ChallengeFillController extends Controller
         $fill = DB::table('fillQuestions')->where('status',1)->get();
         $playnum = 20;
         $totalgold = 0;
+        $changeNum = 2;
         $random = $this->randomNumber(count($fill));
         Session::push('ChallengeFillRandom',$random);
+        Session::push('ChallengeFillChange',$changeNum);
         $random = Session::get('ChallengeFillRandom')[0][0];
         $totalknowledge = 0;
 
@@ -56,7 +58,7 @@ class ChallengeFillController extends Controller
         $knowledge = $fill[$random]->knowledge;
        // dd($playnum);
         $check = $this->checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$random);
-        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => '<font color="#76eec6">Correct</font>', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0,'Type'=>$type];
+        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => '<font color="#76eec6">Correct</font>', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => 0,'Type'=>$type];
         Session::push('challengeFill', $totalquestiondetail);
         $totalquestionresult = Session::get('challengeFill');
         $totalquestionMCresult = Session::get('challenge');
@@ -191,6 +193,25 @@ class ChallengeFillController extends Controller
 //            ->update(array('gold'=>$gold));
 //        //$project->update($input);
     }
+
+    public function checkAjax(Request $request){
+        $random = Session::get('ChallengeFillRandom');
+        $changeNum = Session::get('ChallengeFillChange');
+        $random[0][0] = $changeNum[0];
+        Session::forget('ChallengeFillRandom');
+        Session::push('ChallengeFillRandom',$random[0]);
+        $random = Session::get('ChallengeFillRandom');
+        //dd($random);
+        $fill = DB::table('fillquestions')->where('status',1)->get();
+        $change = Auth::user()->change -1;
+        DB::table('users')
+        ->where('id',Auth::user()->id)
+        ->update(array('change'=>$change));
+        //dd($fill[$random[0][0]]);
+        return response()->json( $fill[$random[0][0]]);
+    }
+
+
 
 
 
