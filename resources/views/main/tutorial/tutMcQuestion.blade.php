@@ -132,15 +132,19 @@
                             <p><input type="radio" name="tutans" value="d">d. {!!(($iftutorial[$tutquestion]->mc_ans4))!!}</p>
                         </td>
                     </tr>
-
+                    </table>
+                <table width="100%">
+<tr>
+    <td align="right">
+          <input type="submit" id="Next" name="next" class="btn btn-primary" value="Next">
+            {!! Form::close() !!}</td>
+</tr>
 
                 </table>
 
 
             </div>
-            <div>
-                <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
-                {!! Form::close() !!}</div>
+
         </div>
         <!-- /.row -->
     </div>

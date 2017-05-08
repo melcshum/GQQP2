@@ -137,7 +137,7 @@
                         </tr>
 
                     </table>
-                    <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
+                    <p align="right"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
                     {!! Form::close() !!}
                 </div>
             </div>
