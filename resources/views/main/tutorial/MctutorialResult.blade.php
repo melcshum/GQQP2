@@ -72,25 +72,30 @@
 
         <div id="Mainp"class="row">
             <pre><h4>{!! $message !!}</h4></pre>
-            <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Question" class="">
                 <h2> Question</h2>
                 {!!(array_get($iftutorial[$playQuestionNum], 'attributes.program'))!!}
             </div>
-            <div id="Question" class="col-md-8 col-sm-8 col-xs-8">
+        </div>
+
+        <div id=""class="row">
+           <div id="Question" class="col-md-6 col-sm-6 col-xs-6">
                 <h2>Your Answer</h2>
                 {!!$playAns!!}.{!!$userAns!!}
             </div>
 
-            <div id="Answer" class="col-md-8 col-sm-8 col-xs-8">
+            <div id="Answer" class="col-md-6 col-sm-6 col-xs-6">
                 <h2>Correct Answer</h2>
                 {!!$tureAns!!}.{!!($turntotAns)!!}
 
             </div>
-        </div>
-        <div>
-            <p align="right"><a href="/tutorial/conditional"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
+            <div>
+                <p align="right"><a href="/tutorial/conditional"><input type="button" name='Next_question' class="btn btn-warning" value="back to the tutorial page"></a></p>
 
+            </div>
         </div>
+
+
         <!-- /.row -->
     </div>
 

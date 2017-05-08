@@ -92,7 +92,6 @@
                     rotateX(0deg);
             background-color: Gold;
         }
-
         /*
          | //lea.verou.me/css3patterns
          | Because white bgs are boring.
@@ -181,7 +180,8 @@
                             </td>
                         </tr>
                     </table>
-                    <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
+                    <p align="right"><input type="button" id="Reset" name="reset" class="btn btn-primary" value="Reset" onclick="reset()">
+                  <input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
                 </div>
             </div>
         </div>
@@ -222,6 +222,7 @@
     $(document).ready(function(){
         $("#hits").hide();
         $("#Next").hide();
+        $("#Reset").hide();
         var num = 50;
         var s =$("#sy").val();
         var m = $("#my").val();
@@ -261,9 +262,21 @@
 
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
+            $("#Reset").show();
             $("#skip").hide();
         });
 
+
+        $('input:button[name="reset"]').click(function(){
+            $("#Next").hide();
+            $("#Reset").hide();
+            $("#skip").show();
+
+            $(':radio').each(function () {
+                $(this).removeAttr('checked');
+                $('input[type="radio"]').prop('checked', false);
+            })
+        });
 
 
 
@@ -272,6 +285,10 @@
         //});
     });
 </script>
+
+
+
+
 
 <!--<script type="text/javascript" language="javascript">
     $(document).ready(function(){

@@ -185,7 +185,7 @@
                         <h3><p align="left">Items: </p></h3>
                         <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50"> x <span id="changeNum" >{{ Auth::user()->change }}</span>
                         　<img id='fivefive' src="./images/50-50-movie_61.jpg" width="100" height="50"> x <span id="halfNum" >{{ Auth::user()->half }}</span>
-                        　<img id="plustime" src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
+                        　<img id='plustime' src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
                     </div>
 
                 </div>
@@ -199,11 +199,23 @@
                     // Get the <span> element that closes the modal
                     var span = document.getElementsByClassName("close")[0];
 
+                    var changeQ = document.getElementById("changeQ");
+                    var fivefive = document.getElementById("fivefive");
+                    var plustime = document.getElementById("plustime");
+
                     // When the user clicks the button, open the modal
                     btn.onclick = function() {
                         modal.style.display = "block";
                     }
-
+                    changeQ.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    fivefive.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    plustime.onclick = function() {
+                        modal.style.display = "none";
+                    }
                     // When the user clicks on <span> (x), close the modal
                     span.onclick = function() {
                         modal.style.display = "none";
