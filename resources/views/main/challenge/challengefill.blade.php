@@ -55,6 +55,47 @@
 
     </style>
 
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 150px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 
@@ -65,34 +106,86 @@
 @section('content')
     <div id="wrapper">
     <div class="container">
-        <div class="row">
+        <div>
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <pre class="joe"><center><h4><label>Type:{!!(($fill[$random]->question_type))!!}</label>    <label>Level:<u>{!!(($fill[$random]->question_level))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label></h4></center></pre>
+                <pre class="joe"><center><h4><label>Type:{!!(($fill[$random]->question_type))!!}</label>    <label>Level:<u>{!!(($fill[$random]->question_level))!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label><label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
             </div>
         </div>
     </div>
-    <h3><p align="right">item</p></h3>
-    <table border="1" align="right">
-        <tr>
-            <td>
-                <img src="./images/changeQuestion.png" width="50" height="50">
-            </td>
-            <td>
-                x1
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="./images/extraTime.png" width="50" height="50">
-            </td>
-            <td>
-                x1
-            </td>
-        </tr>
-    </table>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3><p align="left">Items: </p></h3>
+                    <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50"> x <span id="changeNum" >{{ Auth::user()->change }}</span>
+                    <img id='plustime' src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
+                </div>
+
+            </div>
+            <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                var changeQ = document.getElementById("changeQ");
+
+                var plustime = document.getElementById("plustime");
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+                changeQ.onclick = function() {
+                    modal.style.display = "none";
+                }
+                plustime.onclick = function() {
+                    modal.style.display = "none";
+                }
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+
+            <div id="myimageDiv" style="display:none;">
+                <h3><p align="left">Items: </p></h3>
+                <table border="1" align="left" width="100%" >
+                    <tr>
+                        <td>
+                            <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50">
+                        </td>
+                        <td>
+                            x<span id="changeNum" >{{ Auth::user()->change }}</span>
+                        </td>
+                        <td>
+                            <img id="plustime" src="./images/extraTime.png" width="50" height="50">
+                        </td>
+                        <td>
+                            x<span id="extraNum">{{ Auth::user()->extra }}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
     <div class="container">
 
-        <div id="Mainp" class="row">
+        <div id="Mainp">
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
 
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
@@ -107,36 +200,21 @@
                     </ol>
                 </div>
 
-                <div id="Answer"class="col-md-8 col-sm-8 col-xs-8" >
+                <div id="Answer" >
                     <h2>Answer</h2>
                     {!! Form::open(array('action' => 'Main\ChallengeFillController@challenge','method' => 'post')) !!}
                     <input type="hidden" name="playNum" id="playNum" value={!! $playnum !!}>
                     <input type="hidden" name="playNum" id="playNum" value={!! $random !!}>
                     <input type="hidden" id='qtime' name="qtime" value={!! $fill[$random]->time !!}>
                     {!!(($fill[$random]->program))!!}
-                    <p id="test"align="right" valign="bottom"><input type="submit" id="Next" class="btn btn-primary" value="Next"></p>
+                    <p align="right" valign="bottom"><input type="submit" id="Next" class="btn btn-primary" value="Next"></p>
                 </div>
             </div>
         </div>
         <!-- /.row -->
     </div>
     <div class="container">
-        <ul class="nav" id="side-menu">
 
-            <li>
-                <a href="" class="btn" style="float: left;">01</a>
-            </li>
-
-            <li>
-                <a href="" class="btn " style="float: left;">02</a>
-            </li>
-            <li>
-                <a href="" class="btn" style="float: left;">03</a>
-            </li>
-            <li>
-                <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
-            </li>
-        </ul>
         {!! Form::close() !!}
     </div>
     <!-- /#page-wrapper -->

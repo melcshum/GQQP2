@@ -42,6 +42,10 @@
                         <div class="alert alert-danger">
                             {{Session::get('message')}}
                         </div>
+                        @elseif(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
                     @endif
                     <table border="0" width="100%" align="right">
                         <tr>
@@ -49,7 +53,7 @@
                                 <h1 class="page-header" id="item">Items Redemption</h1>
                             </td>
                             <td colspan="2" align="center">
-                                <img src="./images/2955057094021740194.png" name="aboutme" width="70" height="70" class="img-circle">
+                                <img src="{{ access()->user()->picture }}" name="aboutme" width="70" height="70" class="img-circle">
                                 <h5><img src="./images/Gold.png">{{ Auth::user()->name }}<img src="./images/Gold.png"></h5>
                             </td>
                         </tr>

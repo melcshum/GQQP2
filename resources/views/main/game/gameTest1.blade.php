@@ -92,7 +92,6 @@
                     rotateX(0deg);
             background-color: Gold;
         }
-
         /*
          | //lea.verou.me/css3patterns
          | Because white bgs are boring.
@@ -118,15 +117,19 @@
         #myProgress {
             width: 100%;
             background-color: #ddd;
+            position:relative;
         }
 
         #myBar {
 
-            width:{!! $playQuestionNum/count($mc)*100 !!}%;
+            width:{!! ($playQuestionNum+1)/count($mc)*100 !!}%;
             height: 30px;
             background-color: #4CAF50;
         }
+
+
     </style>
+
 </head>
 
 <body>
@@ -136,19 +139,28 @@
 
     <div class="container">
 
-        <div id="Mainp"class="row">
+        <div id="Mainp"class="col-md-12 col-sm-12 col-xs-12">
             <div id="Test123" class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <pre class="joe"><center><h4><label> Total Gold Earned:<u>{!!$totalgold!!}</u></label>  <label><img src="./images/gold.ico" width="25" height="25">{!!(($mc[$random]->gold))!!}</label>  <label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>     </h4></center></pre>
                     </div>
                 </div>
-                <h5>Game in Progress </h5>
+
                 <div id="myProgress">
-                    <div id="myBar"></div>
+
+                    <div id="myBar">
+                        <div align="center"> {!! Form::label('question_num', $playQuestionNum+1) !!}/{!! count($mc) !!}</div>
+                    </div>
+
+
                 </div>
+
+
+
+
                 <div id="Question" class="col-md-4 col-sm-4 col-xs-4">
-                    <h2>Question <label>{!! Form::label('question_num', $playQuestionNum+1) !!}</label> / {!! count($mc) !!}</h2>
+                    <h2>Question </h2>
                     <p><label>{!!($mc[$random]->question)!!}</label></p>
                     <hr>
                     <h2>Output</h2>
@@ -181,7 +193,8 @@
                             </td>
                         </tr>
                     </table>
-                    <p id="test"align="right" valign="bottom"><input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
+                    <p align="right"><input type="button" id="Reset" name="reset" class="btn btn-danger" value="Reset" onclick="reset()">
+                  <input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
                 </div>
             </div>
         </div>
@@ -222,6 +235,7 @@
     $(document).ready(function(){
         $("#hits").hide();
         $("#Next").hide();
+        $("#Reset").hide();
         var num = 50;
         var s =$("#sy").val();
         var m = $("#my").val();
@@ -261,9 +275,21 @@
 
         $('input:radio[name="ans"]').change(function(){
             $("#Next").show();
+            $("#Reset").show();
             $("#skip").hide();
         });
 
+
+        $('input:button[name="reset"]').click(function(){
+            $("#Next").hide();
+            $("#Reset").hide();
+            $("#skip").show();
+
+            $(':radio').each(function () {
+                $(this).removeAttr('checked');
+                $('input[type="radio"]').prop('checked', false);
+            })
+        });
 
 
 
@@ -272,6 +298,10 @@
         //});
     });
 </script>
+
+
+
+
 
 <!--<script type="text/javascript" language="javascript">
     $(document).ready(function(){

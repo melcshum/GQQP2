@@ -51,7 +51,7 @@
 </head>
 
 <body>
-@extends('main.layouts.app')
+@extends('main.layouts.game')
 
 @section('content')
     <div id="wrapper">
@@ -59,12 +59,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <center><h3>Now we going to fill question part</h3></center>
+                    <center><h3>Now, we are going to fill in the blanks</h3></center>
                 </div>
             </div>
+            <center><p><a href="/challengeFill"><input type="button" name="3" id="3" class="btn btn-primary" value="Play"></a></p></center>
 
-                        <center><p><a href="/challengeFill"><input type="button" name="3" id="3" class="btn btn-primary" value="Play"></a></p></center>
-                    </div>
+        </div>
                 </div>
             </div>
             <!-- /.row -->

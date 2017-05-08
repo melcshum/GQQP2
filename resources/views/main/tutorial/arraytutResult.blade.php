@@ -93,7 +93,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="Logout_page.html">Result</a>
+            <a class="navbar-brand" href="/tutorial">Back to Tutorial Menu</a>
         </div>
         <!-- /.navbar-header -->
 

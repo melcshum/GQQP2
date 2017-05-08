@@ -24,7 +24,7 @@
         <div id="page-wrapper">
             <div class="row-fluid">
                 <div class="col-md-12 col-sm-12 col-xs-1">
-                    <ul id="myTab" class="nav nav-tabs">
+                    <ul id="myTab" class="nav nav-tabs" >
                         <li class="active"><a href="#Platinum" data-toggle="tab"><img src="./images/platinum.png"></a></li>
                         <li><a href="#Gold" data-toggle="tab"><img src="./images/gold2.png"></a></li>
                         <li><a href="#Silver" data-toggle="tab"><img src="./images/silver2.png"></a></li>
@@ -183,6 +183,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- /.row -->
         </div>
@@ -229,16 +230,17 @@
 <script src="../dist/js/sb-admin-2.js"></script>
 <script type="text/javascript" language="javascript">
     $(document).ready(function(){
-//        $('tr').each(function(){
-//            var userID = $('#userID').val();
-//            var id = $('#id').val();
-////            alert(id);
-////            if(userID == id){
-//                $(this).addClass('self').sibling().removeClass('self');
-//            }
-
-
+        $('table td').each(function(){
+            //$('table tr:even').css('backgroundColor', '#FFFFFF');
+            var userID = $('#userID').val();
+            var id = $('#id').val();
+            if(userID == id) {
+             //   $(this).parent().css('backgroundColor', '#EFEF00');
+            }
         });
+
+
+    });
 //            $('table').on('click', 'tr', function(){
 //               $(this).addClass('self').sibling().removeClass('self');
 

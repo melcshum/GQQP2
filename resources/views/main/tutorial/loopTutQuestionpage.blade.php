@@ -127,12 +127,12 @@
                         <input type="hidden" name="numQ" value={!! $tutquestion !!}>
                         <tr v-align="right">
                             <td >
-                                <p><input type="radio" name="tutans" value="a">a.{!!(($looptutorial[$tutquestion]->mc_ans1))!!}</p>
-                                <p><input type="radio" name="tutans" value="b">b.{!!(($looptutorial[$tutquestion]->mc_ans2))!!}</p>
+                                <p><input type="radio" name="tutans" value="a">　a. {!!(($looptutorial[$tutquestion]->mc_ans1))!!}</p>
+                                <p><input type="radio" name="tutans" value="b">　b. {!!(($looptutorial[$tutquestion]->mc_ans2))!!}</p>
                             </td>
                             <td>
-                                <p> <input type="radio" name="tutans" value="c">c.{!!(($looptutorial[$tutquestion]->mc_ans3))!!}</p>
-                                <p><input type="radio" name="tutans" value="d">d.{!!(($looptutorial[$tutquestion]->mc_ans4))!!}</p>
+                                <p> <input type="radio" name="tutans" value="c">　c. {!!(($looptutorial[$tutquestion]->mc_ans3))!!}</p>
+                                <p><input type="radio" name="tutans" value="d">　d. {!!(($looptutorial[$tutquestion]->mc_ans4))!!}</p>
                             </td>
                         </tr>
 

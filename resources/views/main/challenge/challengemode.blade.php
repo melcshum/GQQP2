@@ -169,7 +169,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
+                        <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
                 </div>
 
 
@@ -185,7 +185,7 @@
                         <h3><p align="left">Items: </p></h3>
                         <img id='changeQ' src="./images/changeQuestion.png" width="50" height="50"> x <span id="changeNum" >{{ Auth::user()->change }}</span>
                         　<img id='fivefive' src="./images/50-50-movie_61.jpg" width="100" height="50"> x <span id="halfNum" >{{ Auth::user()->half }}</span>
-                        　<img id="plustime" src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
+                        　<img id='plustime' src="./images/extraTime.png" width="50" height="50"> x <span id="extraNum">{{ Auth::user()->extra }}</span>
                     </div>
 
                 </div>
@@ -199,11 +199,23 @@
                     // Get the <span> element that closes the modal
                     var span = document.getElementsByClassName("close")[0];
 
+                    var changeQ = document.getElementById("changeQ");
+                    var fivefive = document.getElementById("fivefive");
+                    var plustime = document.getElementById("plustime");
+
                     // When the user clicks the button, open the modal
                     btn.onclick = function() {
                         modal.style.display = "block";
                     }
-
+                    changeQ.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    fivefive.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    plustime.onclick = function() {
+                        modal.style.display = "none";
+                    }
                     // When the user clicks on <span> (x), close the modal
                     span.onclick = function() {
                         modal.style.display = "none";
@@ -301,11 +313,7 @@
             <!-- /.row -->
         </div>
         <div class="container">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
-                </li>
-            </ul>
+
             {!! Form::close() !!}
         </div>
         <!-- /#page-wrapper -->

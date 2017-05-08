@@ -125,12 +125,12 @@
                         <input type="hidden" name="numQ" value={!! $tutquestion !!}>
                         <tr>
                             <td>
-                                <p><input type="radio" name="tutans" value="a">a. {!!(($arraytutorial[$tutquestion]->mc_ans1))!!}</p>
-                                <p><input type="radio" name="tutans" value="b">b. {!!(($arraytutorial[$tutquestion]->mc_ans2))!!}</p>
+                                <p><input type="radio" name="tutans" value="a">　a. {!!(($arraytutorial[$tutquestion]->mc_ans1))!!}</p>
+                                <p><input type="radio" name="tutans" value="b">　b. {!!(($arraytutorial[$tutquestion]->mc_ans2))!!}</p>
                             </td>
                             <td>
-                                <p><input type="radio" name="tutans" value="c">c. {!!(($arraytutorial[$tutquestion]->mc_ans3))!!}</p>
-                                <p><input type="radio" name="tutans" value="d">d. {!!(($arraytutorial[$tutquestion]->mc_ans4))!!}</p>
+                                <p><input type="radio" name="tutans" value="c">　c. {!!(($arraytutorial[$tutquestion]->mc_ans3))!!}</p>
+                                <p><input type="radio" name="tutans" value="d">　d. {!!(($arraytutorial[$tutquestion]->mc_ans4))!!}</p>
                             </td>
                         </tr>
 

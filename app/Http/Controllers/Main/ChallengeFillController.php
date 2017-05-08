@@ -38,7 +38,8 @@ class ChallengeFillController extends Controller
         $ans5 =$request->input('ans5');
         $type = $fill[$random]->question_type;
         if($ans1==""||$ans1==""||$ans2==""||$ans3==""||$ans4==""||$ans5==""||Input::get('skip')){
-            $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'False', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0, 'Type'=>$type];
+
+            $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => '<font color ="#ee3b3b">Incorrect</font>', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0, 'Type'=>$type];
             Session::push('challengeFill', $totalquestiondetail);
             $totalquestionresult = Session::get('challengeFill');
             $totalquestionMCresult = Session::get('challenge');
@@ -55,7 +56,7 @@ class ChallengeFillController extends Controller
         $knowledge = $fill[$random]->knowledge;
        // dd($playnum);
         $check = $this->checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$random);
-        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'True', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => 0,'Type'=>$type ];
+        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => '<font color="#76eec6">Correct</font>', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0,'Type'=>$type];
         Session::push('challengeFill', $totalquestiondetail);
         $totalquestionresult = Session::get('challengeFill');
         $totalquestionMCresult = Session::get('challenge');
@@ -127,10 +128,10 @@ class ChallengeFillController extends Controller
             ->where('id',Auth::user()->id)
             ->update(array('gold'=>$gold));
 
-        $gold = Auth::user()->Knowledge + $totalKnow;
+        $know = Auth::user()->Knowledge + $totalKnow;
         DB::table('users')
             ->where('id',Auth::user()->id)
-            ->update(array('Knowledge'=>$totalKnow));
+            ->update(array('Knowledge'=>$know));
         //$project->update($input);
         return 'nice';
     }

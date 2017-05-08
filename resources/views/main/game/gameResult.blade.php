@@ -95,24 +95,23 @@
 
         <div id="Mainp"><div class="col-md-12 col-sm-12 col-xs-12">
 
-
-                    <pre class="joe"><center><h4><label><img src="./images/gold.ico" width="25" height="25">＝<u>{!!$gold!!}</u></label>   <label>Timer: 0:{!! $time!!}</label></h4></center></pre>
-
-            <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
-            <div id="Question" >
                 <table border="1" width="100%">
-                    <tr><td colspan="3"><center><h2>{!! $message !!}</h2></center></td></tr></table>
-                <table border="0" width="100%">
-                    <tr><td><h2>Your Answer</h2></td><td></td><td><h2>Correct Answer</h2></td></tr>
+                    <tr><td colspan="3"><center><h3>{!! $message !!},　{!!$gold!!} <img src="./images/gold.ico" width="35" height="35"> is earned! 　<img src="./images/timer.png" width="35" height="35"> used is 0:{!! $time!!} ! </h3></center></td></tr></table>
+
+
+                <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
+                <table border="1" width="100%">
                     <tr>
                         <td>
-                    {!!($mc[$random]->program)!!}
-                    </td>
-                    <td>　　　　</td>
-                    <td>
-                        {!!($mc[$random]->program)!!}
-                    </td>
+                            {!!($mc[$random]->program)!!}
+                        </td>
                     </tr>
+
+                    </table>
+            <div id="Question" >
+               <table border="0" width="100%">
+                    <tr><td><h2>Your Answer</h2></td><td></td><td><h2>Correct Answer</h2></td></tr>
+
                     <tr><td>  {!!$playAns!!}.{!!$ans!!} </td><td></td><td>{!!($mc[$random]->question_ans)!!}.{!!($tureAns)!!}</td></tr>
 <tr><td colspan="3">  {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
         <p align="right"><input type="submit" name='Next_question' class="btn btn-warning" value="Next question"></p>
