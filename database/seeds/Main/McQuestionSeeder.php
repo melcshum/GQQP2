@@ -630,8 +630,130 @@ class McQuestionSeeder extends Seeder
                 'mc_ans2' =>'<br>1645<br>'
                 ,'mc_ans3'=>'<br>1645<br>545<br>'
                 ,'mc_ans4'=>'<br>-645<br>',
-                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>Is num bigger than 0?</p><p>Does num fit in the next if_else statment?</p>','photo'=>'./images/mcQuestion/ans21.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
+                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>Is num bigger than 0?</p><p>Does num fit in the next if_else statment?</p>','photo'=>'./images/mcQuestion/ans22.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
 
+            //Q23
+
+            ['id'=>23,'name'=>'array 1', 'teacher_id'=>1, 'question_type'=>'array','question_level'=>1
+                ,'question'=>'What is the correct answer to make the output like below? The output is shown as below:','program'=>
+
+                '<pre>		
+	public class test{
+
+	public static void main (String [] args){
+		int gasPrices[] = new int[10];
+
+		gasPrices[0] = 346;
+		gasPrices[1] = 360;
+		gasPrices[2] = 354;
+		gasPrices[3] = 321;
+	    System.out.println(<input type="text" name="ans1" disabled >);
+	}
+}</pre>',
+                'question_ans'=>'c',
+                'mc_ans1' =>'<br>gasPrices[2]<br>',
+                'mc_ans2' =>'<br>gasPrices[3]<br>'
+                ,'mc_ans3'=>'<br>gasPrices[0]<br>'
+                ,'mc_ans4'=>'<br>gasPrices[1]<br>',
+                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>What is the array locate?</p>','photo'=>'./images/mcQuestion/ans23.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
+
+            //Q24
+
+            ['id'=>24,'name'=>'array 2', 'teacher_id'=>1, 'question_type'=>'array','question_level'=>1
+                ,'question'=>'What is the correct answer to make the output like below? The output is shown as below:','program'=>
+
+                '<pre>		
+	public class test{
+
+	public static void main (String [] args){
+		int gasPrices[] = new int[10];
+
+		gasPrices[0] = 856;
+		gasPrices[1] = 765;
+		gasPrices[2] = 454;
+		gasPrices[3] = gasPrices[<input type="text" name="ans1" disabled >] - 100;
+	    System.out.println(gasPrices[3]);
+	}
+}</pre>',
+                'question_ans'=>'d',
+                'mc_ans1' =>'<br>gasPrices[2]<br>',
+                'mc_ans2' =>'<br>gasPrices[3]<br>'
+                ,'mc_ans3'=>'<br>gasPrices[0]<br>'
+                ,'mc_ans4'=>'<br>gasPrices[1]<br>',
+                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>what number subtract 100 can be the answer</p>','photo'=>'./images/mcQuestion/ans24.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
+
+            //Q25
+
+            ['id'=>25,'name'=>'array 3', 'teacher_id'=>1, 'question_type'=>'array','question_level'=>2
+                ,'question'=>'What is the correct answer to make the output like below? The output is shown as below:','program'=>
+
+                '<pre>		
+	public class test{
+
+	public static void main (String [] args){
+	    int k = 3;
+		int gasPrices[] = new int[k];
+
+		gasPrices[0] = 15;
+		gasPrices[1] = 32;
+		gasPrices[2] = 76;
+	    System.out.println(gasPrices<input type="text" name="ans1" disabled >);
+	}
+}</pre>',
+                'question_ans'=>'b',
+                'mc_ans1' =>'<br>.length()<br>',
+                'mc_ans2' =>'<br>.length<br>'
+                ,'mc_ans3'=>'<br>[3]<br>'
+                ,'mc_ans4'=>'<br>[1]<br>',
+                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>How long is the array?</p><p>Do .length have "()" ?</p>','photo'=>'./images/mcQuestion/ans25.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
+
+            //Q26
+
+            ['id'=>26,'name'=>'loop 1', 'teacher_id'=>1, 'question_type'=>'loop','question_level'=>1
+                ,'question'=>'What is the correct answer to make the output like below? The output is shown as below:','program'=>
+
+                '<pre>		
+	public class test{
+
+	public static void main (String [] args){
+	    int x = 1;
+		while(x < <input type="text" name="ans1" disabled >){ 
+		  System.out.println(x+"\t");
+		  ++x;
+		}
+	}
+}</pre>',
+                'question_ans'=>'b',
+                'mc_ans1' =>'<br>9<br>',
+                'mc_ans2' =>'<br>10<br>'
+                ,'mc_ans3'=>'<br>11<br>'
+                ,'mc_ans4'=>'<br>8<br>',
+                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>How many times it will loop?</p>','photo'=>'./images/mcQuestion/ans26.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
+
+            //Q27
+
+            ['id'=>27,'name'=>'loop 2', 'teacher_id'=>1, 'question_type'=>'loop','question_level'=>1
+                ,'question'=>'What is the correct answer to make the output like below? The output is shown as below:','program'=>
+
+                '<pre>		
+	public class test{
+
+	public static void main (String [] args){
+		int i,j;
+		for<input type="text" name="ans1" disabled >{
+			for<input type="text" name="ans2" disabled >{
+				System.out.print("*");
+			}
+			System.out.println(" ");
+		}
+	}
+}</pre>',
+                'question_ans'=>'a',
+                'mc_ans1'=>'<br>(i = 1; i < 10; i+=2)<br>(j = 0; j < i; j++)<br>',
+                'mc_ans2' =>'<br>(i = 1; i < 10; i+=1)<br>(j = 1; j < i; j++)<br>'
+                ,'mc_ans3'=>'<br>(i = 2; i < 10; i+=2)<br>(j = 0; j < i; j--)<br>'
+                ,'mc_ans4'=>'<br>(i = 1; i <= 10; i+=2)<br>(j = 0; j <= i; j++)<br>',
+                'knowledge'=>20,'gold'=>120,'time'=>60,'hint'=>'<p>First time print one *, second time orint two *</p>','photo'=>'./images/mcQuestion/ans26.JPG','created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
 
         );
 
