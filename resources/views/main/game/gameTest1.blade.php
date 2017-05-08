@@ -193,7 +193,7 @@
                             </td>
                         </tr>
                     </table>
-                    <p align="right"><input type="button" id="Reset" name="reset" class="btn btn-primary" value="Reset" onclick="reset()">
+                    <p align="right"><input type="button" id="Reset" name="reset" class="btn btn-danger" value="Reset" onclick="reset()">
                   <input type="submit" id="Next" name="next" class="btn btn-primary" value="Next"></p>
                 </div>
             </div>

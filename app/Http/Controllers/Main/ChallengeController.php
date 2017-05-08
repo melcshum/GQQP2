@@ -52,7 +52,7 @@ class ChallengeController extends Controller
                 $knowledge = ($mc[$random]->knowledge);
                 $totalgold = $totalgold + $gold;
                 $totalknowledge = $totalknowledge + $knowledge;
-                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'True', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
+                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => '<font color="#76eec6">Correct</font>', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
                 Session::push('challenge', $totalquestiondetail);
                 $playNumber++;
                 if($this->checkEnd($playNumber)) {
@@ -66,7 +66,7 @@ class ChallengeController extends Controller
                 $gold = 0;
                 $knowledge = 0;
                 $totalgold = $totalgold + $gold;
-                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'False', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
+                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => '<font color ="#ee3b3b">Incorrect</font>', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
                 Session::push('challenge', $totalquestiondetail);
                 $playNumber++;
                 if($this->checkEnd($playNumber)) {

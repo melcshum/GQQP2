@@ -169,7 +169,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
+                        <pre class="joe"><center><h4><label>Type:{!!(($mc[$random]->question_type))!!}</label>    <label>Level:<u>{!!($mc[$random]->question_level)!!}</u></label>    <label>Timer: </label><label id="my">0</label>:<label id="tensy">0</label><label id="sy">0</label>　　　<label> <button id="myBtn"><img src="./images/bag.png" width="35" height="35"></button></label></h4></center></pre>
                 </div>
 
 
@@ -313,11 +313,7 @@
             <!-- /.row -->
         </div>
         <div class="container">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <p align="right"><input type="submit" name="skip" id="skip" class="btn btn-warning" value="Skip"></p>
-                </li>
-            </ul>
+
             {!! Form::close() !!}
         </div>
         <!-- /#page-wrapper -->

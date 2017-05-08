@@ -100,14 +100,15 @@
 
                     <tr>
                         <td colspan="5">
-                            <center>Total Gold: {!! $totalGold !!} <img src="./images/gold.ico" width="25" height="25">
+                            <center>Total Gold Earned: {!! $totalGold !!}　<img src="./images/gold.ico" width="45" height="45">
                         </center>
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="4">
-
+                        <td colspan="5">
+                            <center>Total Knowledge Earned: {!! $totalKnow !!}　<i class="fa fa-book fa-3x"></i>
+                            </center>
                         </td>
                     </tr>
                     </tbody>

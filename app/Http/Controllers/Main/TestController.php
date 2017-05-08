@@ -91,7 +91,7 @@ class TestController extends Controller
             $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="orange">Skip</font>','Gold' =>$gold,'Finish Time' =>$time];
             Session::push('abc',$totalquestiondetail);
             $message = '<font color="Orange">You have skip this question!</font>';
-            $gif='<img src="./images/correct.gif" width="100%" height="100%">';
+            $gif='<img src="./images/skip.gif" width="100%" height="100%">';
 
             return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','type','random','message','gif'));
 

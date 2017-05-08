@@ -37,7 +37,7 @@ class ChallengeFillController extends Controller
         $ans4 =$request->input('ans4');
         $ans5 =$request->input('ans5');
         if($ans1==""||$ans1==""||$ans2==""||$ans3==""||$ans4==""||$ans5==""||Input::get('skip')){
-            $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'False', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0];
+            $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => '<font color ="#ee3b3b">Incorrect</font>', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0];
             Session::push('challengeFill', $totalquestiondetail);
             $totalquestionresult = Session::get('challengeFill');
             $totalquestionMCresult = Session::get('challenge');
@@ -54,7 +54,7 @@ class ChallengeFillController extends Controller
         $knowledge = $fill[$random]->knowledge;
        // dd($playnum);
         $check = $this->checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$random);
-        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'True', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0];
+        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => '<font color="#76eec6">Correct</font>', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0];
         Session::push('challengeFill', $totalquestiondetail);
         $totalquestionresult = Session::get('challengeFill');
         $totalquestionMCresult = Session::get('challenge');

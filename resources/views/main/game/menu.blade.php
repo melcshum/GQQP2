@@ -290,8 +290,7 @@
                 </div>
                 <div class="modal-body">
                     <p><h4>How to play?</h4></p>
-                    <p>This game contain 20 questions. If you cannot complete the question in time,it takes 0 marks.<b>(when the level is high, it will more time)</b>
-                         This mode can get Gold to buy item(Tips) in shop, it can help you solve some problem.</p>
+                    <p>This game contain 20 questions. This set of question contain Multiple Choice and Fill in the Blanks question!</p>
                 </div>
                     <div class="modal-footer">
                         {!! Form::open(array('action' => 'Main\TestController@result','method' => 'post')) !!}
