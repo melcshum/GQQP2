@@ -82,15 +82,18 @@ class TestController extends Controller
         if (Input::get('skip')) {//if user click skip button
             $this->totalgold= $this->totalgold+$request->input('totalgold');//set the totalgold
             $totalgold = $this->totalgold;//set the totalgold
-            $playAns = 'Null';//player choose ans
-            $ans = "you skip the question";
+            $playAns = '';//player choose ans
+            $ans = "You have skip this question";
             $gold = 0;
             $time = 0;
             $type = Input::get('type');
             $random = Session::get('random')[0][$playQuestionNum];
-            $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<i>skip</i>','Gold' =>$gold,'Finish Time' =>$time];
+            $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="orange">Skip</font>','Gold' =>$gold,'Finish Time' =>$time];
             Session::push('abc',$totalquestiondetail);
-            return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','type','random'));
+            $message = '<font color="Orange">You have skip this question!</font>';
+            $gif='<img src="./images/correct.gif" width="100%" height="100%">';
+
+            return view('main.game.gameResult', compact('playAns', 'playQuestionNum', 'mc', 'ans', 'tureAns', 'gold','time','totalgold','type','random','message','gif'));
 
         } elseif (Input::get('next')) { // if user choose answer the question and click next
             //dd(Session::get('random')[0][$playQuestionNum]);
