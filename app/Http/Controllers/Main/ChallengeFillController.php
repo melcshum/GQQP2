@@ -36,8 +36,9 @@ class ChallengeFillController extends Controller
         $ans3 =$request->input('ans3');
         $ans4 =$request->input('ans4');
         $ans5 =$request->input('ans5');
+        $type = $fill[$random]->question_type;
         if($ans1==""||$ans1==""||$ans2==""||$ans3==""||$ans4==""||$ans5==""||Input::get('skip')){
-            $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'False', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0];
+            $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'False', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0, 'Type'=>$type];
             Session::push('challengeFill', $totalquestiondetail);
             $totalquestionresult = Session::get('challengeFill');
             $totalquestionMCresult = Session::get('challenge');
@@ -54,7 +55,7 @@ class ChallengeFillController extends Controller
         $knowledge = $fill[$random]->knowledge;
        // dd($playnum);
         $check = $this->checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$random);
-        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'True', 'Gold' => 0, 'Knowledge' => 0, 'Finish Time' => 0];
+        $totalquestiondetail[$playnum] = ['Question' => 20, 'Result' => 'True', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => 0,'Type'=>$type ];
         Session::push('challengeFill', $totalquestiondetail);
         $totalquestionresult = Session::get('challengeFill');
         $totalquestionMCresult = Session::get('challenge');
@@ -62,6 +63,7 @@ class ChallengeFillController extends Controller
         $totalTime = $this->getTotalTime($totalquestionMCresult,$totalquestionresult);
         $totalKnow = $this->getTotalKnow($totalquestionMCresult,$totalquestionresult);
         $this->update($totalGold,$totalKnow);
+        $this->updateSkill();
         return view ('main.challenge.ChallengeResult', compact('totalquestionresult','totalquestionMCresult','totalGold','totalTime','totalKnow'));
     }
     public function checkAns($ans1,$ans2,$ans3,$ans4,$ans5,$random){
@@ -132,5 +134,63 @@ class ChallengeFillController extends Controller
         //$project->update($input);
         return 'nice';
     }
+
+    public function updateSkill()
+    {
+        //challenge
+        //challengeFill
+        $mcType = Session::get('challenge');
+        $fillType = Session::get('challengeFill');
+        $UserInfo = DB::table('skills')->where('user_id',Auth::user()->id)->get();
+        $ifskillPoint = $UserInfo[0]->if_else_point;
+        $arrayskillPoint = $UserInfo[0]->array_point;
+        $loopskillPoint = $UserInfo[0]->loop_point;
+        //dd($ifskillPoint);
+        for($i=0;$i<count($mcType);$i++){
+            if($mcType[$i][$i]['Type'] =='if_else'){
+                $ifskillPoint = $ifskillPoint + $mcType[$i][$i]['Knowledge'];
+            }
+            if($mcType[$i][$i]['Type'] =='array'){
+                $arrayskillPoint = $arrayskillPoint + $mcType[$i][$i]['Knowledge'];
+            }
+            if($mcType[$i][$i]['Type'] =='loop'){
+                $loopskillPoint = $loopskillPoint + $mcType[$i][$i]['Knowledge'];
+            }
+        }
+        $ifskillLv = $UserInfo[0]->if_else_level;
+        $arrayskillLv = $UserInfo[0]->array_level;
+        $loopskillLv = $UserInfo[0]->loop_level;
+
+        if($fillType[0][0]['Type']== 'if_else'){
+            $ifskillPoint = $ifskillPoint + $mcType[0][0]['Knowledge'];
+        }
+        if($fillType[0][0]['Type']== 'array'){
+            $arrayskillPoint = $arrayskillPoint + $mcType[0][0]['Knowledge'];
+        }
+        if($fillType[0][0]['Type']== 'loop'){
+            $loopskillPoint = $loopskillPoint + $mcType[0][0]['Knowledge'];
+        }
+
+
+        DB::table('skills')
+            ->where('user_id',Auth::user()->id)
+            ->update(array('if_else_point'=>$ifskillPoint,'array_point'=>$arrayskillPoint,'loop_point'=>$loopskillPoint
+            ,'if_else_level'=>$ifskillLv+($ifskillPoint/630),'loop_level'=>$loopskillLv+($loopskillPoint/630),'array_level'=>$arrayskillLv+($arrayskillPoint/630)));
+        //dd($ifskillPoint);
+        //dd($mcType[0][0]['Type']);
+
+
+
+
+        //dd($fillType[0][0]['Type']);
+        //dd($type);
+//        $gold = Auth::user()->gold + $totalgold;
+//        DB::table('users')
+//            ->where('id',Auth::user()->id)
+//            ->update(array('gold'=>$gold));
+//        //$project->update($input);
+    }
+
+
 
 }

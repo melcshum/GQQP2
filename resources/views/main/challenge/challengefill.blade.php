@@ -183,9 +183,7 @@
             }
             if(qtime<=30){
                 $("#hits").show();
-                s--;
                 $("#sy").text(s);
-                qtime--;
             }
             if(s >60){
                 m++;

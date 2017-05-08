@@ -39,7 +39,7 @@ class TestController extends Controller
             $type = Input::get('1');
             $playQuestionNum = 0;
             //$mc = $this->mc;
-            $mc = DB::table('mcquestions')->where('question_type', $type)->get();
+            $mc = DB::table('mcquestions')->where('question_type', $type)->where('status',1)->get();
             $random = $this->randomNumber(count($mc));
             //dd($random);
             $totalgold = $this->totalgold;
@@ -51,11 +51,11 @@ class TestController extends Controller
             return view('main.game.gameTest1', compact('mc', 'playQuestionNum', 'totalgold','type','random'));
         }
         $type = Input::get('type');
-        $mc = DB::table('mcquestions')->where('question_type', $type)->get();
+        $mc = DB::table('mcquestions')->where('question_type', $type)->where('status',1)->get();
         $mc_num = count($mc);//count the all question
         $playQuestionNum = $request->input('question_num');
         if(Input::get('Next_question')){//view button in question result
-            if(($playQuestionNum>=$mc_num)){//check game is not finish
+            if(($playQuestionNum>=$mc_num)){//check game is not finish to 20
                 $this->totalgold= $this->totalgold+$request->input('totalgold');//set the totalgold
                 $totalgold = $this->totalgold;//set the totalgold
                 $totalquestionresult = Session::get('abc');
@@ -66,13 +66,13 @@ class TestController extends Controller
         $playQuestionNum = $request->input('question_num');//get the number of now do question number
         $this->totalgold= $this->totalgold+$request->input('totalgold');//set the totalgold
         $totalgold = $this->totalgold;//set the totalgold
-        $mc = DB::table('mcquestions')->where('question_type', $type)->get();
+        $mc = DB::table('mcquestions')->where('question_type', $type)->where('status',1)->get();
             $random = Session::get('random')[0][$playQuestionNum];
             $type = Input::get('type');
         return view('main.game.gameTest1',compact('mc','playQuestionNum','totalgold','random','type'));
         }
 
-        $mc = DB::table('mcquestions')->where('question_type', $type)->get();
+        $mc = DB::table('mcquestions')->where('question_type', $type)->where('status',1)->get();
         //dd(Auth::user()->id);
 
         $time = $request->input('time');
@@ -148,7 +148,7 @@ class TestController extends Controller
     }
 
     public function getDbAns($answer,$num,$type){
-        $mc = DB::table('mcquestions')->where('question_type', $type)->get();;
+        $mc = DB::table('mcquestions')->where('question_type', $type)->where('status',1)->get();
         if($answer=='a'){
             $qAns=($mc[$num]->mc_ans1);
         }elseif ($answer=='b'){

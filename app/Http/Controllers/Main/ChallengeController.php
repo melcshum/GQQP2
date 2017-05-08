@@ -20,14 +20,17 @@ class ChallengeController extends Controller
         $mc = DB::table('mcQuestions')->where('status',1)->get();
         $random = $this->randomNumber(count($mc));
         $fill = DB::table('fillQuestions')->where('status',1)->get();//
+        $changeNumber = 20;
         $totalgold = 0;
         $totalknowledge = 0;
         $totalquestion2 = count($fill) + count($mc);//all mc+fill question
         Session::forget('challenge');
         Session::forget('challengeFill');
+        Session::forget('ChangeNumber');
         Session::forget('ChallengeRandom');
         Session::forget('ChallengeFillRandom');
         Session::push('ChallengeRandom',$random);
+        Session::push('ChangeNumber',$changeNumber);
         $random = Session::get('ChallengeRandom')[0][$playNumber];
         return view('main.challenge.challengemode',compact('totalgold', 'totalknowledge','playNumber','mc','totalquestion2','random'));
     }
@@ -50,9 +53,10 @@ class ChallengeController extends Controller
             if ($this->checkTureFlase($playAns, $trueAns)) {
                 $gold = ($mc[$random]->gold);
                 $knowledge = ($mc[$random]->knowledge);
+                $type = ($mc[$random]->question_type);
                 $totalgold = $totalgold + $gold;
                 $totalknowledge = $totalknowledge + $knowledge;
-                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'True', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
+                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'True', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $QuestionTime, 'Type' => $type];
                 Session::push('challenge', $totalquestiondetail);
                 $playNumber++;
                 if($this->checkEnd($playNumber)) {
@@ -65,8 +69,9 @@ class ChallengeController extends Controller
                 $random = Session::get('ChallengeRandom')[0][$playNumber];
                 $gold = 0;
                 $knowledge = 0;
+                $type = ($mc[$random]->question_type);
                 $totalgold = $totalgold + $gold;
-                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'False', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $UserTime];
+                $totalquestiondetail[$playNumber] = ['Question' => $playNumber+1, 'Result' => 'False', 'Gold' => $gold, 'Knowledge' => $knowledge, 'Finish Time' => $QuestionTime, 'Type' => $type];
                 Session::push('challenge', $totalquestiondetail);
                 $playNumber++;
                 if($this->checkEnd($playNumber)) {
@@ -128,7 +133,7 @@ class ChallengeController extends Controller
     public function checkEnd($playNumber){
         $End = "";
         $mc =DB::table('mcQuestions')->where('status',1)->get();
-        if ($playNumber == count($mc)) {
+        if ($playNumber == count($mc)) { // to 20
             $End = True;
         }else {
             $End = False;
@@ -142,6 +147,11 @@ class ChallengeController extends Controller
     }
 
     public function checkAjax(Request $request){
+        $changeNumber = Session::get('ChangeNumber');
+        $random = Session::get('ChallengeRandom');
+        return (input::get('sem'));
+
+
 //        $total = [1,2,3];
 //        $random = range(0,4);
 //        shuffle($random);

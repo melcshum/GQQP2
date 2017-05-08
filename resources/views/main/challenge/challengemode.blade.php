@@ -271,7 +271,7 @@
                         {!!(($mc[$random]->program))!!}
                         <table id="Mc">
                             {!! Form::open(array('action' => 'Main\ChallengeController@challenge','method' => 'post')) !!}
-                            <input type="hidden" name="question_num" value={!! $playNumber!!}>
+                            <input type="hidden" id='question_num' name="question_num" value={!! $playNumber!!}>
                             <input type="hidden" id='time' name="time" value='0'>
                             <input type="hidden" id='qtime' name="qtime" value={!! $mc[$random]->time !!}>
                             <input type="hidden" id='trueAns' name="trueAns" value={!! $mc[$random]->question_ans !!}>
@@ -282,15 +282,15 @@
                                     <p ><input class="item" type="radio" id='a' name="ans" value="a"/><label for="a" ><span class="queenie"><span id="MCA">a) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
                                 </td>
                                 <td id ="hset" align="center">
-                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span class="queenie"><span id="MCB">b) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
+                                    <p><input class="item" type="radio" id='b' name="ans" value="b"/><label for="b" ><span class="queenie"><span id="MCB">b) {!!($mc[$random]->mc_ans2)!!}</span></span></label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td id ="hset2" align="center">
-                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span class="queenie"><span id="MCC">c) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
+                                    <p><input class="item" type="radio" id='c' name="ans" value="c"/><label for="c" ><span class="queenie"><span id="MCC">c) {!!($mc[$random]->mc_ans3)!!}</span></span></label></p>
                                 </td>
                                 <td id ="hset2" align="center">
-                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span class="queenie"><span id="MCD">d) {!!($mc[$random]->mc_ans1)!!}</span></span></label></p>
+                                    <p><input class="item" type="radio" id='d' name="ans" value="d"/><label for="d" ><span class="queenie"><span id="MCD">d) {!!($mc[$random]->mc_ans4)!!}</span></span></label></p>
                                 </td>
                             </tr>
                         </table>
@@ -493,13 +493,15 @@
         });
 
         $('#changeQ').click(function() {
+            var NowNumber = $("#question_num").val();
             if (($("#useItem").val() == 0) && (parseInt($("#changeNum").html()) != 0)){
                 $.ajax({
                     type: "POST",
                     url: "/challengeMCChange",
-                    data: {sem: "mc"},
+                    data: {sem: NowNumber},
                     success: function (data) {
                         console.log(data);
+                        alert(data);
                         var changecount = parseInt($("#changeNum").html());
                         $("#changeNum").html(changecount - 1);
                         $("#changeNum").fadeOut(1000).fadeIn(1000);
