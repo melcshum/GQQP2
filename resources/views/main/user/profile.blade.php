@@ -28,14 +28,47 @@
                     </ul>
 
                     <?php
-                        $ifElse = Auth::user()->skill->if_else_point/630*100;
-                        $ie = (int) $ifElse;
 
-                        $loop = Auth::user()->skill->loop_point/630*100;
-                        $l = (int) $loop;
+                    //count if_else point for circle
 
-                        $array = Auth::user()->skill->array_point/630*100;
-                        $a = (int) $array;
+                    $ifPoint = Auth::user()->skill->if_else_point;
+                    if($ifPoint > 630){
+                        while ($ifPoint > 630){
+                            $ifPoint = $ifPoint - 630;
+                        }
+                        $ifElse = $ifPoint/630*100;
+                    }else{
+                        $ifElse = $ifPoint/630*100;
+                    }
+                    $ie = (int) $ifElse;
+
+                    //count loop point for circle
+
+                    $loopPoint = Auth::user()->skill->loop_point;
+                    if($loopPoint > 630){
+                        while ($loopPoint > 630){
+                            $loopPoint = $loopPoint - 630;
+                        }
+                        $loop = $loopPoint/630*100;
+                    }else{
+                        $loop = $loopPoint/630*100;
+                    }
+                    $l = (int) $loop;
+
+                    //count array point for circle
+
+                    $arrayPoint = Auth::user()->skill->array_point;
+                    if($arrayPoint > 630){
+                        while ($arrayPoint > 630){
+                            $arrayPoint = $arrayPoint - 630;
+                        }
+                        $array = $arrayPoint/630*100;
+                    }else{
+                        $array = $arrayPoint/630*100;
+                    }
+                    $a = (int) $array;
+
+
                     ?>
                 <div class="tab-content">
                     <div id="status" class="tab-pane fade in active">
@@ -51,7 +84,7 @@
                                         <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
                                     </g>
                                 </svg> <svg viewBox="-10 -10 220 220">
-                                    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="{{Auth::user()->skill->if_else_point}}"></path>
+                                    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="{{$ifPoint}}"></path>
                                 </svg> </li>
                             <!--  Item  -->
 
@@ -65,7 +98,7 @@
                                         <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
                                     </g>
                                 </svg> <svg viewBox="-10 -10 220 220">
-                                    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="{{Auth::user()->skill->loop_point}}"></path>
+                                    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="{{$loopPoint}}"></path>
                                 </svg> </li>
                             <!--  Item  -->
 
@@ -79,7 +112,7 @@
                                         <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
                                     </g>
                                 </svg> <svg viewBox="-10 -10 220 220">
-                                    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="{{Auth::user()->skill->array_point}}"></path>
+                                    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="{{$arrayPoint}}"></path>
                                 </svg> </li>
                             <!--  Item  -->
                         </ul>
