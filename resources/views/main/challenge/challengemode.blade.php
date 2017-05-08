@@ -349,7 +349,7 @@
             $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
         }
         if(parseInt($("#extraNum").html()) == 0){
-            $("#plustime").attr('src','./images/hO01DAyn-black.png');
+            $("#plustime").attr('src','./images/extraTime-black.png');
         }
 
         var id = setInterval(frame, 1000);
@@ -455,7 +455,7 @@
                     $("#useItem").val(1);
                     $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
                     $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
-                    $("#plustime").attr('src','./images/hO01DAyn-black.png');
+                    $("#plustime").attr('src','./images/extraTime-black.png');
 
                 }
             })
@@ -480,7 +480,7 @@
                     $("#useItem").val(1);
                     $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
                     $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
-                    $("#plustime").attr('src','./images/hO01DAyn-black.png');
+                    $("#plustime").attr('src','./images/extraTime-black.png');
                 }
             })
         }
@@ -508,7 +508,7 @@
                         $("#useItem").val(1);
                         $("#changeQ").attr('src','./images/the-meaning-of-D-black.jpg');
                         $("#fivefive").attr('src','./images/50-50-movie_61 -black.jpg');
-                        $("#plustime").attr('src','./images/hO01DAyn-black.png');
+                        $("#plustime").attr('src','./images/extraTime-black.png');
                     }
                 })
         }else{
