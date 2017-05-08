@@ -25,9 +25,9 @@ class TutorialController extends Controller
             $turntotAns = $this->getTureAns($tureAns,$iftutorial,$playQuestionNum);
             $userAns = $this->getTureAns($playAns,$iftutorial,$playQuestionNum);
             if($playAns==$tureAns){
-                $message="NIce, you are correct";
+                $message="<font color=\"#008000\">Nice, You are Correct</font>";
             }else{
-                $message="Sorry, you are not correct";
+                $message="<font color=\"#ee3b3b\">Sorry, You are Incorrect</font>";
             }
             return view('main.tutorial.MctutorialResult', compact('message', 'tureAns','playQuestionNum','playAns','iftutorial','userAns','turntotAns'));
         }

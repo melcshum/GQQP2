@@ -24,7 +24,7 @@
         <div id="page-wrapper">
             <div class="row-fluid">
                 <div class="col-md-12 col-sm-12 col-xs-1">
-                    <ul id="myTab" class="nav nav-tabs">
+                    <ul id="myTab" class="nav nav-tabs" >
                         <li class="active"><a href="#Platinum" data-toggle="tab"><img src="./images/platinum.png"></a></li>
                         <li><a href="#Gold" data-toggle="tab"><img src="./images/gold2.png"></a></li>
                         <li><a href="#Silver" data-toggle="tab"><img src="./images/silver2.png"></a></li>

@@ -99,13 +99,13 @@ class TestController extends Controller
             $totalgold = $this->totalgold;//set the totalgold
             if ($playAns == $mc[$random]->question_ans) {
                 $gold = ($mc[$random]->gold);
-                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="#76eec6">True</font>','Gold' =>$gold,'Finish Time' =>$time];
+                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color="#76eec6">Correct</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
-                $message = '<font color="#76eec6">Nice, You are Correct</font>';
+                $message = '<font color="#008000">Nice, You are Correct</font>';
                 $gif='<img src="./images/correct.gif" width="100%" height="100%">';
             } else {
                 $gold = 0;
-                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color ="#ee3b3b">False</font>','Gold' =>$gold,'Finish Time' =>$time];
+                $totalquestiondetail[$playQuestionNum]=['Question' => $playQuestionNum+1 ,'Result' => '<font color ="#ee3b3b">Incorrect</font>','Gold' =>$gold,'Finish Time' =>$time];
                 Session::push('abc',$totalquestiondetail);
                 $message = '<font color="#ee3b3b">Sorry, You are Incorrect</font>';
                 $gif='<img src="./images/wrong.gif" width="100%" height="100%">';
