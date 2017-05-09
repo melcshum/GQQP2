@@ -88,11 +88,12 @@
                         </tr>
                     @endfor
                     <tr>
-                        <td>{!! $totalquestionresult[0][0]['Question'] !!}</td>
-                        <td>{!! $totalquestionresult[0][0]['Result'] !!}</td>
-                        <td>{!! $totalquestionresult[0][0]['Gold'] !!}</td>
-                        <td>{!! $totalquestionresult[0][0]['Knowledge'] !!}</td>
-                        <td>{!! $totalquestionMCresult[0][0]['Finish Time']!!} (Sec)</td>
+                        <td>{!! $totalquestionresult[0][20]['Question'] !!}</td>
+                        <td>{!! $totalquestionresult[0][20]['Result'] !!}</td>
+                        <td>{!! $totalquestionresult[0][20]['Gold'] !!}</td>
+                        <td>{!! $totalquestionresult[0][20]['Knowledge'] !!}</td>
+                        <td>{!! $totalquestionresult[0][20]['Finish Time']!!} (Sec)</td>
+
                     </tr>
                     <tr>
 

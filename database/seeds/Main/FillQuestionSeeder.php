@@ -14,22 +14,9 @@ class FillQuestionSeeder extends Seeder
         DB::table('fillQuestions')->delete();
 
         $fillquestions = array(
-            ['id'=>1, 'name'=>"Q1",'teacher_id'=>1, 'question_type'=>'class','question_level'=>3,'question'=>'Create Hello class and have a main class to print "Hello class":'
-            ,'program'=>'<pre>public class 1.<input type="text" id="ans1" name="ans1">{
-	public 2. <input type="text" id="ans2" name="ans2"> 3.<input type="text" id="ans3" name="ans3"> 4.<input type="text" id="ans4" name="ans4">(String [] args){
-		5.<input type="text" id="ans5" name="ans5">.print("Hello class");
-	}
-}
-</pre>'
-            ,'ans1'=>'Hello','ans2'=>'static','ans3'=>'vold','ans4'=>'main','ans5'=>'System.out','knowledge'=>20,'gold'=>200,'time'=>90,'hint'=>'<li>Class name</li>
-						<li>about the main class</li>
-						<li>about the main class</li>
-						<li>about the main class</li>
-						<li>java basic library to print</li>','photo'=>'./images/ans1.JPG', 'created_at'=>new DateTime,'updated_at'=>new DateTime, 'slug'=> str_random(10)],
-
             //Q2
 
-            ['id'=>2, 'name'=>"Q2",'teacher_id'=>1, 'question_type'=>'if_else','question_level'=>3,'question'=>'Complete the fill in the blank to complete the program:'
+            ['id'=>1, 'name'=>"Q2",'teacher_id'=>1, 'question_type'=>'if_else','question_level'=>3,'question'=>'Complete the fill in the blank to complete the program:'
                 ,'program'=>'<pre>public class mark{
 	public static void main(String [] args){
 	    int mark = 73;
@@ -53,7 +40,7 @@ class FillQuestionSeeder extends Seeder
 
             //Q3
 
-            ['id'=>3, 'name'=>"Q3",'teacher_id'=>1, 'question_type'=>'array','question_level'=>4,'question'=>'Complete the fill in the blank to complete the program:'
+            ['id'=>2, 'name'=>"Q3",'teacher_id'=>1, 'question_type'=>'array','question_level'=>4,'question'=>'Complete the fill in the blank to complete the program:'
                 ,'program'=>'<pre>public class array{
 	public static void main(String [] args){
 		int[] a = new int[<input type="text" id="ans1" name="ans1">];
@@ -82,7 +69,7 @@ class FillQuestionSeeder extends Seeder
 
             //Q4
 
-            ['id'=>4, 'name'=>"Q4",'teacher_id'=>1, 'question_type'=>'loop','question_level'=>2,'question'=>'Complete the fill in the blank to complete the program:'
+            ['id'=>3, 'name'=>"Q4",'teacher_id'=>1, 'question_type'=>'loop','question_level'=>2,'question'=>'Complete the fill in the blank to complete the program:'
                 ,'program'=>'<pre>
 public class SimpleWhileEx {
  

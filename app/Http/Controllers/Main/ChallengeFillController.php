@@ -22,6 +22,7 @@ class ChallengeFillController extends Controller
         $random = $this->randomNumber(count($fill));
         Session::push('ChallengeFillRandom',$random);
         Session::push('ChallengeFillChange',$changeNum);
+        Session::forget('challengeFill');
         $random = Session::get('ChallengeFillRandom')[0][0];
         $totalknowledge = 0;
 
@@ -101,7 +102,7 @@ class ChallengeFillController extends Controller
         for($i = 0;$i<count($totalquestionMCresult);$i++){
             $gold +=$totalquestionMCresult[$i][$i]['Gold'];
         }
-        $gold+=$totalquestionresult[0][0]['Gold'];
+        $gold+=$totalquestionresult[0][20]['Gold'];
         return $gold;
     }
 
@@ -110,7 +111,7 @@ class ChallengeFillController extends Controller
         for($i = 0;$i<count($totalquestionMCresult);$i++){
             $time +=$totalquestionMCresult[$i][$i]['Finish Time'];
         }
-        $time+=$totalquestionresult[0][0]['Finish Time'];
+        $time+=$totalquestionresult[0][20]['Finish Time'];
         return $time;
     }
 
@@ -119,7 +120,7 @@ class ChallengeFillController extends Controller
         for($i = 0;$i<count($totalquestionMCresult);$i++){
             $know +=$totalquestionMCresult[$i][$i]['Knowledge'];
         }
-        $know+=$totalquestionresult[0][0]['Knowledge'];
+        $know+=$totalquestionresult[0][20]['Knowledge'];
         return $know;
     }
 
