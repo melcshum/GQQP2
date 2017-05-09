@@ -204,7 +204,6 @@
                     <h2>Answer</h2>
                     {!! Form::open(array('action' => 'Main\ChallengeFillController@challenge','method' => 'post')) !!}
                     <input type="hidden" name="playNum" id="playNum" value={!! $playnum !!}>
-                    <input type="hidden" name="playNum" id="playNum" value={!! $random !!}>
                     <input type="hidden" id='qtime' name="qtime" value={!! $fill[$random]->time !!}>
                     <input type="hidden" id='useItem' name="useItem" value=0>
                    <span id="programP"> {!!(($fill[$random]->program))!!}</span>
@@ -328,7 +327,13 @@
                     console.log(data);
                     var changecount = parseInt($("#changeNum").html());
                     $("#changeNum").html(changecount - 1);
-                    alert(data['question_type']);
+                    $("#changePhoto").attr('src',data['photo']);
+                    $("#changeQuestion").html(data['question']);
+                    $("#changeType").html(data['question_type']);
+                    $("#changeQuLv").html(data['question_level']);
+                    $("#changeQ").attr('src','./images/changeQuestion - black.png');
+                    $("#plustime").attr('src','./images/extraTime-black.png');
+                    $("#useItem").val(1);
                 }
             })
             }
