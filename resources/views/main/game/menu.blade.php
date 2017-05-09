@@ -131,7 +131,7 @@
                     <li>
 
                         <div class="panel panel-default">
-                            <div class="panel-heading text-center" >Suggest finsih time</div>
+                            <div class="panel-heading text-center" >Suggested finishing time</div>
                             <div class="panel-body text-center">
                                 30 minute
                             </div>

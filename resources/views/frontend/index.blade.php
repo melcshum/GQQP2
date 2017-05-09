@@ -39,13 +39,11 @@
                                             <tr><td colspan="2" align="center"><i class="fa fa-compass" aria-hidden="true" style="font-size:100px;color:gold"></i></td></tr>
                                             <tr><td colspan="2" align="center"><strong>GOAL</strong></td></tr>
                                             <tr>
-                                                <td>    <ul><li><h5>Enrich Themselves</h5></li></td>
-                                                <td>   <ul>    <li><h5>Breaking Up Traditional Learning</h5></li></td>
+                                                <td colspan="2">    <h5>Enrich Themselves in program coding.</h5></td></tr><tr>
+                                                <td colspan="2">   <h5>Breaking Up Traditional Learning, learning can be fun!</h5></td>
                                             </tr>
                                             <tr>
-                                                <td>    <ul><li><h5>Improving Constantly</h5></li></td>
-                                                <td>   <ul><li><h5>Enhance Student's Learning Motivation</h5></li></td>
-                                                </ul></td>
+                                                <td colspan="2">   <h5>Provide a suitable platform for student to improve their knowledge constantly and to enhance their Learning Motivation</h5></td></tr>
 
                                             </tr>
                                         </table>
@@ -79,12 +77,14 @@
                                             <tr><td colspan="2" align="center"><img src="../images/why2.png" width="100px" height="100px"></td></tr>
                                             <tr><td><strong></strong></td></tr>
                                             <tr>
-                                                <td>    <ul><li><h5>Learning programming is not easy</h5></li></td>
-                                                <td>   <ul>    <li><h5>Interesting Way to Learn Programming?</h5></li></td>
+                                                <td colspan="2" >    <ul><li><h5>Learning programming is not easy, student can learn through games in this learning system!</h5></li></td>
                                             </tr>
                                             <tr>
-                                                <td>    <ul><li><h5>Traditional Learning Is Boring </h5></li></td>
-                                                <td>   </td>
+                                                <td colspan="2" >   <ul>    <li><h5>Interesting Way to Learn Programming?</h5></li></td>
+                                            </tr>
+                                            <tr>
+                                                <td>    <ul><li><h5>Traditional Learning Is Boring, so this learning system can renewed your study interest.   </h5></li></td>
+
                                                 </ul></td>
 
                                             </tr>
