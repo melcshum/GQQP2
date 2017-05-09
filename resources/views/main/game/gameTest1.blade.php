@@ -167,7 +167,8 @@
                     <img src="{!! $mc[$random]->photo !!}">
                     <hr>
                     <ol id="hits">
-                        {!! $mc[$random]->hint !!}
+                        <font color="Red"><h3>Hints!</h3></font>
+                        <font color="Red">{!! $mc[$random]->hint !!}</font>
                     </ol>
                 </div>
 
