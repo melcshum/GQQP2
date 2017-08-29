@@ -82,7 +82,7 @@
             </div>
      <!--   </div> -->
 
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12" height="100%">
         @yield('content')
         </div>
 

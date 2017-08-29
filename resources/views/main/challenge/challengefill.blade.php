@@ -204,7 +204,6 @@
                     <h2>Answer</h2>
                     {!! Form::open(array('action' => 'Main\ChallengeFillController@challenge','method' => 'post')) !!}
                     <input type="hidden" name="playNum" id="playNum" value={!! $playnum !!}>
-                    <input type="hidden" name="playNum" id="playNum" value={!! $random !!}>
                     <input type="hidden" id='qtime' name="qtime" value={!! $fill[$random]->time !!}>
                     <input type="hidden" id='useItem' name="useItem" value=0>
                    <span id="programP"> {!!(($fill[$random]->program))!!}</span>
@@ -320,34 +319,38 @@
 
         $('#changeQ').click(function() {
             if (($("#useItem").val() == 0) && (parseInt($("#changeNum").html()) != 0)){
-            $.ajax({
-                type:"POST",
-                url: "/challengeFillChange",
-                data: {sem : "mc"},
-                success:function(data){
-                    console.log(data);
-                    alert(data['id']);
-                    var changecount = parseInt($("#changeNum").html());
-                    $("#changeNum").html(changecount - 1);
-                    $("#changeQuestion").html(data['question']);
-                    $("#changeType").html(data['question_type']);
-                    $("#changeQuLv").html(data['question_level']);
-                    $("#changeQ").attr('src','./images/changeQuestion - black.png');
-                    $("#plustime").attr('src','./images/extraTime-black.png');
-                    $("#useItem").val(1);
-                }
-            })
+                $.ajax({
+                    type:"POST",
+                    url: "/challengeFillChange",
+                    data: {sem : "mc"},
+                    success:function(data){
+                        console.log(data);
+                        var changecount = parseInt($("#changeNum").html());
+                        $("#changeNum").html(changecount - 1);
+                        $("#changePhoto").attr('src',data['photo']);
+                        $("#changeQuestion").html(data['question']);
+                        $("#changeType").html(data['question_type']);
+                        $("#changeQuLv").html(data['question_level']);
+                        $("#changeQ").attr('src','./images/changeQuestion - black.png');
+                        $("#plustime").attr('src','./images/extraTime-black.png');
+                        $("#useItem").val(1);
+                    }
+                })
             }
             else{
-
             }
         });
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+    });
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
 
     });
 </script>

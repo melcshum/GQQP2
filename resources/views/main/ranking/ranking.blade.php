@@ -32,7 +32,9 @@
 
                         </li>
                     </ul>
-
+                    <div>
+                        <h4><font color="blue">You are now having knowledge : </font> <font color="gold"> {{Auth::user()->knowledge}}</font></h4>
+                    </div>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade in active" id="Platinum">
                             <center>
@@ -77,6 +79,7 @@
                                 <h3>Gold</h3>
                             </center>
                             <table class="table table-striped" align="left">
+                                <input type="hidden" name="userID" id="userID" value="{{Auth::user()->id}}">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -115,6 +118,7 @@
                                 <h3>Silver</h3>
                             </center>
                             <table class="table table-striped" align="left">
+                                <input type="hidden" name="userID" id="userID" value="{{Auth::user()->id}}">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -151,6 +155,7 @@
                                 <h3>Bronze</h3>
                             </center>
                             <table class="table table-striped" align="left">
+                                <input type="hidden" name="userID" id="userID" value="{{Auth::user()->id}}">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -160,6 +165,7 @@
                                 </thead>
                                 <tbody>
                                 <?php $index = 1; ?>
+
                                 @foreach($users as $user)
                                     @if($user -> id >= 1 && $user -> id <= 3)
 
@@ -181,6 +187,7 @@
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
 
@@ -231,12 +238,15 @@
 <script type="text/javascript" language="javascript">
     $(document).ready(function(){
         $('table td').each(function(){
-            //$('table tr:even').css('backgroundColor', '#FFFFFF');
+            $('table tr:even').css('backgroundColor', '#FFFFFF');
             var userID = $('#userID').val();
             var id = $('#id').val();
             if(userID == id) {
-             //   $(this).parent().css('backgroundColor', '#EFEF00');
+             $(this).parent().css('backgroundColor', 'Gold');
             }
+
+
+
         });
 
 
