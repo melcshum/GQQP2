@@ -51,7 +51,7 @@ class ShopController extends Controller
         elseif($itemid == 2){
             if($gold >= 1000){
                 $half += 1;
-                $gold -= 500;
+                $gold -= 1000;
                 DB::table('users')->where('id', $userId)->update(['gold' => $gold]);
                 DB::table('users')->where('id', $userId)->update(['half' => $half]);
                 return redirect::to('shop')->with('success', 'You have bought a 50/50 Item');;

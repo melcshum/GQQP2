@@ -326,9 +326,15 @@
                 data: {sem : "mc"},
                 success:function(data){
                     console.log(data);
+                    alert(data['id']);
                     var changecount = parseInt($("#changeNum").html());
                     $("#changeNum").html(changecount - 1);
-                    alert(data['question_type']);
+                    $("#changeQuestion").html(data['question']);
+                    $("#changeType").html(data['question_type']);
+                    $("#changeQuLv").html(data['question_level']);
+                    $("#changeQ").attr('src','./images/changeQuestion - black.png');
+                    $("#plustime").attr('src','./images/extraTime-black.png');
+                    $("#useItem").val(1);
                 }
             })
             }
