@@ -121,7 +121,7 @@ class ChallengeController extends Controller
     public function checkEnd($playNumber){
         $End = "";
         $mc =DB::table('mcQuestions')->where('status',1)->get();
-        if ($playNumber == 1) { // to 20
+        if ($playNumber == 19) { // to 20
             $End = True;
         }else {
             $End = False;

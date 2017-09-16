@@ -129,6 +129,17 @@
 
 
     </style>
+    <style>
+        .position2{
+            position:absolute;
+            width: 100px;
+            height: 15px;
+            right: 500px;
+            bottom: 10px;
+            
+            text-align: center
+        }
+    </style>
 
 </head>
 
@@ -148,9 +159,8 @@
                 </div>
 
                 <div id="myProgress">
-
                     <div id="myBar">
-                        <div align="center"> {!! Form::label('question_num', $playQuestionNum+1) !!}/{!! count($mc) !!}</div>
+                        <div class="position2"> {!! Form::label('question_num', $playQuestionNum+1) !!}/{!! count($mc) !!}</div>
                     </div>
 
 
