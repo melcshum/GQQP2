@@ -136,7 +136,7 @@
             height: 15px;
             right: 500px;
             bottom: 10px;
-            
+
             text-align: center
         }
     </style>

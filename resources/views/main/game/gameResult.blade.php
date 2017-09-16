@@ -96,7 +96,7 @@
         <div id="Mainp"><div class="col-md-12 col-sm-12 col-xs-12">
 
                 <table border="1" width="100%">
-                    <tr><td colspan="3"><center><h3>{!! $message !!},　{!!$gold!!} <img src="./images/gold.ico" width="35" height="35"> is earned! 　<img src="./images/timer.png" width="35" height="35"> used is 0:{!! $time!!} ! </h3></center></td></tr></table>
+                    <tr><td colspan="3"><center><h3>{!! $message !!},　{!!$gold!!} <img src="./images/gold.ico" width="35" height="35"> is earned! 　<img src="./images/timer.png" width="35" height="35"> used is {!! $time!!} sec ! </h3></center></td></tr></table>
 
 
                 <pre><h4>Question: <label>{!! $playQuestionNum+1!!}</label>/{!! count($mc) !!}  {!!($mc[$random]->question)!!}</h4></pre>
