@@ -152,7 +152,18 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Detail</h4>
+                        <table border="0" width="100%">
+                            <tr>
+                                <td align="left">
+                                    <h4>Detail</h4>
+                                    </td>
+                                <td align="right">
+                                    <a href="{{url('/config')}}"><img src="./images/setting.png" width="40" height="30"></a>
+                                </td>
+                            </tr>
+
+                        </table>
+
                     </div>
 
                     <div class="panel-body">
