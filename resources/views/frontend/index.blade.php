@@ -80,7 +80,7 @@
                                                 <td colspan="2" >    <ul><li><h5>Learning programming is not easy, student can learn through games in this learning system!</h5></li></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" >   <ul>    <li><h5>Interesting Way to Learn Programming?</h5></li></td>
+                                                <td colspan="2" >   <ul>    <li><h5>Interesting Way to Learn Programming?</h5></li></ul></td>
                                             </tr>
                                             <tr>
                                                 <td>    <ul><li><h5>Traditional Learning Is Boring, so this learning system can renewed your study interest.   </h5></li></td>

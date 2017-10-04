@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6 text-right">
                     <form method="get" action="/changeInfor">
-                        <input class="btn btn-primary" value="Edit" type="submit">
+                        <input class="btn btn-primary" value="Change Password" type="submit">
                     </form>
                 </div>
                 <br><br><br>
@@ -48,6 +48,7 @@
                             <input class="form-control" value="{{ Auth::user()->name }}" type="text">
                         </div>
                     </div>
+
                     {{--<div class="form-group">--}}
                         {{--<label class="col-md-3 control-label">Password:</label>--}}
                         {{--<div class="col-md-8">--}}

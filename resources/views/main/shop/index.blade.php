@@ -80,7 +80,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 {!! Form::open(array('action' => 'Main\ShopController@exchangeItem','method' => 'post')) !!}
                     {{ csrf_field() }}
-                <table border="1" width="100%">
+                <table border="2" width="100%">
                     <tr >
                         <th align="center"><center>Item name</center></th>
                         <th align="center"><center>Item description</center></th>
@@ -104,7 +104,7 @@
                     <tr>
 
                             <h5><td align="center"><img src="./images/50-50-movie_61.jpg"></td>
-                                <td align="center">&nbsp(user can filter 2 incorrecct answer in  Challenge Mode <b>(Multiple Choice Only)</b>)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                <td align="center">&nbsp(user can filter 2 incorrect answer in  Challenge Mode <b>(Multiple Choice Only)</b>)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                                 <td align="center"><button id="buy2" name="buy2" class="btn btn-danger" data-toggle="modal" data-target="#myModal2" value="2">
                                 <span class="showPoint"><img src="./images/gold.ico" width="40"> x 1000</span>
                                 <span class="redeem">Redeem now!</span>
